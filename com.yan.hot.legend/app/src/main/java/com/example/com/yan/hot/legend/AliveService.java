@@ -114,7 +114,7 @@ public class AliveService extends NotificationListenerService {
 				}
 			}
 			for (Action action : actions) {
-//				if (action.getName().contains("激情泡点-2倍")){
+//				if (action.getName().contains("转生")){
 					alarm(action);
 //				}
 			}
