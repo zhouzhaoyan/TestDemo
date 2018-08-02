@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -30,6 +32,7 @@ public class MainActivity extends Activity {
 	private static final String Coordinate_FLAG = "Coordinate_FLAG";
 	private List<Action> actions;
 	private ListView actionsView;
+	public static boolean filter = false;
 
 	public static void open(Context context, List<Coordinate> coordinatess){
 		Intent intent = new Intent(context, MainActivity.class);
@@ -65,8 +68,18 @@ public class MainActivity extends Activity {
 		}else{
 			AliveService.openAliveService(getApplicationContext());
 		}
+
+		((CheckBox)findViewById(R.id.filter)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				filter = isChecked;
+			}
+		});
+
 		Log.e(TAG, "week: " + TimeUtil.dateToWeek(System.currentTimeMillis()));
 		Log.e(TAG, "day: " + TimeUtil.getCurrentDay());
+		Log.e(TAG, "hour: " + TimeUtil.getCurrentHour());
+		Log.e(TAG, "min: " + TimeUtil.getCurrentMin());
 	}
 
 	public void onClick(View view){

@@ -34,6 +34,13 @@
             android:layout_height="wrap_content"
             android:text="停止"
             android:onClick="onClick"/>
+
+        <CheckBox
+            android:id="@+id/filter"
+            android:checked="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="过滤日常"/>
     </LinearLayout>
 
     <ListView

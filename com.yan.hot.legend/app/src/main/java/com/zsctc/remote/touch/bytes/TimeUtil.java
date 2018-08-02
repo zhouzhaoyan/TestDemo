@@ -365,4 +365,14 @@ public class TimeUtil {
         Calendar now = Calendar.getInstance();
         return now.get(Calendar.DAY_OF_MONTH);
     }
+
+    public static int getCurrentHour(){
+        Calendar now = Calendar.getInstance();
+        return now.get(Calendar.HOUR_OF_DAY);
+    }
+
+    public static int getCurrentMin(){
+        Calendar now = Calendar.getInstance();
+        return now.get(Calendar.MINUTE);
+    }
 }

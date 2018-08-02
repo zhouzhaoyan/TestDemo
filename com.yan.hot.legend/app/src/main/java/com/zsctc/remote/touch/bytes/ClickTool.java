@@ -77,18 +77,22 @@ public class ClickTool {
 
 	public static List<Long> getClickTime(long time, ActionTime actionTime){
 		List<Long> clickTimes = new ArrayList<Long>();
+//		int runHour = actionTime.getHour();
+//		int runMin = actionTime.getMin();
+		int runHour = TimeUtil.getCurrentHour();
+		int runMin = TimeUtil.getCurrentMin() + 1;
 		long secendTime = TimeUtil.getLastSecondInDay(time) + 2000;
 
 		long tmpRunningTime;
 		for (int i = 0; i < actionTime.getCount(); i++) {
 			long addTime = i * (Math.max(actionTime.getInterval() * 1000 * 60, 300));
 			tmpRunningTime = TimeUtil.getSpecifyTime(time,
-					actionTime.getHour(), actionTime.getMin())
+					runHour, runMin)
 					+ addTime;
 
 			if (System.currentTimeMillis() > tmpRunningTime) {
 				tmpRunningTime = TimeUtil.getSpecifyTime(secendTime,
-						actionTime.getHour(), actionTime.getMin())
+						runHour, runMin)
 						+ addTime;
 			}
 //			result[i] = tmpRunningTime;

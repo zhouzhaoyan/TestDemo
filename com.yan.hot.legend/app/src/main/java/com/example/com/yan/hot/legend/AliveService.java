@@ -138,18 +138,18 @@ public class AliveService extends NotificationListenerService {
 		List<Long> clickTimes = ClickTool.getClickTime(System.currentTimeMillis(), actionTime);
 		if (action.getName().contains("野外boss") || action.getName().equals("神域boss")){
 			//以单双来刷boss
-			List<Long> deleteClickTime = new ArrayList<Long>();
-			for (long tmp: clickTimes) {
-				int hour = TimeUtil.getHour(tmp);
-				if ((action.getName().contains("野外boss") && hour%3 == 0)
-					|| (action.getName().equals("神域boss") && (hour%3 == 1 || hour%3 == 2))){
-					Log.e(TAG, "alarm hour：" + hour + "," + action.getName() + "," + TimeUtil.getFormatTime(tmp));
-					deleteClickTime.add(tmp);
-				}else {
-					Log.e(TAG, "alarm hour else：" + hour + "," + action.getName() + "," + TimeUtil.getFormatTime(tmp));
-				}
-			}
-			clickTimes.removeAll(deleteClickTime);
+//			List<Long> deleteClickTime = new ArrayList<Long>();
+//			for (long tmp: clickTimes) {
+//				int hour = TimeUtil.getHour(tmp);
+//				if ((action.getName().contains("野外boss") && hour%3 == 0)
+//					|| (action.getName().equals("神域boss") && (hour%3 == 1 || hour%3 == 2))){
+//					Log.e(TAG, "alarm hour：" + hour + "," + action.getName() + "," + TimeUtil.getFormatTime(tmp));
+//					deleteClickTime.add(tmp);
+//				}else {
+//					Log.e(TAG, "alarm hour else：" + hour + "," + action.getName() + "," + TimeUtil.getFormatTime(tmp));
+//				}
+//			}
+//			clickTimes.removeAll(deleteClickTime);
 
 			Log.e(TAG, "alarm filer: " +  action.getName());
 			Map<Long, Long> allClick = new HashMap<Long, Long>();
@@ -329,6 +329,13 @@ public class AliveService extends NotificationListenerService {
 				return true;
             }
         }
+
+        if (MainActivity.filter){
+			if (!(name.equals("熔炼") || name.equals("竞技") || name.equals("野外boss")
+					|| name.equals("王者争霸"))){
+				return true;
+			}
+		}
 		return false;
 	}
 
