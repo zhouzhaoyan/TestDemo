@@ -81,7 +81,7 @@ public class ClickTool {
 //		int runMin = actionTime.getMin();
 		int runHour = TimeUtil.getCurrentHour();
 		int runMin = TimeUtil.getCurrentMin() + 1;
-		long secendTime = TimeUtil.getLastSecondInDay(time) + 2000;
+		long secondTime = TimeUtil.getLastSecondInDay(time) + 2000;
 
 		long tmpRunningTime;
 		for (int i = 0; i < actionTime.getCount(); i++) {
@@ -91,7 +91,7 @@ public class ClickTool {
 					+ addTime;
 
 			if (System.currentTimeMillis() > tmpRunningTime) {
-				tmpRunningTime = TimeUtil.getSpecifyTime(secendTime,
+				tmpRunningTime = TimeUtil.getSpecifyTime(secondTime,
 						runHour, runMin)
 						+ addTime;
 			}

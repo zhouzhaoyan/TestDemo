@@ -108,11 +108,11 @@ public class AliveService extends NotificationListenerService {
 		actions = ActionFile.read();
 
 		if (actions != null){
-			for (Action action : actions) {
-				if (!action.getName().contains("野外boss") && !action.getName().equals("神域boss")){
-					filerActions.add(action);
-				}
-			}
+//			for (Action action : actions) {
+//				if (!action.getName().contains("野外boss") && !action.getName().equals("神域boss")){
+//					filerActions.add(action);
+//				}
+//			}
 			for (Action action : actions) {
 //				if (action.getName().contains("转生")){
 					alarm(action);
@@ -332,7 +332,7 @@ public class AliveService extends NotificationListenerService {
 
         if (MainActivity.filter){
 			if (!(name.equals("熔炼") || name.equals("竞技") || name.equals("野外boss")
-					|| name.equals("王者争霸"))){
+					|| name.equals("王者争霸") || name.equals("神域boss"))){
 				return true;
 			}
 		}
