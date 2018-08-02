@@ -10,7 +10,7 @@ import java.util.List;
 public class ClickTool {
 
 	LinuxShell shell;
-	String devicePath = "/dev/input/event2";
+	String devicePath = "/dev/input/event3";
 
 	public ClickTool(){
 		shell = new LinuxShell();

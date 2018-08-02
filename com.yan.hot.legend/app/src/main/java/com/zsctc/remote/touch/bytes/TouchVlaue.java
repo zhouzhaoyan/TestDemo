@@ -5,15 +5,15 @@ public class TouchVlaue {
 	public static String eventDown = 
 			"sendevent %3$s 0003 0057 00001046 \n" +
 			"sendevent %3$s 0001 0330 00000001 \n" +
-			"sendevent %3$s 0001 0325 00000001 \n" +
+//			"sendevent %3$s 0001 0325 00000001 \n" +
 			
 			"sendevent %3$s 0003 0053 %1$s \n" +
 			"sendevent %3$s 0003 0054 %2$s \n" +
 			
-			"sendevent %3$s 0003 0049 00000003 \n" +
-			"sendevent %3$s 0000 0000 00000000 \n" +
-			
-			"sendevent %3$s 0003 0048 00000003 \n" +
+//			"sendevent %3$s 0003 0049 00000003 \n" +
+//			"sendevent %3$s 0000 0000 00000000 \n" +
+//
+//			"sendevent %3$s 0003 0048 00000003 \n" +
 			"sendevent %3$s 0000 0000 00000000 \n";
 	
 	public static String eventMove = 
@@ -27,7 +27,7 @@ public class TouchVlaue {
 	public static String eventUp = 
 			"sendevent %3$s 0003 0057 4294967295 \n" +
 			"sendevent %3$s 0001 0330 00000000 \n" +
-			"sendevent %3$s 0001 0325 00000001 \n" +
+//			"sendevent %3$s 0001 0325 00000001 \n" +
 			"sendevent %3$s 0000 0000 00000000 \n";
 	
 	public static String move =
