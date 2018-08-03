@@ -16,7 +16,6 @@ import android.widget.TextView;
 
 import com.yan.hot.legend.action.Action;
 import com.yan.hot.legend.action.ActionFile;
-import com.yan.hot.legend.action.ActionTime;
 import com.yan.hot.legend.action.Coordinate;
 import com.zsctc.remote.touch.bytes.ClickTool;
 import com.zsctc.remote.touch.bytes.LogManager;
@@ -133,9 +132,8 @@ public class AliveService extends NotificationListenerService {
 				- coordinatesTmp.get(0).getTime())/1000;
 		String time = (runTimeTmp/60 + ":" + runTimeTmp%60);
 		LogManager.newInstance().writeMessage(action.getName() + "  " + time);
-		ActionTime actionTime = action.getActionTime();
 
-		List<Long> clickTimes = ClickTool.getClickTime(System.currentTimeMillis(), actionTime);
+		List<Long> clickTimes = ClickTool.getClickTime(System.currentTimeMillis(), action);
 		if (action.getName().contains("野外boss") || action.getName().equals("神域boss")){
 			//以单双来刷boss
 //			List<Long> deleteClickTime = new ArrayList<Long>();
@@ -155,7 +153,7 @@ public class AliveService extends NotificationListenerService {
 			Map<Long, Long> allClick = new HashMap<Long, Long>();
 
 			for (Action filerAction: filerActions) {
-				List<Long> filerTimes = ClickTool.getClickTime(System.currentTimeMillis(), filerAction.getActionTime());
+				List<Long> filerTimes = ClickTool.getClickTime(System.currentTimeMillis(), filerAction);
 				List<Coordinate> filerCoordinates = filerAction.getCoordinates();
 				long filerRunTime = (int) (filerCoordinates.get(filerCoordinates.size() - 1).getTime()
 						- filerCoordinates.get(0).getTime()) + 1000;
@@ -329,13 +327,6 @@ public class AliveService extends NotificationListenerService {
 				return true;
             }
         }
-
-        if (MainActivity.filter){
-			if (!(name.equals("熔炼") || name.equals("竞技") || name.equals("野外boss")
-					|| name.equals("王者争霸") || name.equals("神域boss"))){
-				return true;
-			}
-		}
 		return false;
 	}
 
