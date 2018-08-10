@@ -93,13 +93,13 @@ public class ClickTool {
             } else if (name.equals("竞技")) {
                 runMin += 2;
             } else if (name.equals("血战矿洞")) {
-                runMin += 4;
+                runMin += 3;
             } else if (name.equals("秘境boss")) {
-                runMin += 5;
+                runMin += 4;
             } else if (name.equals("野外boss")) {
-                runMin += 10;
+                runMin += 5;
             } else if (name.equals("神域boss")) {
-                runMin += 15;
+                runMin += 6;
             } else {
                 return clickTimes;
             }
@@ -108,39 +108,53 @@ public class ClickTool {
                 runMin += 1;
             } else if (name.equals("竞技")) {
                 runMin += 2;
-            } else if (name.equals("王者争霸")) {
-                runMin += 3;
-            } else if (name.equals("个人boss")) {
-                runMin += 5;
-            } else if (name.equals("神兵幻境")) {
-                runMin += 8;
-            } else if (name.equals("材料副本")) {
-                runMin += 15;
-            } else if (name.equals("守护神剑")) {
-                runMin += 17;
-            } else if (name.equals("特戒副本")) {
-                runMin += 20;
-            } else if (name.equals("经验副本")) {
-                runMin += 21;
-            } else if (name.equals("自动关卡")) {
-                runMin += 22;
-            } else if (name.equals("转生")) {
-                runMin += 27;
             } else if (name.equals("血战矿洞")) {
-                runMin += 28;
+                runMin += 3;
+            } else if (name.equals("王者争霸")) {
+                runMin += 4;
+            } else if (name.equals("材料副本")) {
+                runMin += 5;
+            } else if (name.equals("经验副本")) {
+                runMin += 6;
+            } else if (name.equals("转生")) {
+                runMin += 7;
+            } else if (name.equals("特戒副本")) {
+                runMin += 8;
+            } else if (name.equals("个人boss")) {
+                runMin += 9;
+            } else if (name.equals("自动关卡")) {
+                runMin += 10;
+            } else if (name.equals("神兵幻境")) {
+                runMin += 11;
+            } else if (name.equals("守护神剑")) {
+                runMin += 12;
             } else if (name.equals("秘境boss")) {
-                runMin += 29;
+                runMin += 13;
             } else if (name.equals("野外boss")) {
-                runMin += 32;
+                runMin += 14;
             } else if (name.equals("神域boss")) {
-                runMin += 35;
+                runMin += 15;
             } else {
             }
         }
 
         long tmpRunningTime;
         for (int i = 0; i < actionTime.getCount(); i++) {
-            long addTime = i * (Math.max(actionTime.getInterval() * 1000 * 60, 300));
+            int interval = actionTime.getInterval();
+            if (!MainActivity.filter) {
+                if (name.equals("熔炼") && i == 2) {
+                    runMin += 16;
+                    interval = 0;
+                } else if (name.equals("竞技") && i >= 1 ) {
+                    runMin += 17;
+                    interval = 0;
+                } else if (name.equals("血战矿洞") && i >= 1 ) {
+                    runMin += 18;
+                    interval = 0;
+                }
+            }
+
+            long addTime = i * (Math.max(interval * 1000 * 60, 300));
             tmpRunningTime = TimeUtil.getSpecifyTime(time,
                     runHour, runMin)
                     + addTime;
