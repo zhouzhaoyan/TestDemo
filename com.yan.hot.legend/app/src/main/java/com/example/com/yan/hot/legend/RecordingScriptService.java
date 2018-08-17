@@ -15,6 +15,7 @@ import com.zsctc.remote.touch.bytes.LinuxShell;
 import com.zsctc.remote.touch.bytes.TimeUtil;
 
 import android.R.bool;
+import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.Color;
@@ -58,7 +59,7 @@ public class RecordingScriptService extends GrayService {
 		public void run() {
 			Log.e("test", "--run--");
 			
-			String devicePath = "/dev/input/event2";
+			String devicePath = "/dev/input/event3";
 			InputStream inputStream = null;
 			try {
 				Process process = Runtime.getRuntime().exec("/system/xbin/su");
@@ -122,6 +123,7 @@ public class RecordingScriptService extends GrayService {
 				textView.setPadding(10, 20, 10, 10);
 				textView.setOnClickListener(new OnClickListener() {
 					
+					@SuppressLint("WrongConstant")
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub

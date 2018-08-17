@@ -93,13 +93,13 @@ public class ClickTool {
             } else if (name.equals("竞技")) {
                 runMin += 2;
             } else if (name.equals("血战矿洞")) {
-                runMin += 3;
-            } else if (name.equals("秘境boss")) {
                 runMin += 4;
-            } else if (name.equals("野外boss")) {
+            } else if (name.equals("秘境boss")) {
                 runMin += 5;
-            } else if (name.equals("神域boss")) {
+            } else if (name.equals("野外boss")) {
                 runMin += 6;
+            } else if (name.equals("神域boss")) {
+                runMin += 7;
             } else {
                 return clickTimes;
             }
@@ -108,8 +108,6 @@ public class ClickTool {
                 runMin += 1;
             } else if (name.equals("竞技")) {
                 runMin += 2;
-            } else if (name.equals("血战矿洞")) {
-                runMin += 3;
             } else if (name.equals("王者争霸")) {
                 runMin += 4;
             } else if (name.equals("材料副本")) {
@@ -132,9 +130,14 @@ public class ClickTool {
                 runMin += 13;
             } else if (name.equals("野外boss")) {
                 runMin += 14;
-            } else if (name.equals("神域boss")) {
-                runMin += 15;
-            } else {
+            }else if (name.equals("血战矿洞")) {
+                runMin += 30;
+            }
+//            else if (name.equals("神域boss")) {
+//                runMin += 15;
+//            }
+            else {
+                return clickTimes;
             }
         }
 
@@ -145,11 +148,8 @@ public class ClickTool {
                 if (name.equals("熔炼") && i == 2) {
                     runMin += 16;
                     interval = 0;
-                } else if (name.equals("竞技") && i >= 1 ) {
+                } else if (name.equals("竞技") && i >= 2 ) {
                     runMin += 17;
-                    interval = 0;
-                } else if (name.equals("血战矿洞") && i >= 1 ) {
-                    runMin += 18;
                     interval = 0;
                 }
             }
