@@ -318,11 +318,11 @@ public class AliveService extends NotificationListenerService {
             }
         }
 
-		if (name.equals("跨服boss")){
-            if (!(week == Calendar.TUESDAY || week == Calendar.THURSDAY || week == Calendar.SATURDAY )){
-				return true;
-            }
-        }
+//		if (name.equals("跨服boss")){
+//            if (!(week == Calendar.TUESDAY || week == Calendar.THURSDAY || week == Calendar.SATURDAY )){
+//				return true;
+//            }
+//        }
 
 		if (name.equals("跨服竞技场")){
             if (TimeUtil.getCurrentDay() > 28){
