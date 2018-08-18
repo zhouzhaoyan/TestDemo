@@ -76,9 +76,11 @@ public class ActionAdapter extends BaseAdapter implements View.OnClickListener {
         hold.intervalView.setText(action.getActionTime().getInterval() + "");
         hold.countView.setText(action.getActionTime().getCount() + "");
         List<Coordinate> coordinates = action.getCoordinates();
-        long runTime = (coordinates.get(coordinates.size() - 1).getTime()
-                - coordinates.get(0).getTime())/1000;
-        hold.runTimeView.setText(runTime/60 + ":" + runTime%60 + "");
+        if (coordinates.size() > 2){
+            long runTime = (coordinates.get(coordinates.size() - 1).getTime()
+                    - coordinates.get(0).getTime())/1000;
+            hold.runTimeView.setText(runTime/60 + ":" + runTime%60 + "");
+        }
         return convertView;
     }
 

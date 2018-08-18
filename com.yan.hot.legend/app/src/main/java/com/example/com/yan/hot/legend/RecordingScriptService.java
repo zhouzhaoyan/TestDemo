@@ -1,33 +1,27 @@
 package com.example.com.yan.hot.legend;
 
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
-import com.yan.hot.legend.action.Coordinate;
-import com.yan.hot.legend.action.CoordinateParse;
-import com.zsctc.remote.touch.bytes.LinuxShell;
-import com.zsctc.remote.touch.bytes.TimeUtil;
-
-import android.R.bool;
 import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.IBinder;
-import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.yan.hot.legend.action.Coordinate;
+import com.yan.hot.legend.action.CoordinateParse;
+import com.zsctc.remote.touch.bytes.TimeUtil;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.List;
 
 /**
  * 脚本录制

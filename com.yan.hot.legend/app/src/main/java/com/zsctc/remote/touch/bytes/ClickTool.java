@@ -4,10 +4,11 @@ import android.util.Log;
 
 import com.example.com.yan.hot.legend.MainActivity;
 import com.yan.hot.legend.action.Action;
-import com.yan.hot.legend.action.ActionTime;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.content.ContentValues.TAG;
 
 public class ClickTool {
 
@@ -77,103 +78,170 @@ public class ClickTool {
         }
     }
 
+    private static class RunNameList<E> extends ArrayList<E> {
+        public void add(E value, int count) {
+            for (int i = 0; i < count; i++) {
+                add(value);
+            }
+        }
+    }
+
+
+    public static void initClient(List<Action> actions) {
+        clientTypes = new ArrayList<ClientType>();
+        List<ClientType> tmp = new ArrayList<ClientType>();
+        for (Action action : actions) {
+            String name = action.getName();
+            Log.e(TAG, "initClient: name:" + action.getName()
+                    + "count:" + action.getActionTime().getCount());
+            if (action.getActionTime().getCount() == 0) {
+                continue;
+            }
+            if (name.equals("火树")) {
+                tmp.add(ClientType.火树);
+            } else if (name.equals("07073游戏盒子")) {
+                tmp.add(ClientType.游戏07073);
+            } else if (name.equals("乐趣")) {
+                tmp.add(ClientType.乐趣);
+            } else if (name.equals("核弹头")) {
+                tmp.add(ClientType.核弹头);
+            } else if (name.equals("1758微游戏")) {
+                tmp.add(ClientType.游戏1758);
+            } else if (name.equals("牛刀")) {
+                tmp.add(ClientType.牛刀);
+            }
+        }
+        Log.e(TAG, "initClient: tmp" + tmp);
+        if (tmp.contains(ClientType.火树) && MainActivity.isGame1) {
+            clientTypes.add(ClientType.火树);
+        }
+        if (tmp.contains(ClientType.乐趣) && MainActivity.isGame2) {
+            clientTypes.add(ClientType.乐趣);
+        }
+        if (tmp.contains(ClientType.游戏07073) && MainActivity.isGame3) {
+            clientTypes.add(ClientType.游戏07073);
+        }
+        if (tmp.contains(ClientType.核弹头) && MainActivity.isGame4) {
+            clientTypes.add(ClientType.核弹头);
+        }
+        if (tmp.contains(ClientType.游戏1758) && MainActivity.isGame5) {
+            clientTypes.add(ClientType.游戏1758);
+        }
+        if (tmp.contains(ClientType.牛刀) && MainActivity.isGame6) {
+            clientTypes.add(ClientType.牛刀);
+        }
+    }
+
+    private static List<ClientType> clientTypes;
+
+    private enum ClientType {
+        火树, 游戏07073, 乐趣, 核弹头, 游戏1758, 牛刀
+    }
+
     public static List<Long> getClickTime(long time, Action action) {
-        ActionTime actionTime = action.getActionTime();
         List<Long> clickTimes = new ArrayList<Long>();
-        //		int runHour = actionTime.getHour();
-        //		int runMin = actionTime.getMin();
         int runHour = TimeUtil.getCurrentHour();
-        int runMin = TimeUtil.getCurrentMin() + 1;
+        int currentMin = TimeUtil.getCurrentMin();
         long secondTime = TimeUtil.getLastSecondInDay(time) + 2000;
         String name = action.getName();
 
-        if (MainActivity.filter) {
-            if (name.equals("熔炼")) {
-                runMin += 1;
-            } else if (name.equals("竞技")) {
-                runMin += 2;
-            } else if (name.equals("血战矿洞")) {
-                runMin += 4;
-            } else if (name.equals("秘境boss")) {
-                runMin += 5;
-            } else if (name.equals("野外boss")) {
-                runMin += 6;
-            } else if (name.equals("神域boss")) {
-                runMin += 7;
+        RunNameList<String> runNames = new RunNameList<String>();
+        Log.e(TAG, "getClickTime,clientTypes: " + clientTypes);
+        for (ClientType clientType : clientTypes) {
+            switch (clientType) {
+                case 火树:
+                    runNames.add("火树");
+                    break;
+                case 游戏07073:
+                    runNames.add("07073游戏盒子");
+                    break;
+                case 乐趣:
+                    runNames.add("乐趣");
+                    break;
+                case 核弹头:
+                    runNames.add("核弹头");
+                    break;
+                case 游戏1758:
+                    runNames.add("1758微游戏");
+                    break;
+                case 牛刀:
+                    runNames.add("牛刀");
+                    break;
+            }
+            if (!MainActivity.filter) {
+                runNames.add("熔炼",2);
+                runNames.add("竞技",2);
+                runNames.add("王者争霸", 6);
+                runNames.add("材料副本");
+                runNames.add("经验副本");
+                runNames.add("转生", 3);
+                runNames.add("特戒副本");
+                runNames.add("个人boss", 5);
+                runNames.add("自动关卡");
+                runNames.add("神兵幻境",2);
+                runNames.add("守护神剑");
+                runNames.add("秘境boss");
+                runNames.add("野外boss",2);
+                runNames.add("熔炼",2);
+                runNames.add("竞技");
+                runNames.add("血战矿洞",2);
             } else {
-                return clickTimes;
+                runNames.add("血战矿洞-收取");
+                runNames.add("熔炼",2);
+                runNames.add("竞技",2);
+                runNames.add("秘境boss");
+                runNames.add("野外boss");
+                runNames.add("神域boss");
+                runNames.add("血战矿洞",2);
             }
-        } else {
-            if (name.equals("熔炼")) {
-                runMin += 1;
-            } else if (name.equals("竞技")) {
-                runMin += 2;
-            } else if (name.equals("王者争霸")) {
-                runMin += 4;
-            } else if (name.equals("材料副本")) {
-                runMin += 5;
-            } else if (name.equals("经验副本")) {
-                runMin += 6;
-            } else if (name.equals("转生")) {
-                runMin += 7;
-            } else if (name.equals("特戒副本")) {
-                runMin += 8;
-            } else if (name.equals("个人boss")) {
-                runMin += 9;
-            } else if (name.equals("自动关卡")) {
-                runMin += 10;
-            } else if (name.equals("神兵幻境")) {
-                runMin += 11;
-            } else if (name.equals("守护神剑")) {
-                runMin += 12;
-            } else if (name.equals("秘境boss")) {
-                runMin += 13;
-            } else if (name.equals("野外boss")) {
-                runMin += 14;
-            }else if (name.equals("血战矿洞")) {
-                runMin += 30;
-            }
-//            else if (name.equals("神域boss")) {
-//                runMin += 15;
-//            }
-            else {
-                return clickTimes;
+
+            switch (clientType) {
+                case 火树:
+                    runNames.add("游戏-结束");
+                    break;
+                case 游戏07073:
+                    runNames.add("07073游戏盒子-结束");
+                    break;
+                case 乐趣:
+                    runNames.add("游戏-结束");
+                    break;
+                case 核弹头:
+                    runNames.add("游戏-结束");
+                    break;
+                case 游戏1758:
+                    runNames.add("1758微游戏-结束");
+                    break;
+                case 牛刀:
+                    runNames.add("游戏-结束");
+                    break;
             }
         }
 
         long tmpRunningTime;
-        for (int i = 0; i < actionTime.getCount(); i++) {
-            int interval = actionTime.getInterval();
-            if (!MainActivity.filter) {
-                if (name.equals("熔炼") && i == 2) {
-                    runMin += 16;
-                    interval = 0;
-                } else if (name.equals("竞技") && i >= 2 ) {
-                    runMin += 17;
-                    interval = 0;
-                }
-            }
-
-            long addTime = i * (Math.max(interval * 1000 * 60, 300));
-            tmpRunningTime = TimeUtil.getSpecifyTime(time,
-                    runHour, runMin)
-                    + addTime;
-
-            if (System.currentTimeMillis() > tmpRunningTime) {
-                tmpRunningTime = TimeUtil.getSpecifyTime(secondTime,
+        int runMin;
+        Log.e(TAG, "getClickTime: runNames:" + runNames);
+        for (int i = 0; i < runNames.size(); i++) {
+            if (name.equals(runNames.get(i))) {
+                runMin = currentMin + 1;
+                long addTime = i * 1000 * 20;
+                tmpRunningTime = TimeUtil.getSpecifyTime(time,
                         runHour, runMin)
                         + addTime;
-            }
-            //			result[i] = tmpRunningTime;
-            if (!clickTimes.contains(tmpRunningTime)) {
-                clickTimes.add(tmpRunningTime);
+
+                if (runHour >= 22) {
+                    tmpRunningTime = TimeUtil.getSpecifyTime(secondTime,
+                            0, 0)
+                            + addTime;
+                }
+
+                if (!clickTimes.contains(tmpRunningTime)) {
+                    clickTimes.add(tmpRunningTime);
+                }
             }
         }
-        //        long[] result = new long[clickTimes.size()];
-        //        for (int i = 0; i < clickTimes.size(); i++) {
-        //            result[i] = clickTimes.get(i);
-        //        }
-        //        return result;
+
+        Log.e(TAG, "getClickTime: name:" + name
+                + ",clickTimes:" + clickTimes);
         return clickTimes;
     }
 }

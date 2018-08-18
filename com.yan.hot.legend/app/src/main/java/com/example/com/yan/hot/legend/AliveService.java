@@ -21,10 +21,8 @@ import com.zsctc.remote.touch.bytes.ClickTool;
 import com.zsctc.remote.touch.bytes.LogManager;
 import com.zsctc.remote.touch.bytes.TimeUtil;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -107,6 +105,7 @@ public class AliveService extends NotificationListenerService {
 		actions = ActionFile.read();
 
 		if (actions != null){
+			ClickTool.initClient(actions);
 //			for (Action action : actions) {
 //				if (!action.getName().contains("野外boss") && !action.getName().equals("神域boss")){
 //					filerActions.add(action);
@@ -134,85 +133,6 @@ public class AliveService extends NotificationListenerService {
 		LogManager.newInstance().writeMessage(action.getName() + "  " + time);
 
 		List<Long> clickTimes = ClickTool.getClickTime(System.currentTimeMillis(), action);
-		if (action.getName().contains("野外boss") || action.getName().equals("神域boss")){
-			//以单双来刷boss
-//			List<Long> deleteClickTime = new ArrayList<Long>();
-//			for (long tmp: clickTimes) {
-//				int hour = TimeUtil.getHour(tmp);
-//				if ((action.getName().contains("野外boss") && hour%3 == 0)
-//					|| (action.getName().equals("神域boss") && (hour%3 == 1 || hour%3 == 2))){
-//					Log.e(TAG, "alarm hour：" + hour + "," + action.getName() + "," + TimeUtil.getFormatTime(tmp));
-//					deleteClickTime.add(tmp);
-//				}else {
-//					Log.e(TAG, "alarm hour else：" + hour + "," + action.getName() + "," + TimeUtil.getFormatTime(tmp));
-//				}
-//			}
-//			clickTimes.removeAll(deleteClickTime);
-
-			Log.e(TAG, "alarm filer: " +  action.getName());
-			Map<Long, Long> allClick = new HashMap<Long, Long>();
-
-			for (Action filerAction: filerActions) {
-				List<Long> filerTimes = ClickTool.getClickTime(System.currentTimeMillis(), filerAction);
-				List<Coordinate> filerCoordinates = filerAction.getCoordinates();
-				long filerRunTime = (int) (filerCoordinates.get(filerCoordinates.size() - 1).getTime()
-						- filerCoordinates.get(0).getTime()) + 1000;
-
-				for (long tmp: filerTimes) {
-					if (isBreak(filerAction.getName(), tmp)) continue;
-
-					Set<Long> key = allClick.keySet();
-					boolean add = true;
-					for (long tmpClickTime: key){
-						if (tmp >= tmpClickTime && tmp <= tmpClickTime + allClick.get(tmpClickTime)){
-							LogManager.newInstance().writeMessage("alarm:" +  filerAction.getName()
-									+ " same Time:" + TimeUtil.getFormatTime(tmp) + "," + TimeUtil.getFormatTimeForRunTime(filerRunTime)
-								+ ",key:" + TimeUtil.getFormatTime(tmpClickTime) + ",value:" + TimeUtil.getFormatTimeForRunTime(allClick.get(tmpClickTime) + filerRunTime));
-							allClick.put(tmpClickTime, allClick.get(tmpClickTime) + filerRunTime);
-							add = false;
-							break;
-						}else if ((tmp <= tmpClickTime && (tmp + filerRunTime) >= tmpClickTime)){
-							LogManager.newInstance().writeMessage("alarm:" +  filerAction.getName()
-									+ " same run Time:" + TimeUtil.getFormatTime(tmp) + "," + TimeUtil.getFormatTimeForRunTime(filerRunTime)
-									+ ",key:" + TimeUtil.getFormatTime(tmpClickTime) + ",value:" + TimeUtil.getFormatTimeForRunTime(allClick.get(tmpClickTime) + filerRunTime));
-							//								allClick.put(tmpClickTime, allClick.get(tmpClickTime) + filerRunTime);
-							long tmpRunTime = allClick.get(tmpClickTime) + filerRunTime;
-							allClick.put(tmp, tmpRunTime);
-							allClick.remove(tmpClickTime);
-							add = false;
-							break;
-						}
-					}
-					if (add){
-						LogManager.newInstance().writeMessage("alarm:" +  filerAction.getName()
-								+ " add Time:" + TimeUtil.getFormatTime(tmp) + "," + TimeUtil.getFormatTime(filerRunTime));
-						allClick.put(tmp, filerRunTime);
-					}
-
-				}
-
-			}
-
-			List<Long> delete = new ArrayList<Long>();
-			List<Coordinate> actionCoordinates = action.getCoordinates();
-			long runTime = actionCoordinates.get(actionCoordinates.size() - 1).getTime() - actionCoordinates.get(0).getTime();
-			Set<Long> filerClickTime = allClick.keySet();
-			for (int i = 0; i < clickTimes.size(); i++) {
-				for (long tmpClickTime: filerClickTime) {
-					if (clickTimes.get(i) >= tmpClickTime && clickTimes.get(i) <= tmpClickTime + allClick.get(tmpClickTime)){
-						Log.e(TAG, "alarm delete click  " + clickTimes.get(i));
-						delete.add(clickTimes.get(i));
-					} else if ((clickTimes.get(i) <= tmpClickTime && (clickTimes.get(i) + runTime) >= tmpClickTime)){
-						Log.e(TAG, "alarm delete runTime " + clickTimes.get(i));
-						delete.add(clickTimes.get(i));
-					}
-				}
-			}
-
-			clickTimes.removeAll(delete);
-
-		}
-
 		clickTimesMap.put(action, clickTimes);
 		int offset = getTimeOffset(action);
 		for (long clickTime: clickTimes) {
@@ -247,7 +167,7 @@ public class AliveService extends NotificationListenerService {
 		if (actions == null){
 			return;
 		}
-		String ms = "";
+		String ms = "运行中\n";
 		long currentTime = System.currentTimeMillis();
 		int showCount = 0;
 		for (Action action: actions) {

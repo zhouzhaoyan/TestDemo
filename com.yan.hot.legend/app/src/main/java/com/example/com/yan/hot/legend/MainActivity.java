@@ -33,6 +33,12 @@ public class MainActivity extends Activity {
 	private List<Action> actions;
 	private ListView actionsView;
 	public static boolean filter = false;
+	public static boolean isGame1 = true;
+    public static boolean isGame2 = true;
+    public static boolean isGame3 = true;
+    public static boolean isGame4 = true;
+    public static boolean isGame5 = true;
+    public static boolean isGame6 = true;
 
 	public static void open(Context context, List<Coordinate> coordinatess){
 		Intent intent = new Intent(context, MainActivity.class);
@@ -91,6 +97,19 @@ public class MainActivity extends Activity {
 			finish();
 			break;
 		case R.id.action_start:
+		    isGame1 = ((CheckBox)findViewById(R.id.game1)).isChecked();
+			isGame2 = ((CheckBox)findViewById(R.id.game2)).isChecked();
+			isGame3 = ((CheckBox)findViewById(R.id.game3)).isChecked();
+			isGame4 = ((CheckBox)findViewById(R.id.game4)).isChecked();
+			isGame5 = ((CheckBox)findViewById(R.id.game5)).isChecked();
+			isGame6 = ((CheckBox)findViewById(R.id.game6)).isChecked();
+			Log.e(TAG, "onClick: isGame1:" + isGame1
+					+ ",isGame2:" + isGame2
+					+ ",isGame3:" + isGame3
+					+ ",isGame4:" + isGame4
+					+ ",isGame5:" + isGame5
+					+ ",isGame6:" + isGame6);
+
 			AliveService.openAliveService(getApplicationContext());
 			break;
 		case R.id.action_stop:

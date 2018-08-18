@@ -43,6 +43,53 @@
             android:text="过滤日常"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/game1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="火树"
+            android:checked="true"/>
+        <CheckBox
+            android:id="@+id/game2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="乐趣"
+            android:checked="true"/>
+        <CheckBox
+            android:id="@+id/game3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="07073游戏盒子"
+            android:checked="true"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/game4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="核弹头"
+            android:checked="true"/>
+        <CheckBox
+            android:id="@+id/game5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1758微游戏"
+            android:checked="true"/>
+        <CheckBox
+            android:id="@+id/game6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="牛刀"
+            android:checked="true"/>
+    </LinearLayout>
+
     <ListView
         android:id="@+id/action_list"
         android:layout_width="match_parent"
