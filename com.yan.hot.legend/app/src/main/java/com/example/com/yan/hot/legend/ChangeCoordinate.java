@@ -2,6 +2,7 @@ package com.example.com.yan.hot.legend;
 
 import android.util.Log;
 
+import com.annimon.stream.function.Predicate;
 import com.yan.hot.legend.action.Action;
 import com.yan.hot.legend.action.Coordinate;
 
@@ -35,6 +36,12 @@ public class ChangeCoordinate {
         //        setCoordinate("野外boss", 917, 888, 844,806);
         //        setCoordinate("野外boss", 886, 1150, 817,1074);
         //        setCoordinate("野外boss", 836, 1415, 801,1378);
+//        addCoordinate("野外boss", new Predicate<Coordinate>() {
+//            @Override
+//            public boolean test(Coordinate value) {
+//                return value.getX() == 1004 &&  value.getY() == 1490;
+//            }
+//        },325, 1843, 1000);
 
         //        setCoordinate("神域boss", 1053, 1299, 1004,1490);
         //        setCoordinate("神域boss", 743, 1671, 759,1853);
@@ -162,9 +169,9 @@ public class ChangeCoordinate {
 //        addCoordinateEndRepeate("07073游戏盒子-结束", 779, 2212, 1000, 3);
 //        setCoordinate("07073游戏盒子-结束", 708,1200, 547,2208);
 
-//        addTime("07073游戏盒子-开始", 2,5000);
-//        addTime("07073游戏盒子-开始", 4,10000);
-//        addTime("07073游戏盒子-开始", 5,10000);
+//        addTime("07073游戏盒子", 2,15000);
+//        addTime("07073游戏盒子", 4,10000);
+//        addTime("07073游戏盒子", 5,10000);
 
 //        delete("火树", 7);
 //        addTime("火树", 1,3000);
@@ -194,7 +201,11 @@ public class ChangeCoordinate {
 //        addTime("1758微游戏", 2,10000);
 //        addTime("1758微游戏", 4,20000);
 //        addTime("1758微游戏", 8,20000);
-
+//        addCoordinate("1758微游戏", 6, 937,372, 4000);
+//        addTime("1758微游戏",2,5000);
+//        setCoordinateIndex("1758微游戏",5,5,470, 1852);
+//        deletePostion("1758微游戏", 7);
+//        addCoordinate("1758微游戏", 3,907, 2051,2000);
 //        addNew("游戏-结束","1758微游戏-结束");
 //        addCoordinate("1758微游戏-结束", 3,377,1170,1000);
 
@@ -206,7 +217,7 @@ public class ChangeCoordinate {
 //        addTime("牛刀", 7, 15000);
 //        addTime("牛刀", 5, 5000);
 
-        show("游戏-结束");
+        show("野外boss");
 //                ActionFile.write(actions);
     }
 
@@ -305,6 +316,37 @@ public class ChangeCoordinate {
             for (int i = index + 1; i < coordinates.size(); i++) {
                 coordinates.get(i).setTime(coordinates.get(i).getTime() + offsetTime);
             }
+        }
+    }
+
+    private static void addCoordinate(String name, Predicate<Coordinate> predicate, int newX, int newY, int offsetTime) {
+        Action tmp = null;
+        for (Action action : actions) {
+            if (action.getName().equals(name)) {
+                tmp = action;
+                break;
+            }
+        }
+        if (tmp != null) {
+            List<Coordinate> coordinates = tmp.getCoordinates();
+            List<Coordinate> tmpCoordinates = new ArrayList<Coordinate>(coordinates);
+            Coordinate coordinate;
+            int offset = 0;
+            for (int i = 0; i < tmpCoordinates.size(); i++) {
+                Coordinate value = tmpCoordinates.get(i);
+                if (predicate.test(value)){
+                    offset += 1;
+                    coordinate = new Coordinate(newX, newY);
+                    coordinate.setTime(value.getTime() + offsetTime);
+                    coordinates.add(i+offset, coordinate);
+
+                    for (int j = i + offset + 1; j < coordinates.size(); j++) {
+                        coordinates.get(j).setTime(coordinates.get(j).getTime() + offsetTime);
+                    }
+                }
+            }
+
+
         }
     }
 

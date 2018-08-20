@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.example.com.yan.hot.legend.MainActivity;
 import com.yan.hot.legend.action.Action;
+import com.yan.hot.legend.action.Coordinate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,8 +87,9 @@ public class ClickTool {
         }
     }
 
-
+    private static long allRunTime = 0;
     public static void initClient(List<Action> actions) {
+        allRunTime = 0;
         clientTypes = new ArrayList<ClientType>();
         List<ClientType> tmp = new ArrayList<ClientType>();
         for (Action action : actions) {
@@ -181,17 +183,18 @@ public class ClickTool {
                 runNames.add("神兵幻境",2);
                 runNames.add("守护神剑");
                 runNames.add("秘境boss");
-                runNames.add("野外boss",2);
+                runNames.add("野外boss",1);
                 runNames.add("熔炼",2);
                 runNames.add("竞技");
                 runNames.add("血战矿洞",2);
             } else {
                 runNames.add("血战矿洞-收取");
                 runNames.add("熔炼",2);
-                runNames.add("竞技",2);
+                runNames.add("竞技");
                 runNames.add("秘境boss");
                 runNames.add("野外boss");
                 runNames.add("神域boss");
+                runNames.add("竞技",2);
                 runNames.add("血战矿洞",2);
             }
 
@@ -220,8 +223,12 @@ public class ClickTool {
         long tmpRunningTime;
         int runMin;
         Log.e(TAG, "getClickTime: runNames:" + runNames);
+        List<Coordinate> coordinatesTmp = action.getCoordinates();
+        long runTimeTmp = (coordinatesTmp.get(coordinatesTmp.size() - 1).getTime()
+                - coordinatesTmp.get(0).getTime())/1000;
         for (int i = 0; i < runNames.size(); i++) {
             if (name.equals(runNames.get(i))) {
+                allRunTime = allRunTime + runTimeTmp;
                 runMin = currentMin + 1;
                 long addTime = i * 1000 * 20;
                 tmpRunningTime = TimeUtil.getSpecifyTime(time,
@@ -239,6 +246,9 @@ public class ClickTool {
                 }
             }
         }
+
+        Log.e(TAG, "getClickTime---allRunTime," + allRunTime + ",runTimeTmp:" + runTimeTmp);
+        Log.e(TAG, "getClickTime---allRunTime,min:" + ((allRunTime/60/60) + ":" + (allRunTime/60%60) + ":" + (allRunTime%60)));
 
         Log.e(TAG, "getClickTime: name:" + name
                 + ",clickTimes:" + clickTimes);
