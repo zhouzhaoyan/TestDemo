@@ -36,12 +36,12 @@ public class ChangeCoordinate {
         //        setCoordinate("野外boss", 917, 888, 844,806);
         //        setCoordinate("野外boss", 886, 1150, 817,1074);
         //        setCoordinate("野外boss", 836, 1415, 801,1378);
-//        addCoordinate("野外boss", new Predicate<Coordinate>() {
-//            @Override
-//            public boolean test(Coordinate value) {
-//                return value.getX() == 1004 &&  value.getY() == 1490;
-//            }
-//        },325, 1843, 1000);
+        //        addCoordinate("野外boss", new Predicate<Coordinate>() {
+        //            @Override
+        //            public boolean test(Coordinate value) {
+        //                return value.getX() == 1004 &&  value.getY() == 1490;
+        //            }
+        //        },325, 1843, 1000);
 
         //        setCoordinate("神域boss", 1053, 1299, 1004,1490);
         //        setCoordinate("神域boss", 743, 1671, 759,1853);
@@ -135,6 +135,8 @@ public class ChangeCoordinate {
         //        setCoordinate("血战矿洞", 75, 1600, 81,1806);
         //        setCoordinate("血战矿洞", 1019, 1822, 1013, 2021);
         //        setCoordinate("血战矿洞", 996, 1813, 1013, 2021);
+//        addCoordinateTop("血战矿洞",811,894, 2000);
+//        addCoordinate("血战矿洞", 9, 1013, 2021,2000);
 
         //        setCoordinateIndex("经验副本", 1, 4, 1013, 2021);
         //        setCoordinate("经验副本", 1016, 1188, 1017,1368);
@@ -162,63 +164,63 @@ public class ChangeCoordinate {
 
         //        delete("07073游戏盒子-开始", 6);
 
-//        delete("07073游戏盒子-结束", 1);
-//        setCoordinateIndex("07073游戏盒子-结束", 0, 0, 779, 2212);
-//        addCoordinateEndRepeate("07073游戏盒子-结束", 779, 2212, 1000, 12);
-//        addCoordinateEnd("07073游戏盒子-结束", 708,1200, 1000);
-//        addCoordinateEndRepeate("07073游戏盒子-结束", 779, 2212, 1000, 3);
-//        setCoordinate("07073游戏盒子-结束", 708,1200, 547,2208);
+        //        delete("07073游戏盒子-结束", 1);
+        //        setCoordinateIndex("07073游戏盒子-结束", 0, 0, 779, 2212);
+        //        addCoordinateEndRepeate("07073游戏盒子-结束", 779, 2212, 1000, 12);
+        //        addCoordinateEnd("07073游戏盒子-结束", 708,1200, 1000);
+        //        addCoordinateEndRepeate("07073游戏盒子-结束", 779, 2212, 1000, 3);
+        //        setCoordinate("07073游戏盒子-结束", 708,1200, 547,2208);
 
-//        addTime("07073游戏盒子", 2,15000);
-//        addTime("07073游戏盒子", 4,10000);
-//        addTime("07073游戏盒子", 5,10000);
+        //        addTime("07073游戏盒子", 2,15000);
+        //        addTime("07073游戏盒子", 4,10000);
+        //        addTime("07073游戏盒子", 5,10000);
 
-//        delete("火树", 7);
-//        addTime("火树", 1,3000);
-//        addTime("火树", 4,5000);
-//        addTime("火树", 6,19000);
-//        setCoordinate("火树",586, 1184,561, 1369);
-//        deletePostion("火树", 5);
-//        addTime("火树", 5,20000);
+        //        delete("火树", 7);
+        //        addTime("火树", 1,3000);
+        //        addTime("火树", 4,5000);
+        //        addTime("火树", 6,19000);
+        //        setCoordinate("火树",586, 1184,561, 1369);
+        //        deletePostion("火树", 5);
+        //        addTime("火树", 5,20000);
 
-//        deletePostion("火树-结束", 0);
-//        delete("游戏-结束", 1);
-//        addCoordinateEndRepeate("游戏-结束",794, 2210, 300,15);
+        //        deletePostion("火树-结束", 0);
+        //        delete("游戏-结束", 1);
+        //        addCoordinateEndRepeate("游戏-结束",794, 2210, 300,15);
 
-//        addNew("火树", "乐趣");
-//        setCoordinate("乐趣",858, 332,680, 687);
+        //        addNew("火树", "乐趣");
+        //        setCoordinate("乐趣",858, 332,680, 687);
 
-//        delete("核弹头", 4);
-//        addTime("核弹头", 2,5000);
-//        addTime("核弹头", 3,5000);
-//        addTime("核弹头", 4,5000);
-//        addCoordinateEnd("核弹头",561, 1369,20000);
+        //        delete("核弹头", 4);
+        //        addTime("核弹头", 2,5000);
+        //        addTime("核弹头", 3,5000);
+        //        addTime("核弹头", 4,5000);
+        //        addCoordinateEnd("核弹头",561, 1369,20000);
 
-//        setCoordinate("血战矿洞-收取",88, 2019,95,1798);
-//        deletePostion("血战矿洞-收取",7);
+        //        setCoordinate("血战矿洞-收取",88, 2019,95,1798);
+        //        deletePostion("血战矿洞-收取",7);
 
-//        delete("1758微游戏", 9);
-//        addTime("1758微游戏", 2,10000);
-//        addTime("1758微游戏", 4,20000);
-//        addTime("1758微游戏", 8,20000);
-//        addCoordinate("1758微游戏", 6, 937,372, 4000);
-//        addTime("1758微游戏",2,5000);
-//        setCoordinateIndex("1758微游戏",5,5,470, 1852);
-//        deletePostion("1758微游戏", 7);
-//        addCoordinate("1758微游戏", 3,907, 2051,2000);
-//        addNew("游戏-结束","1758微游戏-结束");
-//        addCoordinate("1758微游戏-结束", 3,377,1170,1000);
+        //        delete("1758微游戏", 9);
+        //        addTime("1758微游戏", 2,10000);
+        //        addTime("1758微游戏", 4,20000);
+        //        addTime("1758微游戏", 8,20000);
+        //        addCoordinate("1758微游戏", 6, 937,372, 4000);
+        //        addTime("1758微游戏",2,5000);
+        //        setCoordinateIndex("1758微游戏",5,5,470, 1852);
+        //        deletePostion("1758微游戏", 7);
+        //        addCoordinate("1758微游戏", 3,907, 2051,2000);
+        //        addNew("游戏-结束","1758微游戏-结束");
+        //        addCoordinate("1758微游戏-结束", 3,377,1170,1000);
 
-//        delete("牛刀", 5);
-//        addCoordinate("牛刀", 2, 990,198, 20000);
-//        addCoordinate("牛刀", 3, 772,1202, 5000);
-//        addCoordinate("牛刀", 4, 632, 1434, 5000);
-//        addTime("牛刀", 6, 20000);
-//        addTime("牛刀", 7, 15000);
-//        addTime("牛刀", 5, 5000);
+        //        delete("牛刀", 5);
+        //        addCoordinate("牛刀", 2, 990,198, 20000);
+        //        addCoordinate("牛刀", 3, 772,1202, 5000);
+        //        addCoordinate("牛刀", 4, 632, 1434, 5000);
+        //        addTime("牛刀", 6, 20000);
+        //        addTime("牛刀", 7, 15000);
+        //        addTime("牛刀", 5, 5000);
 
-        show("野外boss");
-//                ActionFile.write(actions);
+        show("血战矿洞");
+//                        ActionFile.write(actions);
     }
 
     private static void show(String name) {
@@ -282,6 +284,23 @@ public class ChangeCoordinate {
         }
     }
 
+    private static void addCoordinateTop(String name, int newX, int newY, int offsetTime) {
+        Action tmp = null;
+        for (Action action : actions) {
+            if (action.getName().equals(name)) {
+                tmp = action;
+                break;
+            }
+        }
+        if (tmp != null) {
+            List<Coordinate> coordinates = tmp.getCoordinates();
+            Coordinate coordinate;
+            coordinate = new Coordinate(newX, newY);
+            coordinate.setTime(coordinates.get(0).getTime() - offsetTime);
+            coordinates.add(0, coordinate);
+        }
+    }
+
     private static void addCoordinateEnd(String name, int newX, int newY, int offsetTime) {
         Action tmp = null;
         for (Action action : actions) {
@@ -334,11 +353,11 @@ public class ChangeCoordinate {
             int offset = 0;
             for (int i = 0; i < tmpCoordinates.size(); i++) {
                 Coordinate value = tmpCoordinates.get(i);
-                if (predicate.test(value)){
+                if (predicate.test(value)) {
                     offset += 1;
                     coordinate = new Coordinate(newX, newY);
                     coordinate.setTime(value.getTime() + offsetTime);
-                    coordinates.add(i+offset, coordinate);
+                    coordinates.add(i + offset, coordinate);
 
                     for (int j = i + offset + 1; j < coordinates.size(); j++) {
                         coordinates.get(j).setTime(coordinates.get(j).getTime() + offsetTime);

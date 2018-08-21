@@ -188,7 +188,7 @@ public class ClickTool {
                 runNames.add("竞技");
                 runNames.add("血战矿洞",2);
             } else {
-                runNames.add("血战矿洞-收取");
+                runNames.add("血战矿洞");
                 runNames.add("熔炼",2);
                 runNames.add("竞技");
                 runNames.add("王者争霸", 3);
