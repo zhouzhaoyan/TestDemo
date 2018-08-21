@@ -191,6 +191,7 @@ public class ClickTool {
                 runNames.add("血战矿洞-收取");
                 runNames.add("熔炼",2);
                 runNames.add("竞技");
+                runNames.add("王者争霸", 3);
                 runNames.add("秘境boss");
                 runNames.add("野外boss");
                 runNames.add("神域boss");
