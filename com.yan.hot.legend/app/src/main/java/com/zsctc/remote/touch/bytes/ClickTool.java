@@ -111,6 +111,8 @@ public class ClickTool {
                 tmp.add(ClientType.游戏1758);
             } else if (name.equals("牛刀")) {
                 tmp.add(ClientType.牛刀);
+            } else if (name.equals("牛刀网页")) {
+                tmp.add(ClientType.牛刀网页);
             }
         }
         Log.e(TAG, "initClient: tmp" + tmp);
@@ -132,12 +134,16 @@ public class ClickTool {
         if (tmp.contains(ClientType.牛刀) && MainActivity.isGame6) {
             clientTypes.add(ClientType.牛刀);
         }
+        if (tmp.contains(ClientType.牛刀网页) && MainActivity.isGame7) {
+            clientTypes.add(ClientType.牛刀网页);
+        }
+
     }
 
     private static List<ClientType> clientTypes;
 
     private enum ClientType {
-        火树, 游戏07073, 乐趣, 核弹头, 游戏1758, 牛刀
+        火树, 游戏07073, 乐趣, 核弹头, 游戏1758, 牛刀, 牛刀网页
     }
 
     public static List<Long> getClickTime(long time, Action action) {
@@ -169,11 +175,14 @@ public class ClickTool {
                 case 牛刀:
                     runNames.add("牛刀");
                     break;
+                case 牛刀网页:
+                    runNames.add("牛刀网页");
             }
             if (!MainActivity.filter) {
                 runNames.add("熔炼",2);
                 runNames.add("竞技",2);
-                runNames.add("王者争霸", 6);
+                runNames.add("王者争霸", 5);
+                runNames.add("通天塔");
                 runNames.add("材料副本");
                 runNames.add("经验副本");
                 runNames.add("转生", 3);
@@ -218,12 +227,14 @@ public class ClickTool {
                 case 牛刀:
                     runNames.add("游戏-结束");
                     break;
+                case 牛刀网页:
+                    runNames.add("游戏-结束");
+                    break;
             }
         }
 
         long tmpRunningTime;
         int runMin;
-        Log.e(TAG, "getClickTime: runNames:" + runNames);
         List<Coordinate> coordinatesTmp = action.getCoordinates();
         long runTimeTmp = (coordinatesTmp.get(coordinatesTmp.size() - 1).getTime()
                 - coordinatesTmp.get(0).getTime())/1000;
@@ -248,7 +259,6 @@ public class ClickTool {
             }
         }
 
-        Log.e(TAG, "getClickTime---allRunTime," + allRunTime + ",runTimeTmp:" + runTimeTmp);
         Log.e(TAG, "getClickTime---allRunTime,min:" + ((allRunTime/60/60) + ":" + (allRunTime/60%60) + ":" + (allRunTime%60)));
 
         Log.e(TAG, "getClickTime: name:" + name

@@ -182,6 +182,7 @@ public class ChangeCoordinate {
         //        setCoordinate("火树",586, 1184,561, 1369);
         //        deletePostion("火树", 5);
         //        addTime("火树", 5,20000);
+//        addTime("火树", 4,10000);
 
         //        deletePostion("火树-结束", 0);
         //        delete("游戏-结束", 1);
@@ -189,6 +190,7 @@ public class ChangeCoordinate {
 
         //        addNew("火树", "乐趣");
         //        setCoordinate("乐趣",858, 332,680, 687);
+//        addTime("乐趣", 4,10000);
 
         //        delete("核弹头", 4);
         //        addTime("核弹头", 2,5000);
@@ -218,9 +220,24 @@ public class ChangeCoordinate {
         //        addTime("牛刀", 6, 20000);
         //        addTime("牛刀", 7, 15000);
         //        addTime("牛刀", 5, 5000);
+//        addTime("牛刀", 2, 10000);
 
-        show("血战矿洞");
-//                        ActionFile.write(actions);
+//        deletePostion("通天塔",0);
+//        deletePostion("通天塔",0);
+//        setCoordinate("通天塔",571, 1563,547, 1579);
+//        addCoordinate("通天塔",12,547, 1579, 1000);
+//        addCoordinate("通天塔",12,547, 1579, 1000);
+//        delete("通天塔", 19);
+//        addTime("通天塔", 15, 10000);
+
+//        delete("牛刀网页", 19);
+//        addTime("牛刀网页",17, 10000);
+//        addTime("牛刀网页",18, 30000);
+//        addTime("牛刀网页",4,10000);
+//        setCoordinate("牛刀网页",545, 746, 545, 800);
+
+        show("牛刀");
+//        ActionFile.write(actions);
     }
 
     private static void show(String name) {
@@ -420,6 +437,10 @@ public class ChangeCoordinate {
         }
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
+            if (position != 0){
+                addTime(name, position,
+                        coordinates.get(position).getTime() - coordinates.get(position - 1).getTime());
+            }
             coordinates.remove(position);
         }
     }

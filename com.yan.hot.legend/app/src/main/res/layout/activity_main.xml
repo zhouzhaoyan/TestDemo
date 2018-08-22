@@ -88,6 +88,12 @@
             android:layout_height="wrap_content"
             android:text="牛刀"
             android:checked="true"/>
+        <CheckBox
+            android:id="@+id/game7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="牛刀网页"
+            android:checked="true"/>
     </LinearLayout>
 
     <ListView
