@@ -33,6 +33,7 @@ public class MainActivity extends Activity {
 	private List<Action> actions;
 	private ListView actionsView;
 	public static boolean filter = false;
+	public static boolean simple = false;
 	public static boolean isGame1 = true;
     public static boolean isGame2 = true;
     public static boolean isGame3 = true;
@@ -80,6 +81,13 @@ public class MainActivity extends Activity {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				filter = isChecked;
+			}
+		});
+
+		((CheckBox)findViewById(R.id.simple)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				simple = isChecked;
 			}
 		});
 

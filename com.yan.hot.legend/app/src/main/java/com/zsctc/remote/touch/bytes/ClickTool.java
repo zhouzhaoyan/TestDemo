@@ -178,7 +178,28 @@ public class ClickTool {
                 case 牛刀网页:
                     runNames.add("牛刀网页");
             }
-            if (!MainActivity.filter) {
+
+            if (MainActivity.filter){
+                //39分
+                runNames.add("熔炼");
+                runNames.add("血战矿洞");
+                runNames.add("熔炼");
+                runNames.add("竞技");
+                runNames.add("王者争霸", 3);
+                runNames.add("秘境boss");
+                runNames.add("野外boss");
+                runNames.add("神域boss");
+                runNames.add("竞技",2);
+                runNames.add("血战矿洞",2);
+            } else if (MainActivity.simple){
+                //15分钟
+                runNames.add("熔炼");
+                runNames.add("血战矿洞");
+                runNames.add("熔炼");
+                runNames.add("竞技",2);
+                runNames.add("野外boss");
+            } else {
+                //一个小时9分钟
                 runNames.add("熔炼",2);
                 runNames.add("竞技",2);
                 runNames.add("王者争霸", 5);
@@ -195,16 +216,6 @@ public class ClickTool {
                 runNames.add("野外boss",1);
                 runNames.add("熔炼",2);
                 runNames.add("竞技");
-                runNames.add("血战矿洞",2);
-            } else {
-                runNames.add("血战矿洞");
-                runNames.add("熔炼",2);
-                runNames.add("竞技");
-                runNames.add("王者争霸", 3);
-                runNames.add("秘境boss");
-                runNames.add("野外boss");
-                runNames.add("神域boss");
-                runNames.add("竞技",2);
                 runNames.add("血战矿洞",2);
             }
 

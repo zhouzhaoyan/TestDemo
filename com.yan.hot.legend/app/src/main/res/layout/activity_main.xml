@@ -34,6 +34,12 @@
             android:layout_height="wrap_content"
             android:text="停止"
             android:onClick="onClick"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/filter"
@@ -41,6 +47,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="过滤日常"/>
+
+        <CheckBox
+            android:id="@+id/simple"
+            android:checked="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="简单模式"/>
     </LinearLayout>
 
     <LinearLayout
