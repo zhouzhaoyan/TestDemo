@@ -88,6 +88,7 @@ public class ClickTool {
     }
 
     private static long allRunTime = 0;
+
     public static void initClient(List<Action> actions) {
         allRunTime = 0;
         clientTypes = new ArrayList<ClientType>();
@@ -113,6 +114,10 @@ public class ClickTool {
                 tmp.add(ClientType.牛刀);
             } else if (name.equals("牛刀网页")) {
                 tmp.add(ClientType.牛刀网页);
+            } else if (name.equals("玩蛋")) {
+                tmp.add(ClientType.玩蛋);
+            } else if (name.equals("客娱")) {
+                tmp.add(ClientType.客娱);
             }
         }
         Log.e(TAG, "initClient: tmp" + tmp);
@@ -137,13 +142,18 @@ public class ClickTool {
         if (tmp.contains(ClientType.牛刀网页) && MainActivity.isGame7) {
             clientTypes.add(ClientType.牛刀网页);
         }
-
+        if (tmp.contains(ClientType.玩蛋) && MainActivity.isGame8) {
+            clientTypes.add(ClientType.玩蛋);
+        }
+        if (tmp.contains(ClientType.客娱) && MainActivity.isGame9) {
+            clientTypes.add(ClientType.客娱);
+        }
     }
 
     private static List<ClientType> clientTypes;
 
     private enum ClientType {
-        火树, 游戏07073, 乐趣, 核弹头, 游戏1758, 牛刀, 牛刀网页
+        火树, 游戏07073, 乐趣, 核弹头, 游戏1758, 牛刀, 牛刀网页, 玩蛋, 客娱
     }
 
     public static List<Long> getClickTime(long time, Action action) {
@@ -177,46 +187,61 @@ public class ClickTool {
                     break;
                 case 牛刀网页:
                     runNames.add("牛刀网页");
+                    break;
+                case 玩蛋:
+                    runNames.add("玩蛋");
+                    break;
+                case 客娱:
+                    runNames.add("客娱");
+                    break;
             }
 
-            if (MainActivity.filter){
-                //39分
+            if (MainActivity.daily) {
+                //日常模式，30分，5个小时
                 runNames.add("熔炼");
                 runNames.add("血战矿洞");
-                runNames.add("熔炼");
+                runNames.add("熔炼", 2);
                 runNames.add("竞技");
-                runNames.add("王者争霸", 3);
+                runNames.add("王者争霸", 5);
                 runNames.add("秘境boss");
                 runNames.add("野外boss");
-                runNames.add("神域boss");
-                runNames.add("竞技",2);
-                runNames.add("血战矿洞",2);
-            } else if (MainActivity.simple){
-                //15分钟
+                //                runNames.add("神域boss");
+                runNames.add("竞技");
+                //                runNames.add("血战矿洞");
+            } else if (MainActivity.simple) {
+                //简单模式，10分钟，1个小时40分钟
                 runNames.add("熔炼");
                 runNames.add("血战矿洞");
                 runNames.add("熔炼");
-                runNames.add("竞技",2);
-                runNames.add("野外boss");
+                runNames.add("竞技", 2);
+                //                runNames.add("野外boss");
+            } else if (MainActivity.surplus) {
+                //多余模式,15分钟，2个半小时
+                //                runNames.add("熔炼");
+                //                runNames.add("血战矿洞");
+                //                runNames.add("熔炼");
+                runNames.add("神兵幻境", 2);
+                runNames.add("守护神剑");
             } else {
-                //一个小时9分钟
-                runNames.add("熔炼",2);
-                runNames.add("竞技",2);
-                runNames.add("王者争霸", 5);
+                //任务模式，一个小时，10个小时
+                runNames.add("熔炼", 2);
+                runNames.add("竞技", 2);
+                //                runNames.add("王者争霸", 5);
                 runNames.add("通天塔");
                 runNames.add("材料副本");
                 runNames.add("经验副本");
-                runNames.add("转生", 3);
+                runNames.add("转生", 2);
                 runNames.add("特戒副本");
                 runNames.add("个人boss", 5);
+                runNames.add("血战矿洞");
                 runNames.add("自动关卡");
-                runNames.add("神兵幻境",2);
-                runNames.add("守护神剑");
+                //                runNames.add("神兵幻境", 2);
+                //                runNames.add("守护神剑");
                 runNames.add("秘境boss");
-                runNames.add("野外boss",1);
-                runNames.add("熔炼",2);
+                runNames.add("野外boss", 2);
+                runNames.add("熔炼", 2);
                 runNames.add("竞技");
-                runNames.add("血战矿洞",2);
+                runNames.add("血战矿洞");
             }
 
             switch (clientType) {
@@ -241,6 +266,12 @@ public class ClickTool {
                 case 牛刀网页:
                     runNames.add("游戏-结束");
                     break;
+                case 玩蛋:
+                    runNames.add("游戏-结束");
+                    break;
+                case 客娱:
+                    runNames.add("游戏-结束");
+                    break;
             }
         }
 
@@ -248,7 +279,7 @@ public class ClickTool {
         int runMin;
         List<Coordinate> coordinatesTmp = action.getCoordinates();
         long runTimeTmp = (coordinatesTmp.get(coordinatesTmp.size() - 1).getTime()
-                - coordinatesTmp.get(0).getTime())/1000;
+                - coordinatesTmp.get(0).getTime()) / 1000;
         for (int i = 0; i < runNames.size(); i++) {
             if (name.equals(runNames.get(i))) {
                 allRunTime = allRunTime + runTimeTmp;
@@ -270,7 +301,8 @@ public class ClickTool {
             }
         }
 
-        Log.e(TAG, "getClickTime---allRunTime,min:" + ((allRunTime/60/60) + ":" + (allRunTime/60%60) + ":" + (allRunTime%60)));
+        Log.e(TAG, "getClickTime---allRunTime,min:" + ((allRunTime / 60 / 60) + ":" + (allRunTime / 60 % 60) + ":" + (allRunTime % 60))
+                + ",allRunTime:" + allRunTime);
 
         Log.e(TAG, "getClickTime: name:" + name
                 + ",clickTimes:" + clickTimes);

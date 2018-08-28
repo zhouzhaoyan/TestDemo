@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -32,8 +31,9 @@ public class MainActivity extends Activity {
 	private static final String Coordinate_FLAG = "Coordinate_FLAG";
 	private List<Action> actions;
 	private ListView actionsView;
-	public static boolean filter = false;
+	public static boolean daily = false;
 	public static boolean simple = false;
+	public static boolean surplus = false;
 	public static boolean isGame1 = true;
     public static boolean isGame2 = true;
     public static boolean isGame3 = true;
@@ -41,6 +41,8 @@ public class MainActivity extends Activity {
     public static boolean isGame5 = true;
     public static boolean isGame6 = true;
 	public static boolean isGame7 = true;
+	public static boolean isGame8 = true;
+	public static boolean isGame9 = true;
 
 	public static void open(Context context, List<Coordinate> coordinatess){
 		Intent intent = new Intent(context, MainActivity.class);
@@ -77,20 +79,6 @@ public class MainActivity extends Activity {
 			AliveService.openAliveService(getApplicationContext());
 		}
 
-		((CheckBox)findViewById(R.id.filter)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				filter = isChecked;
-			}
-		});
-
-		((CheckBox)findViewById(R.id.simple)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				simple = isChecked;
-			}
-		});
-
 		Log.e(TAG, "week: " + TimeUtil.dateToWeek(System.currentTimeMillis()));
 		Log.e(TAG, "day: " + TimeUtil.getCurrentDay());
 		Log.e(TAG, "hour: " + TimeUtil.getCurrentHour());
@@ -106,6 +94,10 @@ public class MainActivity extends Activity {
 			finish();
 			break;
 		case R.id.action_start:
+			daily = ((CheckBox)findViewById(R.id.filter)).isChecked();
+			simple = ((CheckBox)findViewById(R.id.simple)).isChecked();
+			surplus = ((CheckBox)findViewById(R.id.surplus)).isChecked();
+
 		    isGame1 = ((CheckBox)findViewById(R.id.game1)).isChecked();
 			isGame2 = ((CheckBox)findViewById(R.id.game2)).isChecked();
 			isGame3 = ((CheckBox)findViewById(R.id.game3)).isChecked();
@@ -113,6 +105,8 @@ public class MainActivity extends Activity {
 			isGame5 = ((CheckBox)findViewById(R.id.game5)).isChecked();
 			isGame6 = ((CheckBox)findViewById(R.id.game6)).isChecked();
 			isGame7 = ((CheckBox)findViewById(R.id.game7)).isChecked();
+			isGame8 = ((CheckBox)findViewById(R.id.game8)).isChecked();
+			isGame9 = ((CheckBox)findViewById(R.id.game9)).isChecked();
 			Log.e(TAG, "onClick: isGame1:" + isGame1
 					+ ",isGame2:" + isGame2
 					+ ",isGame3:" + isGame3

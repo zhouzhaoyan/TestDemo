@@ -1,39 +1,40 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="${relativePackage}.${activityClass}"
-    android:orientation="vertical" >
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="${relativePackage}.${activityClass}">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:text="@string/hello_world"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <Button
             android:id="@+id/action_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="录制脚本"
-            android:onClick="onClick"/>
+            android:onClick="onClick"
+            android:text="录制脚本"/>
 
         <Button
             android:id="@+id/action_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="开始"
-            android:onClick="onClick"/>
+            android:onClick="onClick"
+            android:text="开始"/>
 
         <Button
             android:id="@+id/action_stop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="停止"
-            android:onClick="onClick"/>
+            android:onClick="onClick"
+            android:text="停止"/>
     </LinearLayout>
 
     <LinearLayout
@@ -43,70 +44,105 @@
 
         <CheckBox
             android:id="@+id/filter"
-            android:checked="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="过滤日常"/>
+            android:checked="false"
+            android:text="日常模式"/>
 
         <CheckBox
             android:id="@+id/simple"
-            android:checked="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="false"
             android:text="简单模式"/>
+
+        <CheckBox
+            android:id="@+id/surplus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="多余模式"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <CheckBox
             android:id="@+id/game1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="火树"
-            android:checked="true"/>
+            android:checked="true"
+            android:text="火树"/>
+
         <CheckBox
             android:id="@+id/game2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="乐趣"
-            android:checked="true"/>
+            android:checked="true"
+            android:text="乐趣"/>
+
         <CheckBox
             android:id="@+id/game3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="07073游戏盒子"
-            android:checked="true"/>
+            android:checked="true"
+            android:text="07073游戏盒子"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <CheckBox
             android:id="@+id/game4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="核弹头"
-            android:checked="true"/>
+            android:checked="true"
+            android:text="核弹头"/>
+
         <CheckBox
             android:id="@+id/game5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1758微游戏"
-            android:checked="true"/>
+            android:checked="true"
+            android:text="1758微游戏"/>
+
         <CheckBox
             android:id="@+id/game6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="牛刀"
-            android:checked="true"/>
+            android:checked="true"
+            android:text="牛刀"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <CheckBox
             android:id="@+id/game7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="牛刀网页"
-            android:checked="true"/>
+            android:checked="true"
+            android:text="牛刀网页"/>
+
+        <CheckBox
+            android:id="@+id/game8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="玩蛋"/>
+
+        <CheckBox
+            android:id="@+id/game9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="客娱"/>
     </LinearLayout>
 
     <ListView
@@ -114,8 +150,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"/>
-    
+
     <!--<include-->
-        <!--layout="@layout/dialog_action"/>-->
+    <!--layout="@layout/dialog_action"/>-->
 
 </LinearLayout>

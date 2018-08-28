@@ -236,7 +236,20 @@ public class ChangeCoordinate {
 //        addTime("牛刀网页",4,10000);
 //        setCoordinate("牛刀网页",545, 746, 545, 800);
 
-        show("牛刀");
+//        addNew("火树", "玩蛋");
+//        setCoordinate("玩蛋",858, 332,809, 996);
+
+//        addNew("牛刀网页", "客娱");
+//        setCoordinate("客娱",663, 822,711, 1159);
+//        setCoordinate("客娱",540, 1366,528,1541);
+
+//        String[] names = new String[]{"火树","07073游戏盒子","乐趣","核弹头","1758微游戏","牛刀","牛刀网页","玩蛋","客娱"};
+//        for (String name: names) {
+//            addTime(name, getSize(name)-1, 10000);
+//            addTime(name, getSize(name)-2, 20000);
+//        }
+
+        show("客娱");
 //        ActionFile.write(actions);
     }
 
@@ -384,6 +397,22 @@ public class ChangeCoordinate {
 
 
         }
+    }
+
+    private static int getSize(String name) {
+        Action tmp = null;
+        int size = 0;
+        for (Action action : actions) {
+            if (action.getName().equals(name)) {
+                tmp = action;
+                break;
+            }
+        }
+        if (tmp != null) {
+            List<Coordinate> coordinates = tmp.getCoordinates();
+            size = coordinates.size();
+        }
+        return size;
     }
 
     private static void setCoordinateIndex(String name,
