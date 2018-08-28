@@ -248,6 +248,7 @@ public class ChangeCoordinate {
 //            addTime(name, getSize(name)-1, 10000);
 //            addTime(name, getSize(name)-2, 20000);
 //        }
+//        addTime("1758微游戏", getSize("1758微游戏")-2, 10000);
 
         show("客娱");
 //        ActionFile.write(actions);
@@ -285,6 +286,13 @@ public class ChangeCoordinate {
                 coordinate = coordinates.get(i);
                 coordinate.setTime(coordinate.getTime() + addTime);
             }
+        }
+    }
+
+    private static void addTimeAll(String name, long addTime) {
+        int size = getSize(name);
+        for (int i = 0; i < size; i++) {
+            addTime(name, i, addTime);
         }
     }
 
