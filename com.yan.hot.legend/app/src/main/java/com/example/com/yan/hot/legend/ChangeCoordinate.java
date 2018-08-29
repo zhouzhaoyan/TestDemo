@@ -250,8 +250,31 @@ public class ChangeCoordinate {
 //        }
 //        addTime("1758微游戏", getSize("1758微游戏")-2, 10000);
 
-        show("客娱");
-//        ActionFile.write(actions);
+//        addNew("秘境boss", "秘境boss快速");
+//        delete("秘境boss快速",17);
+//        addCoordinate("秘境boss快速", new Predicate<Coordinate>() {
+//            @Override
+//            public boolean test(Coordinate value) {
+//                return value.getX() == 1013 && value.getY() ==2021;
+//            }
+//        },81,1824, 5000);
+//        addCoordinateEndRepeate("秘境boss快速",1013, 2021,1000,3);
+//        addTime("秘境boss快速", 10, 70000);
+
+//        addNew("火树", "07073游戏盒子-网页");
+//        setCoordinate("07073游戏盒子-网页",858, 332,542,1321);
+//
+//        addNew("火树", "1758微游戏-网页");
+//        setCoordinate("1758微游戏-网页",858, 332,530,1510);
+
+//        addTime("热血单机", 2,30000);
+//        addTime("热血单机", 3,20000);
+//        addTime("热血单机", 4,40000);
+//        delete("热血单机",5);
+
+        show("热血单机");
+
+//                ActionFile.write(actions);
     }
 
     private static void show(String name) {

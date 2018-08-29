@@ -88,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="07073游戏盒子"/>
+            android:text="07073游戏盒子网页"/>
     </LinearLayout>
 
     <LinearLayout
@@ -108,7 +108,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="1758微游戏"/>
+            android:text="1758微游戏网页"/>
 
         <CheckBox
             android:id="@+id/game6"
@@ -143,6 +143,33 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="客娱"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/game10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="热血单机"/>
+
+        <CheckBox
+            android:id="@+id/game11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="07073游戏盒子"/>
+
+        <CheckBox
+            android:id="@+id/game12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="1758微游戏"/>
     </LinearLayout>
 
     <ListView

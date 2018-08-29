@@ -102,14 +102,14 @@ public class ClickTool {
             }
             if (name.equals("火树")) {
                 tmp.add(ClientType.火树);
-            } else if (name.equals("07073游戏盒子")) {
-                tmp.add(ClientType.游戏07073);
+            } else if (name.equals("07073游戏盒子-网页")) {
+                tmp.add(ClientType.游戏07073网页);
             } else if (name.equals("乐趣")) {
                 tmp.add(ClientType.乐趣);
             } else if (name.equals("核弹头")) {
                 tmp.add(ClientType.核弹头);
-            } else if (name.equals("1758微游戏")) {
-                tmp.add(ClientType.游戏1758);
+            } else if (name.equals("1758微游戏-网页")) {
+                tmp.add(ClientType.游戏1758网页);
             } else if (name.equals("牛刀")) {
                 tmp.add(ClientType.牛刀);
             } else if (name.equals("牛刀网页")) {
@@ -118,6 +118,12 @@ public class ClickTool {
                 tmp.add(ClientType.玩蛋);
             } else if (name.equals("客娱")) {
                 tmp.add(ClientType.客娱);
+            } else if (name.equals("热血单机")) {
+                tmp.add(ClientType.热血单机);
+            } else if (name.equals("07073游戏盒子")) {
+                tmp.add(ClientType.游戏07073);
+            } else if (name.equals("1758微游戏")) {
+                tmp.add(ClientType.游戏1758);
             }
         }
         Log.e(TAG, "initClient: tmp" + tmp);
@@ -127,14 +133,14 @@ public class ClickTool {
         if (tmp.contains(ClientType.乐趣) && MainActivity.isGame2) {
             clientTypes.add(ClientType.乐趣);
         }
-        if (tmp.contains(ClientType.游戏07073) && MainActivity.isGame3) {
-            clientTypes.add(ClientType.游戏07073);
+        if (tmp.contains(ClientType.游戏07073网页) && MainActivity.isGame3) {
+            clientTypes.add(ClientType.游戏07073网页);
         }
         if (tmp.contains(ClientType.核弹头) && MainActivity.isGame4) {
             clientTypes.add(ClientType.核弹头);
         }
-        if (tmp.contains(ClientType.游戏1758) && MainActivity.isGame5) {
-            clientTypes.add(ClientType.游戏1758);
+        if (tmp.contains(ClientType.游戏1758网页) && MainActivity.isGame5) {
+            clientTypes.add(ClientType.游戏1758网页);
         }
         if (tmp.contains(ClientType.牛刀) && MainActivity.isGame6) {
             clientTypes.add(ClientType.牛刀);
@@ -148,12 +154,22 @@ public class ClickTool {
         if (tmp.contains(ClientType.客娱) && MainActivity.isGame9) {
             clientTypes.add(ClientType.客娱);
         }
+        if (tmp.contains(ClientType.热血单机) && MainActivity.isGame10) {
+            clientTypes.add(ClientType.热血单机);
+        }
+        if (tmp.contains(ClientType.游戏07073) && MainActivity.isGame11) {
+            clientTypes.add(ClientType.游戏07073);
+        }
+        if (tmp.contains(ClientType.游戏1758) && MainActivity.isGame12) {
+            clientTypes.add(ClientType.游戏1758);
+        }
     }
 
     private static List<ClientType> clientTypes;
 
     private enum ClientType {
-        火树, 游戏07073, 乐趣, 核弹头, 游戏1758, 牛刀, 牛刀网页, 玩蛋, 客娱
+        火树, 游戏07073网页, 乐趣, 核弹头, 游戏1758网页, 牛刀, 牛刀网页, 玩蛋, 客娱,
+        热血单机,游戏07073,游戏1758
     }
 
     public static List<Long> getClickTime(long time, Action action) {
@@ -170,8 +186,8 @@ public class ClickTool {
                 case 火树:
                     runNames.add("火树");
                     break;
-                case 游戏07073:
-                    runNames.add("07073游戏盒子");
+                case 游戏07073网页:
+                    runNames.add("07073游戏盒子-网页");
                     break;
                 case 乐趣:
                     runNames.add("乐趣");
@@ -179,8 +195,8 @@ public class ClickTool {
                 case 核弹头:
                     runNames.add("核弹头");
                     break;
-                case 游戏1758:
-                    runNames.add("1758微游戏");
+                case 游戏1758网页:
+                    runNames.add("1758微游戏-网页");
                     break;
                 case 牛刀:
                     runNames.add("牛刀");
@@ -194,6 +210,15 @@ public class ClickTool {
                 case 客娱:
                     runNames.add("客娱");
                     break;
+                case 热血单机:
+                    runNames.add("热血单机");
+                    break;
+                case 游戏07073:
+                    runNames.add("07073游戏盒子");
+                    break;
+                case 游戏1758:
+                    runNames.add("1758微游戏");
+                    break;
             }
 
             if (MainActivity.daily) {
@@ -203,10 +228,15 @@ public class ClickTool {
                 runNames.add("熔炼",2);
                 runNames.add("竞技");
                 runNames.add("王者争霸", 5);
-                runNames.add("秘境boss");
                 runNames.add("竞技");
                 //                runNames.add("神域boss");
                 runNames.add("野外boss");
+                if (clientType == ClientType.火树 || clientType == ClientType.游戏07073网页
+                        || clientType == ClientType.乐趣 || clientType == ClientType.核弹头){
+                    runNames.add("秘境boss快速");
+                } else{
+                    runNames.add("秘境boss");
+                }
                 //                runNames.add("血战矿洞");
             } else if (MainActivity.simple) {
                 //简单模式，10分钟，1个小时30分钟
@@ -231,9 +261,9 @@ public class ClickTool {
                 runNames.add("材料副本");
                 runNames.add("经验副本");
                 runNames.add("转生", 2);
+                runNames.add("血战矿洞");
                 runNames.add("特戒副本");
                 runNames.add("个人boss", 5);
-                runNames.add("血战矿洞");
                 runNames.add("自动关卡");
                 //                runNames.add("神兵幻境", 2);
                 //                runNames.add("守护神剑");
@@ -246,31 +276,22 @@ public class ClickTool {
 
             switch (clientType) {
                 case 火树:
+                case 游戏07073网页:
+                case 乐趣:
+                case 核弹头:
+                case 游戏1758网页:
+                case 牛刀:
+                case 牛刀网页:
+                case 玩蛋:
+                case 客娱:
+                case 热血单机:
                     runNames.add("游戏-结束");
                     break;
                 case 游戏07073:
                     runNames.add("07073游戏盒子-结束");
                     break;
-                case 乐趣:
-                    runNames.add("游戏-结束");
-                    break;
-                case 核弹头:
-                    runNames.add("游戏-结束");
-                    break;
                 case 游戏1758:
                     runNames.add("1758微游戏-结束");
-                    break;
-                case 牛刀:
-                    runNames.add("游戏-结束");
-                    break;
-                case 牛刀网页:
-                    runNames.add("游戏-结束");
-                    break;
-                case 玩蛋:
-                    runNames.add("游戏-结束");
-                    break;
-                case 客娱:
-                    runNames.add("游戏-结束");
                     break;
             }
         }
