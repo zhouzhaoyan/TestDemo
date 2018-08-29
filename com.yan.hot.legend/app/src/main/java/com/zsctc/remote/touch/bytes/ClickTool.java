@@ -169,7 +169,7 @@ public class ClickTool {
 
     private enum ClientType {
         火树, 游戏07073网页, 乐趣, 核弹头, 游戏1758网页, 牛刀, 牛刀网页, 玩蛋, 客娱,
-        热血单机,游戏07073,游戏1758
+        热血单机, 游戏07073, 游戏1758
     }
 
     public static List<Long> getClickTime(long time, Action action) {
@@ -225,18 +225,14 @@ public class ClickTool {
                 //日常模式，30分，5个小时
                 runNames.add("熔炼");
                 runNames.add("血战矿洞");
-                runNames.add("熔炼",2);
+                runNames.add("熔炼");
                 runNames.add("竞技");
                 runNames.add("王者争霸", 5);
                 runNames.add("竞技");
                 //                runNames.add("神域boss");
                 runNames.add("野外boss");
-                if (clientType == ClientType.火树 || clientType == ClientType.游戏07073网页
-                        || clientType == ClientType.乐趣 || clientType == ClientType.核弹头){
-                    runNames.add("秘境boss快速");
-                } else{
-                    runNames.add("秘境boss");
-                }
+                runNames.add("熔炼");
+                addMiJin(runNames, clientType);
                 //                runNames.add("血战矿洞");
             } else if (MainActivity.simple) {
                 //简单模式，10分钟，1个小时30分钟
@@ -267,11 +263,12 @@ public class ClickTool {
                 runNames.add("自动关卡");
                 //                runNames.add("神兵幻境", 2);
                 //                runNames.add("守护神剑");
-                runNames.add("秘境boss");
+                //                runNames.add("秘境boss");
                 runNames.add("野外boss", 2);
                 runNames.add("熔炼", 2);
                 runNames.add("竞技");
                 runNames.add("血战矿洞");
+                addMiJin(runNames, clientType);
             }
 
             switch (clientType) {
@@ -325,8 +322,18 @@ public class ClickTool {
         Log.e(TAG, "getClickTime---allRunTime,min:" + ((allRunTime / 60 / 60) + ":" + (allRunTime / 60 % 60) + ":" + (allRunTime % 60))
                 + ",allRunTime:" + allRunTime);
 
-        Log.e(TAG, "getClickTime: name:" + name
+        Log.e(TAG, "getClickTime  end: name:" + name
                 + ",clickTimes:" + clickTimes);
         return clickTimes;
+        //        return new ArrayList<Long>();
+    }
+
+    private static void addMiJin(RunNameList<String> runNames, ClientType clientType) {
+        if (clientType == ClientType.火树 || clientType == ClientType.游戏07073网页
+                || clientType == ClientType.乐趣 || clientType == ClientType.核弹头) {
+            runNames.add("秘境boss快速");
+        } else {
+            runNames.add("秘境boss");
+        }
     }
 }

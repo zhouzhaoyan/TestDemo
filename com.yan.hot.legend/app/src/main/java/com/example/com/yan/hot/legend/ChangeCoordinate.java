@@ -272,7 +272,9 @@ public class ChangeCoordinate {
 //        addTime("热血单机", 4,40000);
 //        delete("热血单机",5);
 
-        show("热血单机");
+//        addTime("核弹头", getSize("核弹头")-1, 20000);
+
+        show("核弹头");
 
 //                ActionFile.write(actions);
     }
