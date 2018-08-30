@@ -267,8 +267,8 @@ public class ClickTool {
                 runNames.add("野外boss", 2);
                 runNames.add("熔炼", 2);
                 runNames.add("竞技");
-                runNames.add("血战矿洞");
                 addMiJin(runNames, clientType);
+                runNames.add("血战矿洞");
             }
 
             switch (clientType) {
