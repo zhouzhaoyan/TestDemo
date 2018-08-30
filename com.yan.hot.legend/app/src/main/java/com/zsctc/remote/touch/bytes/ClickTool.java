@@ -228,7 +228,6 @@ public class ClickTool {
                 runNames.add("熔炼");
                 runNames.add("竞技");
                 runNames.add("王者争霸", 5);
-                runNames.add("竞技");
                 runNames.add("野外boss");
                 runNames.add("熔炼");
                 addMiJin(runNames, clientType);
@@ -237,7 +236,7 @@ public class ClickTool {
                 runNames.add("熔炼");
                 runNames.add("血战矿洞");
                 runNames.add("熔炼");
-                runNames.add("竞技", 2);
+                runNames.add("竞技");
             } else if (MainActivity.surplus) {
                 //多余模式,15分钟，2个半小时
                 runNames.add("神兵幻境", 2);
@@ -246,7 +245,7 @@ public class ClickTool {
             } else {
                 //任务模式，56分30秒，10个小时
                 runNames.add("熔炼", 2);
-                runNames.add("竞技", 2);
+                runNames.add("竞技");
                 runNames.add("通天塔");
                 addCaiLiaoFuBen(runNames, clientType);
                 runNames.add("经验副本");

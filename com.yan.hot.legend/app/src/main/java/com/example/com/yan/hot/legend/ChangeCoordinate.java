@@ -300,7 +300,11 @@ public class ChangeCoordinate {
 //        }, -20000);
 //        addTime("材料副本快速", 11, -22000);
 
-        show("材料副本快速");
+//        deletePostion("竞技",8);
+//        addCoordinate("竞技",6, 922, 829, 35000);
+//        addCoordinate("竞技",7, 922, 829, 35000);
+
+        show("竞技");
 
 //        ActionFile.write(actions);
     }
