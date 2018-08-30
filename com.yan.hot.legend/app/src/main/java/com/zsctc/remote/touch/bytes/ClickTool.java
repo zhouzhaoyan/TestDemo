@@ -229,41 +229,32 @@ public class ClickTool {
                 runNames.add("竞技");
                 runNames.add("王者争霸", 5);
                 runNames.add("竞技");
-                //                runNames.add("神域boss");
                 runNames.add("野外boss");
                 runNames.add("熔炼");
                 addMiJin(runNames, clientType);
-                //                runNames.add("血战矿洞");
             } else if (MainActivity.simple) {
                 //简单模式，10分钟，1个小时30分钟
                 runNames.add("熔炼");
                 runNames.add("血战矿洞");
                 runNames.add("熔炼");
                 runNames.add("竞技", 2);
-                //                runNames.add("野外boss");
             } else if (MainActivity.surplus) {
                 //多余模式,15分钟，2个半小时
-                //                runNames.add("熔炼");
-                //                runNames.add("血战矿洞");
-                //                runNames.add("熔炼");
                 runNames.add("神兵幻境", 2);
                 runNames.add("守护神剑");
+                //                runNames.add("神域boss");
             } else {
                 //任务模式，56分30秒，10个小时
                 runNames.add("熔炼", 2);
                 runNames.add("竞技", 2);
-                //                runNames.add("王者争霸", 5);
                 runNames.add("通天塔");
-                runNames.add("材料副本");
+                addCaiLiaoFuBen(runNames, clientType);
                 runNames.add("经验副本");
                 runNames.add("转生", 2);
                 runNames.add("血战矿洞");
                 runNames.add("特戒副本");
                 runNames.add("个人boss", 5);
                 runNames.add("自动关卡");
-                //                runNames.add("神兵幻境", 2);
-                //                runNames.add("守护神剑");
-                //                runNames.add("秘境boss");
                 runNames.add("野外boss", 2);
                 runNames.add("熔炼", 2);
                 runNames.add("竞技");
@@ -307,7 +298,7 @@ public class ClickTool {
                         runHour, runMin)
                         + addTime;
 
-                if (runHour >= 22) {
+                if (MainActivity.night) {
                     tmpRunningTime = TimeUtil.getSpecifyTime(secondTime,
                             0, 0)
                             + addTime;
@@ -328,12 +319,33 @@ public class ClickTool {
         //        return new ArrayList<Long>();
     }
 
+    //秘境
     private static void addMiJin(RunNameList<String> runNames, ClientType clientType) {
-        if (clientType == ClientType.火树 || clientType == ClientType.游戏07073网页
-                || clientType == ClientType.乐趣 || clientType == ClientType.核弹头) {
-            runNames.add("秘境boss快速");
-        } else {
-            runNames.add("秘境boss");
+        switch (clientType) {
+            case 游戏1758网页://五转+
+            case 客娱://三、四转
+            case 游戏1758://一、二转
+                runNames.add("秘境boss");
+                break;
+            default:
+                runNames.add("秘境boss快速");
+                break;
+        }
+    }
+
+    //材料副本
+    private static void addCaiLiaoFuBen(RunNameList<String> runNames, ClientType clientType) {
+        switch (clientType) {
+            case 火树:
+            case 游戏07073网页:
+            case 乐趣:
+            case 核弹头:
+            case 游戏1758网页:
+                runNames.add("材料副本快速");
+                break;
+            default:
+                runNames.add("材料副本");
+                break;
         }
     }
 }

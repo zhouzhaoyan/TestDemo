@@ -34,6 +34,7 @@ public class MainActivity extends Activity {
 	public static boolean daily = false;
 	public static boolean simple = false;
 	public static boolean surplus = false;
+	public static boolean night = false;
 	public static boolean isGame1 = true;
     public static boolean isGame2 = true;
     public static boolean isGame3 = true;
@@ -100,6 +101,7 @@ public class MainActivity extends Activity {
 			daily = ((CheckBox)findViewById(R.id.filter)).isChecked();
 			simple = ((CheckBox)findViewById(R.id.simple)).isChecked();
 			surplus = ((CheckBox)findViewById(R.id.surplus)).isChecked();
+			night = ((CheckBox)findViewById(R.id.night)).isChecked();
 
 		    isGame1 = ((CheckBox)findViewById(R.id.game1)).isChecked();
 			isGame2 = ((CheckBox)findViewById(R.id.game2)).isChecked();

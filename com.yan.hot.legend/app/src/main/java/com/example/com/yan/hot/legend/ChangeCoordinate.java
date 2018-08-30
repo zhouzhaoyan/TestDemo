@@ -135,8 +135,8 @@ public class ChangeCoordinate {
         //        setCoordinate("血战矿洞", 75, 1600, 81,1806);
         //        setCoordinate("血战矿洞", 1019, 1822, 1013, 2021);
         //        setCoordinate("血战矿洞", 996, 1813, 1013, 2021);
-//        addCoordinateTop("血战矿洞",811,894, 2000);
-//        addCoordinate("血战矿洞", 9, 1013, 2021,2000);
+        //        addCoordinateTop("血战矿洞",811,894, 2000);
+        //        addCoordinate("血战矿洞", 9, 1013, 2021,2000);
 
         //        setCoordinateIndex("经验副本", 1, 4, 1013, 2021);
         //        setCoordinate("经验副本", 1016, 1188, 1017,1368);
@@ -182,7 +182,7 @@ public class ChangeCoordinate {
         //        setCoordinate("火树",586, 1184,561, 1369);
         //        deletePostion("火树", 5);
         //        addTime("火树", 5,20000);
-//        addTime("火树", 4,10000);
+        //        addTime("火树", 4,10000);
 
         //        deletePostion("火树-结束", 0);
         //        delete("游戏-结束", 1);
@@ -190,7 +190,7 @@ public class ChangeCoordinate {
 
         //        addNew("火树", "乐趣");
         //        setCoordinate("乐趣",858, 332,680, 687);
-//        addTime("乐趣", 4,10000);
+        //        addTime("乐趣", 4,10000);
 
         //        delete("核弹头", 4);
         //        addTime("核弹头", 2,5000);
@@ -220,63 +220,89 @@ public class ChangeCoordinate {
         //        addTime("牛刀", 6, 20000);
         //        addTime("牛刀", 7, 15000);
         //        addTime("牛刀", 5, 5000);
-//        addTime("牛刀", 2, 10000);
+        //        addTime("牛刀", 2, 10000);
 
-//        deletePostion("通天塔",0);
-//        deletePostion("通天塔",0);
-//        setCoordinate("通天塔",571, 1563,547, 1579);
-//        addCoordinate("通天塔",12,547, 1579, 1000);
-//        addCoordinate("通天塔",12,547, 1579, 1000);
-//        delete("通天塔", 19);
-//        addTime("通天塔", 15, 10000);
+        //        deletePostion("通天塔",0);
+        //        deletePostion("通天塔",0);
+        //        setCoordinate("通天塔",571, 1563,547, 1579);
+        //        addCoordinate("通天塔",12,547, 1579, 1000);
+        //        addCoordinate("通天塔",12,547, 1579, 1000);
+        //        delete("通天塔", 19);
+        //        addTime("通天塔", 15, 10000);
 
-//        delete("牛刀网页", 19);
-//        addTime("牛刀网页",17, 10000);
-//        addTime("牛刀网页",18, 30000);
-//        addTime("牛刀网页",4,10000);
-//        setCoordinate("牛刀网页",545, 746, 545, 800);
+        //        delete("牛刀网页", 19);
+        //        addTime("牛刀网页",17, 10000);
+        //        addTime("牛刀网页",18, 30000);
+        //        addTime("牛刀网页",4,10000);
+        //        setCoordinate("牛刀网页",545, 746, 545, 800);
 
-//        addNew("火树", "玩蛋");
-//        setCoordinate("玩蛋",858, 332,809, 996);
+        //        addNew("火树", "玩蛋");
+        //        setCoordinate("玩蛋",858, 332,809, 996);
 
-//        addNew("牛刀网页", "客娱");
-//        setCoordinate("客娱",663, 822,711, 1159);
-//        setCoordinate("客娱",540, 1366,528,1541);
+        //        addNew("牛刀网页", "客娱");
+        //        setCoordinate("客娱",663, 822,711, 1159);
+        //        setCoordinate("客娱",540, 1366,528,1541);
 
-//        String[] names = new String[]{"火树","07073游戏盒子","乐趣","核弹头","1758微游戏","牛刀","牛刀网页","玩蛋","客娱"};
-//        for (String name: names) {
-//            addTime(name, getSize(name)-1, 10000);
-//            addTime(name, getSize(name)-2, 20000);
-//        }
-//        addTime("1758微游戏", getSize("1758微游戏")-2, 10000);
+        //        String[] names = new String[]{"火树","07073游戏盒子","乐趣","核弹头","1758微游戏","牛刀","牛刀网页","玩蛋","客娱"};
+        //        for (String name: names) {
+        //            addTime(name, getSize(name)-1, 10000);
+        //            addTime(name, getSize(name)-2, 20000);
+        //        }
+        //        addTime("1758微游戏", getSize("1758微游戏")-2, 10000);
 
-//        addNew("秘境boss", "秘境boss快速");
-//        delete("秘境boss快速",17);
-//        addCoordinate("秘境boss快速", new Predicate<Coordinate>() {
+        //        addNew("秘境boss", "秘境boss快速");
+        //        delete("秘境boss快速",17);
+        //        addCoordinate("秘境boss快速", new Predicate<Coordinate>() {
+        //            @Override
+        //            public boolean test(Coordinate value) {
+        //                return value.getX() == 1013 && value.getY() ==2021;
+        //            }
+        //        },81,1824, 5000);
+        //        addCoordinateEndRepeate("秘境boss快速",1013, 2021,1000,3);
+        //        addTime("秘境boss快速", 10, 70000);
+
+        //        addNew("火树", "07073游戏盒子-网页");
+        //        setCoordinate("07073游戏盒子-网页",858, 332,542,1321);
+        //
+        //        addNew("火树", "1758微游戏-网页");
+        //        setCoordinate("1758微游戏-网页",858, 332,530,1510);
+
+        //        addTime("热血单机", 2,30000);
+        //        addTime("热血单机", 3,20000);
+        //        addTime("热血单机", 4,40000);
+        //        delete("热血单机",5);
+
+        //        addTime("核弹头", getSize("核弹头")-1, 20000);
+        //        addTime("熔炼", 3, 2000);
+        //        addTime("熔炼", 4, 4000);
+
+        //        addNew("材料副本","材料副本快速");
+
+//        deletePostions("材料副本快速", 3, 4, 5, 7, 8, 9, 10, 12, 14);
+//        delete("材料副本快速", 10);
+//        addCoordinate("材料副本快速", new Predicate<Coordinate>() {
 //            @Override
 //            public boolean test(Coordinate value) {
-//                return value.getX() == 1013 && value.getY() ==2021;
+//                return isSame(value,848, 352)
+//                        || isSame(value,850, 607)
+//                        || isSame(value,854, 874)
+//                        || isSame(value,814, 1154);
 //            }
-//        },81,1824, 5000);
-//        addCoordinateEndRepeate("秘境boss快速",1013, 2021,1000,3);
-//        addTime("秘境boss快速", 10, 70000);
+//        }, 1017, 1368, 3000);
+//        addTime("材料副本快速", new Predicate<Coordinate>() {
+//            @Override
+//            public boolean test(Coordinate value) {
+//                return isSame(value,850, 607)
+//                        || isSame(value,854, 874)
+//                        || isSame(value,814, 1154)
+//                        || isSame(value,866, 1373);
+//            }
+//        }, -20000);
+//        addTime("材料副本快速", 11, -22000);
 
-//        addNew("火树", "07073游戏盒子-网页");
-//        setCoordinate("07073游戏盒子-网页",858, 332,542,1321);
-//
-//        addNew("火树", "1758微游戏-网页");
-//        setCoordinate("1758微游戏-网页",858, 332,530,1510);
+        show("材料副本快速");
 
-//        addTime("热血单机", 2,30000);
-//        addTime("热血单机", 3,20000);
-//        addTime("热血单机", 4,40000);
-//        delete("热血单机",5);
-
-//        addTime("核弹头", getSize("核弹头")-1, 20000);
-
-        show("核弹头");
-
-//                ActionFile.write(actions);
+//        ActionFile.write(actions);
     }
 
     private static void show(String name) {
@@ -310,6 +336,26 @@ public class ChangeCoordinate {
             for (int i = startIndex; i < coordinates.size(); i++) {
                 coordinate = coordinates.get(i);
                 coordinate.setTime(coordinate.getTime() + addTime);
+            }
+        }
+    }
+
+    private static void addTime(String name, Predicate<Coordinate> predicate, long addTime) {
+        Action tmp = null;
+        for (Action action : actions) {
+            if (action.getName().equals(name)) {
+                tmp = action;
+                break;
+            }
+        }
+        if (tmp != null) {
+            List<Coordinate> coordinates = tmp.getCoordinates();
+            Coordinate coordinate;
+            for (int i = 0; i < coordinates.size(); i++) {
+                coordinate = coordinates.get(i);
+                if (predicate.test(coordinate)){
+                    addTime(name, i, addTime);
+                }
             }
         }
     }
@@ -489,6 +535,29 @@ public class ChangeCoordinate {
         }
     }
 
+    private static void deletePostions(String name, int... positions) {
+        Action tmp = null;
+        for (Action action : actions) {
+            if (action.getName().equals(name)) {
+                tmp = action;
+                break;
+            }
+        }
+        if (tmp != null) {
+            List<Coordinate> coordinates = tmp.getCoordinates();
+            List<Coordinate> delete = new ArrayList<Coordinate>();
+            for (int i = 0; i < coordinates.size(); i++) {
+                for (int position : positions) {
+                    if (position == i) {
+                        delete.add(coordinates.get(i));
+                        break;
+                    }
+                }
+            }
+            coordinates.removeAll(delete);
+        }
+    }
+
     private static void deletePostion(String name, int position) {
         Action tmp = null;
         for (Action action : actions) {
@@ -499,7 +568,7 @@ public class ChangeCoordinate {
         }
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
-            if (position != 0){
+            if (position != 0) {
                 addTime(name, position,
                         coordinates.get(position).getTime() - coordinates.get(position - 1).getTime());
             }
@@ -542,5 +611,9 @@ public class ChangeCoordinate {
         action.setCoordinates(coordinates);
         action.setActionTime(source.getActionTime());
         return action;
+    }
+
+    private static boolean isSame(Coordinate value, int x, int y) {
+        return value.getX() == x && value.getY() == y;
     }
 }

@@ -62,6 +62,13 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="多余模式"/>
+
+        <CheckBox
+            android:id="@+id/night"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="夜间模式"/>
     </LinearLayout>
 
     <LinearLayout
