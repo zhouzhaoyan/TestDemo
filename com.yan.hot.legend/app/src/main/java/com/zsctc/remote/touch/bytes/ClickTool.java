@@ -228,8 +228,9 @@ public class ClickTool {
                 runNames.add("熔炼");
                 runNames.add("王者争霸");
                 runNames.add("竞技");
-                addMiJin(runNames, clientType);
                 runNames.add("野外boss");
+                runNames.add("熔炼");
+                addMiJin(runNames, clientType);
             } else if (MainActivity.simple) {
                 //简单模式，9分钟
                 runNames.add("熔炼");
