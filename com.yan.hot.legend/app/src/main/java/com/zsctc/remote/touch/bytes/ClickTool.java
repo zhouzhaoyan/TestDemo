@@ -222,43 +222,43 @@ public class ClickTool {
             }
 
             if (MainActivity.daily) {
-                //日常模式，30分，5个小时
+                //日常模式，最多30分，最少23分
                 runNames.add("熔炼");
                 runNames.add("血战矿洞");
                 runNames.add("熔炼");
+                runNames.add("王者争霸");
                 runNames.add("竞技");
-                runNames.add("王者争霸", 5);
-                runNames.add("野外boss");
-                runNames.add("熔炼");
                 addMiJin(runNames, clientType);
+                runNames.add("野外boss");
             } else if (MainActivity.simple) {
-                //简单模式，10分钟，1个小时30分钟
+                //简单模式，9分钟
                 runNames.add("熔炼");
                 runNames.add("血战矿洞");
                 runNames.add("熔炼");
                 runNames.add("竞技");
             } else if (MainActivity.surplus) {
-                //多余模式,15分钟，2个半小时
+                //多余模式,15分钟
                 runNames.add("神兵幻境", 2);
                 runNames.add("守护神剑");
                 //                runNames.add("神域boss");
             } else {
-                //任务模式，56分30秒，10个小时
+                //任务模式，最多53分，最少43分
                 runNames.add("熔炼", 2);
                 runNames.add("竞技");
+                runNames.add("血战矿洞");
                 runNames.add("通天塔");
                 addCaiLiaoFuBen(runNames, clientType);
                 runNames.add("经验副本");
-                runNames.add("转生", 2);
-                runNames.add("血战矿洞");
+                runNames.add("转生");
                 runNames.add("特戒副本");
-                runNames.add("个人boss", 5);
+                runNames.add("个人boss");
                 runNames.add("自动关卡");
                 runNames.add("野外boss", 2);
-                runNames.add("熔炼", 2);
+                runNames.add("熔炼");
                 runNames.add("竞技");
-                addMiJin(runNames, clientType);
+                runNames.add("熔炼");
                 runNames.add("血战矿洞");
+                addMiJin(runNames, clientType);
             }
 
             switch (clientType) {

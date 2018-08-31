@@ -320,9 +320,33 @@ public class ChangeCoordinate {
         //            addCoordinate("王者争霸",9+i*2,557, 1723,1000);
         //        }
 
-        show("王者争霸");
+//        delete("个人boss", 18);
+//        for (int i = 0; i <= 7; i++) {
+//            deletePostion("个人boss", 7);
+//        }
+//        setTime("个人boss",7,30000);
+//
+//        for (int i = 0; i < 120; i++) {
+//            addCoordinate("个人boss",7,426, 1726,1000);
+//        }
 
-        //        ActionFile.write(actions);
+//        delete("转生",16);
+//        addCoordinate("转生",12,843, 889,2000);
+
+//        addTime("经验副本",10,10000);
+
+//        setCoordinateIndex("秘境boss快速",8,8,81, 1824);
+//        setCoordinateIndex("秘境boss快速",9,9,1013, 2021);
+//        setCoordinateIndex("秘境boss快速",17,17,81, 1824);
+//        setCoordinateIndex("秘境boss快速",18,18,1013, 2021);
+//        addTime("秘境boss快速",8, 4000);
+//        addTime("秘境boss快速",9, -4000);
+//        addTime("秘境boss快速",17, 4000);
+//        addTime("秘境boss快速",18, -4000);
+
+        show("秘境boss快速");
+
+//                ActionFile.write(actions);
     }
 
     private static void show(String name) {
