@@ -262,10 +262,10 @@ public class ChangeCoordinate {
         //        addTime("秘境boss快速", 10, 70000);
 
         //                addNew("火树", "07073游戏盒子-网页");
-        //                setCoordinate("07073游戏盒子-网页",858, 332,542,1321);
+        //                        setCoordinate("07073游戏盒子-网页",858, 332,542,1321);
         //
         //                addNew("火树", "1758微游戏-网页");
-        //                setCoordinate("1758微游戏-网页",858, 332,530,1510);
+        //                        setCoordinate("1758微游戏-网页",858, 332,530,1510);
 
         //        addTime("热血单机", 2,30000);
         //        addTime("热血单机", 3,20000);
@@ -304,25 +304,25 @@ public class ChangeCoordinate {
         //        addCoordinate("竞技",6, 922, 829, 35000);
         //        addCoordinate("竞技",7, 922, 829, 35000);
 
-//        setTime("材料副本", 3, 35000);
-//        setTime("材料副本", 4, 35000);
-//        setTime("材料副本", 5, 35000);
-//        setTime("材料副本", 6, 35000);
-//        setTime("材料副本", 7, 35000);
+        //        setTime("材料副本", 3, 35000);
+        //        setTime("材料副本", 4, 35000);
+        //        setTime("材料副本", 5, 35000);
+        //        setTime("材料副本", 6, 35000);
+        //        setTime("材料副本", 7, 35000);
 
-//        delete("王者争霸",10);
-//        addCoordinate("王者争霸",6,422, 1864,2000);
-//        setTime("王者争霸",8,20000);
-//        setTime("王者争霸",9,2000);
-//        setTime("王者争霸",10,2000);
-//        for (int i = 0; i < 60; i++) {
-//            addCoordinate("王者争霸",8+i*2,511, 1534,1000);
-//            addCoordinate("王者争霸",9+i*2,557, 1723,1000);
-//        }
+        //        delete("王者争霸",10);
+        //        addCoordinate("王者争霸",6,422, 1864,2000);
+        //        setTime("王者争霸",8,20000);
+        //        setTime("王者争霸",9,2000);
+        //        setTime("王者争霸",10,2000);
+        //        for (int i = 0; i < 60; i++) {
+        //            addCoordinate("王者争霸",8+i*2,511, 1534,1000);
+        //            addCoordinate("王者争霸",9+i*2,557, 1723,1000);
+        //        }
 
         show("王者争霸");
 
-//        ActionFile.write(actions);
+        //        ActionFile.write(actions);
     }
 
     private static void show(String name) {
@@ -377,7 +377,7 @@ public class ChangeCoordinate {
         Action tmp = getAction(name);
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
-            if (index > 0 && index < coordinates.size()){
+            if (index > 0 && index < coordinates.size()) {
                 Coordinate preCoordinate = coordinates.get(index - 1);
                 Coordinate currentCoordinate = coordinates.get(index);
                 addTime(name, index, delay - (currentCoordinate.getTime() - preCoordinate.getTime()));
