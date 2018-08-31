@@ -261,11 +261,11 @@ public class ChangeCoordinate {
         //        addCoordinateEndRepeate("秘境boss快速",1013, 2021,1000,3);
         //        addTime("秘境boss快速", 10, 70000);
 
-        //        addNew("火树", "07073游戏盒子-网页");
-        //        setCoordinate("07073游戏盒子-网页",858, 332,542,1321);
+        //                addNew("火树", "07073游戏盒子-网页");
+        //                setCoordinate("07073游戏盒子-网页",858, 332,542,1321);
         //
-        //        addNew("火树", "1758微游戏-网页");
-        //        setCoordinate("1758微游戏-网页",858, 332,530,1510);
+        //                addNew("火树", "1758微游戏-网页");
+        //                setCoordinate("1758微游戏-网页",858, 332,530,1510);
 
         //        addTime("热血单机", 2,30000);
         //        addTime("热血单机", 3,20000);
@@ -278,45 +278,55 @@ public class ChangeCoordinate {
 
         //        addNew("材料副本","材料副本快速");
 
-//        deletePostions("材料副本快速", 3, 4, 5, 7, 8, 9, 10, 12, 14);
-//        delete("材料副本快速", 10);
-//        addCoordinate("材料副本快速", new Predicate<Coordinate>() {
-//            @Override
-//            public boolean test(Coordinate value) {
-//                return isSame(value,848, 352)
-//                        || isSame(value,850, 607)
-//                        || isSame(value,854, 874)
-//                        || isSame(value,814, 1154);
-//            }
-//        }, 1017, 1368, 3000);
-//        addTime("材料副本快速", new Predicate<Coordinate>() {
-//            @Override
-//            public boolean test(Coordinate value) {
-//                return isSame(value,850, 607)
-//                        || isSame(value,854, 874)
-//                        || isSame(value,814, 1154)
-//                        || isSame(value,866, 1373);
-//            }
-//        }, -20000);
-//        addTime("材料副本快速", 11, -22000);
+        //        deletePostions("材料副本快速", 3, 4, 5, 7, 8, 9, 10, 12, 14);
+        //        delete("材料副本快速", 10);
+        //        addCoordinate("材料副本快速", new Predicate<Coordinate>() {
+        //            @Override
+        //            public boolean test(Coordinate value) {
+        //                return isSame(value,848, 352)
+        //                        || isSame(value,850, 607)
+        //                        || isSame(value,854, 874)
+        //                        || isSame(value,814, 1154);
+        //            }
+        //        }, 1017, 1368, 3000);
+        //        addTime("材料副本快速", new Predicate<Coordinate>() {
+        //            @Override
+        //            public boolean test(Coordinate value) {
+        //                return isSame(value,850, 607)
+        //                        || isSame(value,854, 874)
+        //                        || isSame(value,814, 1154)
+        //                        || isSame(value,866, 1373);
+        //            }
+        //        }, -20000);
+        //        addTime("材料副本快速", 11, -22000);
 
-//        deletePostion("竞技",8);
-//        addCoordinate("竞技",6, 922, 829, 35000);
-//        addCoordinate("竞技",7, 922, 829, 35000);
+        //        deletePostion("竞技",8);
+        //        addCoordinate("竞技",6, 922, 829, 35000);
+        //        addCoordinate("竞技",7, 922, 829, 35000);
 
-        show("竞技");
+//        setTime("材料副本", 3, 35000);
+//        setTime("材料副本", 4, 35000);
+//        setTime("材料副本", 5, 35000);
+//        setTime("材料副本", 6, 35000);
+//        setTime("材料副本", 7, 35000);
+
+//        delete("王者争霸",10);
+//        addCoordinate("王者争霸",6,422, 1864,2000);
+//        setTime("王者争霸",8,20000);
+//        setTime("王者争霸",9,2000);
+//        setTime("王者争霸",10,2000);
+//        for (int i = 0; i < 60; i++) {
+//            addCoordinate("王者争霸",8+i*2,511, 1534,1000);
+//            addCoordinate("王者争霸",9+i*2,557, 1723,1000);
+//        }
+
+        show("王者争霸");
 
 //        ActionFile.write(actions);
     }
 
     private static void show(String name) {
-        Action tmp = null;
-        for (Action action : actions) {
-            if (action.getName().equals(name)) {
-                tmp = action;
-                break;
-            }
-        }
+        Action tmp = getAction(name);
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
             for (int i = 0; i < coordinates.size(); i++) {
@@ -327,13 +337,7 @@ public class ChangeCoordinate {
     }
 
     private static void addTime(String name, int startIndex, long addTime) {
-        Action tmp = null;
-        for (Action action : actions) {
-            if (action.getName().equals(name)) {
-                tmp = action;
-                break;
-            }
-        }
+        Action tmp = getAction(name);
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
             Coordinate coordinate;
@@ -344,7 +348,7 @@ public class ChangeCoordinate {
         }
     }
 
-    private static void addTime(String name, Predicate<Coordinate> predicate, long addTime) {
+    private static Action getAction(String name) {
         Action tmp = null;
         for (Action action : actions) {
             if (action.getName().equals(name)) {
@@ -352,14 +356,31 @@ public class ChangeCoordinate {
                 break;
             }
         }
+        return tmp;
+    }
+
+    private static void addTime(String name, Predicate<Coordinate> predicate, long addTime) {
+        Action tmp = getAction(name);
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
             Coordinate coordinate;
             for (int i = 0; i < coordinates.size(); i++) {
                 coordinate = coordinates.get(i);
-                if (predicate.test(coordinate)){
+                if (predicate.test(coordinate)) {
                     addTime(name, i, addTime);
                 }
+            }
+        }
+    }
+
+    private static void setTime(String name, int index, long delay) {
+        Action tmp = getAction(name);
+        if (tmp != null) {
+            List<Coordinate> coordinates = tmp.getCoordinates();
+            if (index > 0 && index < coordinates.size()){
+                Coordinate preCoordinate = coordinates.get(index - 1);
+                Coordinate currentCoordinate = coordinates.get(index);
+                addTime(name, index, delay - (currentCoordinate.getTime() - preCoordinate.getTime()));
             }
         }
     }
@@ -373,13 +394,7 @@ public class ChangeCoordinate {
 
     private static void setCoordinate(String name,
                                       int oldX, int oldY, int newX, int newY) {
-        Action tmp = null;
-        for (Action action : actions) {
-            if (action.getName().equals(name)) {
-                tmp = action;
-                break;
-            }
-        }
+        Action tmp = getAction(name);
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
             for (Coordinate coordinate : coordinates) {
@@ -398,13 +413,7 @@ public class ChangeCoordinate {
     }
 
     private static void addCoordinateTop(String name, int newX, int newY, int offsetTime) {
-        Action tmp = null;
-        for (Action action : actions) {
-            if (action.getName().equals(name)) {
-                tmp = action;
-                break;
-            }
-        }
+        Action tmp = getAction(name);
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
             Coordinate coordinate;
@@ -415,13 +424,7 @@ public class ChangeCoordinate {
     }
 
     private static void addCoordinateEnd(String name, int newX, int newY, int offsetTime) {
-        Action tmp = null;
-        for (Action action : actions) {
-            if (action.getName().equals(name)) {
-                tmp = action;
-                break;
-            }
-        }
+        Action tmp = getAction(name);
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
             Coordinate coordinate;
@@ -432,13 +435,7 @@ public class ChangeCoordinate {
     }
 
     private static void addCoordinate(String name, int index, int newX, int newY, int offsetTime) {
-        Action tmp = null;
-        for (Action action : actions) {
-            if (action.getName().equals(name)) {
-                tmp = action;
-                break;
-            }
-        }
+        Action tmp = getAction(name);
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
             Coordinate coordinate;
@@ -452,13 +449,7 @@ public class ChangeCoordinate {
     }
 
     private static void addCoordinate(String name, Predicate<Coordinate> predicate, int newX, int newY, int offsetTime) {
-        Action tmp = null;
-        for (Action action : actions) {
-            if (action.getName().equals(name)) {
-                tmp = action;
-                break;
-            }
-        }
+        Action tmp = getAction(name);
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
             List<Coordinate> tmpCoordinates = new ArrayList<Coordinate>(coordinates);
@@ -483,14 +474,8 @@ public class ChangeCoordinate {
     }
 
     private static int getSize(String name) {
-        Action tmp = null;
+        Action tmp = getAction(name);
         int size = 0;
-        for (Action action : actions) {
-            if (action.getName().equals(name)) {
-                tmp = action;
-                break;
-            }
-        }
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
             size = coordinates.size();
@@ -500,13 +485,7 @@ public class ChangeCoordinate {
 
     private static void setCoordinateIndex(String name,
                                            int startIndex, int endIndex, int newX, int newY) {
-        Action tmp = null;
-        for (Action action : actions) {
-            if (action.getName().equals(name)) {
-                tmp = action;
-                break;
-            }
-        }
+        Action tmp = getAction(name);
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
             Coordinate coordinate;
@@ -519,13 +498,7 @@ public class ChangeCoordinate {
     }
 
     private static void addNew(String oldName, String newName) {
-        Action tmp = null;
-        for (Action action : actions) {
-            if (action.getName().equals(oldName)) {
-                tmp = action;
-                break;
-            }
-        }
+        Action tmp = getAction(oldName);
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
             Action actionCopy = copy(tmp, newName);
@@ -540,13 +513,7 @@ public class ChangeCoordinate {
     }
 
     private static void deletePostions(String name, int... positions) {
-        Action tmp = null;
-        for (Action action : actions) {
-            if (action.getName().equals(name)) {
-                tmp = action;
-                break;
-            }
-        }
+        Action tmp = getAction(name);
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
             List<Coordinate> delete = new ArrayList<Coordinate>();
@@ -563,13 +530,7 @@ public class ChangeCoordinate {
     }
 
     private static void deletePostion(String name, int position) {
-        Action tmp = null;
-        for (Action action : actions) {
-            if (action.getName().equals(name)) {
-                tmp = action;
-                break;
-            }
-        }
+        Action tmp = getAction(name);
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
             if (position != 0) {
@@ -581,13 +542,7 @@ public class ChangeCoordinate {
     }
 
     private static void delete(String name, int startIndex) {
-        Action tmp = null;
-        for (Action action : actions) {
-            if (action.getName().equals(name)) {
-                tmp = action;
-                break;
-            }
-        }
+        Action tmp = getAction(name);
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
             List<Coordinate> delete = new ArrayList<Coordinate>();
