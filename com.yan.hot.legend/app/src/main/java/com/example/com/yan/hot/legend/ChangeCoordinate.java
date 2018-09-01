@@ -25,7 +25,11 @@ public class ChangeCoordinate {
 //        addNew("暗之秘境-修罗","暗之秘境-魔窟");
 //        setCoordinate("暗之秘境-魔窟",941,1351,882,1463);
 
-        show("暗之秘境-魔窟");
+//        addNew("跨服boss-苍月岛","跨服boss-埋骨之地");
+//        addCoordinate("跨服boss-埋骨之地",6,660,1653,5000);
+//        setCoordinate("跨服boss-埋骨之地",516, 823,293,1131);
+
+        show("跨服boss-埋骨之地");
 
 //        ActionFile.write(actions);
     }
