@@ -4,7 +4,6 @@ import android.util.Log;
 
 import com.annimon.stream.function.Predicate;
 import com.yan.hot.legend.action.Action;
-import com.yan.hot.legend.action.ActionFile;
 import com.yan.hot.legend.action.Coordinate;
 
 import java.util.ArrayList;
@@ -346,11 +345,11 @@ public class ChangeCoordinate {
 //        addTime("秘境boss快速",18, -4000);
 
 //        setCoordinate("竞技",922, 829,845 ,843);
-        deletePostions("1758微游戏",5,6,7);
+//        deletePostions("1758微游戏",5,6,7);
 
-//        show("1758微游戏");
+        show("1758微游戏");
 
-                ActionFile.write(actions);
+//                ActionFile.write(actions);
     }
 
     private static void show(String name) {
