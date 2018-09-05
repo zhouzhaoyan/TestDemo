@@ -88,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="乐趣"/>
+            android:text="乐趣网页"/>
 
         <CheckBox
             android:id="@+id/game3"
@@ -150,12 +150,6 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="客娱"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/game10"
@@ -163,6 +157,12 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="热血单机"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/game11"
@@ -177,6 +177,13 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="1758微游戏"/>
+
+        <CheckBox
+            android:id="@+id/game13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="乐趣"/>
     </LinearLayout>
 
     <ListView

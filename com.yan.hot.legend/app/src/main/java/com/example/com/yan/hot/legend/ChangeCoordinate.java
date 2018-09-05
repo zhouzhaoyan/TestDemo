@@ -347,7 +347,14 @@ public class ChangeCoordinate {
 //        setCoordinate("竞技",922, 829,845 ,843);
 //        deletePostions("1758微游戏",5,6,7);
 
-        show("1758微游戏");
+//        setCoordinate("乐趣",93, 2055,118, 2058);
+//        addTime("乐趣",2,30000);
+//        addTime("乐趣",6,40000);
+//        addTime("乐趣",7,40000);
+//        addTime("乐趣",5,40000);
+//        delete("乐趣",7);
+
+        show("乐趣");
 
 //                ActionFile.write(actions);
     }

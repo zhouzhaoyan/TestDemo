@@ -47,6 +47,7 @@ public class MainActivity extends Activity {
 	public static boolean isGame10 = true;
 	public static boolean isGame11 = true;
 	public static boolean isGame12 = true;
+	public static boolean isGame13 = true;
 
 	public static void open(Context context, List<Coordinate> coordinatess){
 		Intent intent = new Intent(context, MainActivity.class);
@@ -80,7 +81,7 @@ public class MainActivity extends Activity {
 		if (eidtCoordinatess != null){
 			showActionDialog(eidtCoordinatess);
 		}else{
-			AliveService.openAliveService(getApplicationContext());
+//			AliveService.openAliveService(getApplicationContext());
 		}
 
 		Log.e(TAG, "week: " + TimeUtil.dateToWeek(System.currentTimeMillis()));
@@ -115,6 +116,7 @@ public class MainActivity extends Activity {
 			isGame10 = ((CheckBox)findViewById(R.id.game10)).isChecked();
 			isGame11 = ((CheckBox)findViewById(R.id.game11)).isChecked();
 			isGame12 = ((CheckBox)findViewById(R.id.game12)).isChecked();
+			isGame13 = ((CheckBox)findViewById(R.id.game13)).isChecked();
 			Log.e(TAG, "onClick: isGame1:" + isGame1
 					+ ",isGame2:" + isGame2
 					+ ",isGame3:" + isGame3
