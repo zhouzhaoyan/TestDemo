@@ -45,7 +45,7 @@ public class AliveService extends NotificationListenerService {
 		screenView = new ScreenView(this,false);
 		alarmEveryDay();
 	}
-	
+
 	public static void openAliveService(Context context){
 		Intent intent = new Intent(context, AliveService.class);
 		context.startService(intent);
@@ -73,7 +73,7 @@ public class AliveService extends NotificationListenerService {
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		View view = screenView.getView();
-		
+
 		String content = "正在运行";
 		if (content != null && !content.equals("")) {
 			if (view != null) {
@@ -89,7 +89,7 @@ public class AliveService extends NotificationListenerService {
 				LinearLayout linearLayout = new LinearLayout(this);
 				linearLayout.addView(textView,new LinearLayout.LayoutParams(
 						LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-				
+
 				screenView.showScreenshot(linearLayout);
 			}
 		}
@@ -122,7 +122,7 @@ public class AliveService extends NotificationListenerService {
 		updateUi();
 		return super.onStartCommand(intent, Service.START_REDELIVER_INTENT, startId);
 	}
-	
+
 	private void alarm(Action action){
 		if (action.getActionTime().getCount() == 0){
 			return;
@@ -318,11 +318,17 @@ public class AliveService extends NotificationListenerService {
             }
         }
 
-//		if (name.equals("跨服boss")){
-//            if (!(week == Calendar.TUESDAY || week == Calendar.THURSDAY || week == Calendar.SATURDAY )){
-//				return true;
-//            }
-//        }
+		if (name.equals("跨服boss-苍月岛")){
+            if (!(week == Calendar.SATURDAY || week == Calendar.SUNDAY)){
+				return true;
+            }
+        }
+
+		if (name.equals("跨服boss-埋骨之地")){
+			if (week == Calendar.SATURDAY || week == Calendar.SUNDAY){
+				return true;
+			}
+		}
 
 		if (name.equals("跨服竞技场")){
             if (TimeUtil.getCurrentDay() > 28){
@@ -333,7 +339,7 @@ public class AliveService extends NotificationListenerService {
 	}
 
 	Handler handler;
-	
+
 	private void alarmEveryDay(){
 //		((AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE))
 //        .setRepeating(AlarmManager.RTC_WAKEUP, TimeUtil.getLastSecondInDay(System.currentTimeMillis()) + 1000,
@@ -346,12 +352,12 @@ public class AliveService extends NotificationListenerService {
 	@Override
 	public void onNotificationPosted(StatusBarNotification sbn) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void onNotificationRemoved(StatusBarNotification sbn) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
