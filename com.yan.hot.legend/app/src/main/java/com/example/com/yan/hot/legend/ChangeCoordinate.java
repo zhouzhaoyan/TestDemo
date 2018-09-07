@@ -272,7 +272,7 @@ public class ChangeCoordinate {
         //        addTime("热血单机", 4,40000);
         //        delete("热血单机",5);
 
-        //        addTime("核弹头", getSize("核弹头")-1, 20000);
+        //        addTime("核弹头网页", getSize("核弹头网页")-1, 20000);
         //        addTime("熔炼", 3, 2000);
         //        addTime("熔炼", 4, 4000);
 
@@ -354,7 +354,13 @@ public class ChangeCoordinate {
 //        addTime("乐趣",5,40000);
 //        delete("乐趣",7);
 
-        show("乐趣");
+//        addNew("火树", "核弹头网页");
+//        setCoordinate("核弹头网页",858, 332,216,1639);
+
+//        addTime("1758微游戏", getSize("1758微游戏")-2, 10000);
+//        addTime("07073游戏盒子", getSize("07073游戏盒子")-2, 10000);
+
+        show("核弹头网页");
 
 //                ActionFile.write(actions);
     }

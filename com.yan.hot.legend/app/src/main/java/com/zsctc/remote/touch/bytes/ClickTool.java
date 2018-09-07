@@ -106,8 +106,8 @@ public class ClickTool {
                 tmp.add(ClientType.游戏07073网页);
             } else if (name.equals("乐趣网页")) {
                 tmp.add(ClientType.乐趣网页);
-            } else if (name.equals("核弹头")) {
-                tmp.add(ClientType.核弹头);
+            } else if (name.equals("核弹头网页")) {
+                tmp.add(ClientType.核弹头网页);
             } else if (name.equals("1758微游戏-网页")) {
                 tmp.add(ClientType.游戏1758网页);
             } else if (name.equals("牛刀")) {
@@ -126,6 +126,8 @@ public class ClickTool {
                 tmp.add(ClientType.游戏1758);
             } else if (name.equals("乐趣")) {
                 tmp.add(ClientType.乐趣);
+            } else if (name.equals("核弹头")) {
+                tmp.add(ClientType.核弹头);
             }
         }
         Log.e(TAG, "initClient: tmp" + tmp);
@@ -138,8 +140,8 @@ public class ClickTool {
         if (tmp.contains(ClientType.游戏07073网页) && MainActivity.isGame3) {
             clientTypes.add(ClientType.游戏07073网页);
         }
-        if (tmp.contains(ClientType.核弹头) && MainActivity.isGame4) {
-            clientTypes.add(ClientType.核弹头);
+        if (tmp.contains(ClientType.核弹头网页) && MainActivity.isGame4) {
+            clientTypes.add(ClientType.核弹头网页);
         }
         if (tmp.contains(ClientType.游戏1758网页) && MainActivity.isGame5) {
             clientTypes.add(ClientType.游戏1758网页);
@@ -168,13 +170,16 @@ public class ClickTool {
         if (tmp.contains(ClientType.乐趣) && MainActivity.isGame13) {
             clientTypes.add(ClientType.乐趣);
         }
+        if (tmp.contains(ClientType.核弹头) && MainActivity.isGame14) {
+            clientTypes.add(ClientType.核弹头);
+        }
     }
 
     private static List<ClientType> clientTypes;
 
     private enum ClientType {
-        火树, 游戏07073网页, 乐趣网页, 核弹头, 游戏1758网页, 牛刀, 牛刀网页, 玩蛋, 客娱,
-        热血单机, 游戏07073, 游戏1758,乐趣
+        火树, 游戏07073网页, 乐趣网页, 核弹头网页, 游戏1758网页, 牛刀, 牛刀网页, 玩蛋, 客娱,
+        热血单机, 游戏07073, 游戏1758,乐趣,核弹头
     }
 
     public static List<Long> getClickTime(long time, Action action) {
@@ -197,8 +202,8 @@ public class ClickTool {
                 case 乐趣网页:
                     runNames.add("乐趣网页");
                     break;
-                case 核弹头:
-                    runNames.add("核弹头");
+                case 核弹头网页:
+                    runNames.add("核弹头网页");
                     break;
                 case 游戏1758网页:
                     runNames.add("1758微游戏-网页");
@@ -227,12 +232,16 @@ public class ClickTool {
                 case 乐趣:
                     runNames.add("乐趣");
                     break;
+                case 核弹头:
+                    runNames.add("核弹头");
+                    break;
             }
 
             if (MainActivity.daily) {
-                //日常模式，最多30分，最少23分
+                //日常模式，20分
                 runNames.add("熔炼");
                 runNames.add("血战矿洞");
+                runNames.add("特戒副本");
                 runNames.add("熔炼");
                 runNames.add("王者争霸");
                 runNames.add("竞技");
@@ -250,7 +259,7 @@ public class ClickTool {
                 addShenBinHuanJin(runNames, clientType);
                 addShouHuShenJian(runNames, clientType);
             } else {
-                //任务模式，最多53分，最少43分
+                //任务模式，43分
                 runNames.add("熔炼", 2);
                 runNames.add("竞技");
                 runNames.add("血战矿洞");
@@ -258,13 +267,12 @@ public class ClickTool {
                 addCaiLiaoFuBen(runNames, clientType);
                 runNames.add("经验副本");
                 runNames.add("转生");
-                runNames.add("特戒副本");
+                runNames.add("熔炼");
                 runNames.add("个人boss");
                 runNames.add("自动关卡");
                 runNames.add("野外boss", 2);
                 runNames.add("熔炼");
                 runNames.add("竞技");
-                runNames.add("熔炼");
                 runNames.add("血战矿洞");
                 addMiJin(runNames, clientType);
             }
@@ -273,7 +281,7 @@ public class ClickTool {
                 case 火树:
                 case 游戏07073网页:
                 case 乐趣网页:
-                case 核弹头:
+                case 核弹头网页:
                 case 游戏1758网页:
                 case 牛刀:
                 case 牛刀网页:
@@ -281,6 +289,7 @@ public class ClickTool {
                 case 客娱:
                 case 热血单机:
                 case 乐趣:
+                case 核弹头:
                     runNames.add("游戏-结束");
                     break;
                 case 游戏07073:
@@ -330,10 +339,10 @@ public class ClickTool {
     //秘境
     private static void addMiJin(RunNameList<String> runNames, ClientType clientType) {
         switch (clientType) {
-            case 牛刀://五转+
-            case 游戏1758://三、四转
-                runNames.add("秘境boss");
-                break;
+//            case 牛刀://五转+
+//            case 游戏1758://三、四转
+//                runNames.add("秘境boss");
+//                break;
             default:
                 runNames.add("秘境boss快速");
                 break;
@@ -346,7 +355,7 @@ public class ClickTool {
             case 火树:
             case 游戏07073网页:
             case 乐趣网页:
-            case 核弹头:
+            case 核弹头网页:
             case 游戏1758网页:
             case 牛刀:
                 runNames.add("材料副本快速");
@@ -359,13 +368,14 @@ public class ClickTool {
 
     //神兵幻境
     private static void addShenBinHuanJin(RunNameList<String> runNames, ClientType clientType) {
-        switch (clientType) {
-            case 乐趣:
-                break;
-            default:
+//        switch (clientType) {
+//            case 乐趣:
+//            case 核弹头:
+//                break;
+//            default:
                 runNames.add("神兵幻境", 2);
-                break;
-        }
+//                break;
+//        }
     }
 
     //守护神剑
@@ -375,6 +385,7 @@ public class ClickTool {
             case 游戏07073:
             case 游戏1758:
             case 乐趣:
+            case 核弹头:
                 break;
             default:
                 runNames.add("守护神剑");
