@@ -381,6 +381,7 @@ public class ClickTool {
     //守护神剑
     private static void addShouHuShenJian(RunNameList<String> runNames, ClientType clientType) {
         switch (clientType) {
+            case 客娱:
             case 热血单机:
             case 游戏07073:
             case 游戏1758:
