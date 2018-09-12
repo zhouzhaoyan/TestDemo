@@ -378,7 +378,21 @@ public class ChangeCoordinate {
 //        addCoordinate("热血单机h5",3,526, 1526, 60000);
 //        addTime("热血单机h5",2,30000);
 
-        show("热血单机h5");
+//        deletePostions("熔炼",41);
+//        for (int i = 6; i < 41; i++) {
+//            setTime("熔炼",i,500);
+//        }
+
+//        delete("野外boss",1);
+//        for (int i = 0; i < 15*4; i++) {
+//            addCoordinateEnd("野外boss",1004, 1490,1000);
+//            addCoordinateEnd("野外boss",325, 1843,1000);
+//            addCoordinateEnd("野外boss",864, 507,1000);
+//            addCoordinateEnd("野外boss",1013, 2021,1000);
+//        }
+
+//        addTime("核弹头",2,10000);
+        show("核弹头");
 
 //                ActionFile.write(actions);
     }

@@ -247,15 +247,13 @@ public class ClickTool {
 
             if (MainActivity.daily) {
                 //日常模式，20分
-                runNames.add("熔炼");
+                runNames.add("熔炼",2);
                 runNames.add("血战矿洞");
                 runNames.add("特戒副本");
-                runNames.add("熔炼");
                 runNames.add("王者争霸");
                 runNames.add("竞技");
-                runNames.add("野外boss");
-                runNames.add("熔炼");
                 addMiJin(runNames, clientType);
+                runNames.add("野外boss");
             } else if (MainActivity.simple) {
                 //简单模式，9分钟
                 runNames.add("熔炼");
