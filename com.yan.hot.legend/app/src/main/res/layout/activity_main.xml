@@ -197,6 +197,13 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="核弹头"/>
+
+        <CheckBox
+            android:id="@+id/game15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="热血单机h5"/>
     </LinearLayout>
 
     <ListView

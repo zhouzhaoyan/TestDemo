@@ -128,6 +128,8 @@ public class ClickTool {
                 tmp.add(ClientType.乐趣);
             } else if (name.equals("核弹头")) {
                 tmp.add(ClientType.核弹头);
+            } else if (name.equals("热血单机h5")) {
+                tmp.add(ClientType.热血单机h5);
             }
         }
         Log.e(TAG, "initClient: tmp" + tmp);
@@ -173,13 +175,16 @@ public class ClickTool {
         if (tmp.contains(ClientType.核弹头) && MainActivity.isGame14) {
             clientTypes.add(ClientType.核弹头);
         }
+        if (tmp.contains(ClientType.热血单机h5) && MainActivity.isGame15) {
+            clientTypes.add(ClientType.热血单机h5);
+        }
     }
 
     private static List<ClientType> clientTypes;
 
     private enum ClientType {
         火树, 游戏07073网页, 乐趣网页, 核弹头网页, 游戏1758网页, 牛刀, 牛刀网页, 玩蛋, 客娱,
-        热血单机, 游戏07073, 游戏1758,乐趣,核弹头
+        热血单机, 游戏07073, 游戏1758,乐趣,核弹头,热血单机h5
     }
 
     public static List<Long> getClickTime(long time, Action action) {
@@ -235,6 +240,9 @@ public class ClickTool {
                 case 核弹头:
                     runNames.add("核弹头");
                     break;
+                case 热血单机h5:
+                    runNames.add("热血单机h5");
+                    break;
             }
 
             if (MainActivity.daily) {
@@ -259,10 +267,10 @@ public class ClickTool {
                 addShenBinHuanJin(runNames, clientType);
                 addShouHuShenJian(runNames, clientType);
             } else {
-                //任务模式，43分
+                //任务模式，39分
                 runNames.add("熔炼", 2);
-                runNames.add("竞技");
                 runNames.add("血战矿洞");
+                runNames.add("竞技");
                 runNames.add("通天塔");
                 addCaiLiaoFuBen(runNames, clientType);
                 runNames.add("经验副本");
@@ -292,6 +300,7 @@ public class ClickTool {
                 case 核弹头:
                     runNames.add("游戏-结束");
                     break;
+                case 热血单机h5:
                 case 游戏07073:
                     runNames.add("07073游戏盒子-结束");
                     break;
@@ -381,10 +390,6 @@ public class ClickTool {
     //守护神剑
     private static void addShouHuShenJian(RunNameList<String> runNames, ClientType clientType) {
         switch (clientType) {
-            case 客娱:
-            case 热血单机:
-            case 游戏07073:
-            case 游戏1758:
             case 乐趣:
             case 核弹头:
                 break;

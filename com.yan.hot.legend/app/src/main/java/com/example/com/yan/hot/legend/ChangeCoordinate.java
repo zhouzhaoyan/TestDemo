@@ -360,19 +360,39 @@ public class ChangeCoordinate {
 //        addTime("1758微游戏", getSize("1758微游戏")-2, 10000);
 //        addTime("07073游戏盒子", getSize("07073游戏盒子")-2, 10000);
 
-        show("核弹头网页");
+//        setCoordinateIndexOffset("07073游戏盒子",1,1,0, -202);
+//        setCoordinateIndexOffset("乐趣",1,1,0, -202);
+//        setCoordinateIndexOffset("核弹头",1,1,0, -202);
+//
+//        setCoordinateIndexOffset("1758微游戏",1,1,0, -183);
+//        setCoordinateIndexOffset("牛刀",1,1,0, -183);
+//        setCoordinateIndexOffset("热血单机",1,1,0, -183);
+
+//        deletePostions("竞技",3,4,5,6,7,8);
+//        setTime("竞技",3,35000);
+//        for (int i = 3; i < 120; i++) {
+//            addCoordinate("竞技",i,845, 843,1000);
+//        }
+
+//        delete("热血单机h5",3);
+//        addCoordinate("热血单机h5",3,526, 1526, 60000);
+//        addTime("热血单机h5",2,30000);
+
+        show("热血单机h5");
 
 //                ActionFile.write(actions);
     }
 
-    private static void show(String name) {
-        Action tmp = getAction(name);
-        if (tmp != null) {
-            List<Coordinate> coordinates = tmp.getCoordinates();
-            for (int i = 0; i < coordinates.size(); i++) {
-                Log.e("test", "tmp: " + coordinates.get(i) + "\n");
+    private static void show(String...names) {
+        for (String name: names) {
+            Action tmp = getAction(name);
+            if (tmp != null) {
+                List<Coordinate> coordinates = tmp.getCoordinates();
+                for (int i = 0; i < coordinates.size(); i++) {
+                    Log.e("test", "tmp: " + coordinates.get(i) + "\n");
+                }
+                Log.e("test", "tmp: " + tmp);
             }
-            Log.e("test", "tmp: " + tmp);
         }
     }
 
@@ -390,10 +410,12 @@ public class ChangeCoordinate {
 
     private static Action getAction(String name) {
         Action tmp = null;
-        for (Action action : actions) {
-            if (action.getName().equals(name)) {
-                tmp = action;
-                break;
+        if (actions != null){
+            for (Action action : actions) {
+                if (action.getName().equals(name)) {
+                    tmp = action;
+                    break;
+                }
             }
         }
         return tmp;
@@ -533,6 +555,20 @@ public class ChangeCoordinate {
                 coordinate = coordinates.get(i);
                 coordinate.setX(newX);
                 coordinate.setY(newY);
+            }
+        }
+    }
+
+    private static void setCoordinateIndexOffset(String name,
+                                           int startIndex, int endIndex, int offsetX, int offsetY) {
+        Action tmp = getAction(name);
+        if (tmp != null) {
+            List<Coordinate> coordinates = tmp.getCoordinates();
+            Coordinate coordinate;
+            for (int i = startIndex; i <= endIndex; i++) {
+                coordinate = coordinates.get(i);
+                coordinate.setX(coordinate.getX() + offsetX);
+                coordinate.setY(coordinate.getY() + offsetY);
             }
         }
     }
