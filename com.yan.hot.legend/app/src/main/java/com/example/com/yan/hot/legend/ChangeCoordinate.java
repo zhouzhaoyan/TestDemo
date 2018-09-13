@@ -393,7 +393,11 @@ public class ChangeCoordinate {
 
 //        addTime("核弹头",2,10000);
 //        setCoordinateIndex("竞技",120,120,410,1216);
-        show("竞技");
+
+//        addNew("热血单机","热血单机双开");
+//        setCoordinate("热血单机双开",830, 1008,541,1330);
+
+        show("热血单机双开");
 
 //                ActionFile.write(actions);
     }

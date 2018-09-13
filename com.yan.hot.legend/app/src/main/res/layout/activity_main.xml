@@ -204,6 +204,13 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="热血单机h5"/>
+
+        <CheckBox
+            android:id="@+id/game16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="热血单机双开"/>
     </LinearLayout>
 
     <ListView

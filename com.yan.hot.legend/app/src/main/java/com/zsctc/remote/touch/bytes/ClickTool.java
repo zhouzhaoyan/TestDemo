@@ -130,6 +130,8 @@ public class ClickTool {
                 tmp.add(ClientType.核弹头);
             } else if (name.equals("热血单机h5")) {
                 tmp.add(ClientType.热血单机h5);
+            } else if (name.equals("热血单机双开")) {
+                tmp.add(ClientType.热血单机双开);
             }
         }
         Log.e(TAG, "initClient: tmp" + tmp);
@@ -178,13 +180,16 @@ public class ClickTool {
         if (tmp.contains(ClientType.热血单机h5) && MainActivity.isGame15) {
             clientTypes.add(ClientType.热血单机h5);
         }
+        if (tmp.contains(ClientType.热血单机双开) && MainActivity.isGame16) {
+            clientTypes.add(ClientType.热血单机双开);
+        }
     }
 
     private static List<ClientType> clientTypes;
 
     private enum ClientType {
         火树, 游戏07073网页, 乐趣网页, 核弹头网页, 游戏1758网页, 牛刀, 牛刀网页, 玩蛋, 客娱,
-        热血单机, 游戏07073, 游戏1758,乐趣,核弹头,热血单机h5
+        热血单机, 游戏07073, 游戏1758,乐趣,核弹头,热血单机h5,热血单机双开
     }
 
     public static List<Long> getClickTime(long time, Action action) {
@@ -243,6 +248,9 @@ public class ClickTool {
                 case 热血单机h5:
                     runNames.add("热血单机h5");
                     break;
+                case 热血单机双开:
+                    runNames.add("热血单机双开");
+                    break;
             }
 
             if (MainActivity.daily) {
@@ -296,6 +304,7 @@ public class ClickTool {
                 case 热血单机:
                 case 乐趣:
                 case 核弹头:
+                case 热血单机双开:
                     runNames.add("游戏-结束");
                     break;
                 case 热血单机h5:
