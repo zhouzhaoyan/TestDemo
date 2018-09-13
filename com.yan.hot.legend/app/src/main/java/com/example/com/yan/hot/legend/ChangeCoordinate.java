@@ -392,7 +392,8 @@ public class ChangeCoordinate {
 //        }
 
 //        addTime("核弹头",2,10000);
-        show("核弹头");
+//        setCoordinateIndex("竞技",120,120,410,1216);
+        show("竞技");
 
 //                ActionFile.write(actions);
     }

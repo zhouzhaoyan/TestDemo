@@ -246,7 +246,7 @@ public class ClickTool {
             }
 
             if (MainActivity.daily) {
-                //日常模式，20分
+                //日常模式，18分
                 runNames.add("熔炼",2);
                 runNames.add("血战矿洞");
                 runNames.add("特戒副本");
@@ -255,7 +255,7 @@ public class ClickTool {
                 addMiJin(runNames, clientType);
                 runNames.add("野外boss");
             } else if (MainActivity.simple) {
-                //简单模式，9分钟
+                //简单模式，6分钟30秒
                 runNames.add("熔炼");
                 runNames.add("血战矿洞");
                 runNames.add("熔炼");
@@ -265,9 +265,9 @@ public class ClickTool {
                 addShenBinHuanJin(runNames, clientType);
                 addShouHuShenJian(runNames, clientType);
             } else {
-                //任务模式，39分
+                //任务模式，33分
                 runNames.add("熔炼", 2);
-                runNames.add("血战矿洞");
+//                runNames.add("血战矿洞");
                 runNames.add("竞技");
                 runNames.add("通天塔");
                 addCaiLiaoFuBen(runNames, clientType);
