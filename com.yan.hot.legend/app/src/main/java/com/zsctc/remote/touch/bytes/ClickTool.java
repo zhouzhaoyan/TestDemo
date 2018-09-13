@@ -132,6 +132,8 @@ public class ClickTool {
                 tmp.add(ClientType.热血单机h5);
             } else if (name.equals("热血单机双开")) {
                 tmp.add(ClientType.热血单机双开);
+            } else if (name.equals("凹凸果")) {
+                tmp.add(ClientType.凹凸果);
             }
         }
         Log.e(TAG, "initClient: tmp" + tmp);
@@ -183,13 +185,16 @@ public class ClickTool {
         if (tmp.contains(ClientType.热血单机双开) && MainActivity.isGame16) {
             clientTypes.add(ClientType.热血单机双开);
         }
+        if (tmp.contains(ClientType.凹凸果) && MainActivity.isGame17) {
+            clientTypes.add(ClientType.凹凸果);
+        }
     }
 
     private static List<ClientType> clientTypes;
 
     private enum ClientType {
         火树, 游戏07073网页, 乐趣网页, 核弹头网页, 游戏1758网页, 牛刀, 牛刀网页, 玩蛋, 客娱,
-        热血单机, 游戏07073, 游戏1758,乐趣,核弹头,热血单机h5,热血单机双开
+        热血单机, 游戏07073, 游戏1758,乐趣,核弹头,热血单机h5,热血单机双开,凹凸果
     }
 
     public static List<Long> getClickTime(long time, Action action) {
@@ -251,10 +256,13 @@ public class ClickTool {
                 case 热血单机双开:
                     runNames.add("热血单机双开");
                     break;
+                case 凹凸果:
+                    runNames.add("凹凸果");
+                    break;
             }
 
             if (MainActivity.daily) {
-                //日常模式，18分
+                //日常模式，16分30秒
                 runNames.add("熔炼",2);
                 runNames.add("血战矿洞");
                 runNames.add("特戒副本");
@@ -264,9 +272,8 @@ public class ClickTool {
                 runNames.add("野外boss");
             } else if (MainActivity.simple) {
                 //简单模式，6分钟30秒
-                runNames.add("熔炼");
+                runNames.add("熔炼",2);
                 runNames.add("血战矿洞");
-                runNames.add("熔炼");
                 runNames.add("竞技");
             } else if (MainActivity.surplus) {
                 //多余模式,15分钟
@@ -305,6 +312,7 @@ public class ClickTool {
                 case 乐趣:
                 case 核弹头:
                 case 热血单机双开:
+                case 凹凸果:
                     runNames.add("游戏-结束");
                     break;
                 case 热血单机h5:

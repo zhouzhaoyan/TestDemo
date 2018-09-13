@@ -397,7 +397,10 @@ public class ChangeCoordinate {
 //        addNew("热血单机","热血单机双开");
 //        setCoordinate("热血单机双开",830, 1008,541,1330);
 
-        show("热血单机双开");
+//        delete("凹凸果",5);
+//        addTime("凹凸果",4,30000);
+//        addCoordinateEnd("凹凸果",526, 1526,60000);
+        show("热血单机","凹凸果");
 
 //                ActionFile.write(actions);
     }
