@@ -318,17 +318,17 @@ public class AliveService extends NotificationListenerService {
             }
         }
 
-		if (name.equals("跨服boss-苍月岛")){
-            if (!(week == Calendar.SATURDAY || week == Calendar.SUNDAY)){
-				return true;
-            }
-        }
-
-		if (name.equals("跨服boss-埋骨之地")){
-			if (week == Calendar.SATURDAY || week == Calendar.SUNDAY){
-				return true;
-			}
-		}
+//		if (name.equals("跨服boss-苍月岛")){
+//            if (!(week == Calendar.SATURDAY || week == Calendar.SUNDAY)){
+//				return true;
+//            }
+//        }
+//
+//		if (name.equals("跨服boss-埋骨之地")){
+//			if (week == Calendar.SATURDAY || week == Calendar.SUNDAY){
+//				return true;
+//			}
+//		}
 
 		if (name.equals("跨服竞技场")){
             if (TimeUtil.getCurrentDay() > 28){
