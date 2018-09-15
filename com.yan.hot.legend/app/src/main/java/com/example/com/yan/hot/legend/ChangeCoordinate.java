@@ -400,7 +400,10 @@ public class ChangeCoordinate {
 //        delete("凹凸果",5);
 //        addTime("凹凸果",4,30000);
 //        addCoordinateEnd("凹凸果",526, 1526,60000);
-        show("热血单机","凹凸果");
+
+//        setCoordinate("血战矿洞",681, 1872,519,1869);
+
+        show("血战矿洞");
 
 //                ActionFile.write(actions);
     }
