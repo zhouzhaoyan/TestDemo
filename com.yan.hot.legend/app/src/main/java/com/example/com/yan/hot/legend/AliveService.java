@@ -109,7 +109,7 @@ public class AliveService extends NotificationListenerService {
 
 		if (actions != null){
 			for (Action action : actions) {
-				if (!action.getName().contains("野外boss") && !action.getName().equals("神域boss")){
+				if (!action.getName().contains("野外boss") && !action.getName().contains("神域boss")){
 					filerActions.add(action);
 				}
 			}
@@ -136,13 +136,13 @@ public class AliveService extends NotificationListenerService {
 		ActionTime actionTime = action.getActionTime();
 
 		List<Long> clickTimes = ClickTool.getClickTime(System.currentTimeMillis(), actionTime);
-		if (action.getName().contains("野外boss") || action.getName().equals("神域boss")){
+		if (action.getName().contains("野外boss") || action.getName().contains("神域boss")){
 			//以单双来刷boss
 			List<Long> deleteClickTime = new ArrayList<Long>();
 			for (long tmp: clickTimes) {
 				int hour = TimeUtil.getHour(tmp);
 				if ((action.getName().contains("野外boss") && hour%3 == 0)
-					|| (action.getName().equals("神域boss") && (hour%3 == 1 || hour%3 == 2))){
+					|| (action.getName().contains("神域boss") && (hour%3 == 1 || hour%3 == 2))){
 					Log.e(TAG, "alarm hour：" + hour + "," + action.getName() + "," + TimeUtil.getFormatTime(tmp));
 					deleteClickTime.add(tmp);
 				}else {
@@ -234,12 +234,12 @@ public class AliveService extends NotificationListenerService {
 
 	private int getTimeOffset(Action action) {
 		int offset = 0;
-		if (action.getName().equals("世界boss")
-				||action.getName().equals("血战比奇") || action.getName().contains("激情泡点")
-				|| action.getName().equals("魔界入侵") || action.getName().equals("龙城争霸")){
+		if (action.getName().contains("世界boss")
+				||action.getName().contains("血战比奇") || action.getName().contains("激情泡点")
+				|| action.getName().contains("魔界入侵") || action.getName().contains("龙城争霸")){
 			//世界boss提前1s进去
 			offset = -1000;
-		} else if (action.getName().equals("跨服竞技场")){
+		} else if (action.getName().contains("跨服竞技场")){
 			offset = -2000;
 		}
 		return offset;
@@ -301,7 +301,7 @@ public class AliveService extends NotificationListenerService {
 	private boolean isBreak(String name, long clickTime) {
 		int week;
 		week = TimeUtil.dateToWeek(clickTime);
-		if (name.equals("血战比奇")){
+		if (name.contains("血战比奇")){
             if (!(week == Calendar.MONDAY || week == Calendar.WEDNESDAY || week == Calendar.FRIDAY)){
 				return true;
             }
@@ -312,7 +312,7 @@ public class AliveService extends NotificationListenerService {
             }
         }
 
-		if (name.equals("龙城争霸")){
+		if (name.contains("龙城争霸")){
             if (!(week == Calendar.SATURDAY )){
 				return true;
             }
@@ -330,7 +330,7 @@ public class AliveService extends NotificationListenerService {
 //			}
 //		}
 
-		if (name.equals("跨服竞技场")){
+		if (name.contains("跨服竞技场")){
             if (TimeUtil.getCurrentDay() > 28){
 				return true;
             }

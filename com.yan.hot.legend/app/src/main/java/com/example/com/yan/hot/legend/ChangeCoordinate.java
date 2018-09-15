@@ -29,7 +29,26 @@ public class ChangeCoordinate {
 //        addCoordinate("跨服boss-埋骨之地",6,660,1653,5000);
 //        setCoordinate("跨服boss-埋骨之地",516, 823,293,1131);
 
-        show("跨服boss-埋骨之地");
+//        addNew("血战比奇", "血战比奇MAX");
+//        delete("血战比奇MAX",9);
+//        for (int i = 0; i < 132; i++) {
+//            addCoordinateEnd("血战比奇MAX",100,678,1000);
+//            addCoordinateEnd("血战比奇MAX",100,863,1000);
+//            addCoordinateEnd("血战比奇MAX",100,1051,1000);
+//            addCoordinateEnd("血战比奇MAX",100,1210,1000);
+//            addCoordinateEnd("血战比奇MAX",100,1380,1000);
+//            addCoordinateEnd("血战比奇MAX",1000,1800,1000);
+//            addCoordinateEnd("血战比奇MAX",926,1554,1000);
+//
+//        }
+//        addCoordinateEnd("血战比奇MAX",545, 662,1000);
+//        addCoordinateEnd("血战比奇MAX",1002, 1487,1000);
+//        for (int i = 0; i < 2; i++) {
+//            addCoordinateEnd("血战比奇MAX",1000, 1800,1000);
+//        }
+//        addCoordinateEnd("血战比奇MAX",538, 1492,1000);
+
+        show("血战比奇MAX");
 
 //        ActionFile.write(actions);
     }
