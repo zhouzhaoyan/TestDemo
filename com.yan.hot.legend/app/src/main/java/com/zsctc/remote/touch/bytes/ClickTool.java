@@ -278,7 +278,7 @@ public class ClickTool {
             } else if (MainActivity.surplus) {
                 //多余模式,15分钟
                 addShenBinHuanJin(runNames, clientType);
-                addShouHuShenJian(runNames, clientType);
+//                addShouHuShenJian(runNames, clientType);
             } else {
                 //任务模式，33分
                 runNames.add("熔炼", 2);
@@ -382,6 +382,8 @@ public class ClickTool {
             case 核弹头网页:
             case 游戏1758网页:
             case 牛刀:
+            case 牛刀网页:
+            case 玩蛋:
                 runNames.add("材料副本快速");
                 break;
             default:
