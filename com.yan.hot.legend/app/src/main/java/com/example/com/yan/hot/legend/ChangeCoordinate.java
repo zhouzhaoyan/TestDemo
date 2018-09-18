@@ -403,7 +403,11 @@ public class ChangeCoordinate {
 
 //        setCoordinate("血战矿洞",681, 1872,519,1869);
 
-        show("血战矿洞");
+//        addCoordinate("核弹头",3,288,416,2000);
+//        setCoordinate("核弹头",948, 322,935,2026);
+//        setCoordinate("核弹头",288,416,935,2026);
+//        addCoordinate("核弹头",4,934,854,10000);
+        show("核弹头");
 
 //                ActionFile.write(actions);
     }
