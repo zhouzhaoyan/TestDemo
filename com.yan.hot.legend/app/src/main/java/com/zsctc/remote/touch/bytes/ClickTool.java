@@ -218,7 +218,7 @@ public class ClickTool {
                     runNames.add("乐趣网页");
                     break;
                 case 核弹头网页:
-                    runNames.add("核弹头网页");
+                    runNames.add("核弹头网页new");
                     break;
                 case 游戏1758网页:
                     runNames.add("1758微游戏-网页");
@@ -262,14 +262,14 @@ public class ClickTool {
             }
 
             if (MainActivity.daily) {
-                //日常模式，16分30秒
+                //日常模式，14分30秒
                 runNames.add("熔炼",2);
                 runNames.add("血战矿洞");
                 runNames.add("特戒副本");
                 runNames.add("王者争霸");
                 runNames.add("竞技");
-                addMiJin(runNames, clientType);
-                runNames.add("野外boss");
+                runNames.add("秘境boss快速sample");
+                runNames.add("野外boss快速");
             } else if (MainActivity.simple) {
                 //简单模式，6分钟30秒
                 runNames.add("熔炼",2);
@@ -277,8 +277,8 @@ public class ClickTool {
                 runNames.add("竞技");
             } else if (MainActivity.surplus) {
                 //多余模式,15分钟
-                addShenBinHuanJin(runNames, clientType);
-//                addShouHuShenJian(runNames, clientType);
+                runNames.add("神兵幻境", 2);
+//                runNames.add("守护神剑");
             } else {
                 //任务模式，33分
                 runNames.add("熔炼", 2);
@@ -295,7 +295,7 @@ public class ClickTool {
                 runNames.add("熔炼");
                 runNames.add("竞技");
                 runNames.add("血战矿洞");
-                addMiJin(runNames, clientType);
+                runNames.add("秘境boss快速");
             }
 
             switch (clientType) {
@@ -360,19 +360,6 @@ public class ClickTool {
         //        return new ArrayList<Long>();
     }
 
-    //秘境
-    private static void addMiJin(RunNameList<String> runNames, ClientType clientType) {
-        switch (clientType) {
-//            case 牛刀://五转+
-//            case 游戏1758://三、四转
-//                runNames.add("秘境boss");
-//                break;
-            default:
-                runNames.add("秘境boss快速");
-                break;
-        }
-    }
-
     //材料副本
     private static void addCaiLiaoFuBen(RunNameList<String> runNames, ClientType clientType) {
         switch (clientType) {
@@ -388,30 +375,6 @@ public class ClickTool {
                 break;
             default:
                 runNames.add("材料副本");
-                break;
-        }
-    }
-
-    //神兵幻境
-    private static void addShenBinHuanJin(RunNameList<String> runNames, ClientType clientType) {
-//        switch (clientType) {
-//            case 乐趣:
-//            case 核弹头:
-//                break;
-//            default:
-                runNames.add("神兵幻境", 2);
-//                break;
-//        }
-    }
-
-    //守护神剑
-    private static void addShouHuShenJian(RunNameList<String> runNames, ClientType clientType) {
-        switch (clientType) {
-            case 乐趣:
-            case 核弹头:
-                break;
-            default:
-                runNames.add("守护神剑");
                 break;
         }
     }

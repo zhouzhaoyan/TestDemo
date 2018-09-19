@@ -407,9 +407,28 @@ public class ChangeCoordinate {
 //        setCoordinate("核弹头",948, 322,935,2026);
 //        setCoordinate("核弹头",288,416,935,2026);
 //        addCoordinate("核弹头",4,934,854,10000);
-        show("核弹头");
 
-//                ActionFile.write(actions);
+//        deletePostions("07073游戏盒子",2);
+
+//        addNew("客娱","核弹头网页new");
+
+//        setCoordinate("核弹头网页new",711, 1159,375,1643);
+
+//        addNew("野外boss","野外boss快速");
+//        delete("野外boss快速",1);
+//        for (int i = 0; i < 15*3; i++) {
+//            addCoordinateEnd("野外boss快速",1004, 1490,1000);
+//            addCoordinateEnd("野外boss快速",325, 1843,1000);
+//            addCoordinateEnd("野外boss快速",864, 507,1000);
+//            addCoordinateEnd("野外boss快速",1013, 2021,1000);
+//        }
+//
+//        addNew("秘境boss快速","秘境boss快速sample");
+//        setTime("秘境boss快速sample",10,2000);
+
+        show("秘境boss快速sample");
+
+//        ActionFile.write(actions);
     }
 
     private static void show(String...names) {
