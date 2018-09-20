@@ -270,6 +270,8 @@ public class ClickTool {
                 runNames.add("竞技");
                 runNames.add("秘境boss快速sample");
                 runNames.add("野外boss快速");
+//                runNames.add("秘境boss快速");
+//                runNames.add("野外boss");
             } else if (MainActivity.simple) {
                 //简单模式，6分钟30秒
                 runNames.add("熔炼",2);

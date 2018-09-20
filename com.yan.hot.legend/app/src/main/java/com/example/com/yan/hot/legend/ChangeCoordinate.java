@@ -426,7 +426,11 @@ public class ChangeCoordinate {
 //        addNew("秘境boss快速","秘境boss快速sample");
 //        setTime("秘境boss快速sample",10,2000);
 
-        show("秘境boss快速sample");
+//        addCoordinateEnd("1758微游戏",128, 538,40000);
+//        addCoordinateEnd("1758微游戏",569, 1817,50000);
+//        addCoordinateEnd("1758微游戏",561, 1369,40000);
+
+        show("1758微游戏","07073游戏盒子");
 
 //        ActionFile.write(actions);
     }
