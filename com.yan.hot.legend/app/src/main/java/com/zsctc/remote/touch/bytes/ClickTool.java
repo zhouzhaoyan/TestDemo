@@ -277,6 +277,7 @@ public class ClickTool {
                 runNames.add("熔炼",2);
                 runNames.add("血战矿洞");
                 runNames.add("竞技");
+                runNames.add("秘境boss快速sample");
             } else if (MainActivity.surplus) {
                 //多余模式,15分钟
                 runNames.add("神兵幻境", 2);
@@ -293,11 +294,13 @@ public class ClickTool {
                 runNames.add("熔炼");
                 runNames.add("个人boss");
                 runNames.add("自动关卡");
-                runNames.add("野外boss", 2);
+//                runNames.add("野外boss", 2);
+                runNames.add("野外boss快速", 2);
                 runNames.add("熔炼");
                 runNames.add("竞技");
                 runNames.add("血战矿洞");
-                runNames.add("秘境boss快速");
+//                runNames.add("秘境boss快速");
+                runNames.add("秘境boss快速sample");
             }
 
             switch (clientType) {

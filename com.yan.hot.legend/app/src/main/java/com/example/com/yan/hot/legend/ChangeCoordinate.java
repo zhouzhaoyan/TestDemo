@@ -430,7 +430,8 @@ public class ChangeCoordinate {
 //        addCoordinateEnd("1758微游戏",569, 1817,50000);
 //        addCoordinateEnd("1758微游戏",561, 1369,40000);
 
-        show("1758微游戏","07073游戏盒子");
+//        addTime("核弹头网页new",5,5000);
+        show("核弹头网页new");
 
 //        ActionFile.write(actions);
     }
