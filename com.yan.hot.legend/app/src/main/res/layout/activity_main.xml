@@ -212,6 +212,12 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="热血双开"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/game17"
@@ -219,6 +225,13 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="凹凸果"/>
+
+        <CheckBox
+            android:id="@+id/game18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="乐趣双开"/>
     </LinearLayout>
 
     <ListView

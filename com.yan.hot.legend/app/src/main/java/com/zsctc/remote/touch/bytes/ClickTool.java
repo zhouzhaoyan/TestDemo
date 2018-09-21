@@ -134,6 +134,8 @@ public class ClickTool {
                 tmp.add(ClientType.热血单机双开);
             } else if (name.equals("凹凸果")) {
                 tmp.add(ClientType.凹凸果);
+            } else if (name.equals("乐趣双开")) {
+                tmp.add(ClientType.乐趣双开);
             }
         }
         Log.e(TAG, "initClient: tmp" + tmp);
@@ -188,13 +190,16 @@ public class ClickTool {
         if (tmp.contains(ClientType.凹凸果) && MainActivity.isGame17) {
             clientTypes.add(ClientType.凹凸果);
         }
+        if (tmp.contains(ClientType.乐趣双开) && MainActivity.isGame18) {
+            clientTypes.add(ClientType.乐趣双开);
+        }
     }
 
     private static List<ClientType> clientTypes;
 
     private enum ClientType {
         火树, 游戏07073网页, 乐趣网页, 核弹头网页, 游戏1758网页, 牛刀, 牛刀网页, 玩蛋, 客娱,
-        热血单机, 游戏07073, 游戏1758,乐趣,核弹头,热血单机h5,热血单机双开,凹凸果
+        热血单机, 游戏07073, 游戏1758, 乐趣, 核弹头, 热血单机h5, 热血单机双开, 凹凸果, 乐趣双开
     }
 
     public static List<Long> getClickTime(long time, Action action) {
@@ -259,33 +264,36 @@ public class ClickTool {
                 case 凹凸果:
                     runNames.add("凹凸果");
                     break;
+                case 乐趣双开:
+                    runNames.add("乐趣双开");
+                    break;
             }
 
             if (MainActivity.daily) {
                 //日常模式，14分30秒
-                runNames.add("熔炼",2);
+                runNames.add("熔炼", 2);
                 runNames.add("血战矿洞");
                 runNames.add("特戒副本");
                 runNames.add("王者争霸");
                 runNames.add("竞技");
                 runNames.add("秘境boss快速sample");
                 runNames.add("野外boss快速");
-//                runNames.add("秘境boss快速");
-//                runNames.add("野外boss");
+                //                runNames.add("秘境boss快速");
+                //                runNames.add("野外boss");
             } else if (MainActivity.simple) {
-                //简单模式，6分钟30秒
-                runNames.add("熔炼",2);
+                //简单模式，7分钟
+                runNames.add("熔炼", 2);
                 runNames.add("血战矿洞");
                 runNames.add("竞技");
                 runNames.add("秘境boss快速sample");
             } else if (MainActivity.surplus) {
                 //多余模式,15分钟
                 runNames.add("神兵幻境", 2);
-//                runNames.add("守护神剑");
+                //                runNames.add("守护神剑");
             } else {
-                //任务模式，33分
+                //任务模式，30分
                 runNames.add("熔炼", 2);
-//                runNames.add("血战矿洞");
+                //                runNames.add("血战矿洞");
                 runNames.add("竞技");
                 runNames.add("通天塔");
                 addCaiLiaoFuBen(runNames, clientType);
@@ -294,12 +302,13 @@ public class ClickTool {
                 runNames.add("熔炼");
                 runNames.add("个人boss");
                 runNames.add("自动关卡");
-//                runNames.add("野外boss", 2);
-                runNames.add("野外boss快速", 2);
+//                addAutoCheckPoint(runNames,clientType);
+                //                runNames.add("野外boss", 2);
+                runNames.add("野外boss快速",2);
                 runNames.add("熔炼");
                 runNames.add("竞技");
                 runNames.add("血战矿洞");
-//                runNames.add("秘境boss快速");
+                //                runNames.add("秘境boss快速");
                 runNames.add("秘境boss快速sample");
             }
 
@@ -318,6 +327,7 @@ public class ClickTool {
                 case 核弹头:
                 case 热血单机双开:
                 case 凹凸果:
+                case 乐趣双开:
                     runNames.add("游戏-结束");
                     break;
                 case 热血单机h5:
@@ -380,6 +390,19 @@ public class ClickTool {
                 break;
             default:
                 runNames.add("材料副本");
+                break;
+        }
+    }
+
+    private static void addAutoCheckPoint(RunNameList<String> runNames, ClientType clientType) {
+        switch (clientType) {
+            case 火树:
+            case 游戏07073网页:
+            case 乐趣网页:
+            case 游戏1758网页:
+                break;
+            default:
+                runNames.add("自动关卡");
                 break;
         }
     }

@@ -431,7 +431,11 @@ public class ChangeCoordinate {
 //        addCoordinateEnd("1758微游戏",561, 1369,40000);
 
 //        addTime("核弹头网页new",5,5000);
-        show("核弹头网页new");
+
+//        addNew("乐趣","乐趣双开");
+//        setCoordinateIndex("乐趣双开",0,0,666,855);
+//        setCoordinateIndex("乐趣双开",1,1,291,1033);
+        show("乐趣双开");
 
 //        ActionFile.write(actions);
     }
