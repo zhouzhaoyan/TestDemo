@@ -230,8 +230,16 @@
             android:id="@+id/game18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="乐趣双开"
+            android:enabled="false"/>
+
+        <CheckBox
+            android:id="@+id/game19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:checked="true"
-            android:text="乐趣双开"/>
+            android:text="乐趣网页双开"/>
     </LinearLayout>
 
     <ListView

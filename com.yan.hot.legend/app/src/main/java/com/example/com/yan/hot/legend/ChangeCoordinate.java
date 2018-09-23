@@ -435,7 +435,14 @@ public class ChangeCoordinate {
 //        addNew("乐趣","乐趣双开");
 //        setCoordinateIndex("乐趣双开",0,0,666,855);
 //        setCoordinateIndex("乐趣双开",1,1,291,1033);
-        show("乐趣双开");
+
+//        setCoordinate("乐趣双开",291, 1033,251,794);
+
+//        delete("乐趣网页双开",4);
+//        setTime("乐趣网页双开",1,5000);
+//        setTime("乐趣网页双开",2,50000);
+//        setTime("乐趣网页双开",3,60000);
+        show("乐趣网页双开");
 
 //        ActionFile.write(actions);
     }
