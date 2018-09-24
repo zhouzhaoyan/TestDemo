@@ -109,7 +109,8 @@ public class AliveService extends NotificationListenerService {
 
 		if (actions != null){
 			for (Action action : actions) {
-				if (!action.getName().contains("野外boss") && !action.getName().contains("神域boss")){
+				if (!action.getName().contains("野外boss") && !action.getName().contains("神域boss")
+						&& !action.getName().contains("打开wifi")  && !action.getName().contains("关闭wifi")){
 					filerActions.add(action);
 				}
 			}
@@ -136,18 +137,30 @@ public class AliveService extends NotificationListenerService {
 		ActionTime actionTime = action.getActionTime();
 
 		List<Long> clickTimes = ClickTool.getClickTime(System.currentTimeMillis(), actionTime);
-		if (action.getName().contains("野外boss") || action.getName().contains("神域boss")){
+		if (action.getName().contains("野外boss") || action.getName().contains("神域boss")
+				|| action.getName().contains("打开wifi") || action.getName().contains("关闭wifi")){
 			//以单双来刷boss
 			List<Long> deleteClickTime = new ArrayList<Long>();
 			for (long tmp: clickTimes) {
 				int hour = TimeUtil.getHour(tmp);
-				if ((action.getName().contains("野外boss") && hour%3 == 0)
-					|| (action.getName().contains("神域boss") && (hour%3 == 1 || hour%3 == 2))){
-					Log.e(TAG, "alarm hour：" + hour + "," + action.getName() + "," + TimeUtil.getFormatTime(tmp));
-					deleteClickTime.add(tmp);
-				}else {
-					Log.e(TAG, "alarm hour else：" + hour + "," + action.getName() + "," + TimeUtil.getFormatTime(tmp));
-				}
+				if (MainActivity.isZhuanshen){
+				    if (action.getName().contains("打开wifi") || action.getName().contains("关闭wifi")){
+
+                    } else if (action.getName().contains("野外boss")
+                            || action.getName().contains("神域boss")){
+                        deleteClickTime.add(tmp);
+                    }
+                } else {
+                    if ((action.getName().contains("野外boss") && (hour%4 == 0 || hour%4 == 1))
+                            || (action.getName().contains("神域boss") && (hour%4 == 2 || hour%4 == 3))){
+                        Log.e(TAG, "alarm hour：" + hour + "," + action.getName() + "," + TimeUtil.getFormatTime(tmp));
+                        deleteClickTime.add(tmp);
+                    } else if (action.getName().contains("打开wifi") || action.getName().contains("关闭wifi")){
+						deleteClickTime.add(tmp);
+					} else{
+                        Log.e(TAG, "alarm hour else：" + hour + "," + action.getName() + "," + TimeUtil.getFormatTime(tmp));
+                    }
+                }
 			}
 			clickTimes.removeAll(deleteClickTime);
 
@@ -200,11 +213,11 @@ public class AliveService extends NotificationListenerService {
 			long runTime = actionCoordinates.get(actionCoordinates.size() - 1).getTime() - actionCoordinates.get(0).getTime();
 			Set<Long> filerClickTime = allClick.keySet();
 			for (int i = 0; i < clickTimes.size(); i++) {
-				for (long tmpClickTime: filerClickTime) {
-					if (clickTimes.get(i) >= tmpClickTime && clickTimes.get(i) <= tmpClickTime + allClick.get(tmpClickTime)){
+				for (long tmpClickTime : filerClickTime) {
+					if (clickTimes.get(i) >= tmpClickTime && clickTimes.get(i) <= tmpClickTime + allClick.get(tmpClickTime)) {
 						Log.e(TAG, "alarm delete click  " + clickTimes.get(i));
 						delete.add(clickTimes.get(i));
-					} else if ((clickTimes.get(i) <= tmpClickTime && (clickTimes.get(i) + runTime) >= tmpClickTime)){
+					} else if ((clickTimes.get(i) <= tmpClickTime && (clickTimes.get(i) + runTime) >= tmpClickTime)) {
 						Log.e(TAG, "alarm delete runTime " + clickTimes.get(i));
 						delete.add(clickTimes.get(i));
 					}
@@ -212,6 +225,45 @@ public class AliveService extends NotificationListenerService {
 			}
 
 			clickTimes.removeAll(delete);
+
+			if (MainActivity.isZhuanshen){
+				if (action.getName().contains("打开wifi")){
+					long lastTime = 0;
+					List<Long> deleteTmp = new ArrayList<Long>(clickTimes);
+					for (long tmp: clickTimes) {
+						Log.e(TAG, "zhuan shen alarm lastTime: " + TimeUtil.getFormatTime(lastTime)
+							+ ",tmp:" + TimeUtil.getFormatTime(tmp));
+						if (lastTime != 0){
+							if (tmp - lastTime > action.getActionTime().getInterval()*60000){
+								deleteTmp.remove(lastTime);
+								Log.e(TAG, "zhuan shen alarm remove tmp: " + TimeUtil.getFormatTime(tmp));
+							}
+						}
+						lastTime = tmp;
+					}
+					clickTimes.removeAll(deleteTmp);
+				} else if (action.getName().contains("关闭wifi")){
+					long lastTime = 0;
+					List<Long> deleteTmp = new ArrayList<Long>(clickTimes);
+					for (long tmp: clickTimes) {
+						Log.e(TAG, "zhuan shen alarm lastTime: " + TimeUtil.getFormatTime(lastTime)
+								+ ",tmp:" + TimeUtil.getFormatTime(tmp));
+						if (lastTime != 0){
+							if (tmp - lastTime > action.getActionTime().getInterval()*60000){
+								deleteTmp.remove(tmp);
+								Log.e(TAG, "zhuan shen alarm remove tmp: " + TimeUtil.getFormatTime(tmp));
+							} else if(tmp - lastTime < 0) {
+                                deleteTmp.remove(tmp);
+                            }
+						} else {
+							Log.e(TAG, "zhuan shen alarm first，" + action.getName() + ",time:" + TimeUtil.getFormatTime(tmp));
+							deleteTmp.remove(tmp);
+						}
+						lastTime = tmp;
+					}
+					clickTimes.removeAll(deleteTmp);
+				}
+			}
 
 		}
 

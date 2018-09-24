@@ -1,5 +1,6 @@
 package com.example.com.yan.hot.legend;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -30,6 +32,7 @@ public class MainActivity extends Activity {
 	private static final String Coordinate_FLAG = "Coordinate_FLAG";
 	private List<Action> actions;
 	private ListView actionsView;
+	public static boolean isZhuanshen;
 
 	public static void open(Context context, List<Coordinate> coordinatess){
 		Intent intent = new Intent(context, MainActivity.class);
@@ -38,6 +41,7 @@ public class MainActivity extends Activity {
 		context.startActivity(intent);
 	}
 
+	@SuppressLint("CheckResult")
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -63,10 +67,12 @@ public class MainActivity extends Activity {
 		if (eidtCoordinatess != null){
 			showActionDialog(eidtCoordinatess);
 		}else{
-			AliveService.openAliveService(getApplicationContext());
+//			AliveService.openAliveService(getApplicationContext());
 		}
 		Log.e(TAG, "week: " + TimeUtil.dateToWeek(System.currentTimeMillis()));
 		Log.e(TAG, "day: " + TimeUtil.getCurrentDay());
+
+		WifiUtils.getInstance().init(this);
 	}
 
 	private void delete(List<Coordinate> coordinates, int startIndex) {
@@ -105,6 +111,7 @@ public class MainActivity extends Activity {
 			finish();
 			break;
 		case R.id.action_start:
+			isZhuanshen = ((CheckBox)findViewById(R.id.zhuangshen)).isChecked();
 			AliveService.openAliveService(getApplicationContext());
 			break;
 		case R.id.action_stop:

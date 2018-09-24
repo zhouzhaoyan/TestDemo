@@ -48,7 +48,24 @@ public class ChangeCoordinate {
 //        }
 //        addCoordinateEnd("血战比奇MAX",538, 1492,1000);
 
-        show("血战比奇MAX");
+
+//        setCoordinate("打开wifi",860, 989,567, 1238);
+//        delete("打开wifi",1);
+//        for (int i = 0; i < 30; i++) {
+//            addCoordinateEnd("打开wifi",567, 1238,2000);
+//        }
+
+//        addNew("打开wifi","关闭wifi");
+//        delete("关闭wifi",2);
+//        setCoordinate("关闭wifi",567, 1238,1000, 1800);
+
+//        delete("打开wifi",1);
+//        for (int i = 0; i < 9; i++) {
+//            addCoordinateEnd("打开wifi",567, 1238,10000);
+//        }
+
+//        addDouble("王者争霸","王者争霸double");
+        show("王者争霸double");
 
 //        ActionFile.write(actions);
     }
@@ -75,6 +92,33 @@ public class ChangeCoordinate {
             for (int i = startIndex; i < coordinates.size(); i++) {
                 coordinate = coordinates.get(i);
                 coordinate.setTime(coordinate.getTime() + addTime);
+            }
+        }
+    }
+
+    private static void addDouble(String oldName, String newName) {
+        addNew(oldName,newName);
+        Action tmp = getAction(newName);
+        if (tmp != null) {
+            List<Coordinate> coordinates = tmp.getCoordinates();
+            List<Coordinate> tmpCoordinate = copy(tmp,"").getCoordinates();
+            Coordinate lastCoordinate = null;
+            Coordinate coordinateEnd = coordinates.get(coordinates.size() - 1);
+            int offset = 2000;
+            long firstTime = 0;
+            for (Coordinate coordinate: tmpCoordinate) {
+                if (lastCoordinate == null){
+                    firstTime = coordinate.getTime();
+                    coordinate.setTime(coordinateEnd.getTime() + offset);
+                } else {
+                    long addTime = coordinate.getTime() - lastCoordinate.getTime();
+                    if (addTime < 0 ){
+                        addTime = coordinate.getTime() - firstTime ;
+                    }
+                    coordinate.setTime(coordinateEnd.getTime() + addTime + offset);
+                }
+                lastCoordinate = coordinate;
+                coordinates.add(coordinate);
             }
         }
     }

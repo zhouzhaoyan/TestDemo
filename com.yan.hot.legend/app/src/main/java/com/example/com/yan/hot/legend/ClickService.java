@@ -47,6 +47,11 @@ public class ClickService extends GrayService {
 				action = actions.poll();
 				actionName = action.getName();
 				handler.sendEmptyMessage(WAIT_LOADING_RESOURCE);
+				if (actionName.equals("打开wifi")){
+					WifiUtils.getInstance().set(true);
+				} else if (actionName.equals("关闭wifi")){
+					WifiUtils.getInstance().set(false);
+				}
 				LogManager.newInstance().writeMessage("running click sleep");
 				try {
 					Thread.sleep(1000);
