@@ -241,6 +241,7 @@ public class AliveService extends NotificationListenerService {
 						}
 						lastTime = tmp;
 					}
+					deleteTmp.remove(lastTime);
 					clickTimes.removeAll(deleteTmp);
 				} else if (action.getName().contains("关闭wifi")){
 					long lastTime = 0;
