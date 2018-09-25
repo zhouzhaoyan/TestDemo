@@ -204,7 +204,7 @@ public class ClickTool {
 
     private enum ClientType {
         火树, 游戏07073网页, 乐趣网页, 核弹头网页, 游戏1758网页, 牛刀, 牛刀网页, 玩蛋, 客娱,
-        热血单机, 游戏07073, 游戏1758, 乐趣, 核弹头, 热血单机h5, 热血单机双开, 凹凸果, 乐趣双开,乐趣网页双开
+        热血单机, 游戏07073, 游戏1758, 乐趣, 核弹头, 热血单机h5, 热血单机双开, 凹凸果, 乐趣双开, 乐趣网页双开
     }
 
     public static List<Long> getClickTime(long time, Action action) {
@@ -301,15 +301,21 @@ public class ClickTool {
                 runNames.add("熔炼", 2);
                 runNames.add("竞技");
                 runNames.add("通天塔");
-                addCaiLiaoFuBen(runNames, clientType);
+                if (isFast(clientType)) {
+                    runNames.add("材料副本快速");
+                } else {
+                    runNames.add("材料副本");
+                }
                 runNames.add("经验副本");
                 runNames.add("转生");
                 runNames.add("熔炼");
                 runNames.add("个人boss");
                 runNames.add("自动关卡");
-                runNames.add("野外boss快速",2);
+                runNames.add("野外boss快速", 2);
                 runNames.add("熔炼");
-                runNames.add("竞技");
+                if (!isFast(clientType)){
+                    runNames.add("竞技");
+                }
                 runNames.add("血战矿洞");
                 runNames.add("秘境boss快速sample");
             }
@@ -377,8 +383,8 @@ public class ClickTool {
         return clickTimes;
     }
 
-    //材料副本
-    private static void addCaiLiaoFuBen(RunNameList<String> runNames, ClientType clientType) {
+    private static boolean isFast(ClientType clientType) {
+        boolean result = false;
         switch (clientType) {
             case 火树:
             case 游戏07073网页:
@@ -392,24 +398,9 @@ public class ClickTool {
             case 热血单机:
             case 游戏07073:
             case 游戏1758:
-                runNames.add("材料副本快速");
-                break;
-            default:
-                runNames.add("材料副本");
+                result = true;
                 break;
         }
-    }
-
-    private static void addAutoCheckPoint(RunNameList<String> runNames, ClientType clientType) {
-        switch (clientType) {
-            case 火树:
-            case 游戏07073网页:
-            case 乐趣网页:
-            case 游戏1758网页:
-                break;
-            default:
-                runNames.add("自动关卡");
-                break;
-        }
+        return result;
     }
 }
