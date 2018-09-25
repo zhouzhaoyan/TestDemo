@@ -388,7 +388,10 @@ public class ClickTool {
             case 牛刀:
             case 牛刀网页:
             case 玩蛋:
+            case 客娱:
+            case 热血单机:
             case 游戏07073:
+            case 游戏1758:
                 runNames.add("材料副本快速");
                 break;
             default:
