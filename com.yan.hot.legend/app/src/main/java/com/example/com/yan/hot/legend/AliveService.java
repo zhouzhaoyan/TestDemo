@@ -138,7 +138,8 @@ public class AliveService extends NotificationListenerService {
 
 		List<Long> clickTimes = ClickTool.getClickTime(System.currentTimeMillis(), actionTime);
 		if (action.getName().contains("野外boss") || action.getName().contains("神域boss")
-				|| action.getName().contains("打开wifi") || action.getName().contains("关闭wifi")){
+				|| action.getName().contains("打开wifi") || action.getName().contains("关闭wifi")
+				|| action.getName().contains("野外神域boss")){
 			//以单双来刷boss
 			List<Long> deleteClickTime = new ArrayList<Long>();
 			for (long tmp: clickTimes) {
@@ -146,8 +147,7 @@ public class AliveService extends NotificationListenerService {
 				if (MainActivity.isZhuanshen){
 				    if (action.getName().contains("打开wifi") || action.getName().contains("关闭wifi")){
 
-                    } else if (action.getName().contains("野外boss")
-                            || action.getName().contains("神域boss")){
+                    } else {
                         deleteClickTime.add(tmp);
                     }
                 } else {

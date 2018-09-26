@@ -66,7 +66,24 @@ public class ChangeCoordinate {
 
 //        addDouble("王者争霸","王者争霸double");
 //        addNew("熔炼","熔炼-自定义");
-        show("王者争霸double");
+
+//        addNew("神域boss","野外神域boss");
+//        delete("野外神域boss",1);
+//
+//        for (int j = 0; j < 18; j++) {
+//
+//            addCoordinateEnd("野外神域boss",1053, 1299,1000);
+//            for (int i = 0; i < 4; i++) {
+//                addCoordinateEnd("野外神域boss",336,1672,1000);
+//                addCoordinateEnd("野外神域boss",904, 606,1000);
+//                addCoordinateEnd("野外神域boss",743, 1671,1000);
+//                addCoordinateEnd("野外神域boss",904, 606,1000);
+//            }
+//
+//            addCoordinateEnd("野外神域boss",1029, 1837,1000);
+//        }
+
+        show("激情泡点-2倍");
 
 //        ActionFile.write(actions);
     }
