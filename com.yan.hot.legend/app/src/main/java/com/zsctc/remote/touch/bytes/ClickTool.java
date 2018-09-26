@@ -138,6 +138,8 @@ public class ClickTool {
                 tmp.add(ClientType.乐趣双开);
             } else if (name.equals("乐趣网页双开")) {
                 tmp.add(ClientType.乐趣网页双开);
+            } else if (name.equals("火树网页双开")) {
+                tmp.add(ClientType.火树网页双开);
             }
         }
         Log.e(TAG, "initClient: tmp" + tmp);
@@ -198,13 +200,17 @@ public class ClickTool {
         if (tmp.contains(ClientType.乐趣网页双开) && MainActivity.isGame19) {
             clientTypes.add(ClientType.乐趣网页双开);
         }
+        if (tmp.contains(ClientType.火树网页双开) && MainActivity.isGame20) {
+            clientTypes.add(ClientType.火树网页双开);
+        }
     }
 
     private static List<ClientType> clientTypes;
 
     private enum ClientType {
         火树, 游戏07073网页, 乐趣网页, 核弹头网页, 游戏1758网页, 牛刀, 牛刀网页, 玩蛋, 客娱,
-        热血单机, 游戏07073, 游戏1758, 乐趣, 核弹头, 热血单机h5, 热血单机双开, 凹凸果, 乐趣双开, 乐趣网页双开
+        热血单机, 游戏07073, 游戏1758, 乐趣, 核弹头, 热血单机h5, 热血单机双开, 凹凸果,
+        乐趣双开,乐趣网页双开,火树网页双开,
     }
 
     public static List<Long> getClickTime(long time, Action action) {
@@ -275,6 +281,9 @@ public class ClickTool {
                 case 乐趣网页双开:
                     runNames.add("乐趣网页双开");
                     break;
+                case 火树网页双开:
+                    runNames.add("火树网页双开");
+                    break;
             }
 
             if (MainActivity.daily) {
@@ -294,7 +303,7 @@ public class ClickTool {
                 runNames.add("秘境boss快速sample");
             } else if (MainActivity.surplus) {
                 //多余模式,15分钟
-                runNames.add("神兵幻境", 2);
+                runNames.add("神兵幻境");
                 //                runNames.add("守护神剑");
             } else {
                 //任务模式，30分
@@ -337,6 +346,7 @@ public class ClickTool {
                 case 凹凸果:
                 case 乐趣双开:
                 case 乐趣网页双开:
+                case 火树网页双开:
                     runNames.add("游戏-结束");
                     break;
                 case 热血单机h5:

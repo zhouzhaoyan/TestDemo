@@ -442,7 +442,10 @@ public class ChangeCoordinate {
 //        setTime("乐趣网页双开",1,5000);
 //        setTime("乐趣网页双开",2,50000);
 //        setTime("乐趣网页双开",3,60000);
-        show("乐趣网页双开");
+
+//        addNew("乐趣网页双开", "火树网页双开");
+//        setCoordinate("火树网页双开",547, 805,799,792);
+        show("火树网页双开");
 
 //        ActionFile.write(actions);
     }
