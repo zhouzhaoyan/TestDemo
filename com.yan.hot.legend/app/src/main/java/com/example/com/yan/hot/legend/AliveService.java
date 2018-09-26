@@ -151,8 +151,8 @@ public class AliveService extends NotificationListenerService {
                         deleteClickTime.add(tmp);
                     }
                 } else {
-                    if ((action.getName().contains("野外boss") && (hour%4 == 0 || hour%4 == 1))
-                            || (action.getName().contains("神域boss") && (hour%4 == 2 || hour%4 == 3))){
+                    if ((action.getName().contains("野外boss") && hour%3 == 0)
+							|| (action.getName().contains("神域boss") && (hour%3 == 1 || hour%3 == 2))){
                         Log.e(TAG, "alarm hour：" + hour + "," + action.getName() + "," + TimeUtil.getFormatTime(tmp));
                         deleteClickTime.add(tmp);
                     } else if (action.getName().contains("打开wifi") || action.getName().contains("关闭wifi")){
