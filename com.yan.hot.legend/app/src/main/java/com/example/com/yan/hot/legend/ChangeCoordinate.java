@@ -445,7 +445,10 @@ public class ChangeCoordinate {
 
 //        addNew("乐趣网页双开", "火树网页双开");
 //        setCoordinate("火树网页双开",547, 805,799,792);
-        show("火树网页双开");
+
+
+//        deletePostion("材料副本",6);
+        show("材料副本");
 
 //        ActionFile.write(actions);
     }
@@ -678,7 +681,7 @@ public class ChangeCoordinate {
             List<Coordinate> coordinates = tmp.getCoordinates();
             if (position != 0) {
                 addTime(name, position,
-                        coordinates.get(position).getTime() - coordinates.get(position - 1).getTime());
+                        -(coordinates.get(position).getTime() - coordinates.get(position - 1).getTime()));
             }
             coordinates.remove(position);
         }
