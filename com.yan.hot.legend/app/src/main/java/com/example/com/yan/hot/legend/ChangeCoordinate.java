@@ -65,6 +65,7 @@ public class ChangeCoordinate {
 //        }
 
 //        addDouble("王者争霸","王者争霸double");
+//        addNew("熔炼","熔炼-自定义");
         show("王者争霸double");
 
 //        ActionFile.write(actions);

@@ -344,6 +344,18 @@ public class TimeUtil {
         return result;
     }
 
+    public static int getMin(long time){
+        SimpleDateFormat formatter = new SimpleDateFormat("mm");
+        String dateString = formatter.format(time);
+        int result = 0;
+        try{
+            result = Integer.parseInt(dateString) + getHour(time)*60;
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return result;
+    }
+
     public static String getFormatTimeAll(long time){
         Date currentTime = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("YY-MM-dd");

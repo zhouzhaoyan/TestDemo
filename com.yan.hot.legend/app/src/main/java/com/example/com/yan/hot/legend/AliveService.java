@@ -142,7 +142,7 @@ public class AliveService extends NotificationListenerService {
 			//以单双来刷boss
 			List<Long> deleteClickTime = new ArrayList<Long>();
 			for (long tmp: clickTimes) {
-				int hour = TimeUtil.getHour(tmp);
+				int min = TimeUtil.getMin(tmp);
 				if (MainActivity.isZhuanshen){
 				    if (action.getName().contains("打开wifi") || action.getName().contains("关闭wifi")){
 
@@ -151,14 +151,15 @@ public class AliveService extends NotificationListenerService {
                         deleteClickTime.add(tmp);
                     }
                 } else {
-                    if ((action.getName().contains("野外boss") && hour%3 == 0)
-							|| (action.getName().contains("神域boss") && (hour%3 == 1 || hour%3 == 2))){
-                        Log.e(TAG, "alarm hour：" + hour + "," + action.getName() + "," + TimeUtil.getFormatTime(tmp));
+					int split = min%180-5;
+ 					if ((action.getName().contains("野外boss") && (split >=0 && split < 90))
+							|| (action.getName().contains("神域boss") && (split >=90 && split < 180))){
+						Log.e(TAG, "alarm hour：" + min + "," + action.getName() + "," + TimeUtil.getFormatTime(tmp));
                         deleteClickTime.add(tmp);
                     } else if (action.getName().contains("打开wifi") || action.getName().contains("关闭wifi")){
 						deleteClickTime.add(tmp);
 					} else{
-                        Log.e(TAG, "alarm hour else：" + hour + "," + action.getName() + "," + TimeUtil.getFormatTime(tmp));
+                        Log.e(TAG, "alarm hour else：" + min + "," + action.getName() + "," + TimeUtil.getFormatTime(tmp));
                     }
                 }
 			}
@@ -287,12 +288,12 @@ public class AliveService extends NotificationListenerService {
 
 	private int getTimeOffset(Action action) {
 		int offset = 0;
-		if (action.getName().contains("世界boss")
-				||action.getName().contains("血战比奇") || action.getName().contains("激情泡点")
-				|| action.getName().contains("魔界入侵") || action.getName().contains("龙城争霸")){
+        String actionName = action.getName();
+        if (actionName.contains("世界boss")
+				|| actionName.contains("血战比奇") || actionName.contains("激情泡点")
+				|| actionName.contains("魔界入侵") || actionName.contains("龙城争霸")
+                || actionName.contains("跨服竞技场")){
 			//世界boss提前1s进去
-			offset = -1000;
-		} else if (action.getName().contains("跨服竞技场")){
 			offset = -2000;
 		}
 		return offset;
