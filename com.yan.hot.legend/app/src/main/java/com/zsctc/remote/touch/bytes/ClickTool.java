@@ -302,7 +302,7 @@ public class ClickTool {
                 runNames.add("竞技");
                 runNames.add("秘境boss快速sample");
             } else if (MainActivity.surplus) {
-                //多余模式,15分钟
+                //多余模式
                 runNames.add("神兵幻境");
                 //                runNames.add("守护神剑");
             } else {
