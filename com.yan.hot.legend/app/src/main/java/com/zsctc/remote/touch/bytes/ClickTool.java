@@ -310,7 +310,7 @@ public class ClickTool {
                 runNames.add("熔炼", 2);
                 runNames.add("竞技");
                 runNames.add("通天塔");
-                if (isFast(clientType)) {
+                if (isFastest(clientType)) {
                     runNames.add("材料副本快速");
                 } else {
                     runNames.add("材料副本");
@@ -322,7 +322,7 @@ public class ClickTool {
                 runNames.add("自动关卡");
                 runNames.add("野外boss快速", 2);
                 runNames.add("熔炼");
-                if (!isFast(clientType)){
+                if (!isFaster(clientType)){
                     runNames.add("竞技");
                 }
                 runNames.add("血战矿洞");
@@ -393,7 +393,32 @@ public class ClickTool {
         return clickTimes;
     }
 
-    private static boolean isFast(ClientType clientType) {
+    private static boolean isFaster(ClientType clientType) {
+        boolean result = false;
+        switch (clientType) {
+            case 火树:
+            case 游戏07073网页:
+            case 乐趣网页:
+            case 核弹头网页:
+            case 游戏1758网页:
+            case 牛刀:
+            case 牛刀网页:
+            case 玩蛋:
+            case 客娱:
+            case 热血单机:
+            case 游戏07073:
+            case 游戏1758:
+
+            case 乐趣:
+            case 核弹头:
+            case 热血单机h5:
+                result = true;
+                break;
+        }
+        return result;
+    }
+
+    private static boolean isFastest(ClientType clientType) {
         boolean result = false;
         switch (clientType) {
             case 火树:
