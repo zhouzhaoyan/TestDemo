@@ -448,7 +448,38 @@ public class ChangeCoordinate {
 
 
 //        deletePostion("材料副本",6);
-        show("材料副本");
+
+//        addNew("竞技","竞技new");
+//        delete("竞技new",2);
+//        for (int i = 0; i < 70; i++) {
+//            addCoordinateEnd("竞技new",845, 843,1000);
+//            addCoordinateEnd("竞技new",971, 1233,1000);
+//        }
+//        addCoordinateEnd("竞技new",845, 843,1000);
+//        addCoordinateEnd("竞技new",410, 1216,15000);
+//        addCoordinateEnd("竞技new",1013, 2021,1000);
+//        addCoordinateEnd("竞技new",1013, 2021,1000);
+
+//        addNew("熔炼","熔炼new");
+//        setCoordinateIndex("熔炼new", 4,4,924,1734);
+//        delete("熔炼new", 6);
+//        for (int i = 0; i < 60; i++) {
+//            addCoordinateEnd("熔炼new", 550, 1674,300);
+//        }
+//        addCoordinateEnd("熔炼new",1013, 2021,1000);
+//        addCoordinateEnd("熔炼new",1013, 2021,1000);
+
+//        addNew("野外boss快速","野外boss快速end");
+//        delete("野外boss快速end",getSize("野外boss快速end") - 20);
+//        addCoordinateEnd("野外boss快速end",1004, 1490,20000);
+//        addCoordinateEnd("野外boss快速end",1013, 2021,1000);
+//        addCoordinateEnd("野外boss快速end",1013, 2021,1000);
+
+//        delete("个人boss",101);
+//        addCoordinateEnd("个人boss",1013, 2021,34000);
+//        addCoordinateEnd("个人boss",1013, 2021,1000);
+//        addCoordinateEnd("个人boss",1013, 2021,1000);
+        show("个人boss");
 
 //        ActionFile.write(actions);
     }

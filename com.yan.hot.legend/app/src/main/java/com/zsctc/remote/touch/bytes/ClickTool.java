@@ -288,27 +288,28 @@ public class ClickTool {
 
             if (MainActivity.daily) {
                 //日常模式，14分30秒
-                runNames.add("熔炼", 2);
+                runNames.add("熔炼new");
                 runNames.add("血战矿洞");
                 runNames.add("特戒副本");
                 runNames.add("王者争霸");
-                runNames.add("竞技");
+                runNames.add("竞技new");
                 runNames.add("秘境boss快速sample");
-                runNames.add("野外boss快速");
+                runNames.add("野外boss快速end");
             } else if (MainActivity.simple) {
-                //简单模式，7分钟
-                runNames.add("熔炼", 2);
+                //简单模式，6分钟30秒
+                runNames.add("熔炼new");
                 runNames.add("血战矿洞");
-                runNames.add("竞技");
+                runNames.add("竞技new");
                 runNames.add("秘境boss快速sample");
             } else if (MainActivity.surplus) {
                 //多余模式
                 runNames.add("神兵幻境");
                 //                runNames.add("守护神剑");
             } else {
-                //任务模式，30分
-                runNames.add("熔炼", 2);
-                runNames.add("竞技");
+                //任务模式，25分
+                runNames.add("熔炼new");
+                runNames.add("竞技new");
+                runNames.add("血战矿洞");
                 runNames.add("通天塔");
                 if (isFastest(clientType)) {
                     runNames.add("材料副本快速");
@@ -317,16 +318,11 @@ public class ClickTool {
                 }
                 runNames.add("经验副本");
                 runNames.add("转生");
-                runNames.add("熔炼");
                 runNames.add("个人boss");
                 runNames.add("自动关卡");
-                runNames.add("野外boss快速", 2);
-                runNames.add("熔炼");
-                if (!isFaster(clientType)){
-                    runNames.add("竞技");
-                }
-                runNames.add("血战矿洞");
                 runNames.add("秘境boss快速sample");
+                runNames.add("野外boss快速");
+                runNames.add("野外boss快速end");
             }
 
             switch (clientType) {
@@ -412,6 +408,8 @@ public class ClickTool {
             case 乐趣:
             case 核弹头:
             case 热血单机h5:
+            case 热血单机双开:
+            case 凹凸果:
                 result = true;
                 break;
         }
