@@ -207,7 +207,7 @@ public class ClickTool {
 
     private static List<ClientType> clientTypes;
 
-    private enum ClientType {
+    public enum ClientType {
         火树, 游戏07073网页, 乐趣网页, 核弹头网页, 游戏1758网页, 牛刀, 牛刀网页, 玩蛋, 客娱,
         热血单机, 游戏07073, 游戏1758, 乐趣, 核弹头, 热血单机h5, 热血单机双开, 凹凸果,
         乐趣双开,乐趣网页双开,火树网页双开,

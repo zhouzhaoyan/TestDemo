@@ -13,11 +13,12 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.example.com.yan.hot.legend.devote.DevoteActivity;
+import com.example.com.yan.hot.legend.devote.DevoteManager;
 import com.yan.hot.legend.action.Action;
 import com.yan.hot.legend.action.ActionFile;
 import com.yan.hot.legend.action.ActionTime;
 import com.yan.hot.legend.action.Coordinate;
-import com.zsctc.remote.touch.bytes.TimeUtil;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -91,10 +92,7 @@ public class MainActivity extends Activity {
 //			AliveService.openAliveService(getApplicationContext());
 		}
 
-		Log.e(TAG, "week: " + TimeUtil.dateToWeek(System.currentTimeMillis()));
-		Log.e(TAG, "day: " + TimeUtil.getCurrentDay());
-		Log.e(TAG, "hour: " + TimeUtil.getCurrentHour());
-		Log.e(TAG, "min: " + TimeUtil.getCurrentMin());
+		DevoteManager.init();
 	}
 
 	public void onClick(View view){
@@ -143,6 +141,9 @@ public class MainActivity extends Activity {
 		case R.id.action_stop:
 			AliveService.stopService(getApplicationContext());
 			ClickService.stopService(getApplicationContext());
+			break;
+		case R.id.action_devote:
+			startActivity(new Intent(this, DevoteActivity.class));
 			break;
 		default:
 			break;
