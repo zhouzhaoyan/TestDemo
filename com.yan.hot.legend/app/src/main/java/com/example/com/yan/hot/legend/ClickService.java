@@ -32,6 +32,7 @@ public class ClickService extends GrayService {
 	private String actionName = "";
 	private List<String> runTimeMap = new ArrayList<String>();
 	private ClickThread clickThread;
+	public static ClickTool.ClientType clientType = null;
 
 	class ClickThread extends Thread{
 		private boolean isStop = false;
@@ -46,6 +47,10 @@ public class ClickService extends GrayService {
 
 				action = actions.poll();
 				actionName = action.getName();
+				ClickTool.ClientType currentType = ClickTool.getClientType(actionName);
+				if (currentType != null) {
+					clientType = currentType;
+				}
 				handler.sendEmptyMessage(WAIT_LOADING_RESOURCE);
 				LogManager.newInstance().writeMessage("running click sleep");
 				try {
@@ -90,6 +95,8 @@ public class ClickService extends GrayService {
 				runTimeMap.remove(0);
 
 			}
+
+			clientType = null;
 
 //			new MoveThread().start();
 //			handler.sendEmptyMessage(WAIT_LOADING_RESOURCE);

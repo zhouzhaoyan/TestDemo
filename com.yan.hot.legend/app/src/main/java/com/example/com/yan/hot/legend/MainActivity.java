@@ -56,6 +56,7 @@ public class MainActivity extends Activity {
 	public static boolean isGame18= true;
 	public static boolean isGame19= true;
 	public static boolean isGame20= true;
+	public static boolean isGame21= true;
 
 	public static void open(Context context, List<Coordinate> coordinatess){
 		Intent intent = new Intent(context, MainActivity.class);
@@ -129,6 +130,7 @@ public class MainActivity extends Activity {
 			isGame18 = ((CheckBox)findViewById(R.id.game18)).isChecked();
 			isGame19 = ((CheckBox)findViewById(R.id.game19)).isChecked();
 			isGame20 = ((CheckBox)findViewById(R.id.game20)).isChecked();
+			isGame21 = ((CheckBox)findViewById(R.id.game21)).isChecked();
 			Log.e(TAG, "onClick: isGame1:" + isGame1
 					+ ",isGame2:" + isGame2
 					+ ",isGame3:" + isGame3

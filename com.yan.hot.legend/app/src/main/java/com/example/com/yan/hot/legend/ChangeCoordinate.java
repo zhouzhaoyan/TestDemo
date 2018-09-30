@@ -479,7 +479,17 @@ public class ChangeCoordinate {
 //        addCoordinateEnd("个人boss",1013, 2021,34000);
 //        addCoordinateEnd("个人boss",1013, 2021,1000);
 //        addCoordinateEnd("个人boss",1013, 2021,1000);
-        show("个人boss");
+
+//        String[] names = new String[]{
+//                "火树","乐趣网页","牛刀网页","玩蛋","客娱","07073游戏盒子-网页","1758微游戏-网页","核弹头网页new"
+//        };
+//        for (String name: names) {
+//            setTime(name,1,8000);
+//        }
+
+//        addNew("火树网页双开","玩蛋双开");
+//        setCoordinateIndex("玩蛋双开",1,1,292,1056);
+        show("玩蛋双开");
 
 //        ActionFile.write(actions);
     }

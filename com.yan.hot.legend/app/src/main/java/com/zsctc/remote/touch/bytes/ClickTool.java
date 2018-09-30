@@ -87,6 +87,54 @@ public class ClickTool {
         }
     }
 
+    public static ClientType getClientType(String name){
+        ClientType type = null;
+        if (name.equals("火树")) {
+            type = ClientType.火树;
+        } else if (name.equals("07073游戏盒子-网页")) {
+            type = ClientType.游戏07073网页;
+        } else if (name.equals("乐趣网页")) {
+            type = ClientType.乐趣网页;
+        } else if (name.equals("核弹头网页")) {
+            type = ClientType.核弹头网页;
+        } else if (name.equals("1758微游戏-网页")) {
+            type = ClientType.游戏1758网页;
+        } else if (name.equals("牛刀")) {
+            type = ClientType.牛刀;
+        } else if (name.equals("牛刀网页")) {
+            type = ClientType.牛刀网页;
+        } else if (name.equals("玩蛋")) {
+            type = ClientType.玩蛋;
+        } else if (name.equals("客娱")) {
+            type = ClientType.客娱;
+        } else if (name.equals("热血单机")) {
+            type = ClientType.热血单机;
+        } else if (name.equals("07073游戏盒子")) {
+            type = ClientType.游戏07073;
+        } else if (name.equals("1758微游戏")) {
+            type = ClientType.游戏1758;
+        } else if (name.equals("乐趣")) {
+            type = ClientType.乐趣;
+        } else if (name.equals("核弹头")) {
+            type = ClientType.核弹头;
+        } else if (name.equals("热血单机h5")) {
+            type = ClientType.热血单机h5;
+        } else if (name.equals("热血单机双开")) {
+            type = ClientType.热血单机双开;
+        } else if (name.equals("凹凸果")) {
+            type = ClientType.凹凸果;
+        } else if (name.equals("乐趣双开")) {
+            type = ClientType.乐趣双开;
+        } else if (name.equals("乐趣网页双开")) {
+            type = ClientType.乐趣网页双开;
+        } else if (name.equals("火树网页双开")) {
+            type = ClientType.火树网页双开;
+        } else if (name.equals("玩蛋双开")) {
+            type = ClientType.玩蛋双开;
+        }
+        return type;
+    }
+
     private static long allRunTime = 0;
 
     public static void initClient(List<Action> actions) {
@@ -100,46 +148,9 @@ public class ClickTool {
             if (action.getActionTime().getCount() == 0) {
                 continue;
             }
-            if (name.equals("火树")) {
-                tmp.add(ClientType.火树);
-            } else if (name.equals("07073游戏盒子-网页")) {
-                tmp.add(ClientType.游戏07073网页);
-            } else if (name.equals("乐趣网页")) {
-                tmp.add(ClientType.乐趣网页);
-            } else if (name.equals("核弹头网页")) {
-                tmp.add(ClientType.核弹头网页);
-            } else if (name.equals("1758微游戏-网页")) {
-                tmp.add(ClientType.游戏1758网页);
-            } else if (name.equals("牛刀")) {
-                tmp.add(ClientType.牛刀);
-            } else if (name.equals("牛刀网页")) {
-                tmp.add(ClientType.牛刀网页);
-            } else if (name.equals("玩蛋")) {
-                tmp.add(ClientType.玩蛋);
-            } else if (name.equals("客娱")) {
-                tmp.add(ClientType.客娱);
-            } else if (name.equals("热血单机")) {
-                tmp.add(ClientType.热血单机);
-            } else if (name.equals("07073游戏盒子")) {
-                tmp.add(ClientType.游戏07073);
-            } else if (name.equals("1758微游戏")) {
-                tmp.add(ClientType.游戏1758);
-            } else if (name.equals("乐趣")) {
-                tmp.add(ClientType.乐趣);
-            } else if (name.equals("核弹头")) {
-                tmp.add(ClientType.核弹头);
-            } else if (name.equals("热血单机h5")) {
-                tmp.add(ClientType.热血单机h5);
-            } else if (name.equals("热血单机双开")) {
-                tmp.add(ClientType.热血单机双开);
-            } else if (name.equals("凹凸果")) {
-                tmp.add(ClientType.凹凸果);
-            } else if (name.equals("乐趣双开")) {
-                tmp.add(ClientType.乐趣双开);
-            } else if (name.equals("乐趣网页双开")) {
-                tmp.add(ClientType.乐趣网页双开);
-            } else if (name.equals("火树网页双开")) {
-                tmp.add(ClientType.火树网页双开);
+            ClientType clientType = getClientType(name);
+            if (clientType != null){
+                tmp.add(clientType);
             }
         }
         Log.e(TAG, "initClient: tmp" + tmp);
@@ -149,14 +160,8 @@ public class ClickTool {
         if (tmp.contains(ClientType.乐趣网页) && MainActivity.isGame2) {
             clientTypes.add(ClientType.乐趣网页);
         }
-        if (tmp.contains(ClientType.游戏07073网页) && MainActivity.isGame3) {
-            clientTypes.add(ClientType.游戏07073网页);
-        }
         if (tmp.contains(ClientType.核弹头网页) && MainActivity.isGame4) {
             clientTypes.add(ClientType.核弹头网页);
-        }
-        if (tmp.contains(ClientType.游戏1758网页) && MainActivity.isGame5) {
-            clientTypes.add(ClientType.游戏1758网页);
         }
         if (tmp.contains(ClientType.牛刀) && MainActivity.isGame6) {
             clientTypes.add(ClientType.牛刀);
@@ -172,12 +177,6 @@ public class ClickTool {
         }
         if (tmp.contains(ClientType.热血单机) && MainActivity.isGame10) {
             clientTypes.add(ClientType.热血单机);
-        }
-        if (tmp.contains(ClientType.游戏07073) && MainActivity.isGame11) {
-            clientTypes.add(ClientType.游戏07073);
-        }
-        if (tmp.contains(ClientType.游戏1758) && MainActivity.isGame12) {
-            clientTypes.add(ClientType.游戏1758);
         }
         if (tmp.contains(ClientType.乐趣) && MainActivity.isGame13) {
             clientTypes.add(ClientType.乐趣);
@@ -203,6 +202,23 @@ public class ClickTool {
         if (tmp.contains(ClientType.火树网页双开) && MainActivity.isGame20) {
             clientTypes.add(ClientType.火树网页双开);
         }
+        if (tmp.contains(ClientType.玩蛋双开) && MainActivity.isGame21) {
+            clientTypes.add(ClientType.玩蛋双开);
+        }
+
+        //不稳定因素
+        if (tmp.contains(ClientType.游戏07073网页) && MainActivity.isGame3) {
+            clientTypes.add(ClientType.游戏07073网页);
+        }
+        if (tmp.contains(ClientType.游戏1758网页) && MainActivity.isGame5) {
+            clientTypes.add(ClientType.游戏1758网页);
+        }
+        if (tmp.contains(ClientType.游戏07073) && MainActivity.isGame11) {
+            clientTypes.add(ClientType.游戏07073);
+        }
+        if (tmp.contains(ClientType.游戏1758) && MainActivity.isGame12) {
+            clientTypes.add(ClientType.游戏1758);
+        }
     }
 
     private static List<ClientType> clientTypes;
@@ -210,7 +226,7 @@ public class ClickTool {
     public enum ClientType {
         火树, 游戏07073网页, 乐趣网页, 核弹头网页, 游戏1758网页, 牛刀, 牛刀网页, 玩蛋, 客娱,
         热血单机, 游戏07073, 游戏1758, 乐趣, 核弹头, 热血单机h5, 热血单机双开, 凹凸果,
-        乐趣双开,乐趣网页双开,火树网页双开,
+        乐趣双开,乐趣网页双开,火树网页双开,玩蛋双开,
     }
 
     public static List<Long> getClickTime(long time, Action action) {
@@ -284,6 +300,9 @@ public class ClickTool {
                 case 火树网页双开:
                     runNames.add("火树网页双开");
                     break;
+                case 玩蛋双开:
+                    runNames.add("玩蛋双开");
+                    break;
             }
 
             if (MainActivity.daily) {
@@ -291,8 +310,8 @@ public class ClickTool {
                 runNames.add("熔炼new");
                 runNames.add("血战矿洞");
                 runNames.add("特戒副本");
-                runNames.add("王者争霸");
                 runNames.add("竞技new");
+                runNames.add("王者争霸");
                 runNames.add("秘境boss快速sample");
                 runNames.add("野外boss快速end");
             } else if (MainActivity.simple) {
@@ -343,6 +362,7 @@ public class ClickTool {
                 case 乐趣双开:
                 case 乐趣网页双开:
                 case 火树网页双开:
+                case 玩蛋双开:
                     runNames.add("游戏-结束");
                     break;
                 case 热血单机h5:
@@ -389,33 +409,6 @@ public class ClickTool {
         return clickTimes;
     }
 
-    private static boolean isFaster(ClientType clientType) {
-        boolean result = false;
-        switch (clientType) {
-            case 火树:
-            case 游戏07073网页:
-            case 乐趣网页:
-            case 核弹头网页:
-            case 游戏1758网页:
-            case 牛刀:
-            case 牛刀网页:
-            case 玩蛋:
-            case 客娱:
-            case 热血单机:
-            case 游戏07073:
-            case 游戏1758:
-
-            case 乐趣:
-            case 核弹头:
-            case 热血单机h5:
-            case 热血单机双开:
-            case 凹凸果:
-                result = true;
-                break;
-        }
-        return result;
-    }
-
     private static boolean isFastest(ClientType clientType) {
         boolean result = false;
         switch (clientType) {
@@ -431,6 +424,7 @@ public class ClickTool {
             case 热血单机:
             case 游戏07073:
             case 游戏1758:
+            case 乐趣:
                 result = true;
                 break;
         }
