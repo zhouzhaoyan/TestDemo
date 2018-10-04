@@ -70,10 +70,10 @@ public class ChangeCoordinate {
 //        addNew("神域boss","野外神域boss");
 //        delete("野外神域boss",1);
 //
-//        for (int j = 0; j < 18; j++) {
+//        for (int j = 0; j < 6; j++) {
 //
 //            addCoordinateEnd("野外神域boss",1053, 1299,1000);
-//            for (int i = 0; i < 4; i++) {
+//            for (int i = 0; i < 2; i++) {
 //                addCoordinateEnd("野外神域boss",336,1672,1000);
 //                addCoordinateEnd("野外神域boss",904, 606,1000);
 //                addCoordinateEnd("野外神域boss",743, 1671,1000);
@@ -83,7 +83,7 @@ public class ChangeCoordinate {
 //            addCoordinateEnd("野外神域boss",1029, 1837,1000);
 //        }
 
-        show("激情泡点-2倍");
+        show("野外神域boss");
 
 //        ActionFile.write(actions);
     }
