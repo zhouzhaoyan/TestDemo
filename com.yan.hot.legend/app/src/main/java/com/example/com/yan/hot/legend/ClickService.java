@@ -190,7 +190,11 @@ public class ClickService extends GrayService {
 		if (content != null && !content.equals("")) {
 			if (view != null) {
 				if (view instanceof LinearLayout) {
-					((TextView)((LinearLayout)view).getChildAt(0)).setText(content);
+					if (ClickService.clientType != null){
+						((TextView)((LinearLayout)view).getChildAt(0)).setText(content + ", " + ClickService.clientType.name());
+					} else {
+						((TextView)((LinearLayout)view).getChildAt(0)).setText(content);
+					}
 				}
 			}else {
 				textView = new TextView(this);

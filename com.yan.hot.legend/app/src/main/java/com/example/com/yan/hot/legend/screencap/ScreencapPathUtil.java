@@ -58,15 +58,19 @@ public class ScreencapPathUtil {
             exists = parentFile.list();
         }
         Log.e(TAG, "getPath: exists:" + exists + ",length:" + exists.length);
-        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+        for (int i = 1; i < Integer.MAX_VALUE; i++) {
             path = parent + File.separator + i + "-" + clientType + end;
             if (exists != null && exists.length > 0){
+                boolean exist = false;
                 for (String tmp: exists) {
                     Log.e(TAG, "getPath: tmp:" + tmp );
-                    if (!tmp.startsWith(i + "-")){
-                        Log.e(TAG, "getPath: " + path );
-                        return path;
+                    if (tmp.startsWith(i + "-")){
+                        exist = true;
+                        break;
                     }
+                }
+                if (!exist){
+                    break;
                 }
             } else {
                 break;

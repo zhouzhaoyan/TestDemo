@@ -37,10 +37,10 @@ public class ClickTool {
         }
     }
 
-    public void screencap(String path){
+    public void screencap(String path) {
         try {
             LinuxShell.write("screencap -p " + path);
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -126,8 +126,14 @@ public class ClickTool {
         if (tmp.contains(ClientType.乐趣网页) && MainActivity.isGame2) {
             clientTypes.add(ClientType.乐趣网页);
         }
+        if (tmp.contains(ClientType.游戏07073网页) && MainActivity.isGame3) {
+            clientTypes.add(ClientType.游戏07073网页);
+        }
         if (tmp.contains(ClientType.核弹头网页) && MainActivity.isGame4) {
             clientTypes.add(ClientType.核弹头网页);
+        }
+        if (tmp.contains(ClientType.游戏1758网页) && MainActivity.isGame5) {
+            clientTypes.add(ClientType.游戏1758网页);
         }
         if (tmp.contains(ClientType.牛刀) && MainActivity.isGame6) {
             clientTypes.add(ClientType.牛刀);
@@ -144,11 +150,20 @@ public class ClickTool {
         if (tmp.contains(ClientType.热血单机) && MainActivity.isGame10) {
             clientTypes.add(ClientType.热血单机);
         }
+        if (tmp.contains(ClientType.游戏07073) && MainActivity.isGame11) {
+            clientTypes.add(ClientType.游戏07073);
+        }
+        if (tmp.contains(ClientType.游戏1758) && MainActivity.isGame12) {
+            clientTypes.add(ClientType.游戏1758);
+        }
         if (tmp.contains(ClientType.乐趣) && MainActivity.isGame13) {
             clientTypes.add(ClientType.乐趣);
         }
         if (tmp.contains(ClientType.核弹头) && MainActivity.isGame14) {
             clientTypes.add(ClientType.核弹头);
+        }
+        if (tmp.contains(ClientType.热血单机h5) && MainActivity.isGame15) {
+            clientTypes.add(ClientType.热血单机h5);
         }
         if (tmp.contains(ClientType.热血单机双开) && MainActivity.isGame16) {
             clientTypes.add(ClientType.热血单机双开);
@@ -167,25 +182,6 @@ public class ClickTool {
         }
         if (tmp.contains(ClientType.玩蛋双开) && MainActivity.isGame21) {
             clientTypes.add(ClientType.玩蛋双开);
-        }
-
-        //不稳定因素
-        if (tmp.contains(ClientType.游戏1758网页) && MainActivity.isGame5) {
-            clientTypes.add(ClientType.游戏1758网页);
-        }
-        if (tmp.contains(ClientType.游戏1758) && MainActivity.isGame12) {
-            clientTypes.add(ClientType.游戏1758);
-        }
-
-        if (tmp.contains(ClientType.游戏07073网页) && MainActivity.isGame3) {
-            clientTypes.add(ClientType.游戏07073网页);
-        }
-        if (tmp.contains(ClientType.游戏07073) && MainActivity.isGame11) {
-            clientTypes.add(ClientType.游戏07073);
-        }
-
-        if (tmp.contains(ClientType.热血单机h5) && MainActivity.isGame15) {
-            clientTypes.add(ClientType.热血单机h5);
         }
     }
 
@@ -278,7 +274,7 @@ public class ClickTool {
                 runNames.add("熔炼new");
                 runNames.add("血战矿洞");
                 runNames.add("竞技new");
-                if (MainActivity.simple){
+                if (!MainActivity.simple) {
                     runNames.add("特戒副本");
                     runNames.add("王者争霸");
                 }
