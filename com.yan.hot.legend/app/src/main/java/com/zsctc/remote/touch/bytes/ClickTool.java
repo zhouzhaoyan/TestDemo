@@ -425,6 +425,7 @@ public class ClickTool {
             case 游戏07073:
             case 游戏1758:
             case 乐趣:
+            case 核弹头:
                 result = true;
                 break;
         }
