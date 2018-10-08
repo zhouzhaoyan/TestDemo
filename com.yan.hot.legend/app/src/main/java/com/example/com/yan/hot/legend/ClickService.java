@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.com.yan.hot.legend.pic.SimilarPicture;
 import com.example.com.yan.hot.legend.screencap.ScreencapPathUtil;
 import com.yan.hot.legend.action.Action;
 import com.yan.hot.legend.action.Coordinate;
@@ -23,8 +24,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
@@ -36,6 +39,7 @@ public class ClickService extends GrayService {
 	private List<String> runTimeMap = new ArrayList<String>();
 	private ClickThread clickThread;
 	public static ClickTool.ClientType clientType = null;
+	private boolean isError = false;
 
 	class ClickThread extends Thread{
 		private boolean isStop = false;
@@ -54,9 +58,19 @@ public class ClickService extends GrayService {
 				if (currentType != null) {
 					clientType = currentType;
 				}
+				//错误时不执行
+				if (actionName.contains("结束")){
+					isError = false;
+				} else {
+					if (isError){
+						LogManager.newInstance().writeMessage("running click error," + action.getName());
+						continue;
+					}
+				}
+
 				handler.sendEmptyMessage(WAIT_LOADING_RESOURCE);
 				LogManager.newInstance().writeMessage("running click sleep");
-				if (actionName.contains("竞技")){
+				if (actionName.contains("熔炼")){
 					handler.sendEmptyMessage(SCREENCAP);
 				}
 				try {
@@ -157,9 +171,30 @@ public class ClickService extends GrayService {
 				break;
 			case SCREENCAP:
 				Observable.just(0).observeOn(Schedulers.newThread()).subscribe(new Consumer<Integer>() {
+					@SuppressLint("CheckResult")
 					@Override
 					public void accept(Integer integer) throws Exception {
-						clickTool.screencap(ScreencapPathUtil.getPath(ClickService.clientType.name()));
+						String path = ScreencapPathUtil.getPath(ClickService.clientType.name());
+						clickTool.screencap(path);
+						Observable.just(path).delay(2, TimeUnit.SECONDS)
+								.observeOn(Schedulers.newThread())
+								.subscribe(new Consumer<String>() {
+									@Override
+									public void accept(String str) throws Exception {
+										boolean result = SimilarPicture.isEquals(str);
+										if (!result){
+											isError = true;
+											Observable.just(1)
+													.observeOn(AndroidSchedulers.mainThread())
+													.subscribe(new Consumer<Integer>() {
+												@Override
+												public void accept(Integer integer) throws Exception {
+													MainActivity.mainActivity.setClientColor(ClickService.clientType, Color.RED);
+												}
+											});
+										}
+									}
+								});
 					}
 				});
 				break;

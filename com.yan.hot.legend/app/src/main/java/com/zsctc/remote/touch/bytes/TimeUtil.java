@@ -346,7 +346,7 @@ public class TimeUtil {
 
     public static String getFormatTimeAll(long time){
         Date currentTime = new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("YY-MM-dd");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String dateString = formatter.format(time);
         return dateString;
     }

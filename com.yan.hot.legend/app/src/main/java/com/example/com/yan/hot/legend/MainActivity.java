@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import com.yan.hot.legend.action.Action;
 import com.yan.hot.legend.action.ActionFile;
 import com.yan.hot.legend.action.ActionTime;
 import com.yan.hot.legend.action.Coordinate;
+import com.zsctc.remote.touch.bytes.ClickTool;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -33,6 +35,7 @@ public class MainActivity extends Activity {
 	private static final String Coordinate_FLAG = "Coordinate_FLAG";
 	private List<Action> actions;
 	private ListView actionsView;
+	public static MainActivity mainActivity;
 	public static boolean daily = false;
 	public static boolean simple = false;
 	public static boolean surplus = false;
@@ -74,6 +77,7 @@ public class MainActivity extends Activity {
 
 		actionsView = (ListView) findViewById(R.id.action_list);
 		actions = ActionFile.read();
+		mainActivity = this;
 
 		ChangeCoordinate.change(actions);
 
@@ -141,6 +145,10 @@ public class MainActivity extends Activity {
 					+ ",isGame5:" + isGame5
 					+ ",isGame6:" + isGame6);
 
+			for (ClickTool.ClientType type: ClickTool.ClientType.values()) {
+				setClientColor(type, Color.BLACK);
+			}
+
 			AliveService.openAliveService(getApplicationContext());
 			break;
 		case R.id.action_stop:
@@ -154,6 +162,74 @@ public class MainActivity extends Activity {
 			break;
 		}
 
+	}
+
+	public void setClientColor(ClickTool.ClientType clientType, int color){
+		switch (clientType) {
+			case 火树:
+				((CheckBox) findViewById(R.id.game1)).setTextColor(color);
+				break;
+			case 游戏07073网页:
+				((CheckBox) findViewById(R.id.game3)).setTextColor(color);
+				break;
+			case 乐趣网页:
+				((CheckBox) findViewById(R.id.game2)).setTextColor(color);
+				break;
+			case 核弹头网页:
+				((CheckBox) findViewById(R.id.game4)).setTextColor(color);
+				break;
+			case 游戏1758网页:
+				((CheckBox) findViewById(R.id.game5)).setTextColor(color);
+				break;
+			case 牛刀:
+				((CheckBox) findViewById(R.id.game6)).setTextColor(color);
+				break;
+			case 牛刀网页:
+				((CheckBox) findViewById(R.id.game7)).setTextColor(color);
+				break;
+			case 玩蛋:
+				((CheckBox) findViewById(R.id.game8)).setTextColor(color);
+				break;
+			case 客娱:
+				((CheckBox) findViewById(R.id.game9)).setTextColor(color);
+				break;
+			case 热血单机:
+				((CheckBox) findViewById(R.id.game10)).setTextColor(color);
+				break;
+			case 游戏07073:
+				((CheckBox) findViewById(R.id.game11)).setTextColor(color);
+				break;
+			case 游戏1758:
+				((CheckBox) findViewById(R.id.game12)).setTextColor(color);
+				break;
+			case 乐趣:
+				((CheckBox) findViewById(R.id.game13)).setTextColor(color);
+				break;
+			case 核弹头:
+				((CheckBox) findViewById(R.id.game14)).setTextColor(color);
+				break;
+			case 热血单机h5:
+				((CheckBox) findViewById(R.id.game15)).setTextColor(color);
+				break;
+			case 热血单机双开:
+				((CheckBox) findViewById(R.id.game16)).setTextColor(color);
+				break;
+			case 凹凸果:
+				((CheckBox) findViewById(R.id.game17)).setTextColor(color);
+				break;
+			case 乐趣双开:
+				((CheckBox) findViewById(R.id.game18)).setTextColor(color);
+				break;
+			case 乐趣网页双开:
+				((CheckBox) findViewById(R.id.game19)).setTextColor(color);
+				break;
+			case 火树网页双开:
+				((CheckBox) findViewById(R.id.game20)).setTextColor(color);
+				break;
+			case 玩蛋双开:
+				((CheckBox) findViewById(R.id.game21)).setTextColor(color);
+				break;
+		}
 	}
 
 	private void showActionDialog(final List<Coordinate> eidtCoordinatess){
@@ -186,6 +262,7 @@ public class MainActivity extends Activity {
 //				AliveService.openAliveService(getApplicationContext());
 
 				dialog.dismiss();
+
 			}
 		});
 	}

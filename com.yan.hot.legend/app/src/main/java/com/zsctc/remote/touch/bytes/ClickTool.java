@@ -288,6 +288,7 @@ public class ClickTool {
                 runNames.add("秘境boss快速sample");
             } else if (MainActivity.surplus) {
                 //多余模式
+                runNames.add("熔炼new");
                 runNames.add("神兵幻境");
                 //                runNames.add("守护神剑");
             } else {
