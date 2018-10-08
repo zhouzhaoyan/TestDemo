@@ -1,21 +1,20 @@
 package com.yan.hot.legend.action;
 
+import android.os.Environment;
+
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.StreamCorruptedException;
 import java.util.List;
 
-import android.os.Environment;
-
 public class ActionFile {
-	
-	private final static String path = Environment.getExternalStorageDirectory().getPath()
-			+ File.separator + "hot" + File.separator + "config.txt";
+
+	public static final String HOT_ROOT = Environment.getExternalStorageDirectory().getPath()
+			+ File.separator + "hot";
+	private final static String path = HOT_ROOT + File.separator + "config.txt";
 	
 	public static void write(List<Action> action){
 		FileOutputStream fos = null;

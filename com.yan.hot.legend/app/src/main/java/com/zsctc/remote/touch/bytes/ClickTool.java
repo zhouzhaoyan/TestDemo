@@ -18,48 +18,8 @@ public class ClickTool {
 
     public ClickTool() {
         shell = new LinuxShell();
-        //		try {
-        //			shell.root_cmd("chmod 777 " + devicePath + "\n");
         LinuxShell.write("chmod 777 " + devicePath);
-        //			Process process = Runtime.getRuntime().exec("/system/xbin/su");
-        //			OutputStream outputStream = process.getOutputStream();
-        //			outputStream.write(("getevent -t " + devicePath + "\n").getBytes());
-        //			outputStream.flush();
-        //			InputStream inputStream = process.getInputStream();
-        //			byte[] data = new byte[1024];
-        //			while (inputStream.read(data) > 0) {
-        //				Log.e("test", "data:" + new String(data));
-        //			};
-        //			if (process != null) {
-        //				process.destroy();
-        //			}
-        //		} catch (IOException e) {
-        //			e.printStackTrace();
-        //		}
-        //		shell.get_respond_state();
     }
-
-    //	public void click(int x, int y){
-    //		Log.e("tet", "click,x:" + x +",y:" + y);
-    //		try {
-    //			String donw = TouchVlaue.eventDown.replace("%3$s", devicePath);
-    //			donw = donw.replace("%1$s", x+"");
-    //			donw = donw.replace("%2$s", y+"");
-    //
-    //			String up = TouchVlaue.eventUp.replace("%3$s", devicePath);
-    //
-    ////			shell.root_cmd(donw + up);
-    ////			shell.get_respond_state();
-    //
-    //			Process process = Runtime.getRuntime().exec("/system/xbin/su");
-    //			OutputStream outputStream = process.getOutputStream();
-    //			outputStream.write((donw + up + "\n").getBytes());
-    //			outputStream.flush();
-    //
-    //		} catch (Exception e) {
-    //			e.printStackTrace();
-    //		}
-    //	}
 
     public void click(int x, int y) {
         Log.e("tet", "click,x:" + x + ",y:" + y);
@@ -70,11 +30,17 @@ public class ClickTool {
 
             String up = TouchVlaue.eventUp.replace("%3$s", devicePath);
 
-            //			outputStream.write((donw + up + "\n").getBytes());
-            //			outputStream.flush();
             LinuxShell.write(donw + up);
 
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void screencap(String path){
+        try {
+            LinuxShell.write("screencap -p " + path);
+        } catch (Exception e){
             e.printStackTrace();
         }
     }
@@ -87,7 +53,7 @@ public class ClickTool {
         }
     }
 
-    public static ClientType getClientType(String name){
+    public static ClientType getClientType(String name) {
         ClientType type = null;
         if (name.equals("火树")) {
             type = ClientType.火树;
@@ -149,7 +115,7 @@ public class ClickTool {
                 continue;
             }
             ClientType clientType = getClientType(name);
-            if (clientType != null){
+            if (clientType != null) {
                 tmp.add(clientType);
             }
         }
@@ -184,9 +150,6 @@ public class ClickTool {
         if (tmp.contains(ClientType.核弹头) && MainActivity.isGame14) {
             clientTypes.add(ClientType.核弹头);
         }
-        if (tmp.contains(ClientType.热血单机h5) && MainActivity.isGame15) {
-            clientTypes.add(ClientType.热血单机h5);
-        }
         if (tmp.contains(ClientType.热血单机双开) && MainActivity.isGame16) {
             clientTypes.add(ClientType.热血单机双开);
         }
@@ -207,17 +170,22 @@ public class ClickTool {
         }
 
         //不稳定因素
-        if (tmp.contains(ClientType.游戏07073网页) && MainActivity.isGame3) {
-            clientTypes.add(ClientType.游戏07073网页);
-        }
         if (tmp.contains(ClientType.游戏1758网页) && MainActivity.isGame5) {
             clientTypes.add(ClientType.游戏1758网页);
+        }
+        if (tmp.contains(ClientType.游戏1758) && MainActivity.isGame12) {
+            clientTypes.add(ClientType.游戏1758);
+        }
+
+        if (tmp.contains(ClientType.游戏07073网页) && MainActivity.isGame3) {
+            clientTypes.add(ClientType.游戏07073网页);
         }
         if (tmp.contains(ClientType.游戏07073) && MainActivity.isGame11) {
             clientTypes.add(ClientType.游戏07073);
         }
-        if (tmp.contains(ClientType.游戏1758) && MainActivity.isGame12) {
-            clientTypes.add(ClientType.游戏1758);
+
+        if (tmp.contains(ClientType.热血单机h5) && MainActivity.isGame15) {
+            clientTypes.add(ClientType.热血单机h5);
         }
     }
 
@@ -226,7 +194,7 @@ public class ClickTool {
     public enum ClientType {
         火树, 游戏07073网页, 乐趣网页, 核弹头网页, 游戏1758网页, 牛刀, 牛刀网页, 玩蛋, 客娱,
         热血单机, 游戏07073, 游戏1758, 乐趣, 核弹头, 热血单机h5, 热血单机双开, 凹凸果,
-        乐趣双开,乐趣网页双开,火树网页双开,玩蛋双开,
+        乐趣双开, 乐趣网页双开, 火树网页双开, 玩蛋双开,
     }
 
     public static List<Long> getClickTime(long time, Action action) {
@@ -309,9 +277,11 @@ public class ClickTool {
                 //日常模式，14分30秒
                 runNames.add("熔炼new");
                 runNames.add("血战矿洞");
-                runNames.add("特戒副本");
                 runNames.add("竞技new");
-                runNames.add("王者争霸");
+                if (MainActivity.simple){
+                    runNames.add("特戒副本");
+                    runNames.add("王者争霸");
+                }
                 runNames.add("秘境boss快速sample");
                 runNames.add("野外boss快速end");
             } else if (MainActivity.simple) {

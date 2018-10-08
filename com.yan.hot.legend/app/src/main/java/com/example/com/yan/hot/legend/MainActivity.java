@@ -15,6 +15,7 @@ import android.widget.ListView;
 
 import com.example.com.yan.hot.legend.devote.DevoteActivity;
 import com.example.com.yan.hot.legend.devote.DevoteManager;
+import com.example.com.yan.hot.legend.screencap.ScreencapPathUtil;
 import com.yan.hot.legend.action.Action;
 import com.yan.hot.legend.action.ActionFile;
 import com.yan.hot.legend.action.ActionTime;
@@ -94,6 +95,8 @@ public class MainActivity extends Activity {
 		}
 
 		DevoteManager.init();
+
+		ScreencapPathUtil.getPath("test");
 	}
 
 	public void onClick(View view){

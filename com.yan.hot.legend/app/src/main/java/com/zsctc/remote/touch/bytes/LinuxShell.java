@@ -22,7 +22,7 @@ public class LinuxShell {
 		}
 	}
 
-	public static void write(String cmd){
+	public static synchronized void write(String cmd){
 		try {
 			outputStream.write((cmd + " \n").getBytes());
 			outputStream.flush();

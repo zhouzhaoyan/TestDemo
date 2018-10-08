@@ -171,9 +171,6 @@ public class AliveService extends NotificationListenerService {
             return;
         }
         String ms = "运行中\n";
-        if (ClickService.clientType != null){
-            ms = "运行中," + ClickService.clientType.name() + "\n";
-        }
         long currentTime = System.currentTimeMillis();
         int showCount = 0;
         for (Action action : actions) {

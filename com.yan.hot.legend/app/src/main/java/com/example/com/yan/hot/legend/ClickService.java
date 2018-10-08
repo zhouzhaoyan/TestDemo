@@ -12,18 +12,21 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.com.yan.hot.legend.screencap.ScreencapPathUtil;
 import com.yan.hot.legend.action.Action;
 import com.yan.hot.legend.action.Coordinate;
 import com.zsctc.remote.touch.bytes.ClickTool;
-import com.zsctc.remote.touch.bytes.LinuxShell;
 import com.zsctc.remote.touch.bytes.LogManager;
 import com.zsctc.remote.touch.bytes.TimeUtil;
-import com.zsctc.remote.touch.bytes.TouchVlaue;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+
+import io.reactivex.Observable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 
 public class ClickService extends GrayService {
 		
@@ -53,6 +56,9 @@ public class ClickService extends GrayService {
 				}
 				handler.sendEmptyMessage(WAIT_LOADING_RESOURCE);
 				LogManager.newInstance().writeMessage("running click sleep");
+				if (actionName.contains("竞技")){
+					handler.sendEmptyMessage(SCREENCAP);
+				}
 				try {
 					Thread.sleep(1000);
 				} catch (InterruptedException e1) {
@@ -82,55 +88,17 @@ public class ClickService extends GrayService {
 						e.printStackTrace();
 					}
 					handler.sendMessage(handler.obtainMessage(AUTO_CLICK, coordinate.getX(), coordinate.getY()));
-
-					//				new RunClickThread(coordinate.getX(), coordinate.getY()).start();
-					//				try {
-					//					Thread.sleep(50);
-					//				} catch (InterruptedException e) {
-					//					e.printStackTrace();
-					//				}
 					new ClickTool().click(coordinate.getX(), coordinate.getY());
 				}
 				actions.remove(action);
 				runTimeMap.remove(0);
 
 			}
-
-			clientType = null;
-
-//			new MoveThread().start();
-//			handler.sendEmptyMessage(WAIT_LOADING_RESOURCE);
-//			try {
-//				Thread.sleep(10000);
-//			} catch (InterruptedException e1) {
-//				e1.printStackTrace();
-//			}
-
-//			openClickService(getApplicationContext(), null);
 			stopSelf();
 		}
 
 		public void stopRunnable(){
 			isStop = true;
-		}
-	}
-	
-	class RunClickThread extends Thread{
-		private int x,y;
-		public RunClickThread(int x, int y){
-			this.x = x;
-			this.y = y;
-		}
-		@Override
-		public void run() {
-			new ClickTool().click(x, y);
-		}
-	}
-
-	class MoveThread extends Thread{
-		@Override
-		public void run() {
-			LinuxShell.write(TouchVlaue.move );
 		}
 	}
 	
@@ -152,8 +120,11 @@ public class ClickService extends GrayService {
 	private final int AUTO_CLICK = 2;
 	//滑动屏幕
 	private final int MOVE_SCREEN = 3;
+	//截屏
+	private static final int SCREENCAP = 4;
 	@SuppressLint("HandlerLeak")
 	Handler handler = new Handler(){
+		@SuppressLint("SetTextI18n")
 		public void handleMessage(android.os.Message msg) {
 			String s = "";
 			if (!runTimeMap.isEmpty()){
@@ -166,18 +137,36 @@ public class ClickService extends GrayService {
 
 			switch (msg.what) {
 			case WAIT_LOADING_RESOURCE:
-				textView.setText("等待加载资源， " + actionName  + s);
+				if (ClickService.clientType != null){
+					textView.setText("等待加载资源， "  + ClickService.clientType.name() + "\n"
+							+ actionName  + s);
+				} else {
+					textView.setText("等待加载资源， " + actionName  + s);
+				}
 				break;
 			case AUTO_CLICK:
-				textView.setText("自动运行点击, " + actionName + s + ",x:" + msg.arg1 + ",y:" + msg.arg2);
+				if (ClickService.clientType != null){
+					textView.setText("自动运行点击, " + ClickService.clientType.name() + "\n"
+							+ actionName + s + ",x:" + msg.arg1 + ",y:" + msg.arg2);
+				} else {
+					textView.setText("自动运行点击, " + actionName + s + ",x:" + msg.arg1 + ",y:" + msg.arg2);
+				}
 				break;
 			case MOVE_SCREEN:
 				textView.setText("正在滑动屏幕");
 				break;
+			case SCREENCAP:
+				Observable.just(0).observeOn(Schedulers.newThread()).subscribe(new Consumer<Integer>() {
+					@Override
+					public void accept(Integer integer) throws Exception {
+						clickTool.screencap(ScreencapPathUtil.getPath(ClickService.clientType.name()));
+					}
+				});
+				break;
 			default:
 				break;
 			}
-		};
+		}
 	};
 	
 	@Override
