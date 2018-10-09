@@ -274,10 +274,8 @@ public class ClickTool {
                 runNames.add("熔炼new");
                 runNames.add("血战矿洞");
                 runNames.add("竞技new");
-                if (!MainActivity.simple) {
-                    runNames.add("特戒副本");
-                    runNames.add("王者争霸");
-                }
+                runNames.add("特戒副本");
+                runNames.add("王者争霸");
                 runNames.add("秘境boss快速sample");
                 runNames.add("野外boss快速end");
             } else if (MainActivity.simple) {

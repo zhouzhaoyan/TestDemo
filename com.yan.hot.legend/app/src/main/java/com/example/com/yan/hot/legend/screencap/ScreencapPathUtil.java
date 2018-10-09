@@ -17,9 +17,7 @@ public class ScreencapPathUtil {
 
     private static String getMode() {
         String mode = "task";
-        if (MainActivity.daily && MainActivity.simple){
-            mode = "simple";
-        } else if (MainActivity.daily) {
+        if (MainActivity.daily) {
             mode = "daily";
         } else if (MainActivity.simple) {
             mode = "simple";
@@ -36,7 +34,7 @@ public class ScreencapPathUtil {
         if (files != null && files.length > 0) {
             for (File tmp : files) {
                 if (tmp.isDirectory() && !tmp.getName().equals(time)) {
-                    FileUtils.deleteFile(tmp.getPath());
+                    FileUtils.delete(tmp.getPath());
                 }
             }
         }

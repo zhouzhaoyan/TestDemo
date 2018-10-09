@@ -489,7 +489,12 @@ public class ChangeCoordinate {
 
 //        addNew("火树网页双开","玩蛋双开");
 //        setCoordinateIndex("玩蛋双开",1,1,292,1056);
-        show("玩蛋双开");
+//        setTime("牛刀",3,5000);
+//        setTime("牛刀",4,5000);
+//        setCoordinate("牛刀",990, 198,983,151);
+//        addCoordinate("牛刀",3,983,151,5000);
+//        setCoordinateIndex("牛刀",3,3,772, 1202);
+        show("牛刀");
 
 //        ActionFile.write(actions);
     }

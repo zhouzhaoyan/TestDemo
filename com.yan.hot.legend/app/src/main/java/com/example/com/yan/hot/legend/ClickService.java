@@ -39,9 +39,11 @@ public class ClickService extends GrayService {
 	private List<String> runTimeMap = new ArrayList<String>();
 	private ClickThread clickThread;
 	public static ClickTool.ClientType clientType = null;
+	//无法登陆客户端
 	private boolean isError = false;
 
 	class ClickThread extends Thread{
+		//主动停止
 		private boolean isStop = false;
 		@Override
 		public void run() {
@@ -58,7 +60,7 @@ public class ClickService extends GrayService {
 				if (currentType != null) {
 					clientType = currentType;
 				}
-				//错误时不执行
+				//无法进入游戏则退出，不在运行该客户端
 				if (actionName.contains("结束")){
 					isError = false;
 				} else {
@@ -88,6 +90,11 @@ public class ClickService extends GrayService {
 					if (isStop){
 						LogManager.newInstance().writeMessage("running click stop");
 						break;
+					}
+					//无法进入游戏则退出，不在运行该客户端
+					if (isError){
+						LogManager.newInstance().writeMessage("running click error," + action.getName());
+						continue;
 					}
 
 					if (currentTime != 0) {
@@ -215,7 +222,6 @@ public class ClickService extends GrayService {
 	
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		Log.e("test", "onStartCommand:" + intent.getSerializableExtra(ACTION_FLAG));
 		run(intent);
 		return super.onStartCommand(intent, flags, startId);
 	}
