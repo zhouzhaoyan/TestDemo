@@ -91,10 +91,10 @@ public class ClickService extends GrayService {
 						LogManager.newInstance().writeMessage("running click stop");
 						break;
 					}
-					//无法进入游戏则退出，不在运行该客户端
+					//无法进入游戏则退出，不在运行该客户端的点击事件
 					if (isError){
 						LogManager.newInstance().writeMessage("running click error," + action.getName());
-						continue;
+						break;
 					}
 
 					if (currentTime != 0) {
