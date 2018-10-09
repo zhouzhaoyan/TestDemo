@@ -269,12 +269,19 @@ public class ClickTool {
                     break;
             }
 
-            if (MainActivity.daily) {
-                //日常模式，14分30秒
+            if (MainActivity.daily){
+                //日常模式，10分
                 runNames.add("熔炼new");
                 runNames.add("血战矿洞");
                 runNames.add("竞技new");
-                runNames.add("特戒副本");
+                runNames.add("秘境boss快速sample");
+                runNames.add("野外boss快速end");
+            } else if (MainActivity.dailyTask) {
+                //日常任务模式，13分30秒
+                runNames.add("熔炼new");
+                runNames.add("血战矿洞");
+                runNames.add("竞技new");
+//                runNames.add("特戒副本");
                 runNames.add("王者争霸");
                 runNames.add("秘境boss快速sample");
                 runNames.add("野外boss快速end");
@@ -303,9 +310,12 @@ public class ClickTool {
                 runNames.add("经验副本");
                 runNames.add("转生");
                 runNames.add("个人boss");
-                runNames.add("自动关卡");
+                if (isFastest(clientType)){
+                    runNames.add("自动关卡sample");
+                } else {
+                    runNames.add("自动关卡");
+                }
                 runNames.add("秘境boss快速sample");
-                runNames.add("野外boss快速");
                 runNames.add("野外boss快速end");
             }
 

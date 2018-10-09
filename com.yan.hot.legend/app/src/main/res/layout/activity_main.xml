@@ -50,11 +50,18 @@
         android:orientation="horizontal">
 
         <CheckBox
-            android:id="@+id/filter"
+            android:id="@+id/daily"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="日常模式"/>
+
+        <CheckBox
+            android:id="@+id/daily_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="日常任务"/>
 
         <CheckBox
             android:id="@+id/simple"
@@ -68,7 +75,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="多余模式"/>
+            android:text="多余模式"
+            android:visibility="gone"/>
 
         <CheckBox
             android:id="@+id/night"

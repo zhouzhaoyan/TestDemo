@@ -494,7 +494,13 @@ public class ChangeCoordinate {
 //        setCoordinate("牛刀",990, 198,983,151);
 //        addCoordinate("牛刀",3,983,151,5000);
 //        setCoordinateIndex("牛刀",3,3,772, 1202);
-        show("牛刀");
+
+//        addNew("自动关卡", "自动关卡sample");
+//        int size = getSize("自动关卡");
+//        delete("自动关卡sample",size-1-180);
+//        addCoordinateEnd("自动关卡sample",1013, 2021,30000);
+
+        show("自动关卡sample");
 
 //        ActionFile.write(actions);
     }

@@ -37,6 +37,7 @@ public class MainActivity extends Activity {
 	private ListView actionsView;
 	public static MainActivity mainActivity;
 	public static boolean daily = false;
+	public static boolean dailyTask = false;
 	public static boolean simple = false;
 	public static boolean surplus = false;
 	public static boolean night = false;
@@ -112,7 +113,8 @@ public class MainActivity extends Activity {
 			finish();
 			break;
 		case R.id.action_start:
-			daily = ((CheckBox)findViewById(R.id.filter)).isChecked();
+			daily = ((CheckBox)findViewById(R.id.daily)).isChecked();
+			dailyTask = ((CheckBox)findViewById(R.id.daily_task)).isChecked();
 			simple = ((CheckBox)findViewById(R.id.simple)).isChecked();
 			surplus = ((CheckBox)findViewById(R.id.surplus)).isChecked();
 			night = ((CheckBox)findViewById(R.id.night)).isChecked();

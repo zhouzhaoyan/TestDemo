@@ -19,6 +19,8 @@ public class ScreencapPathUtil {
         String mode = "task";
         if (MainActivity.daily) {
             mode = "daily";
+        } else if (MainActivity.dailyTask) {
+            mode = "dailyTask";
         } else if (MainActivity.simple) {
             mode = "simple";
         } else if (MainActivity.surplus) {
