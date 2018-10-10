@@ -326,11 +326,7 @@ public class ClickTool {
                 runNames.add("经验副本");
                 runNames.add("转生");
                 runNames.add("个人boss");
-                if (isFastest(clientType)){
-                    runNames.add("自动关卡sample");
-                } else {
-                    runNames.add("自动关卡");
-                }
+                runNames.add("自动关卡sample");
                 runNames.add("秘境boss快速sample");
                 runNames.add("野外boss快速end");
             }
@@ -420,6 +416,17 @@ public class ClickTool {
             case 乐趣:
             case 核弹头:
             case 热血单机h5:
+                result = true;
+                break;
+        }
+        return result;
+    }
+
+    private static boolean isSlowest(ClientType clientType){
+        boolean result = false;
+        switch (clientType) {
+            case 牛刀网页双开:
+            case 游戏1758网页双开:
                 result = true;
                 break;
         }

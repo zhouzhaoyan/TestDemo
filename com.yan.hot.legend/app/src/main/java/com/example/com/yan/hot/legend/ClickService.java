@@ -1,12 +1,10 @@
 package com.example.com.yan.hot.legend;
 
 import android.annotation.SuppressLint;
-import android.app.KeyguardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
-import android.os.PowerManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -28,7 +26,6 @@ import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
-import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
@@ -263,7 +260,6 @@ public class ClickService extends GrayService {
 			LogManager.newInstance().writeMessage("running click onStartCommand，name：" + action.getName() + ",waiting");
 			actions.add(action);
 			if (clickThread == null) {
-				wakeUpAndUnlock();
 				clickThread = new ClickThread();
 				clickThread.start();
 			}
@@ -279,32 +275,6 @@ public class ClickService extends GrayService {
 			clickThread.stopRunnable();
 		}
 	}
-	
-	/**
-     * 唤醒手机屏幕并解锁
-     */
-    public void wakeUpAndUnlock() {
-        // 获取电源管理器对象
-        PowerManager pm = (PowerManager) getApplication()
-                .getSystemService(Context.POWER_SERVICE);
-        boolean screenOn = pm.isScreenOn();
-        if (!screenOn) {
-            // 获取PowerManager.WakeLock对象,后面的参数|表示同时传入两个值,最后的是LogCat里用的Tag
-            PowerManager.WakeLock wl = pm.newWakeLock(
-                    PowerManager.ACQUIRE_CAUSES_WAKEUP |
-                            PowerManager.SCREEN_BRIGHT_WAKE_LOCK, "bright");
-            wl.acquire(10000); // 点亮屏幕
-//            wl.acquire(coordinates.get(coordinates.size() - 1).getTime() - coordinates.get(0).getTime() + 10000); // 点亮屏幕
-            wl.release(); // 释放
-        }
-        // 屏幕解锁
-        KeyguardManager keyguardManager = (KeyguardManager) getApplication()
-                .getSystemService(KEYGUARD_SERVICE);
-        KeyguardManager.KeyguardLock keyguardLock = keyguardManager.newKeyguardLock("unLock");
-        // 屏幕锁定
-        keyguardLock.reenableKeyguard();
-        keyguardLock.disableKeyguard(); // 解锁
-    }
 
 	public static void stopService(Context context){
 		Intent intent = new Intent(context, ClickService.class);
