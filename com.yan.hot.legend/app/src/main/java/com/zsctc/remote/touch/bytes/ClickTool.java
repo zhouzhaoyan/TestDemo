@@ -204,7 +204,7 @@ public class ClickTool {
     }
 
     public static List<Long> getClickTime(long time, Action action) {
-        List<Long> clickTimes = new ArrayList<Long>();
+        List<Long> clickTimes = new ArrayList<>();
         int runHour = TimeUtil.getCurrentHour();
         int currentMin = TimeUtil.getCurrentMin();
         long secondTime = TimeUtil.getLastSecondInDay(time) + 2000;
