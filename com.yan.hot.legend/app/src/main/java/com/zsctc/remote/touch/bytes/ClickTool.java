@@ -97,6 +97,10 @@ public class ClickTool {
             type = ClientType.火树网页双开;
         } else if (name.equals("玩蛋双开")) {
             type = ClientType.玩蛋双开;
+        } else if (name.equals("牛刀网页双开")) {
+            type = ClientType.牛刀网页双开;
+        } else if (name.equals("1758网页双开")) {
+            type = ClientType.游戏1758网页双开;
         }
         return type;
     }
@@ -183,6 +187,12 @@ public class ClickTool {
         if (tmp.contains(ClientType.玩蛋双开) && MainActivity.isGame21) {
             clientTypes.add(ClientType.玩蛋双开);
         }
+        if (tmp.contains(ClientType.牛刀网页双开) && MainActivity.isGame22) {
+            clientTypes.add(ClientType.牛刀网页双开);
+        }
+        if (tmp.contains(ClientType.游戏1758网页双开) && MainActivity.isGame23) {
+            clientTypes.add(ClientType.游戏1758网页双开);
+        }
     }
 
     private static List<ClientType> clientTypes;
@@ -190,7 +200,7 @@ public class ClickTool {
     public enum ClientType {
         火树, 游戏07073网页, 乐趣网页, 核弹头网页, 游戏1758网页, 牛刀, 牛刀网页, 玩蛋, 客娱,
         热血单机, 游戏07073, 游戏1758, 乐趣, 核弹头, 热血单机h5, 热血单机双开, 凹凸果,
-        乐趣双开, 乐趣网页双开, 火树网页双开, 玩蛋双开,
+        乐趣双开, 乐趣网页双开, 火树网页双开, 玩蛋双开,牛刀网页双开,游戏1758网页双开,
     }
 
     public static List<Long> getClickTime(long time, Action action) {
@@ -267,6 +277,12 @@ public class ClickTool {
                 case 玩蛋双开:
                     runNames.add("玩蛋双开");
                     break;
+                case 牛刀网页双开:
+                    runNames.add("牛刀网页双开");
+                    break;
+                case 游戏1758网页双开:
+                    runNames.add("1758网页双开");
+                    break;
             }
 
             if (MainActivity.daily){
@@ -277,7 +293,7 @@ public class ClickTool {
                 runNames.add("秘境boss快速sample");
                 runNames.add("野外boss快速end");
             } else if (MainActivity.dailyTask) {
-                //日常任务模式，13分30秒
+                //日常任务模式，13分
                 runNames.add("熔炼new");
                 runNames.add("血战矿洞");
                 runNames.add("竞技new");
@@ -338,6 +354,8 @@ public class ClickTool {
                 case 乐趣网页双开:
                 case 火树网页双开:
                 case 玩蛋双开:
+                case 牛刀网页双开:
+                case 游戏1758网页双开:
                     runNames.add("游戏-结束");
                     break;
                 case 热血单机h5:
@@ -401,6 +419,7 @@ public class ClickTool {
             case 游戏1758:
             case 乐趣:
             case 核弹头:
+            case 热血单机h5:
                 result = true;
                 break;
         }

@@ -27,8 +27,10 @@ import java.util.Queue;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 public class ClickService extends GrayService {
@@ -177,33 +179,36 @@ public class ClickService extends GrayService {
 				textView.setText("正在滑动屏幕");
 				break;
 			case SCREENCAP:
-				Observable.just(0).observeOn(Schedulers.newThread()).subscribe(new Consumer<Integer>() {
-					@SuppressLint("CheckResult")
-					@Override
-					public void accept(Integer integer) throws Exception {
-						String path = ScreencapPathUtil.getPath(ClickService.clientType.name());
-						clickTool.screencap(path);
-						Observable.just(path).delay(2, TimeUnit.SECONDS)
-								.observeOn(Schedulers.newThread())
-								.subscribe(new Consumer<String>() {
-									@Override
-									public void accept(String str) throws Exception {
-										boolean result = SimilarPicture.isEquals(str);
-										if (!result){
-											isError = true;
-											Observable.just(1)
-													.observeOn(AndroidSchedulers.mainThread())
-													.subscribe(new Consumer<Integer>() {
-												@Override
-												public void accept(Integer integer) throws Exception {
-													MainActivity.mainActivity.setClientColor(ClickService.clientType, Color.RED);
-												}
-											});
-										}
-									}
-								});
-					}
-				});
+				Observable.just(0).observeOn(Schedulers.newThread())
+						.flatMap(new Function<Integer, ObservableSource<String>>() {
+							@Override
+							public ObservableSource<String> apply(Integer integer) throws Exception {
+								//保存截图
+								String path = ScreencapPathUtil.getPath(ClickService.clientType.name());
+								clickTool.screencap(path);
+								return Observable.just(path);
+							}
+						}).delay(2, TimeUnit.SECONDS)
+						.map(new Function<String, Boolean>() {
+							@Override
+							public Boolean apply(String s) throws Exception {
+								//对比图片的相似度
+								boolean result = SimilarPicture.isEquals(s);
+								if (!result) {
+									isError = true;
+								}
+								return isError;
+							}
+						}).observeOn(Schedulers.newThread())
+						.subscribe(new Consumer<Boolean>() {
+							@Override
+							public void accept(Boolean aBoolean) throws Exception {
+								//不相似则更新界面
+								if (aBoolean){
+									MainActivity.mainActivity.setClientColor(ClickService.clientType, Color.RED);
+								}
+							}
+						});
 				break;
 			default:
 				break;

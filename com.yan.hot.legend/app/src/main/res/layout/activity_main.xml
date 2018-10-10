@@ -228,19 +228,18 @@
             android:checked="true"
             android:text="热血双开"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
         <CheckBox
             android:id="@+id/game17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="凹凸果"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/game18"
@@ -256,6 +255,13 @@
             android:checked="true"
             android:text="乐趣网页双开"/>
 
+        <CheckBox
+            android:id="@+id/game20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="火树网页双开"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -264,18 +270,25 @@
         android:orientation="horizontal">
 
         <CheckBox
-            android:id="@+id/game20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="火树网页双开"/>
-
-        <CheckBox
             android:id="@+id/game21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="玩蛋双开"/>
+
+        <CheckBox
+            android:id="@+id/game22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="牛刀网页双开"/>
+
+        <CheckBox
+            android:id="@+id/game23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="1758网页双开"/>
     </LinearLayout>
 
     <ListView

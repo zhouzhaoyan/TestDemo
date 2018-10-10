@@ -27,8 +27,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.content.ContentValues.TAG;
-
 public class MainActivity extends Activity {
 
 //	private List<Coordinate> eidtCoordinatess;
@@ -62,6 +60,8 @@ public class MainActivity extends Activity {
 	public static boolean isGame19= true;
 	public static boolean isGame20= true;
 	public static boolean isGame21= true;
+	public static boolean isGame22= true;
+	public static boolean isGame23= true;
 
 	public static void open(Context context, List<Coordinate> coordinatess){
 		Intent intent = new Intent(context, MainActivity.class);
@@ -140,12 +140,8 @@ public class MainActivity extends Activity {
 			isGame19 = ((CheckBox)findViewById(R.id.game19)).isChecked();
 			isGame20 = ((CheckBox)findViewById(R.id.game20)).isChecked();
 			isGame21 = ((CheckBox)findViewById(R.id.game21)).isChecked();
-			Log.e(TAG, "onClick: isGame1:" + isGame1
-					+ ",isGame2:" + isGame2
-					+ ",isGame3:" + isGame3
-					+ ",isGame4:" + isGame4
-					+ ",isGame5:" + isGame5
-					+ ",isGame6:" + isGame6);
+			isGame22 = ((CheckBox)findViewById(R.id.game22)).isChecked();
+			isGame23 = ((CheckBox)findViewById(R.id.game23)).isChecked();
 
 			for (ClickTool.ClientType type: ClickTool.ClientType.values()) {
 				setClientColor(type, Color.BLACK);
@@ -230,6 +226,12 @@ public class MainActivity extends Activity {
 				break;
 			case 玩蛋双开:
 				((CheckBox) findViewById(R.id.game21)).setTextColor(color);
+				break;
+			case 牛刀网页双开:
+				((CheckBox) findViewById(R.id.game22)).setTextColor(color);
+				break;
+			case 游戏1758网页双开:
+				((CheckBox) findViewById(R.id.game23)).setTextColor(color);
 				break;
 		}
 	}

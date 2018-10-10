@@ -500,7 +500,17 @@ public class ChangeCoordinate {
 //        delete("自动关卡sample",size-1-180);
 //        addCoordinateEnd("自动关卡sample",1013, 2021,30000);
 
-        show("自动关卡sample");
+//        addNew("牛刀网页", "牛刀网页双开");
+//        setCoordinateIndex("牛刀网页双开",0,0,666,855);
+//        setCoordinateIndex("牛刀网页双开",1,1,550,1033);
+//        deletePostions("牛刀网页双开",2,3);
+
+//        deletePostions("牛刀网页双开",3,4,5,6,7,8,9,10,11,12,13);
+
+//        addNew("乐趣网页双开", "1758网页双开");
+//        setCoordinate("1758网页双开",547, 805,789,1049);
+
+        show("1758网页双开");
 
 //        ActionFile.write(actions);
     }
