@@ -7,12 +7,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ListView;
 
 import com.example.com.yan.hot.legend.devote.DevoteActivity;
 import com.example.com.yan.hot.legend.devote.DevoteManager;
@@ -24,7 +22,6 @@ import com.yan.hot.legend.action.Coordinate;
 import com.zsctc.remote.touch.bytes.ClickTool;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends Activity {
@@ -32,7 +29,6 @@ public class MainActivity extends Activity {
 //	private List<Coordinate> eidtCoordinatess;
 	private static final String Coordinate_FLAG = "Coordinate_FLAG";
 	private List<Action> actions;
-	private ListView actionsView;
 	public static MainActivity mainActivity;
 	public static boolean daily = false;
 	public static boolean dailyTask = false;
@@ -76,24 +72,12 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
-		actionsView = (ListView) findViewById(R.id.action_list);
-		actions = ActionFile.read();
 		mainActivity = this;
 
+		actions = ActionFile.read();
 		ChangeCoordinate.change(actions);
 
-		if (actions == null){
-			actions = new ArrayList<Action>();
-		}
-		ActionAdapter actionAdapter = new ActionAdapter(this, actions);
-		actionsView.setAdapter(actionAdapter);
-
-		if (actions == null) {
-			actions = new ArrayList<Action>();
-		}
 		List<Coordinate> eidtCoordinatess = (List<Coordinate>) getIntent().getSerializableExtra(Coordinate_FLAG);
-		Log.e("test", "actions:" + actions);
 		if (eidtCoordinatess != null){
 			showActionDialog(eidtCoordinatess);
 		}else{
@@ -157,6 +141,9 @@ public class MainActivity extends Activity {
 			break;
 		case R.id.action_devote:
 			startActivity(new Intent(this, DevoteActivity.class));
+			break;
+		case R.id.action_all:
+			startActivity(new Intent(this, AllActionActivity.class));
 			break;
 		default:
 			break;

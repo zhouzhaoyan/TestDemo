@@ -514,7 +514,16 @@ public class ChangeCoordinate {
 //        setCoordinateIndex("核弹头双开",0,0,701,796);
 //        setCoordinateIndex("核弹头双开",1,1,275,1305);
 
-        show("核弹头双开");
+//        String[] names = new String[]{"07073游戏盒子-网页","07073游戏盒子","热血单机h5"};
+//        for (String tmp : names) {
+//            setCoordinateIndex(tmp, getSize(tmp) - 2, getSize(tmp) - 2,587, 1811);
+//            setCoordinateIndex(tmp, getSize(tmp) - 1, getSize(tmp) - 1,561, 1369);
+//        }
+
+//        addNew("热血单机h5","07073插件");
+//        delete("07073插件",1);
+//        addCoordinateEnd("07073插件",739, 2064,500);
+        show("07073插件");
 
 //        ActionFile.write(actions);
     }

@@ -62,6 +62,8 @@
         -->
         <activity android:name=".devote.DevoteActivity">
         </activity>
+        <activity android:name=".AllActionActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -26,7 +26,7 @@ public class LinuxShell {
 		try {
 			outputStream.write((cmd + " \n").getBytes());
 			outputStream.flush();
-		} catch (IOException e2) {
+		} catch (Exception e2) {
 			e2.printStackTrace();
 		}
 	}
