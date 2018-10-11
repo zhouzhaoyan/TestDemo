@@ -62,6 +62,7 @@ public class MainActivity extends Activity {
 	public static boolean isGame21= true;
 	public static boolean isGame22= true;
 	public static boolean isGame23= true;
+	public static boolean isGame24= true;
 
 	public static void open(Context context, List<Coordinate> coordinatess){
 		Intent intent = new Intent(context, MainActivity.class);
@@ -142,6 +143,7 @@ public class MainActivity extends Activity {
 			isGame21 = ((CheckBox)findViewById(R.id.game21)).isChecked();
 			isGame22 = ((CheckBox)findViewById(R.id.game22)).isChecked();
 			isGame23 = ((CheckBox)findViewById(R.id.game23)).isChecked();
+			isGame24 = ((CheckBox)findViewById(R.id.game24)).isChecked();
 
 			for (ClickTool.ClientType type: ClickTool.ClientType.values()) {
 				setClientColor(type, Color.BLACK);
@@ -232,6 +234,9 @@ public class MainActivity extends Activity {
 				break;
 			case 游戏1758网页双开:
 				((CheckBox) findViewById(R.id.game23)).setTextColor(color);
+				break;
+			case 核弹头双开:
+				((CheckBox) findViewById(R.id.game24)).setTextColor(color);
 				break;
 		}
 	}

@@ -510,7 +510,11 @@ public class ChangeCoordinate {
 //        addNew("乐趣网页双开", "1758网页双开");
 //        setCoordinate("1758网页双开",547, 805,789,1049);
 
-        show("1758网页双开");
+//        addNew("核弹头","核弹头双开");
+//        setCoordinateIndex("核弹头双开",0,0,701,796);
+//        setCoordinateIndex("核弹头双开",1,1,275,1305);
+
+        show("核弹头双开");
 
 //        ActionFile.write(actions);
     }

@@ -188,7 +188,7 @@ public class ClickService extends GrayService {
 						}).delay(2, TimeUnit.SECONDS)
 						.map(new Function<String, Boolean>() {
 							@Override
-							public Boolean apply(String s) throws Exception {
+								public Boolean apply(String s) throws Exception {
 								//对比图片的相似度
 								boolean result = SimilarPicture.isEquals(s);
 								if (!result) {
