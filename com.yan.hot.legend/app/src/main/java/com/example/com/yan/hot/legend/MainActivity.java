@@ -152,80 +152,90 @@ public class MainActivity extends Activity {
 	}
 
 	public void setClientColor(ClickTool.ClientType clientType, int color){
+		getCheckBox(clientType).setTextColor(color);
+	}
+
+	public void setClientCheck(ClickTool.ClientType clientType, boolean check){
+		getCheckBox(clientType).setChecked(check);
+	}
+
+	private CheckBox getCheckBox(ClickTool.ClientType clientType){
+		CheckBox checkBox = null;
 		switch (clientType) {
 			case 火树:
-				((CheckBox) findViewById(R.id.game1)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game1));
 				break;
 			case 游戏07073网页:
-				((CheckBox) findViewById(R.id.game3)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game3));
 				break;
 			case 乐趣网页:
-				((CheckBox) findViewById(R.id.game2)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game2));
 				break;
 			case 核弹头网页:
-				((CheckBox) findViewById(R.id.game4)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game4));
 				break;
 			case 游戏1758网页:
-				((CheckBox) findViewById(R.id.game5)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game5));
 				break;
 			case 牛刀:
-				((CheckBox) findViewById(R.id.game6)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game6));
 				break;
 			case 牛刀网页:
-				((CheckBox) findViewById(R.id.game7)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game7));
 				break;
 			case 玩蛋:
-				((CheckBox) findViewById(R.id.game8)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game8));
 				break;
 			case 客娱:
-				((CheckBox) findViewById(R.id.game9)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game9));
 				break;
 			case 热血单机:
-				((CheckBox) findViewById(R.id.game10)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game10));
 				break;
 			case 游戏07073:
-				((CheckBox) findViewById(R.id.game11)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game11));
 				break;
 			case 游戏1758:
-				((CheckBox) findViewById(R.id.game12)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game12));
 				break;
 			case 乐趣:
-				((CheckBox) findViewById(R.id.game13)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game13));
 				break;
 			case 核弹头:
-				((CheckBox) findViewById(R.id.game14)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game14));
 				break;
 			case 热血单机h5:
-				((CheckBox) findViewById(R.id.game15)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game15));
 				break;
 			case 热血单机双开:
-				((CheckBox) findViewById(R.id.game16)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game16));
 				break;
 			case 凹凸果:
-				((CheckBox) findViewById(R.id.game17)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game17));
 				break;
 			case 乐趣双开:
-				((CheckBox) findViewById(R.id.game18)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game18));
 				break;
 			case 乐趣网页双开:
-				((CheckBox) findViewById(R.id.game19)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game19));
 				break;
 			case 火树网页双开:
-				((CheckBox) findViewById(R.id.game20)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game20));
 				break;
 			case 玩蛋双开:
-				((CheckBox) findViewById(R.id.game21)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game21));
 				break;
 			case 牛刀网页双开:
-				((CheckBox) findViewById(R.id.game22)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game22));
 				break;
 			case 游戏1758网页双开:
-				((CheckBox) findViewById(R.id.game23)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game23));
 				break;
 			case 核弹头双开:
-				((CheckBox) findViewById(R.id.game24)).setTextColor(color);
+				checkBox = ((CheckBox) findViewById(R.id.game24));
 				break;
 		}
+		return checkBox;
 	}
 
 	private void showActionDialog(final List<Coordinate> eidtCoordinatess){

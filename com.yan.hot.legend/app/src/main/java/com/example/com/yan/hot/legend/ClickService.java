@@ -214,6 +214,10 @@ public class ClickService extends GrayService {
                                     //不相似则更新界面
                                     if (aBoolean) {
                                         MainActivity.mainActivity.setClientColor(ClickService.clientType, Color.RED);
+                                        MainActivity.mainActivity.setClientCheck(ClickService.clientType, true);
+                                    } else {
+                                        MainActivity.mainActivity.setClientColor(ClickService.clientType, Color.BLUE);
+                                        MainActivity.mainActivity.setClientCheck(ClickService.clientType, false);
                                     }
                                 }
                             });
