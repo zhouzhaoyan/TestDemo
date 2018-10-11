@@ -61,7 +61,7 @@ public class ClickTool {
             type = ClientType.游戏07073网页;
         } else if (name.equals("乐趣网页")) {
             type = ClientType.乐趣网页;
-        } else if (name.equals("核弹头网页")) {
+        } else if (name.contains("核弹头网页")) {
             type = ClientType.核弹头网页;
         } else if (name.equals("1758微游戏-网页")) {
             type = ClientType.游戏1758网页;
