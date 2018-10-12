@@ -523,7 +523,14 @@ public class ChangeCoordinate {
 //        addNew("热血单机h5","07073插件");
 //        delete("07073插件",1);
 //        addCoordinateEnd("07073插件",739, 2064,500);
-        show("07073插件");
+
+//        addNew("野外boss快速end","野外boss快速sample");
+//        delete("野外boss快速sample",getSize("野外boss快速sample") - 34);
+//        addCoordinateEnd("野外boss快速sample",1004, 1490,20000);
+//        addCoordinateEnd("野外boss快速sample",1013, 2021,1000);
+//        addCoordinateEnd("野外boss快速sample",1013, 2021,1000);
+
+        show("野外boss快速sample");
 
 //        ActionFile.write(actions);
     }

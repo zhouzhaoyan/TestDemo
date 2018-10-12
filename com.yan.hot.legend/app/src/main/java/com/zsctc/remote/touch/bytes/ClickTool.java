@@ -300,7 +300,7 @@ public class ClickTool {
                 runNames.add("血战矿洞");
                 runNames.add("竞技new");
                 runNames.add("秘境boss快速sample");
-                runNames.add("野外boss快速end");
+                runNames.add("野外boss快速sample");
             } else if (MainActivity.dailyTask) {
                 //日常任务模式，13分
                 runNames.add("熔炼new");
@@ -308,7 +308,7 @@ public class ClickTool {
                 runNames.add("竞技new");
                 runNames.add("王者争霸");
                 runNames.add("秘境boss快速sample");
-                runNames.add("野外boss快速end");
+                runNames.add("野外boss快速sample");
             } else if (MainActivity.simple) {
                 //简单模式，6分钟30秒
                 runNames.add("熔炼new");
@@ -321,7 +321,7 @@ public class ClickTool {
                 runNames.add("神兵幻境");
                 //                runNames.add("守护神剑");
             } else {
-                //任务模式，25分
+                //任务模式，20分
                 runNames.add("熔炼new");
                 runNames.add("竞技new");
                 runNames.add("血战矿洞");
@@ -336,7 +336,7 @@ public class ClickTool {
                 runNames.add("个人boss");
                 runNames.add("自动关卡sample");
                 runNames.add("秘境boss快速sample");
-                runNames.add("野外boss快速end");
+                runNames.add("野外boss快速sample");
             }
 
             switch (clientType) {
@@ -425,6 +425,7 @@ public class ClickTool {
             case 乐趣:
             case 核弹头:
             case 热血单机h5:
+            case 热血单机双开:
                 result = true;
                 break;
         }
