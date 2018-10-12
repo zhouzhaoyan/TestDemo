@@ -530,7 +530,13 @@ public class ChangeCoordinate {
 //        addCoordinateEnd("野外boss快速sample",1013, 2021,1000);
 //        addCoordinateEnd("野外boss快速sample",1013, 2021,1000);
 
-        show("野外boss快速sample");
+//        int size = getSize("个人boss");
+//        delete("个人boss",size -1 - 16);
+//        addCoordinateEnd("个人boss",1013, 2021,30000);
+//        addCoordinateEnd("个人boss",1013, 2021,1000);
+//        addCoordinateEnd("个人boss",1013, 2021,1000);
+
+        show("个人boss");
 
 //        ActionFile.write(actions);
     }
