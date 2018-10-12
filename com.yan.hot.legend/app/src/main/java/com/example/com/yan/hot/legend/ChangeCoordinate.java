@@ -83,7 +83,10 @@ public class ChangeCoordinate {
 //            addCoordinateEnd("野外神域boss",1029, 1837,1000);
 //        }
 
-        show("野外神域boss");
+//        addNew("跨服boss-埋骨之地","跨服boss-迷离境");
+//        setCoordinate("跨服boss-迷离境",293, 1131,554,556);
+
+        show("跨服boss-迷离境");
 
 //        ActionFile.write(actions);
     }
@@ -295,13 +298,13 @@ public class ChangeCoordinate {
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
             Action actionCopy = copy(tmp, newName);
-            for (int i = 0; i < coordinates.size(); i++) {
-                Log.e("test", "tmp: " + coordinates.get(i) + "\n");
-            }
+//            for (int i = 0; i < coordinates.size(); i++) {
+//                Log.e("test", "tmp: " + coordinates.get(i) + "\n");
+//            }
 
             actions.add(actionCopy);
             //            ActionFile.write(actions);
-            Log.e("test", "tmp: " + actionCopy);
+//            Log.e("test", "tmp: " + actionCopy);
         }
     }
 
