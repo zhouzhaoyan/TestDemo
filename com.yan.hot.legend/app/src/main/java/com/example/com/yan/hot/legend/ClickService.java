@@ -53,6 +53,7 @@ public class ClickService extends GrayService {
             Action action;
             //07073 插件
             Plug07073 plug07073 = new Plug07073();
+            MainActivity.mainActivity.cancelRestart();
             while (!actions.isEmpty()) {
                 if (isStop) {
                     LogManager.newInstance().writeMessage("running next click stop");
@@ -113,6 +114,9 @@ public class ClickService extends GrayService {
                 actions.remove(action);
                 runTimeMap.remove(0);
 
+            }
+            if (!isStop){
+                MainActivity.mainActivity.restart();
             }
             stopSelf();
         }

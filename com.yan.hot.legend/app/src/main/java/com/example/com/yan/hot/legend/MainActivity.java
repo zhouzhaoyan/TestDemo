@@ -1,5 +1,6 @@
 package com.example.com.yan.hot.legend;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -20,9 +21,17 @@ import com.yan.hot.legend.action.ActionFile;
 import com.yan.hot.legend.action.ActionTime;
 import com.yan.hot.legend.action.Coordinate;
 import com.zsctc.remote.touch.bytes.ClickTool;
+import com.zsctc.remote.touch.bytes.LogManager;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
 
 public class MainActivity extends Activity {
 
@@ -30,6 +39,7 @@ public class MainActivity extends Activity {
 	private static final String Coordinate_FLAG = "Coordinate_FLAG";
 	private List<Action> actions;
 	public static MainActivity mainActivity;
+	private boolean isRestart = false;
 	public static boolean daily = false;
 	public static boolean dailyTask = false;
 	public static boolean simple = false;
@@ -98,46 +108,13 @@ public class MainActivity extends Activity {
 			finish();
 			break;
 		case R.id.action_start:
-			daily = ((CheckBox)findViewById(R.id.daily)).isChecked();
-			dailyTask = ((CheckBox)findViewById(R.id.daily_task)).isChecked();
-			simple = ((CheckBox)findViewById(R.id.simple)).isChecked();
-			surplus = ((CheckBox)findViewById(R.id.surplus)).isChecked();
-			night = ((CheckBox)findViewById(R.id.night)).isChecked();
+			isRestart = false;
 
-		    isGame1 = ((CheckBox)findViewById(R.id.game1)).isChecked();
-			isGame2 = ((CheckBox)findViewById(R.id.game2)).isChecked();
-			isGame3 = ((CheckBox)findViewById(R.id.game3)).isChecked();
-			isGame4 = ((CheckBox)findViewById(R.id.game4)).isChecked();
-			isGame5 = ((CheckBox)findViewById(R.id.game5)).isChecked();
-			isGame6 = ((CheckBox)findViewById(R.id.game6)).isChecked();
-			isGame7 = ((CheckBox)findViewById(R.id.game7)).isChecked();
-			isGame8 = ((CheckBox)findViewById(R.id.game8)).isChecked();
-			isGame9 = ((CheckBox)findViewById(R.id.game9)).isChecked();
-			isGame10 = ((CheckBox)findViewById(R.id.game10)).isChecked();
-			isGame11 = ((CheckBox)findViewById(R.id.game11)).isChecked();
-			isGame12 = ((CheckBox)findViewById(R.id.game12)).isChecked();
-			isGame13 = ((CheckBox)findViewById(R.id.game13)).isChecked();
-			isGame14 = ((CheckBox)findViewById(R.id.game14)).isChecked();
-			isGame15 = ((CheckBox)findViewById(R.id.game15)).isChecked();
-			isGame16 = ((CheckBox)findViewById(R.id.game16)).isChecked();
-			isGame17 = ((CheckBox)findViewById(R.id.game17)).isChecked();
-			isGame18 = ((CheckBox)findViewById(R.id.game18)).isChecked();
-			isGame19 = ((CheckBox)findViewById(R.id.game19)).isChecked();
-			isGame20 = ((CheckBox)findViewById(R.id.game20)).isChecked();
-			isGame21 = ((CheckBox)findViewById(R.id.game21)).isChecked();
-			isGame22 = ((CheckBox)findViewById(R.id.game22)).isChecked();
-			isGame23 = ((CheckBox)findViewById(R.id.game23)).isChecked();
-			isGame24 = ((CheckBox)findViewById(R.id.game24)).isChecked();
-
-			for (ClickTool.ClientType type: ClickTool.ClientType.values()) {
-				setClientColor(type, Color.BLACK);
-			}
-
-			AliveService.openAliveService(getApplicationContext());
+			start();
 			break;
 		case R.id.action_stop:
-			AliveService.stopService(getApplicationContext());
-			ClickService.stopService(getApplicationContext());
+			cancelRestart();
+			stop();
 			break;
 		case R.id.action_devote:
 			startActivity(new Intent(this, DevoteActivity.class));
@@ -151,12 +128,93 @@ public class MainActivity extends Activity {
 
 	}
 
+	private void stop() {
+		AliveService.stopService(getApplicationContext());
+		ClickService.stopService(getApplicationContext());
+	}
+
+	private void start() {
+		daily = ((CheckBox)findViewById(R.id.daily)).isChecked();
+		dailyTask = ((CheckBox)findViewById(R.id.daily_task)).isChecked();
+		simple = ((CheckBox)findViewById(R.id.simple)).isChecked();
+		surplus = ((CheckBox)findViewById(R.id.surplus)).isChecked();
+		night = ((CheckBox)findViewById(R.id.night)).isChecked();
+
+		isGame1 = ((CheckBox)findViewById(R.id.game1)).isChecked();
+		isGame2 = ((CheckBox)findViewById(R.id.game2)).isChecked();
+		isGame3 = ((CheckBox)findViewById(R.id.game3)).isChecked();
+		isGame4 = ((CheckBox)findViewById(R.id.game4)).isChecked();
+		isGame5 = ((CheckBox)findViewById(R.id.game5)).isChecked();
+		isGame6 = ((CheckBox)findViewById(R.id.game6)).isChecked();
+		isGame7 = ((CheckBox)findViewById(R.id.game7)).isChecked();
+		isGame8 = ((CheckBox)findViewById(R.id.game8)).isChecked();
+		isGame9 = ((CheckBox)findViewById(R.id.game9)).isChecked();
+		isGame10 = ((CheckBox)findViewById(R.id.game10)).isChecked();
+		isGame11 = ((CheckBox)findViewById(R.id.game11)).isChecked();
+		isGame12 = ((CheckBox)findViewById(R.id.game12)).isChecked();
+		isGame13 = ((CheckBox)findViewById(R.id.game13)).isChecked();
+		isGame14 = ((CheckBox)findViewById(R.id.game14)).isChecked();
+		isGame15 = ((CheckBox)findViewById(R.id.game15)).isChecked();
+		isGame16 = ((CheckBox)findViewById(R.id.game16)).isChecked();
+		isGame17 = ((CheckBox)findViewById(R.id.game17)).isChecked();
+		isGame18 = ((CheckBox)findViewById(R.id.game18)).isChecked();
+		isGame19 = ((CheckBox)findViewById(R.id.game19)).isChecked();
+		isGame20 = ((CheckBox)findViewById(R.id.game20)).isChecked();
+		isGame21 = ((CheckBox)findViewById(R.id.game21)).isChecked();
+		isGame22 = ((CheckBox)findViewById(R.id.game22)).isChecked();
+		isGame23 = ((CheckBox)findViewById(R.id.game23)).isChecked();
+		isGame24 = ((CheckBox)findViewById(R.id.game24)).isChecked();
+
+		for (ClickTool.ClientType type: ClickTool.ClientType.values()) {
+			setClientColor(type, Color.BLACK);
+		}
+
+		AliveService.openAliveService(getApplicationContext());
+	}
+
 	public void setClientColor(ClickTool.ClientType clientType, int color){
 		getCheckBox(clientType).setTextColor(color);
 	}
 
 	public void setClientCheck(ClickTool.ClientType clientType, boolean check){
 		getCheckBox(clientType).setChecked(check);
+	}
+
+	private Disposable restartDisposable;
+	@SuppressLint("CheckResult")
+	public void restart(){
+		LogManager.newInstance().writeMessage("running click error, restart");
+		if (!isRestart){
+			restartDisposable = Observable.just(1)
+					.delay(10,TimeUnit.SECONDS)
+					.observeOn(AndroidSchedulers.mainThread())
+					.map(new Function<Integer, Integer>() {
+						@Override
+						public Integer apply(Integer integer) throws Exception {
+							LogManager.newInstance().writeMessage("running click error, restart doing");
+							stop();
+							return 1;
+						}
+					})
+					.delay(10, TimeUnit.SECONDS)
+					.subscribe(new Consumer<Integer>() {
+						@Override
+						public void accept(Integer integer) throws Exception {
+							restartDisposable = null;
+							start();
+						}
+					});
+		}
+	}
+
+	public void cancelRestart(){
+		if (restartDisposable != null){
+			LogManager.newInstance().writeMessage("running click error, restart cancel");
+			if (!restartDisposable.isDisposed()){
+				restartDisposable.dispose();
+			}
+			restartDisposable = null;
+		}
 	}
 
 	private CheckBox getCheckBox(ClickTool.ClientType clientType){
