@@ -535,8 +535,28 @@ public class ChangeCoordinate {
 //        addCoordinateEnd("个人boss",1013, 2021,30000);
 //        addCoordinateEnd("个人boss",1013, 2021,1000);
 //        addCoordinateEnd("个人boss",1013, 2021,1000);
+//        setCoordinateIndex("07073插件",0,0, 547,1695);
+//        delete("07073插件",1);
 
-        show("个人boss");
+//        deletePostion("牛刀new",2);
+//        deletePostion("牛刀new",3);
+//        setCoordinate("牛刀new",143, 1879,134,1823);
+//        setCoordinate("牛刀new",158, 1859,134,1823);
+//        delete("牛刀new",getSize("牛刀new")-7);
+//        addTimeAll("牛刀new",2000);
+//        addTime("牛刀new",2,7000);
+//        addTime("牛刀new",8,5000);
+//        addTime("牛刀new",9,30000);
+//        addTime("牛刀new",10,30000);
+
+//        deletePostions("牛刀网页双开new",6,7);
+//        for (int i = 0; i < 6; i++) {
+//            addCoordinate("牛刀网页双开new",6,134, 1823,1000);
+//        }
+
+//        setCoordinateIndex("牛刀网页双开new",2,2,986,220);
+//        addTime("牛刀网页双开new",2,5);
+        show("牛刀网页双开new");
 
 //        ActionFile.write(actions);
     }
@@ -607,7 +627,7 @@ public class ChangeCoordinate {
 
     private static void addTimeAll(String name, long addTime) {
         int size = getSize(name);
-        for (int i = 0; i < size; i++) {
+        for (int i = 1; i < size; i++) {
             addTime(name, i, addTime);
         }
     }

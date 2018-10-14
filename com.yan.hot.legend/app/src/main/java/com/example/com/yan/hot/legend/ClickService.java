@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.example.com.yan.hot.legend.pic.SimilarPicture;
 import com.example.com.yan.hot.legend.plug.Plug07073;
+import com.example.com.yan.hot.legend.runstate.ActionRun;
+import com.example.com.yan.hot.legend.runstate.ActionRunFile;
 import com.example.com.yan.hot.legend.screencap.ScreencapPathUtil;
 import com.yan.hot.legend.action.Action;
 import com.yan.hot.legend.action.Coordinate;
@@ -27,6 +29,8 @@ import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
@@ -53,7 +57,8 @@ public class ClickService extends GrayService {
             Action action;
             //07073 插件
             Plug07073 plug07073 = new Plug07073();
-            MainActivity.mainActivity.cancelRestart();
+            cancelRestart();
+
             while (!actions.isEmpty()) {
                 if (isStop) {
                     LogManager.newInstance().writeMessage("running next click stop");
@@ -115,8 +120,8 @@ public class ClickService extends GrayService {
                 runTimeMap.remove(0);
 
             }
-            if (!isStop){
-                MainActivity.mainActivity.restart();
+            if (!isStop) {
+                restart();
             }
             stopSelf();
         }
@@ -211,18 +216,13 @@ public class ClickService extends GrayService {
                                     }
                                     return isError;
                                 }
-                            }).observeOn(Schedulers.newThread())
+                            })
                             .subscribe(new Consumer<Boolean>() {
                                 @Override
-                                public void accept(Boolean aBoolean) throws Exception {
-                                    //不相似则更新界面
-                                    if (aBoolean) {
-                                        MainActivity.mainActivity.setClientColor(ClickService.clientType, Color.RED);
-                                        MainActivity.mainActivity.setClientCheck(ClickService.clientType, true);
-                                    } else {
-                                        MainActivity.mainActivity.setClientColor(ClickService.clientType, Color.BLUE);
-                                        MainActivity.mainActivity.setClientCheck(ClickService.clientType, false);
-                                    }
+                                public void accept(Boolean error) throws Exception {
+                                    ActionRun actionRun = ActionRunFile.read();
+                                    actionRun.setActionStates(ClickService.clientType, error);
+                                    ActionRunFile.write(actionRun);
                                 }
                             });
                     break;
@@ -298,5 +298,50 @@ public class ClickService extends GrayService {
     public static void stopService(Context context) {
         Intent intent = new Intent(context, ClickService.class);
         context.stopService(intent);
+    }
+
+    private Disposable restartDisposable;
+
+    @SuppressLint("CheckResult")
+    public void restart() {
+        LogManager.newInstance().writeMessage("running click error, restart");
+        restartDisposable = Observable.just(1)
+                .delay(60, TimeUnit.SECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .map(new Function<Integer, Integer>() {
+                    @Override
+                    public Integer apply(Integer integer) throws Exception {
+                        LogManager.newInstance().writeMessage("running click error, restart doing");
+
+                        AliveService.stopService(getApplicationContext());
+                        ClickService.stopService(getApplicationContext());
+
+                        ActionRun actionRun = ActionRunFile.read();
+                        if (actionRun.getModeType() == ActionRun.ModeType.NIGHT){
+                            actionRun.setModeType(ActionRun.ModeType.TASK);
+                        }
+                        ActionRunFile.write(actionRun);
+                        return 1;
+                    }
+                })
+                .delay(10, TimeUnit.SECONDS)
+                .subscribe(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception {
+                        restartDisposable = null;
+
+                        AliveService.openAliveService(getApplicationContext());
+                    }
+                });
+    }
+
+    public void cancelRestart() {
+        if (restartDisposable != null) {
+            LogManager.newInstance().writeMessage("running click error, restart cancel");
+            if (!restartDisposable.isDisposed()) {
+                restartDisposable.dispose();
+            }
+            restartDisposable = null;
+        }
     }
 }

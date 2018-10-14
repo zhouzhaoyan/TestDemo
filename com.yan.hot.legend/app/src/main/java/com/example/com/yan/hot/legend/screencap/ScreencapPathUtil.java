@@ -2,7 +2,8 @@ package com.example.com.yan.hot.legend.screencap;
 
 import android.util.Log;
 
-import com.example.com.yan.hot.legend.MainActivity;
+import com.example.com.yan.hot.legend.runstate.ActionRun;
+import com.example.com.yan.hot.legend.runstate.ActionRunFile;
 import com.yan.hot.legend.action.ActionFile;
 import com.zsctc.remote.touch.bytes.FileUtils;
 import com.zsctc.remote.touch.bytes.TimeUtil;
@@ -16,15 +17,18 @@ public class ScreencapPathUtil {
     private static final String TAG = "ScreencapPathUtil";
 
     private static String getMode() {
+        ActionRun actionRun = ActionRunFile.read();
         String mode = "task";
-        if (MainActivity.daily) {
-            mode = "daily";
-        } else if (MainActivity.dailyTask) {
-            mode = "dailyTask";
-        } else if (MainActivity.simple) {
-            mode = "simple";
-        } else if (MainActivity.surplus) {
-            mode = "surplus";
+        switch (actionRun.getModeType()){
+            case DAILY:
+                mode = "daily";
+                break;
+            case DAILY_TASK:
+                mode = "dailyTask";
+                break;
+            case SIMPLE:
+                mode = "simple";
+                break;
         }
         return mode;
     }

@@ -27,7 +27,7 @@ public class TouchVlaue {
 	public static String eventUp = 
 			"sendevent %3$s 0003 0057 4294967295 \n" +
 			"sendevent %3$s 0001 0330 00000000 \n" +
-//			"sendevent %3$s 0001 0325 00000001 \n" +
+			"sendevent %3$s 0001 0325 00000000 \n" +
 			"sendevent %3$s 0000 0000 00000000 \n";
 	
 	public static String move =

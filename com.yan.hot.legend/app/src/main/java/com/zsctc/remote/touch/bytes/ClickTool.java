@@ -2,7 +2,8 @@ package com.zsctc.remote.touch.bytes;
 
 import android.util.Log;
 
-import com.example.com.yan.hot.legend.MainActivity;
+import com.example.com.yan.hot.legend.runstate.ActionRun;
+import com.example.com.yan.hot.legend.runstate.ActionRunFile;
 import com.yan.hot.legend.action.Action;
 import com.yan.hot.legend.action.Coordinate;
 
@@ -97,7 +98,7 @@ public class ClickTool {
             type = ClientType.火树网页双开;
         } else if (name.equals("玩蛋双开")) {
             type = ClientType.玩蛋双开;
-        } else if (name.equals("牛刀网页双开")) {
+        } else if (name.contains("牛刀网页双开")) {
             type = ClientType.牛刀网页双开;
         } else if (name.equals("1758网页双开")) {
             type = ClientType.游戏1758网页双开;
@@ -108,6 +109,7 @@ public class ClickTool {
     }
 
     private static long allRunTime = 0;
+    private static ActionRun actionRun;
 
     public static void initClient(List<Action> actions) {
         allRunTime = 0;
@@ -125,78 +127,79 @@ public class ClickTool {
                 tmp.add(clientType);
             }
         }
+        actionRun = ActionRunFile.read();
         Log.e(TAG, "initClient: tmp" + tmp);
-        if (tmp.contains(ClientType.火树) && MainActivity.isGame1) {
+        if (tmp.contains(ClientType.火树) && actionRun.isRun(ClientType.火树)) {
             clientTypes.add(ClientType.火树);
         }
-        if (tmp.contains(ClientType.乐趣网页) && MainActivity.isGame2) {
+        if (tmp.contains(ClientType.乐趣网页) && actionRun.isRun(ClientType.乐趣网页)) {
             clientTypes.add(ClientType.乐趣网页);
         }
-        if (tmp.contains(ClientType.游戏07073网页) && MainActivity.isGame3) {
+        if (tmp.contains(ClientType.游戏07073网页) && actionRun.isRun(ClientType.游戏07073网页)) {
             clientTypes.add(ClientType.游戏07073网页);
         }
-        if (tmp.contains(ClientType.核弹头网页) && MainActivity.isGame4) {
+        if (tmp.contains(ClientType.核弹头网页) && actionRun.isRun(ClientType.核弹头网页)) {
             clientTypes.add(ClientType.核弹头网页);
         }
-        if (tmp.contains(ClientType.游戏1758网页) && MainActivity.isGame5) {
+        if (tmp.contains(ClientType.游戏1758网页) && actionRun.isRun(ClientType.游戏1758网页)) {
             clientTypes.add(ClientType.游戏1758网页);
         }
-        if (tmp.contains(ClientType.牛刀) && MainActivity.isGame6) {
+        if (tmp.contains(ClientType.牛刀) && actionRun.isRun(ClientType.牛刀)) {
             clientTypes.add(ClientType.牛刀);
         }
-        if (tmp.contains(ClientType.牛刀网页) && MainActivity.isGame7) {
+        if (tmp.contains(ClientType.牛刀网页) && actionRun.isRun(ClientType.牛刀网页)) {
             clientTypes.add(ClientType.牛刀网页);
         }
-        if (tmp.contains(ClientType.玩蛋) && MainActivity.isGame8) {
+        if (tmp.contains(ClientType.玩蛋) && actionRun.isRun(ClientType.玩蛋)) {
             clientTypes.add(ClientType.玩蛋);
         }
-        if (tmp.contains(ClientType.客娱) && MainActivity.isGame9) {
+        if (tmp.contains(ClientType.客娱) && actionRun.isRun(ClientType.客娱)) {
             clientTypes.add(ClientType.客娱);
         }
-        if (tmp.contains(ClientType.热血单机) && MainActivity.isGame10) {
+        if (tmp.contains(ClientType.热血单机) && actionRun.isRun(ClientType.热血单机)) {
             clientTypes.add(ClientType.热血单机);
         }
-        if (tmp.contains(ClientType.游戏07073) && MainActivity.isGame11) {
+        if (tmp.contains(ClientType.游戏07073) && actionRun.isRun(ClientType.游戏07073)) {
             clientTypes.add(ClientType.游戏07073);
         }
-        if (tmp.contains(ClientType.游戏1758) && MainActivity.isGame12) {
+        if (tmp.contains(ClientType.游戏1758) && actionRun.isRun(ClientType.游戏1758)) {
             clientTypes.add(ClientType.游戏1758);
         }
-        if (tmp.contains(ClientType.乐趣) && MainActivity.isGame13) {
+        if (tmp.contains(ClientType.乐趣) && actionRun.isRun(ClientType.乐趣)) {
             clientTypes.add(ClientType.乐趣);
         }
-        if (tmp.contains(ClientType.核弹头) && MainActivity.isGame14) {
+        if (tmp.contains(ClientType.核弹头) && actionRun.isRun(ClientType.核弹头)) {
             clientTypes.add(ClientType.核弹头);
         }
-        if (tmp.contains(ClientType.热血单机h5) && MainActivity.isGame15) {
+        if (tmp.contains(ClientType.热血单机h5) && actionRun.isRun(ClientType.热血单机h5)) {
             clientTypes.add(ClientType.热血单机h5);
         }
-        if (tmp.contains(ClientType.热血单机双开) && MainActivity.isGame16) {
+        if (tmp.contains(ClientType.热血单机双开) && actionRun.isRun(ClientType.热血单机双开)) {
             clientTypes.add(ClientType.热血单机双开);
         }
-        if (tmp.contains(ClientType.凹凸果) && MainActivity.isGame17) {
+        if (tmp.contains(ClientType.凹凸果) && actionRun.isRun(ClientType.凹凸果)) {
             clientTypes.add(ClientType.凹凸果);
         }
-        if (tmp.contains(ClientType.乐趣双开) && MainActivity.isGame18) {
+        if (tmp.contains(ClientType.乐趣双开) && actionRun.isRun(ClientType.乐趣双开)) {
             clientTypes.add(ClientType.乐趣双开);
         }
-        if (tmp.contains(ClientType.乐趣网页双开) && MainActivity.isGame19) {
+        if (tmp.contains(ClientType.乐趣网页双开) && actionRun.isRun(ClientType.乐趣网页双开)) {
             clientTypes.add(ClientType.乐趣网页双开);
         }
-        if (tmp.contains(ClientType.火树网页双开) && MainActivity.isGame20) {
+        if (tmp.contains(ClientType.火树网页双开) && actionRun.isRun(ClientType.火树网页双开)) {
             clientTypes.add(ClientType.火树网页双开);
         }
-        if (tmp.contains(ClientType.玩蛋双开) && MainActivity.isGame21) {
+        if (tmp.contains(ClientType.玩蛋双开) && actionRun.isRun(ClientType.玩蛋双开)) {
             clientTypes.add(ClientType.玩蛋双开);
         }
-        if (tmp.contains(ClientType.牛刀网页双开) && MainActivity.isGame22) {
+        if (tmp.contains(ClientType.牛刀网页双开) && actionRun.isRun(ClientType.牛刀网页双开)) {
             clientTypes.add(ClientType.牛刀网页双开);
         }
-        if (tmp.contains(ClientType.游戏1758网页双开) && MainActivity.isGame23) {
+        if (tmp.contains(ClientType.游戏1758网页双开) && actionRun.isRun(ClientType.游戏1758网页双开)) {
             clientTypes.add(ClientType.游戏1758网页双开);
         }
 
-        if (tmp.contains(ClientType.核弹头双开) && MainActivity.isGame24) {
+        if (tmp.contains(ClientType.核弹头双开) && actionRun.isRun(ClientType.核弹头双开)) {
             clientTypes.add(ClientType.核弹头双开);
         }
     }
@@ -294,49 +297,50 @@ public class ClickTool {
                     break;
             }
 
-            if (MainActivity.daily){
-                //日常模式，10分
-                runNames.add("熔炼new");
-                runNames.add("血战矿洞");
-                runNames.add("竞技new");
-                runNames.add("秘境boss快速sample");
-                runNames.add("野外boss快速sample");
-            } else if (MainActivity.dailyTask) {
-                //日常任务模式，13分
-                runNames.add("熔炼new");
-                runNames.add("血战矿洞");
-                runNames.add("竞技new");
-                runNames.add("王者争霸");
-                runNames.add("秘境boss快速sample");
-                runNames.add("野外boss快速sample");
-            } else if (MainActivity.simple) {
-                //简单模式，6分钟30秒
-                runNames.add("熔炼new");
-                runNames.add("血战矿洞");
-                runNames.add("竞技new");
-                runNames.add("秘境boss快速sample");
-            } else if (MainActivity.surplus) {
-                //多余模式
-                runNames.add("熔炼new");
-                runNames.add("神兵幻境");
-                //                runNames.add("守护神剑");
-            } else {
-                //任务模式，20分
-                runNames.add("熔炼new");
-                runNames.add("竞技new");
-                runNames.add("血战矿洞");
-                runNames.add("通天塔");
-                if (isFastest(clientType)) {
-                    runNames.add("材料副本快速");
-                } else {
-                    runNames.add("材料副本");
-                }
-                runNames.add("经验副本");
-                runNames.add("转生");
-                runNames.add("个人boss");
-                runNames.add("自动关卡sample");
-                runNames.add("秘境boss快速sample");
-                runNames.add("野外boss快速sample");
+            switch (actionRun.getModeType()){
+                case DAILY:
+                    //日常模式，10分
+                    runNames.add("熔炼new");
+                    runNames.add("血战矿洞");
+                    runNames.add("竞技new");
+                    runNames.add("秘境boss快速sample");
+                    runNames.add("野外boss快速sample");
+                    break;
+                case DAILY_TASK:
+                    //日常任务模式，13分
+                    runNames.add("熔炼new");
+                    runNames.add("血战矿洞");
+                    runNames.add("竞技new");
+                    runNames.add("王者争霸");
+                    runNames.add("秘境boss快速sample");
+                    runNames.add("野外boss快速sample");
+                    break;
+                case SIMPLE:
+                    //简单模式，6分钟30秒
+                    runNames.add("熔炼new");
+                    runNames.add("血战矿洞");
+                    runNames.add("竞技new");
+                    runNames.add("秘境boss快速sample");
+                    break;
+                case NIGHT:
+                case TASK:
+                    //任务模式，20分
+                    runNames.add("熔炼new");
+                    runNames.add("竞技new");
+                    runNames.add("血战矿洞");
+                    runNames.add("通天塔");
+                    if (isFastest(clientType)) {
+                        runNames.add("材料副本快速");
+                    } else {
+                        runNames.add("材料副本");
+                    }
+                    runNames.add("经验副本");
+                    runNames.add("转生");
+                    runNames.add("个人boss");
+                    runNames.add("自动关卡sample");
+                    runNames.add("秘境boss快速sample");
+                    runNames.add("野外boss快速sample");
+                    break;
             }
 
             switch (clientType) {
@@ -387,7 +391,7 @@ public class ClickTool {
                         runHour, runMin)
                         + addTime;
 
-                if (MainActivity.night) {
+                if (actionRun.getModeType() == ActionRun.ModeType.NIGHT) {
                     tmpRunningTime = TimeUtil.getSpecifyTime(secondTime,
                             0, 0)
                             + addTime;
