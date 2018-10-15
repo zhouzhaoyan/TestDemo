@@ -47,6 +47,9 @@ public class SimilarPicture {
     }
 
     private static boolean isEquals(Bitmap b1, Bitmap b2) {
+        if (b1 == null || b2 == null){
+            return false;
+        }
         Log.e(TAG, "isEquals: width:" + b1.getWidth() + "," + b1.getWidth());
 //        save(b1,"1.png");
 //        save(b2,"2.png");

@@ -430,6 +430,7 @@ public class ClickTool {
             case 核弹头:
             case 热血单机h5:
             case 热血单机双开:
+            case 凹凸果:
                 result = true;
                 break;
         }

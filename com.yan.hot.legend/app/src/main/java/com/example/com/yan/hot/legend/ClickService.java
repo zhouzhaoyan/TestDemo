@@ -52,6 +52,10 @@ public class ClickService extends GrayService {
         //主动停止
         private boolean isStop = false;
 
+        public ClickThread() {
+            setName("ClickThread");
+        }
+
         @Override
         public void run() {
             Action action;
@@ -128,6 +132,8 @@ public class ClickService extends GrayService {
 
         public void stopRunnable() {
             isStop = true;
+            clickThread = null;
+            interrupt();
         }
     }
 
