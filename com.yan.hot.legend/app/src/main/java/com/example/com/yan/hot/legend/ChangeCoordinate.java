@@ -564,7 +564,11 @@ public class ChangeCoordinate {
 //        addCoordinate("核弹头网页new",17,760,2016,3000);
 //        addCoordinate("核弹头网页new",18,511,1455,5000);
 
-        show("核弹头网页new");
+//        addNew("热血单机h5","热血单机h5双开");
+//
+//        setCoordinateIndex("热血单机h5双开",0,0,695,806);
+//        setCoordinateIndex("热血单机h5双开",1, 1,550,1313);
+        show("热血单机h5双开");
 
 //        ActionFile.write(actions);
     }

@@ -256,6 +256,9 @@ public class MainActivity extends Activity {
             case 核弹头双开:
                 checkBox = ((CheckBox) findViewById(R.id.game24));
                 break;
+            case 热血单机h5双开:
+                checkBox = ((CheckBox) findViewById(R.id.game25));
+                break;
         }
         return checkBox;
     }

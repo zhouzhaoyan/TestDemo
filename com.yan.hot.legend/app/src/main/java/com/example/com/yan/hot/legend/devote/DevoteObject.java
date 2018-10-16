@@ -55,6 +55,15 @@ public class DevoteObject {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (o instanceof  DevoteObject){
+            return ((DevoteObject)o).getName().equals(name);
+        } else {
+            return false;
+        }
+    }
+
+    @Override
     public String toString() {
         return "DevoteObject{" +
                 "name='" + name + '\'' +

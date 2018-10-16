@@ -311,6 +311,13 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="核弹头双开"/>
+
+        <CheckBox
+            android:id="@+id/game25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="热血h5双开"/>
     </LinearLayout>
 
     <!--<include-->

@@ -21,7 +21,7 @@ public class DevoteManager {
         Observable.just(1).subscribe(new Consumer<Integer>() {
             @Override
             public void accept(Integer integer) throws Exception {
-                List<DevoteObject> list = DevoteFile.read();
+                List<DevoteObject> list = getDevoteNew(DevoteFile.read());
                 if (list != null) {
                     long currentTime = getCurrentTime();
                     for (DevoteObject devoteObject : list) {
@@ -36,11 +36,25 @@ public class DevoteManager {
         });
     }
 
+    public static List<DevoteObject> getDevoteNew(List<DevoteObject> devoteObjectsOld){
+        List<DevoteObject> defaults = getDefault();
+        if (devoteObjectsOld == null || devoteObjectsOld.isEmpty()){
+            return defaults;
+        }
+        List<DevoteObject> devoteObjectsNew = new ArrayList<>(devoteObjectsOld);
+        for (DevoteObject devoteObject: defaults) {
+            if (!devoteObjectsOld.contains(devoteObject)){
+                devoteObjectsNew.add(devoteObject);
+            }
+        }
+        return devoteObjectsNew;
+    }
+
     public static List<DevoteObject> getDefault() {
         List<DevoteObject> devoteObjects = new ArrayList<>();
         ClickTool.ClientType[] clientTypes = ClickTool.ClientType.values();
         for (ClickTool.ClientType clientType : clientTypes) {
-            devoteObjects.add(new DevoteObject(clientType.name(), getCurrentTime(), 0, 540));
+            devoteObjects.add(new DevoteObject(clientType.name(), getCurrentTime(), 0, 0));
         }
         return devoteObjects;
     }
