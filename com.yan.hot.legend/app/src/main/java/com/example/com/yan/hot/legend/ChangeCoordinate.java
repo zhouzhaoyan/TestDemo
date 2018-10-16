@@ -556,7 +556,15 @@ public class ChangeCoordinate {
 
 //        setCoordinateIndex("牛刀网页双开new",2,2,986,220);
 //        addTime("牛刀网页双开new",2,5);
-        show("牛刀网页双开new");
+
+
+//        addTime("核弹头网页new",4,10000);
+//        setCoordinate("核弹头网页new",232,547,123,624);
+//        deletePostion("核弹头网页new",16);
+//        addCoordinate("核弹头网页new",17,760,2016,3000);
+//        addCoordinate("核弹头网页new",18,511,1455,5000);
+
+        show("核弹头网页new");
 
 //        ActionFile.write(actions);
     }
