@@ -127,7 +127,8 @@ public class ClickService extends GrayService {
             if (!isStop) {
                 restart();
             }
-            stopSelf();
+//            stopSelf();
+            stopRunnable();
         }
 
         public void stopRunnable() {
@@ -312,7 +313,7 @@ public class ClickService extends GrayService {
     public void restart() {
         LogManager.newInstance().writeMessage("running click error, restart");
         restartDisposable = Observable.just(1)
-                .delay(60, TimeUnit.SECONDS)
+                .delay(30, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(new Function<Integer, Integer>() {
                     @Override
@@ -342,8 +343,8 @@ public class ClickService extends GrayService {
     }
 
     public void cancelRestart() {
+        LogManager.newInstance().writeMessage("running click error, restart cancel，restartDisposable：" + restartDisposable);
         if (restartDisposable != null) {
-            LogManager.newInstance().writeMessage("running click error, restart cancel");
             if (!restartDisposable.isDisposed()) {
                 restartDisposable.dispose();
             }
