@@ -568,7 +568,11 @@ public class ChangeCoordinate {
 //
 //        setCoordinateIndex("热血单机h5双开",0,0,695,806);
 //        setCoordinateIndex("热血单机h5双开",1, 1,550,1313);
-        show("热血单机h5双开");
+//        addNew("游戏-结束", "游戏-登录结束");
+//        addCoordinateEnd("游戏-登录结束",666 ,2018,3000);
+//        addCoordinateEnd("游戏-登录结束",794, 2210,3000);
+//        addCoordinateEndRepeate("游戏-登录结束",794, 2210,500,4);
+        show("游戏-登录结束");
 
 //        ActionFile.write(actions);
     }

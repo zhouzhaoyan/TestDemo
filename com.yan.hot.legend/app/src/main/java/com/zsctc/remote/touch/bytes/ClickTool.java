@@ -357,12 +357,9 @@ public class ClickTool {
                 case 火树:
                 case 游戏07073网页:
                 case 乐趣网页:
-                case 核弹头网页:
                 case 游戏1758网页:
                 case 牛刀:
-                case 牛刀网页:
                 case 玩蛋:
-                case 客娱:
                 case 热血单机:
                 case 乐趣:
                 case 核弹头:
@@ -376,6 +373,11 @@ public class ClickTool {
                 case 游戏1758网页双开:
                 case 核弹头双开:
                     runNames.add("游戏-结束");
+                    break;
+                case 牛刀网页:
+                case 客娱:
+                case 核弹头网页:
+                    runNames.add("游戏-登录结束");
                     break;
                 case 热血单机h5双开:
                 case 热血单机h5:
