@@ -115,7 +115,6 @@
             android:layout_height="wrap_content"
             android:text="删除"
             android:visibility="gone"
-            android:enabled="false"
             />
 
         <TextView
