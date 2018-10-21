@@ -9,6 +9,18 @@ import java.util.List;
  * Created by on 2018/10/13.
  */
 public class ActionRun {
+
+    private static List<ClickTool.ClientType> noRun = new ArrayList<>();
+
+    static {
+        noRun.add(ClickTool.ClientType.游戏07073);
+        noRun.add(ClickTool.ClientType.核弹头);
+        noRun.add(ClickTool.ClientType.热血单机h5);
+        noRun.add(ClickTool.ClientType.热血单机双开);
+        noRun.add(ClickTool.ClientType.核弹头双开);
+    }
+
+
     @Override
     public String toString() {
         return "ActionRun{" +
@@ -25,23 +37,25 @@ public class ActionRun {
 
     public ActionRun(ModeType modeType) {
         ClickTool.ClientType[] clientTypes = ClickTool.ClientType.values();
-        for (ClickTool.ClientType clientType: clientTypes) {
-            actionStates.add(new ActionState(clientType, true));
+
+
+        for (ClickTool.ClientType clientType : clientTypes) {
+            actionStates.add(new ActionState(clientType, noRun.contains(clientType) ? false : true));
         }
     }
 
-    public void setActionStates(ClickTool.ClientType clientType, boolean run){
-        for (ActionState state:actionStates) {
-            if (state.getClientType().equals(clientType)){
+    public void setActionStates(ClickTool.ClientType clientType, boolean run) {
+        for (ActionState state : actionStates) {
+            if (state.getClientType().equals(clientType)) {
                 state.setRun(run);
                 break;
             }
         }
     }
 
-    public boolean isRun(ClickTool.ClientType clientType){
-        for (ActionState state:actionStates) {
-            if (state.getClientType().equals(clientType)){
+    public boolean isRun(ClickTool.ClientType clientType) {
+        for (ActionState state : actionStates) {
+            if (state.getClientType().equals(clientType)) {
                 return state.isRun();
             }
         }
@@ -60,7 +74,7 @@ public class ActionRun {
         return modeType;
     }
 
-    public class ActionState{
+    public class ActionState {
         public ActionState() {
         }
 
@@ -97,7 +111,7 @@ public class ActionRun {
         }
     }
 
-    public enum ModeType{
-        TASK,DAILY,DAILY_TASK,SIMPLE,NIGHT
+    public enum ModeType {
+        TASK, DAILY, DAILY_TASK, SIMPLE, NIGHT
     }
 }

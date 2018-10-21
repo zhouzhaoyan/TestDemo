@@ -572,7 +572,115 @@ public class ChangeCoordinate {
 //        addCoordinateEnd("游戏-登录结束",666 ,2018,3000);
 //        addCoordinateEnd("游戏-登录结束",794, 2210,3000);
 //        addCoordinateEndRepeate("游戏-登录结束",794, 2210,500,4);
-        show("游戏-登录结束");
+
+//        addTime("牛刀网页",4,10000);
+//        setCoordinate("牛刀网页",232,547,123,624);
+//        addCoordinate("牛刀网页",17,760,2016,3000);
+//        addCoordinate("牛刀网页",18,511,1455,5000);
+
+//        addTime("客娱",4,10000);
+//        setCoordinate("客娱",232,547,123,624);
+//        addCoordinate("客娱",17,760,2016,3000);
+//        addCoordinate("客娱",18,511,1455,5000);
+
+//        addCoordinateEndRepeate("游戏-登录结束",794, 2210,500,4);
+//
+//        addCoordinate("牛刀网页双开",4,557,1455,5000);
+
+//        delete("牛刀网页双开new",29);
+//        deletePostion("牛刀网页双开new",0);
+//        addTime("牛刀网页双开new",1,10000);
+//        addTime("牛刀网页双开new",2,20000);
+//        addTime("牛刀网页双开new",4,10000);
+//        addTime("牛刀网页双开new",26,40000);
+//        addTime("牛刀网页双开new",27,50000);
+//        setCoordinate("牛刀网页双开new",497, 1640,599 ,1668);
+//        deletePostion("牛刀网页双开new",24);
+
+//        addCoordinate("牛刀网页双开new",19,472,1496,1000);
+
+//        addNew("牛刀网页双开new","热血单机双开new");
+//        setCoordinateIndex("热血单机双开new",0,0,420,821);
+//        setCoordinateIndex("热血单机双开new",1,1,509,1346);
+//        setCoordinateIndex("热血单机双开new",2,2,502,1528);
+
+//        addCoordinate("热血单机双开new",2,543,1413,15000);
+//        addTime("热血单机双开new",3,-10000);
+
+//        deletePostion("核弹头-new",25);
+//        delete("核弹头-new",28);
+//        setCoordinate("核弹头-new",496, 1666,599 ,1668);
+//        addCoordinate("核弹头-new",20,472,1496,1000);
+//
+//        addTime("核弹头-new",1,10000);
+//        addTime("核弹头-new",2,20000);
+//        addTime("核弹头-new",4,10000);
+//        addTime("核弹头-new",27,40000);
+//        addTime("核弹头-new",28,50000);
+
+//        addTime("核弹头-new",1,-20000);
+//        addTime("核弹头-new",2,-40000);
+//        addTime("核弹头-new",4,-20000);
+//        addTime("核弹头-new",27,-80000);
+//        addTime("核弹头-new",28,-100000);
+//
+//        deletePostions("核弹头-new",21,22);
+//        addCoordinate("核弹头-new",24,384, 1532,1000);
+//        addCoordinate("核弹头-new",24,384, 1532,1000);
+
+//        delete("07073游戏-new",28);
+//        setCoordinate("07073游戏-new",708, 1524,472,1496);
+
+//        setCoordinate("07073游戏-new",617, 1679,497, 1640);
+//        addCoordinate("07073游戏-new",19,472,1496,1000);
+//        deletePostion("07073游戏-new",24);
+
+//        setCoordinate("07073游戏-new",472, 1496,401, 1515);
+//        setCoordinate("07073游戏-new",502, 1528,580, 1655);
+
+//        setCoordinate("07073游戏-new",401, 1515,491, 1530);
+//        setCoordinateIndex("07073游戏-new",23,24,401, 1515);
+
+//        setCoordinate("07073游戏-new",544, 1834,587, 1811);
+//        setCoordinate("07073游戏-new",565, 1706,537,1654);
+
+//        addTime("07073游戏-new",1,10000);
+//        addTime("07073游戏-new",2,20000);
+//        addTime("07073游戏-new",4,10000);
+//        addTime("07073游戏-new",26,40000);
+//        addTime("07073游戏-new",27,50000);
+
+//        addNew("07073游戏-登录","07073游戏-new");
+//        deletePostionsIndex("07073游戏-new",2,25);
+//        addTime("07073游戏-new",1,-8000);
+//        addTime("07073游戏-new",2,-80000);
+
+//        setCoordinateIndex("热血单机h5-new",1,1,301, 1349);
+
+//        addCoordinate("07073游戏-new",2,939,2034,20000);
+//        addCoordinate("07073游戏-new",3,929 ,385,5000);
+//        addTime("07073游戏-new",4,-15000);
+
+//        setCoordinateIndex("07073游戏-new",5,5,466,
+//                1240
+//        );
+
+//        addCoordinate("07073游戏-new",28,125,
+//                545,15000
+//        );
+
+//        delete("核弹头双开-new",30);
+
+//        addCoordinate("核弹头双开-new",27,609,
+//                1514,1000
+//        );
+
+//            addTime("核弹头双开-new",1,10000);
+//            addTime("核弹头双开-new",2,20000);
+//            addTime("核弹头双开-new",4,10000);
+//            addTime("核弹头双开-new",29,30000);
+//            addTime("核弹头双开-new",30,40000);
+        show("核弹头双开-new");
 
 //        ActionFile.write(actions);
     }
@@ -779,6 +887,18 @@ public class ChangeCoordinate {
             actions.add(actionCopy);
             //            ActionFile.write(actions);
             Log.e("test", "tmp: " + actionCopy);
+        }
+    }
+
+    private static void deletePostionsIndex(String name, int startIndex, int endIndex) {
+        Action tmp = getAction(name);
+        if (tmp != null) {
+            List<Coordinate> coordinates = tmp.getCoordinates();
+            List<Coordinate> delete = new ArrayList<Coordinate>();
+            for (int i = startIndex; i <= Math.min(endIndex,coordinates.size()-1); i++) {
+                delete.add(coordinates.get(i));
+            }
+            coordinates.removeAll(delete);
         }
     }
 

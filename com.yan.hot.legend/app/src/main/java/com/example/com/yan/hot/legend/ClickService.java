@@ -71,7 +71,7 @@ public class ClickService extends GrayService {
 
                 action = actions.poll();
                 actionName = action.getName();
-                ClickTool.ClientType currentType = ClickTool.getClientType(actionName);
+                ClickTool.ClientType currentType = ClickTypeMap.getClientType(actionName);
                 if (currentType != null) {
                     clientType = currentType;
                 }
@@ -87,8 +87,8 @@ public class ClickService extends GrayService {
 
                 handler.sendEmptyMessage(WAIT_LOADING_RESOURCE);
                 LogManager.newInstance().writeMessage("running click sleep");
-                if (actionName.contains("熔炼")) {
-                    handler.sendEmptyMessage(SCREENCAP);
+                if (actionName.contains("竞技")) {
+                    screencap(clientType);
                 }
                 try {
                     Thread.sleep(1000);
@@ -167,8 +167,6 @@ public class ClickService extends GrayService {
     private final int AUTO_CLICK = 2;
     //滑动屏幕
     private final int MOVE_SCREEN = 3;
-    //截屏
-    private static final int SCREENCAP = 4;
     @SuppressLint("HandlerLeak")
     Handler handler = new Handler() {
         @SuppressLint("SetTextI18n")
@@ -202,42 +200,45 @@ public class ClickService extends GrayService {
                 case MOVE_SCREEN:
                     textView.setText("正在滑动屏幕");
                     break;
-                case SCREENCAP:
-                    Observable.just(0).observeOn(Schedulers.newThread())
-                            .flatMap(new Function<Integer, ObservableSource<String>>() {
-                                @Override
-                                public ObservableSource<String> apply(Integer integer) throws Exception {
-                                    //保存截图
-                                    String path = ScreencapPathUtil.getPath(ClickService.clientType.name());
-                                    clickTool.screencap(path);
-                                    return Observable.just(path);
-                                }
-                            }).delay(2, TimeUnit.SECONDS)
-                            .map(new Function<String, Boolean>() {
-                                @Override
-                                public Boolean apply(String s) throws Exception {
-                                    //对比图片的相似度
-                                    boolean result = SimilarPicture.isEquals(s);
-                                    if (!result) {
-                                        isError = true;
-                                    }
-                                    return isError;
-                                }
-                            })
-                            .subscribe(new Consumer<Boolean>() {
-                                @Override
-                                public void accept(Boolean error) throws Exception {
-                                    ActionRun actionRun = ActionRunFile.read();
-                                    actionRun.setActionStates(ClickService.clientType, error);
-                                    ActionRunFile.write(actionRun);
-                                }
-                            });
-                    break;
                 default:
                     break;
             }
         }
     };
+
+    @SuppressLint("CheckResult")
+    private void screencap(final ClickTool.ClientType clientType) {
+        Observable.just(0).observeOn(Schedulers.newThread())
+                .flatMap(new Function<Integer, ObservableSource<String>>() {
+                    @Override
+                    public ObservableSource<String> apply(Integer integer) throws Exception {
+                        //保存截图
+                        String path = ScreencapPathUtil.getPath(clientType.name());
+                        clickTool.screencap(path);
+                        return Observable.just(path);
+                    }
+                }).delay(2, TimeUnit.SECONDS)
+                .map(new Function<String, Boolean>() {
+                    @Override
+                    public Boolean apply(String s) throws Exception {
+                        //对比图片的相似度
+                        boolean result = SimilarPicture.isEquals(s);
+                        if (!result) {
+                            isError = true;
+                        }
+                        return isError;
+                    }
+                })
+                .subscribe(new Consumer<Boolean>() {
+                    @Override
+                    public void accept(Boolean error) throws Exception {
+                        ActionRun actionRun = ActionRunFile.read();
+                        actionRun.setActionStates(clientType, error);
+                        ActionRunFile.write(actionRun);
+                    }
+                });
+    }
+
 
     @Override
     public void onCreate() {

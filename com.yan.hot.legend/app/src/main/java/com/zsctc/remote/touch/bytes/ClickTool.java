@@ -2,6 +2,7 @@ package com.zsctc.remote.touch.bytes;
 
 import android.util.Log;
 
+import com.example.com.yan.hot.legend.ClickTypeMap;
 import com.example.com.yan.hot.legend.runstate.ActionRun;
 import com.example.com.yan.hot.legend.runstate.ActionRunFile;
 import com.yan.hot.legend.action.Action;
@@ -54,62 +55,6 @@ public class ClickTool {
         }
     }
 
-    public static ClientType getClientType(String name) {
-        ClientType type = null;
-        if (name.equals("火树")) {
-            type = ClientType.火树;
-        } else if (name.equals("07073游戏盒子-网页")) {
-            type = ClientType.游戏07073网页;
-        } else if (name.equals("乐趣网页")) {
-            type = ClientType.乐趣网页;
-        } else if (name.contains("核弹头网页")) {
-            type = ClientType.核弹头网页;
-        } else if (name.equals("1758微游戏-网页")) {
-            type = ClientType.游戏1758网页;
-        } else if (name.equals("牛刀")) {
-            type = ClientType.牛刀;
-        } else if (name.equals("牛刀网页")) {
-            type = ClientType.牛刀网页;
-        } else if (name.equals("玩蛋")) {
-            type = ClientType.玩蛋;
-        } else if (name.equals("客娱")) {
-            type = ClientType.客娱;
-        } else if (name.equals("热血单机")) {
-            type = ClientType.热血单机;
-        } else if (name.equals("07073游戏盒子")) {
-            type = ClientType.游戏07073;
-        } else if (name.equals("1758微游戏")) {
-            type = ClientType.游戏1758;
-        } else if (name.equals("乐趣")) {
-            type = ClientType.乐趣;
-        } else if (name.equals("核弹头")) {
-            type = ClientType.核弹头;
-        } else if (name.equals("热血单机h5")) {
-            type = ClientType.热血单机h5;
-        } else if (name.equals("热血单机双开")) {
-            type = ClientType.热血单机双开;
-        } else if (name.equals("凹凸果")) {
-            type = ClientType.凹凸果;
-        } else if (name.equals("乐趣双开")) {
-            type = ClientType.乐趣双开;
-        } else if (name.equals("乐趣网页双开")) {
-            type = ClientType.乐趣网页双开;
-        } else if (name.equals("火树网页双开")) {
-            type = ClientType.火树网页双开;
-        } else if (name.equals("玩蛋双开")) {
-            type = ClientType.玩蛋双开;
-        } else if (name.contains("牛刀网页双开")) {
-            type = ClientType.牛刀网页双开;
-        } else if (name.equals("1758网页双开")) {
-            type = ClientType.游戏1758网页双开;
-        } else if (name.equals("核弹头双开")) {
-            type = ClientType.核弹头双开;
-        } else if (name.equals("热血单机h5双开")) {
-            type = ClientType.热血单机h5双开;
-        }
-        return type;
-    }
-
     private static long allRunTime = 0;
     private static ActionRun actionRun;
 
@@ -124,7 +69,7 @@ public class ClickTool {
             if (action.getActionTime().getCount() == 0) {
                 continue;
             }
-            ClientType clientType = getClientType(name);
+            ClientType clientType = ClickTypeMap.getClientType(name);
             if (clientType != null) {
                 tmp.add(clientType);
             }
@@ -229,98 +174,23 @@ public class ClickTool {
         RunNameList<String> runNames = new RunNameList<String>();
         Log.e(TAG, "getClickTime,clientTypes: " + clientTypes);
         for (ClientType clientType : clientTypes) {
-            switch (clientType) {
-                case 火树:
-                    runNames.add("火树");
-                    break;
-                case 游戏07073网页:
-                    runNames.add("07073游戏盒子-网页");
-                    break;
-                case 乐趣网页:
-                    runNames.add("乐趣网页");
-                    break;
-                case 核弹头网页:
-                    runNames.add("核弹头网页new");
-                    break;
-                case 游戏1758网页:
-                    runNames.add("1758微游戏-网页");
-                    break;
-                case 牛刀:
-                    runNames.add("牛刀");
-                    break;
-                case 牛刀网页:
-                    runNames.add("牛刀网页");
-                    break;
-                case 玩蛋:
-                    runNames.add("玩蛋");
-                    break;
-                case 客娱:
-                    runNames.add("客娱");
-                    break;
-                case 热血单机:
-                    runNames.add("热血单机");
-                    break;
-                case 游戏07073:
-                    runNames.add("07073游戏盒子");
-                    break;
-                case 游戏1758:
-                    runNames.add("1758微游戏");
-                    break;
-                case 乐趣:
-                    runNames.add("乐趣");
-                    break;
-                case 核弹头:
-                    runNames.add("核弹头");
-                    break;
-                case 热血单机h5:
-                    runNames.add("热血单机h5");
-                    break;
-                case 热血单机双开:
-                    runNames.add("热血单机双开");
-                    break;
-                case 凹凸果:
-                    runNames.add("凹凸果");
-                    break;
-                case 乐趣双开:
-                    runNames.add("乐趣双开");
-                    break;
-                case 乐趣网页双开:
-                    runNames.add("乐趣网页双开");
-                    break;
-                case 火树网页双开:
-                    runNames.add("火树网页双开");
-                    break;
-                case 玩蛋双开:
-                    runNames.add("玩蛋双开");
-                    break;
-                case 牛刀网页双开:
-                    runNames.add("牛刀网页双开");
-                    break;
-                case 游戏1758网页双开:
-                    runNames.add("1758网页双开");
-                    break;
-                case 核弹头双开:
-                    runNames.add("核弹头双开");
-                    break;
-                case 热血单机h5双开:
-                    runNames.add("热血单机h5双开");
-                    break;
-            }
+
+            runNames.add(ClickTypeMap.getActionName(clientType));
 
             switch (actionRun.getModeType()){
                 case DAILY:
                     //日常模式，10分
                     runNames.add("熔炼new");
-                    runNames.add("血战矿洞");
                     runNames.add("竞技new");
+                    runNames.add("血战矿洞");
                     runNames.add("秘境boss快速sample");
                     runNames.add("野外boss快速sample");
                     break;
                 case DAILY_TASK:
                     //日常任务模式，13分
                     runNames.add("熔炼new");
-                    runNames.add("血战矿洞");
                     runNames.add("竞技new");
+                    runNames.add("血战矿洞");
                     runNames.add("王者争霸");
                     runNames.add("秘境boss快速sample");
                     runNames.add("野外boss快速sample");
@@ -328,8 +198,8 @@ public class ClickTool {
                 case SIMPLE:
                     //简单模式，6分钟30秒
                     runNames.add("熔炼new");
-                    runNames.add("血战矿洞");
                     runNames.add("竞技new");
+                    runNames.add("血战矿洞");
                     runNames.add("秘境boss快速sample");
                     break;
                 case NIGHT:
@@ -372,6 +242,7 @@ public class ClickTool {
                 case 牛刀网页双开:
                 case 游戏1758网页双开:
                 case 核弹头双开:
+                case 热血单机h5:
                     runNames.add("游戏-结束");
                     break;
                 case 牛刀网页:
@@ -379,9 +250,8 @@ public class ClickTool {
                 case 核弹头网页:
                     runNames.add("游戏-登录结束");
                     break;
-                case 热血单机h5双开:
-                case 热血单机h5:
                 case 游戏07073:
+                case 热血单机h5双开:
                     runNames.add("07073游戏盒子-结束");
                     break;
                 case 游戏1758:
