@@ -22,12 +22,12 @@ public class SimilarPicture {
         return isEquals(path1, RIGHT_PIC_PATH);
     }
 
-    private static boolean isEquals(String path1, String path2) {
+    public static boolean isEquals(String path1, String path2) {
         return isEquals(getBitmap(getBitmap(path1), 525, 305, 65, 65),
                 getBitmap(getBitmap(path2), 525, 305, 65, 65));
     }
 
-    private static Bitmap getBitmap(Bitmap bitmap, int x, int y,
+    public static Bitmap getBitmap(Bitmap bitmap, int x, int y,
                                     int width, int height) {
         if (bitmap == null) {
             return null;
@@ -42,11 +42,11 @@ public class SimilarPicture {
         return bmp;
     }
 
-    private static Bitmap getBitmap(String path) {
+    public static Bitmap getBitmap(String path) {
         return BitmapFactory.decodeFile(path);
     }
 
-    private static boolean isEquals(Bitmap b1, Bitmap b2) {
+    public static boolean isEquals(Bitmap b1, Bitmap b2) {
         if (b1 == null || b2 == null){
             return false;
         }
@@ -78,7 +78,7 @@ public class SimilarPicture {
         }
     }
 
-    private static void save(Bitmap bitmap,String name) {
+    public static void save(Bitmap bitmap,String name) {
         File PHOTO_DIR = new File(Environment.getExternalStorageDirectory().getPath());//设置保存路径
         File avaterFile = new File(PHOTO_DIR, name);//设置文件名称
         if (avaterFile.exists()) {

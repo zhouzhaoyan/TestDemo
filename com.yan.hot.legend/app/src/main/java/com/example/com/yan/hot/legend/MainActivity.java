@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.com.yan.hot.legend.devote.DevoteActivity;
 import com.example.com.yan.hot.legend.devote.DevoteManager;
+import com.example.com.yan.hot.legend.plug.PlugQQ;
 import com.example.com.yan.hot.legend.runstate.ActionRun;
 import com.example.com.yan.hot.legend.runstate.ActionRunFile;
 import com.yan.hot.legend.action.Action;
@@ -59,6 +60,7 @@ public class MainActivity extends Activity {
         }
 
         DevoteManager.init();
+        PlugQQ.init();
     }
 
     public void onClick(View view) {

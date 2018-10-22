@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.com.yan.hot.legend.pic.SimilarPicture;
 import com.example.com.yan.hot.legend.plug.Plug07073;
+import com.example.com.yan.hot.legend.plug.PlugQQ;
 import com.example.com.yan.hot.legend.runstate.ActionRun;
 import com.example.com.yan.hot.legend.runstate.ActionRunFile;
 import com.example.com.yan.hot.legend.screencap.ScreencapPathUtil;
@@ -119,6 +120,8 @@ public class ClickService extends GrayService {
                     }
                     currentTime = coordinate.getTime();
                     runClick(sleep, coordinate);
+
+                    PlugQQ.runClick(ClickService.this, clientType, coordinate);
                 }
                 actions.remove(action);
                 runTimeMap.remove(0);
@@ -127,7 +130,7 @@ public class ClickService extends GrayService {
             if (!isStop) {
                 restart();
             }
-//            stopSelf();
+            //            stopSelf();
             stopRunnable();
         }
 
@@ -146,7 +149,7 @@ public class ClickService extends GrayService {
             e.printStackTrace();
         }
         handler.sendMessage(handler.obtainMessage(AUTO_CLICK, coordinate.getX(), coordinate.getY()));
-        new ClickTool().click(coordinate.getX(), coordinate.getY());
+        clickTool.click(coordinate.getX(), coordinate.getY());
     }
 
     public static Intent getClickService(Context context, Action action, int runTime) {
@@ -157,7 +160,7 @@ public class ClickService extends GrayService {
     }
 
     private Queue<Action> actions = new LinkedList<Action>();
-    private ClickTool clickTool = new ClickTool();
+    public ClickTool clickTool = new ClickTool();
     private ScreenView screenView;
     private TextView textView;
     private String content = "自动运行点击";
@@ -325,7 +328,7 @@ public class ClickService extends GrayService {
                         ClickService.stopService(getApplicationContext());
 
                         ActionRun actionRun = ActionRunFile.read();
-                        if (actionRun.getModeType() == ActionRun.ModeType.NIGHT){
+                        if (actionRun.getModeType() == ActionRun.ModeType.NIGHT) {
                             actionRun.setModeType(ActionRun.ModeType.TASK);
                         }
                         ActionRunFile.write(actionRun);

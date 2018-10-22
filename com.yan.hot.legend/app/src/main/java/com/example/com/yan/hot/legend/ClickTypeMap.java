@@ -23,7 +23,7 @@ public class ClickTypeMap {
         actionNameMap.put(ClickTool.ClientType.牛刀网页,"牛刀网页");
         actionNameMap.put(ClickTool.ClientType.玩蛋,"玩蛋");
         actionNameMap.put(ClickTool.ClientType.客娱,"客娱");
-        actionNameMap.put(ClickTool.ClientType.热血单机,"热血单机");
+        actionNameMap.put(ClickTool.ClientType.热血单机,"热血单机-new");
         actionNameMap.put(ClickTool.ClientType.游戏07073,"07073游戏-new");
         actionNameMap.put(ClickTool.ClientType.游戏1758,"1758微游戏");
         actionNameMap.put(ClickTool.ClientType.乐趣,"乐趣");

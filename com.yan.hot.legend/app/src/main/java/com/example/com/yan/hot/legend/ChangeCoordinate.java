@@ -680,6 +680,51 @@ public class ChangeCoordinate {
 //            addTime("核弹头双开-new",4,10000);
 //            addTime("核弹头双开-new",29,30000);
 //            addTime("核弹头双开-new",30,40000);
+
+//        delete("热血单机h5-new",6);
+//        setCoordinate("热血单机h5-new",89, 362,252, 818);
+
+//        deletePostions("热血单机h5-new",0,1);
+//        setCoordinate("热血单机h5-new",279, 1038,252, 818);
+        //        addCoordinate("热血单机h5-new",0,897,767);
+
+//        delete("热血单机h5-new",3);
+//        setCoordinate("热血单机h5-new",546, 1806,587,1811);
+//        addCoordinateEnd("热血单机h5-new",544, 1573,50000);
+//        setTime("热血单机h5-new",1,3000);
+//        setTime("热血单机h5-new",2,40000);
+
+//        delete("热血单机双开-new",5);
+//        setTime("热血单机双开-new",1,3000);
+//        setTime("热血单机双开-new",2,15000);
+//        setTime("热血单机双开-new",3,40000);
+//        setTime("热血单机双开-new",4,50000);
+
+//        delete("热血单机-new",8);
+//        setTime("热血单机-new",1,3000);
+//        setTime("热血单机-new",2,10000);
+//        setTime("热血单机-new",3,3000);
+//        setTime("热血单机-new",4,3000);
+//        setTime("热血单机-new",5,10000);
+//        setTime("热血单机-new",6,40000);
+//        setTime("热血单机-new",7,50000);
+
+//        delete("07073游戏-new",7);
+//        setTime("07073游戏-new",1,3000);
+//        setTime("07073游戏-new",2,10000);
+//        setTime("07073游戏-new",3,3000);
+//        setTime("07073游戏-new",4,3000);
+//        setTime("07073游戏-new",5,40000);
+//        setTime("07073游戏-new",6,50000);
+
+//        delete("核弹头双开-new",7);
+//        setTime("核弹头双开-new",1,3000);
+//        setTime("核弹头双开-new",2,10000);
+//        setTime("核弹头双开-new",3,3000);
+//        setTime("核弹头双开-new",4,3000);
+//        setTime("核弹头双开-new",5,40000);
+//        setTime("核弹头双开-new",6,50000);
+
         show("核弹头双开-new");
 
 //        ActionFile.write(actions);
