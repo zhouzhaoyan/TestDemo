@@ -8,7 +8,7 @@
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CUSTOM_FILTER" value="tmp" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -16,6 +16,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="de4b68bd-1522-45eb-ba7f-cfd26beeeb4c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <list id="7544c89c-b4dd-47d4-999b-43131f5b2b17" name="gradle" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -38,19 +41,6 @@
     </list>
     <list id="0d06aa8e-9f7b-44fa-adcb-fb15ddfe86bc" name="app,iml" comment="">
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-    </list>
-    <list default="true" id="de4b68bd-1522-45eb-ba7f-cfd26beeeb4c" name="Default" comment="更新代码">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugQQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickTypeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickTypeMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/pic/SimilarPicture.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/pic/SimilarPicture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/runstate/ActionRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/runstate/ActionRun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/screencap/ScreencapPathUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/screencap/ScreencapPathUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java" afterDir="false" />
     </list>
     <list id="4e1a21c9-b0e5-4635-a867-81517a9fb296" name="build" comment="">
       <change beforePath="$PROJECT_DIR$/app/build/generated/mockable-android-19.v3.jar" beforeDir="false" />
@@ -130,7 +120,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ChangeCoordinate.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ChangeCoordinate.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="269">
@@ -210,7 +200,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActionRun.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ActionRun.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/runstate/ActionRun.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="87">
@@ -2219,27 +2209,6 @@
       </list>
     </option>
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/.idea/misc.xml">
-      <ranges>
-        <range start1="2" end1="4" start2="2" end2="4" changelist="7544c89c-b4dd-47d4-999b-43131f5b2b17" />
-        <range start1="8" end1="9" start2="8" end2="9" changelist="7544c89c-b4dd-47d4-999b-43131f5b2b17" />
-        <range start1="36" end1="36" start2="36" end2="38" changelist="7544c89c-b4dd-47d4-999b-43131f5b2b17" />
-        <range start1="39" end1="39" start2="41" end2="42" changelist="7544c89c-b4dd-47d4-999b-43131f5b2b17" />
-        <range start1="43" end1="44" start2="46" end2="46" changelist="7544c89c-b4dd-47d4-999b-43131f5b2b17" />
-        <range start1="46" end1="46" start2="48" end2="49" changelist="7544c89c-b4dd-47d4-999b-43131f5b2b17" />
-        <range start1="47" end1="47" start2="50" end2="52" changelist="7544c89c-b4dd-47d4-999b-43131f5b2b17" />
-        <range start1="50" end1="51" start2="55" end2="56" changelist="7544c89c-b4dd-47d4-999b-43131f5b2b17" />
-        <range start1="59" end1="60" start2="64" end2="65" changelist="7544c89c-b4dd-47d4-999b-43131f5b2b17" />
-        <range start1="65" end1="65" start2="70" end2="71" changelist="7544c89c-b4dd-47d4-999b-43131f5b2b17" />
-        <range start1="66" end1="67" start2="72" end2="73" changelist="7544c89c-b4dd-47d4-999b-43131f5b2b17" />
-        <range start1="76" end1="77" start2="82" end2="83" changelist="7544c89c-b4dd-47d4-999b-43131f5b2b17" />
-        <range start1="79" end1="81" start2="85" end2="88" changelist="7544c89c-b4dd-47d4-999b-43131f5b2b17" />
-        <range start1="95" end1="96" start2="102" end2="103" changelist="de4b68bd-1522-45eb-ba7f-cfd26beeeb4c" />
-        <range start1="100" end1="116" start2="107" end2="107" changelist="7544c89c-b4dd-47d4-999b-43131f5b2b17" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
@@ -2719,13 +2688,6 @@
       <option name="presentableId" value="Default" />
       <updated>1533171703630</updated>
     </task>
-    <task id="LOCAL-00043" summary="更新代码">
-      <created>1537264177445</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1537264177445</updated>
-    </task>
     <task id="LOCAL-00044" summary="更新代码">
       <created>1537350840368</created>
       <option name="number" value="00044" />
@@ -3062,7 +3024,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540133475767</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="更新代码">
+      <created>1540222250901</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1540222250903</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -3075,13 +3044,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="1" />
       <window_info id="Build Variants" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.39111748" side_tool="true" weight="0.4159664" />
-      <window_info active="true" anchor="bottom" id="Logcat" order="3" sideWeight="0.60888255" visible="true" weight="0.4719888" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="3" sideWeight="0.60888255" visible="true" weight="0.49159664" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="2" />
       <window_info id="Compare Directories" order="3" />
@@ -3576,13 +3545,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="730" column="5" selection-start-line="730" selection-start-column="5" selection-end-line="730" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickTypeMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-116">
@@ -3600,6 +3562,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="730" column="5" selection-start-line="730" selection-start-column="5" selection-end-line="730" selection-end-column="5" />
         </state>
       </provider>
     </entry>
