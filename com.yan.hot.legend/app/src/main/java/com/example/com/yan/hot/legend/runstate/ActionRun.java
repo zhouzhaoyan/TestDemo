@@ -13,8 +13,6 @@ public class ActionRun {
     private static List<ClickTool.ClientType> noRun = new ArrayList<>();
 
     static {
-        noRun.add(ClickTool.ClientType.游戏07073);
-        noRun.add(ClickTool.ClientType.热血单机h5双开);
     }
 
 

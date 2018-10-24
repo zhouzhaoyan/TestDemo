@@ -725,7 +725,25 @@ public class ChangeCoordinate {
 //        setTime("核弹头双开-new",5,40000);
 //        setTime("核弹头双开-new",6,50000);
 
-        show("核弹头双开-new");
+//        delete("热血单机h5双开-new",4);
+//        setTime("热血单机h5双开-new",1,3000);
+//        setTime("热血单机h5双开-new",2,40000);
+//        setTime("热血单机h5双开-new",3,50000);
+
+//        setCoordinate("核弹头双开-new",559, 1053,816,
+//                1049
+//        );
+
+//        delete("热血单机双开-new",8);
+//        deletePostion("热血单机双开-new",5);
+//        setTime("热血单机双开-new",1,3000);
+//        setTime("热血单机双开-new",2,10000);
+//        setTime("热血单机双开-new",3,5000);
+//        setTime("热血单机双开-new",4,5000);
+//        setTime("热血单机双开-new",5,40000);
+//        setTime("热血单机双开-new",6,50000);
+
+        show("热血单机双开-new");
 
 //        ActionFile.write(actions);
     }

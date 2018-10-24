@@ -42,13 +42,13 @@ public class PlugQQ {
     private static final Map<ClickTool.ClientType, String> accountMap = new HashMap<>();
 
     static {
-        accountMap.put(ClickTool.ClientType.游戏07073, "1594225121");
+        accountMap.put(ClickTool.ClientType.热血单机双开, "2594365547");
     }
 
     private static Map<String, Bitmap> qqBitmap;
 
     private static final String dir = ActionFile.HOT_ROOT + File.separator + "qq";
-    private static boolean isDebug = false;
+    private static boolean isDebug = true;
 
     @SuppressLint("CheckResult")
     public static void init() {
@@ -69,7 +69,6 @@ public class PlugQQ {
                             qqBitmap.put(next.getKey(), getBitmap(DEFAULT_QQ_PATH, next.getValue()));
                         }
 
-                        FileUtils.deleteDirectory(dir);
                     }
                 });
     }
@@ -92,10 +91,12 @@ public class PlugQQ {
             return;
         }
 
-        if (!(coordinate.getX() == 895 && coordinate.getY() == 1182)) {
+        if (!(coordinate.getX() == 942 && coordinate.getY() == 1161)) {
             return;
         }
 
+        FileUtils.deleteDirectory(dir);
+        new File(dir).mkdirs();
         String path = ScreencapPathUtil.getPath(dir, clientType.name());
         clickService.clickTool.screencap(path);
 
@@ -113,13 +114,12 @@ public class PlugQQ {
 
         Iterator<Map.Entry<String, Rect>> iterator = defaultRect.entrySet().iterator();
         Bitmap bitmap = qqBitmap.get(accountMap.get(clientType));
-        boolean result;
         Rect rect;
         while (iterator.hasNext()) {
             Map.Entry<String, Rect> next = iterator.next();
             rect = next.getValue();
-            result = SimilarPicture.isEquals(getBitmap(path, rect), bitmap);
-            if (result) {
+            float per = SimilarPicture.isEqualsPer(getBitmap(path, rect), bitmap);
+            if (per > 80) {
                 LogManager.newInstance().writeMessage("running click sleep，name: PlugQQ:" + clientType + "," + next.getKey());
 
                 Coordinate coordinate1 = new Coordinate((rect.left + rect.right) / 2, (rect.top + rect.bottom) / 2);

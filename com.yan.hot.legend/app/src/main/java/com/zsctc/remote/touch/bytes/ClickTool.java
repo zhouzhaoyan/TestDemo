@@ -206,8 +206,8 @@ public class ClickTool {
                 case TASK:
                     //任务模式，20分
                     runNames.add("熔炼new");
-                    runNames.add("竞技new");
                     runNames.add("血战矿洞");
+                    runNames.add("竞技new");
                     runNames.add("通天塔");
                     if (isFastest(clientType)) {
                         runNames.add("材料副本快速");
@@ -244,6 +244,7 @@ public class ClickTool {
                 case 核弹头双开:
                 case 热血单机h5:
                 case 游戏07073:
+                case 热血单机h5双开:
                     runNames.add("游戏-结束");
                     break;
                 case 牛刀网页:
@@ -251,9 +252,8 @@ public class ClickTool {
                 case 核弹头网页:
                     runNames.add("游戏-登录结束");
                     break;
-                case 热血单机h5双开:
-                    runNames.add("07073游戏盒子-结束");
-                    break;
+//                    runNames.add("07073游戏盒子-结束");
+//                    break;
                 case 游戏1758:
                     runNames.add("1758微游戏-结束");
                     break;

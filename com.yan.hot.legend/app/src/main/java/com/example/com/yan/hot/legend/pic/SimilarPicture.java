@@ -47,12 +47,16 @@ public class SimilarPicture {
     }
 
     public static boolean isEquals(Bitmap b1, Bitmap b2) {
+        return isEqualsPer(b1, b2) >= 90;
+    }
+
+    public static float isEqualsPer(Bitmap b1, Bitmap b2) {
         if (b1 == null || b2 == null){
-            return false;
+            return 0;
         }
         Log.e(TAG, "isEquals: width:" + b1.getWidth() + "," + b1.getWidth());
-//        save(b1,"1.png");
-//        save(b2,"2.png");
+        //        save(b1,"1.png");
+        //        save(b2,"2.png");
         //先判断宽高是否一致，不一致直接返回false
         if (b1.getWidth() == b2.getWidth()
                 && b1.getHeight() == b2.getHeight()) {
@@ -61,8 +65,8 @@ public class SimilarPicture {
             int difference = 0;
             for (int x = 0; x < xCount; x++) {
                 for (int y = 0; y < yCount; y++) {
-                    Log.e(TAG, "isEquals: " + b1.getPixel(x, y) + "," + b2.getPixel(x, y)
-                            + ",x:" + x + ",y:" + y);
+                    //                    Log.e(TAG, "isEquals: " + b1.getPixel(x, y) + "," + b2.getPixel(x, y)
+                    //                            + ",x:" + x + ",y:" + y);
                     //比较每个像素点颜色
                     if (b1.getPixel(x, y) != b2.getPixel(x, y)) {
                         difference ++;
@@ -72,14 +76,32 @@ public class SimilarPicture {
             float allValue = xCount*yCount*1.0f;
             float per =  (allValue-difference)/allValue*100.0f;
             Log.e(TAG, "isEquals: per:" + per + ",difference:" + difference );
-            return per >= 90;
+            return per;
         } else {
-            return false;
+            return 0;
         }
     }
 
     public static void save(Bitmap bitmap,String name) {
         File PHOTO_DIR = new File(Environment.getExternalStorageDirectory().getPath());//设置保存路径
+        File avaterFile = new File(PHOTO_DIR, name);//设置文件名称
+        if (avaterFile.exists()) {
+            avaterFile.delete();
+        }
+        try {
+            avaterFile.createNewFile();
+            FileOutputStream fos = new FileOutputStream(avaterFile);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            fos.flush();
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void save(Bitmap bitmap,String dir, String name) {
+        File PHOTO_DIR = new File(dir);//设置保存路径
         File avaterFile = new File(PHOTO_DIR, name);//设置文件名称
         if (avaterFile.exists()) {
             avaterFile.delete();
