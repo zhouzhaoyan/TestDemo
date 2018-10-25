@@ -120,7 +120,7 @@ public class PlugQQ {
             rect = next.getValue();
             float per = SimilarPicture.isEqualsPer(getBitmap(path, rect), bitmap);
             if (per > 80) {
-                LogManager.newInstance().writeMessage("running click sleep，name: PlugQQ:" + clientType + "," + next.getKey());
+                LogManager.newInstance().writeMessage("running click sleep，name: PlugQQ:" + clientType);
 
                 Coordinate coordinate1 = new Coordinate((rect.left + rect.right) / 2, (rect.top + rect.bottom) / 2);
                 Log.e(TAG, "PlugQQ runClick: " + coordinate1.getX() + "," + coordinate1.getY());

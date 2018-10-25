@@ -743,7 +743,14 @@ public class ChangeCoordinate {
 //        setTime("热血单机双开-new",5,40000);
 //        setTime("热血单机双开-new",6,50000);
 
-        show("热血单机双开-new");
+//        setTime("核弹头-new",5,15000);
+
+//        setCoordinate("通天塔",1021,1996,1013, 2021);
+//        deletePostions("通天塔",0,1,2);
+//        setCoordinateIndex("通天塔",12,getSize("通天塔")-1,1013, 2021);
+
+//        setCoordinate("熔炼new",924, 1734,966, 1734);
+        show("熔炼new");
 
 //        ActionFile.write(actions);
     }

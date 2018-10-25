@@ -314,6 +314,7 @@ public class ClickTool {
             case 热血单机h5:
             case 热血单机双开:
             case 凹凸果:
+            case 乐趣网页双开:
                 result = true;
                 break;
         }
