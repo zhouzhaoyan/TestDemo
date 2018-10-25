@@ -32,6 +32,8 @@ import static android.content.ContentValues.TAG;
 public class PlugQQ {
     private static final String DEFAULT_QQ_PATH = ActionFile.HOT_ROOT + File.separator + "qqLogin.png";
     private static final Map<String, Rect> defaultRect = new HashMap<>();
+    private static final float runX = 942;
+    private static final float runY = 1161;
 
     static {
         defaultRect.put("1594225121", new Rect(80, 1500, 320, 1560));
@@ -43,6 +45,7 @@ public class PlugQQ {
 
     static {
         accountMap.put(ClickTool.ClientType.热血单机双开, "2594365547");
+        accountMap.put(ClickTool.ClientType.牛刀网页双开, "2594365547");
     }
 
     private static Map<String, Bitmap> qqBitmap;
@@ -91,7 +94,7 @@ public class PlugQQ {
             return;
         }
 
-        if (!(coordinate.getX() == 942 && coordinate.getY() == 1161)) {
+        if (!(coordinate.getX() == runX && coordinate.getY() == runY)) {
             return;
         }
 

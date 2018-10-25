@@ -750,7 +750,53 @@ public class ChangeCoordinate {
 //        setCoordinateIndex("通天塔",12,getSize("通天塔")-1,1013, 2021);
 
 //        setCoordinate("熔炼new",924, 1734,966, 1734);
-        show("熔炼new");
+
+//        deletePostionsIndex("核弹头网页new",5,15);
+//        setTime("核弹头网页new",1,10000);
+//        setTime("核弹头网页new",2,3000);
+//        setTime("核弹头网页new",3,3000);
+//        setTime("核弹头网页new",4,30000);
+//        setTime("核弹头网页new",5,20000);
+//        setTime("核弹头网页new",6,3000);
+//        setTime("核弹头网页new",7,5000);
+//        setTime("核弹头网页new",8,40000);
+//        setTime("核弹头网页new",9,50000);
+
+//        deletePostionsIndex("牛刀网页",5,15);
+//        setTime("牛刀网页",1,10000);
+//        setTime("牛刀网页",2,3000);
+//        setTime("牛刀网页",3,3000);
+//        setTime("牛刀网页",4,30000);
+//        setTime("牛刀网页",5,20000);
+//        setTime("牛刀网页",6,3000);
+//        setTime("牛刀网页",7,5000);
+//        setTime("牛刀网页",8,40000);
+//        setTime("牛刀网页",9,50000);
+
+//        deletePostionsIndex("客娱",5,15);
+//        setTime("客娱",1,10000);
+//        setTime("客娱",2,3000);
+//        setTime("客娱",3,3000);
+//        setTime("客娱",4,30000);
+//        setTime("客娱",5,20000);
+//        setTime("客娱",6,3000);
+//        setTime("客娱",7,5000);
+//        setTime("客娱",8,40000);
+//        setTime("客娱",9,50000);
+
+//        deletePostionsIndex("牛刀网页双开-new",4,24);
+//        setCoordinate("牛刀网页双开-new",543, 883,942,1161);
+//        setTime("牛刀网页双开-new",1,3000);
+//        setTime("牛刀网页双开-new",2,15000);
+//        setTime("牛刀网页双开-new",3,10000);
+//        setTime("牛刀网页双开-new",4,5000);
+//        setTime("牛刀网页双开-new",5,40000);
+//        setTime("牛刀网页双开-new",6,50000);
+
+//        setCoordinateIndex("07073插件",0,0,964,869);
+
+//        setCoordinate("热血单机h5双开-new",639, 1829,587,1811);
+        show("热血单机h5双开-new");
 
 //        ActionFile.write(actions);
     }

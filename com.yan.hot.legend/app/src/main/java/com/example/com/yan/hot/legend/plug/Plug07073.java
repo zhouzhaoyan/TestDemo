@@ -24,6 +24,7 @@ public class Plug07073 {
         CLIENT_TYPE_LIST.add(ClickTool.ClientType.游戏07073网页);
         CLIENT_TYPE_LIST.add(ClickTool.ClientType.游戏07073);
         CLIENT_TYPE_LIST.add(ClickTool.ClientType.热血单机h5);
+        CLIENT_TYPE_LIST.add(ClickTool.ClientType.热血单机h5双开);
     }
 
     public static void init(List<Action> actions){
