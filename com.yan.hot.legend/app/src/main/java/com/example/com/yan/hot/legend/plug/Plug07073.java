@@ -66,9 +66,10 @@ public class Plug07073 {
         return result;
     }
 
-    public void runPlug(ClickService clickService, ClickTool.ClientType clientType, Coordinate coordinate){
+    public long runPlug(ClickService clickService, ClickTool.ClientType clientType, Coordinate coordinate){
         long currentTime = 0;
         long sleep = 0;
+        long allTime = 0;
         if (isRunPlug(clientType, coordinate)){
             LogManager.newInstance().writeMessage("running click sleep，name: runPlug:" + clientType);
 
@@ -78,10 +79,12 @@ public class Plug07073 {
                 }
                 currentTime = tmp.getTime();
                 if (sleep == 0){
-                    sleep = 10000;
+                    sleep = 30000;
                 }
+                allTime += sleep;
                 clickService.runClick(sleep, tmp);
             }
         }
+        return allTime;
     }
 }

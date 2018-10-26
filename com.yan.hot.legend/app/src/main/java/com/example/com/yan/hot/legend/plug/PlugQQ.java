@@ -127,7 +127,7 @@ public class PlugQQ {
 
                 Coordinate coordinate1 = new Coordinate((rect.left + rect.right) / 2, (rect.top + rect.bottom) / 2);
                 Log.e(TAG, "PlugQQ runClick: " + coordinate1.getX() + "," + coordinate1.getY());
-                clickService.runClick(1000,
+                clickService.runClick(5000,
                         coordinate1);
                 break;
             }

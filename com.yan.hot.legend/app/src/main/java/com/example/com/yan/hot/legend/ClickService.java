@@ -88,7 +88,7 @@ public class ClickService extends GrayService {
 
                 handler.sendEmptyMessage(WAIT_LOADING_RESOURCE);
                 LogManager.newInstance().writeMessage("running click sleep");
-                if (actionName.contains("竞技")) {
+                if (actionName.contains("熔炼")) {
                     screencap(clientType);
                 }
                 try {
@@ -113,10 +113,13 @@ public class ClickService extends GrayService {
                         break;
                     }
                     //运行07073的插件
-                    plug07073.runPlug(ClickService.this, clientType, coordinate);
+                    long runTime07073 = plug07073.runPlug(ClickService.this, clientType, coordinate);
 
                     if (currentTime != 0) {
                         sleep = (int) (coordinate.getTime() - currentTime);
+                        if (runTime07073 != 0){
+                            sleep = Math.max(sleep - runTime07073, 5000);
+                        }
                     }
                     currentTime = coordinate.getTime();
                     runClick(sleep, coordinate);

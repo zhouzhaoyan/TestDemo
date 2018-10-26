@@ -796,7 +796,7 @@ public class ChangeCoordinate {
 //        setCoordinateIndex("07073插件",0,0,964,869);
 
 //        setCoordinate("热血单机h5双开-new",639, 1829,587,1811);
-        show("热血单机h5双开-new");
+        show("热血单机h5");
 
 //        ActionFile.write(actions);
     }
