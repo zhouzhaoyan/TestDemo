@@ -796,7 +796,10 @@ public class ChangeCoordinate {
 //        setCoordinateIndex("07073插件",0,0,964,869);
 
 //        setCoordinate("热血单机h5双开-new",639, 1829,587,1811);
-        show("热血单机h5");
+//        delete("桌面纠错插件",1);
+//        addCoordinateEndRepeate("桌面纠错插件",773 ,2219,500,6);
+
+        show("桌面纠错插件");
 
 //        ActionFile.write(actions);
     }

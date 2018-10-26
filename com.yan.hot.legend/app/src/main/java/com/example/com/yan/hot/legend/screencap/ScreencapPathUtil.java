@@ -39,7 +39,7 @@ public class ScreencapPathUtil {
         File[] files = file.listFiles();
         if (files != null && files.length > 0) {
             for (File tmp : files) {
-                if (tmp.isDirectory() && !tmp.getName().equals(time)) {
+                if (tmp.isDirectory() && !tmp.getName().equals(time) && tmp.getName().length() == 10) {
                     FileUtils.delete(tmp.getPath());
                 }
             }

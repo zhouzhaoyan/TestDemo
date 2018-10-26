@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.com.yan.hot.legend.plug.Plug07073;
+import com.example.com.yan.hot.legend.plug.PlugDesktop;
 import com.yan.hot.legend.action.Action;
 import com.yan.hot.legend.action.ActionFile;
 import com.yan.hot.legend.action.Coordinate;
@@ -108,6 +109,7 @@ public class AliveService extends NotificationListenerService {
 
         actions = ActionFile.read();
         Plug07073.init(actions);
+        PlugDesktop.init(actions);
 
         if (actions != null) {
             ClickTool.initClient(actions);

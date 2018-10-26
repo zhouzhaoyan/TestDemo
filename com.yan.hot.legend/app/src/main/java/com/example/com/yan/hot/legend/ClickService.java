@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.com.yan.hot.legend.pic.SimilarPicture;
 import com.example.com.yan.hot.legend.plug.Plug07073;
+import com.example.com.yan.hot.legend.plug.PlugDesktop;
 import com.example.com.yan.hot.legend.plug.PlugQQ;
 import com.example.com.yan.hot.legend.runstate.ActionRun;
 import com.example.com.yan.hot.legend.runstate.ActionRunFile;
@@ -75,6 +76,7 @@ public class ClickService extends GrayService {
                 ClickTool.ClientType currentType = ClickTypeMap.getClientType(actionName);
                 if (currentType != null) {
                     clientType = currentType;
+                    PlugDesktop.runClick(ClickService.this, clientType);
                 }
                 //无法进入游戏则退出，不在运行该客户端
                 if (actionName.contains("结束")) {
@@ -117,7 +119,7 @@ public class ClickService extends GrayService {
 
                     if (currentTime != 0) {
                         sleep = (int) (coordinate.getTime() - currentTime);
-                        if (runTime07073 != 0){
+                        if (runTime07073 != 0) {
                             sleep = Math.max(sleep - runTime07073, 5000);
                         }
                     }

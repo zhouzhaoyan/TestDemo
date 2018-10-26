@@ -11,7 +11,6 @@ import com.example.com.yan.hot.legend.screencap.ScreencapPathUtil;
 import com.yan.hot.legend.action.ActionFile;
 import com.yan.hot.legend.action.Coordinate;
 import com.zsctc.remote.touch.bytes.ClickTool;
-import com.zsctc.remote.touch.bytes.FileUtils;
 import com.zsctc.remote.touch.bytes.LogManager;
 
 import java.io.File;
@@ -98,12 +97,19 @@ public class PlugQQ {
             return;
         }
 
-        FileUtils.deleteDirectory(dir);
+//        FileUtils.deleteDirectory(dir);
         new File(dir).mkdirs();
         String path = ScreencapPathUtil.getPath(dir, clientType.name());
         clickService.clickTool.screencap(path);
 
-        for (int i = 0; !(new File(path).exists() || i > 5); i++) {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        File file = new File(path);
+        for (int i = 0; !((file.exists() && file.length() > 0) || i > 3); i++) {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -111,7 +117,7 @@ public class PlugQQ {
             }
         }
 
-        if (!(new File(path).exists())) {
+        if (!(file.exists() && file.length() > 0)) {
             return;
         }
 

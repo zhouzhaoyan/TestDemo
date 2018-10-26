@@ -37,21 +37,11 @@ public class Plug07073 {
 
     private List<Coordinate> getCoordinate(){
         List<Coordinate> coordinates = new ArrayList<>();
-        Action newAction = null;
         for (Action action: actions) {
             if (action.getActionTime().getCount() > 0 && action.getName().contains(PLUG_NAME)){
-                if (newAction == null){
-                    newAction = action;
-                } else {
-                    if (action.getCoordinates().get(0).getTime() > newAction.getCoordinates().get(0).getTime()){
-                        newAction = action;
-                    }
-                }
-                action.getCoordinates();
+                coordinates = action.getCoordinates();
+                break;
             }
-        }
-        if (newAction != null){
-            coordinates = newAction.getCoordinates();
         }
         return coordinates;
     }
