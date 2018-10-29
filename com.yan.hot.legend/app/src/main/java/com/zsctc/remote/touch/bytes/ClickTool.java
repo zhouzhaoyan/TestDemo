@@ -316,6 +316,7 @@ public class ClickTool {
             case 凹凸果:
             case 乐趣双开:
             case 乐趣网页双开:
+            case 火树网页双开:
                 result = true;
                 break;
         }

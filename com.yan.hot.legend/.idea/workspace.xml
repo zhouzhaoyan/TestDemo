@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value=" running click sleep，name:" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="running click sleep，name:" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
@@ -16,6 +16,28 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
+    <list id="4e1a21c9-b0e5-4635-a867-81517a9fb296" name="build" comment="">
+      <change beforePath="$PROJECT_DIR$/app/build/generated/mockable-android-19.v3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/source/buildConfig/androidTest/debug/com/example/com/yan/hot/legend/test/BuildConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/androidTest/debug/com/example/com/yan/hot/legend/test/R.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/compileDebugAndroidTestAidl/dependency.store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/debug/zip-cache/vnr2GRNl57H4heZ9Z3nz2KHFfdA=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest/androidTest/debug/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest/androidTest/debug/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/androidTest/debug/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/androidTest/debug/resources-debugAndroidTest.ap_" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/splits-support/androidTest/debug/split-list.gson" beforeDir="false" />
+    </list>
+    <list default="true" id="de4b68bd-1522-45eb-ba7f-cfd26beeeb4c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java" afterDir="false" />
+    </list>
+    <list id="0d06aa8e-9f7b-44fa-adcb-fb15ddfe86bc" name="app,iml" comment="">
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+    </list>
     <list id="7544c89c-b4dd-47d4-999b-43131f5b2b17" name="gradle" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -35,33 +57,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_v4_19_1_0_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com.yan.hot.legend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/com.yan.hot.legend.iml" afterDir="false" />
-    </list>
-    <list default="true" id="de4b68bd-1522-45eb-ba7f-cfd26beeeb4c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugDesktop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/AliveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/AliveService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/Plug07073.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/Plug07073.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugQQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugQQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/screencap/ScreencapPathUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/screencap/ScreencapPathUtil.java" afterDir="false" />
-    </list>
-    <list id="4e1a21c9-b0e5-4635-a867-81517a9fb296" name="build" comment="">
-      <change beforePath="$PROJECT_DIR$/app/build/generated/mockable-android-19.v3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/buildConfig/androidTest/debug/com/example/com/yan/hot/legend/test/BuildConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/androidTest/debug/com/example/com/yan/hot/legend/test/R.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/compileDebugAndroidTestAidl/dependency.store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/debug/zip-cache/vnr2GRNl57H4heZ9Z3nz2KHFfdA=" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest/androidTest/debug/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest/androidTest/debug/output.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/androidTest/debug/output.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/androidTest/debug/resources-debugAndroidTest.ap_" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/splits-support/androidTest/debug/split-list.gson" beforeDir="false" />
-    </list>
-    <list id="0d06aa8e-9f7b-44fa-adcb-fb15ddfe86bc" name="app,iml" comment="">
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -127,6 +122,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ChangeCoordinate.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="806" column="5" selection-start-line="806" selection-start-column="5" selection-end-line="806" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PlugDesktop.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugDesktop.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -134,6 +138,22 @@
               <caret line="65" column="33" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Plug07073.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/Plug07073.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="63" column="70" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="70" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1024#1025#0" expanded="true" />
+                <element signature="e#1067#1068#0" expanded="true" />
+                <element signature="e#1093#1094#0" expanded="true" />
+                <element signature="e#1158#1159#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -151,8 +171,8 @@
       <file leaf-file-name="PlugQQ.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugQQ.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="111" column="71" selection-start-line="111" selection-start-column="71" selection-end-line="111" selection-end-column="71" />
+            <state relative-caret-position="18">
+              <caret line="126" column="36" selection-start-line="126" selection-start-column="36" selection-end-line="126" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -173,29 +193,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TimeUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/TimeUtil.java">
+      <file leaf-file-name="ClickTypeMap.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickTypeMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="346" column="25" selection-start-line="346" selection-start-column="25" selection-end-line="346" selection-end-column="25" />
+            <state relative-caret-position="83">
+              <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="66" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClickTool.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClickTool.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+            <state relative-caret-position="97">
+              <caret line="318" column="24" selection-start-line="318" selection-start-column="24" selection-end-line="318" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClickService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ClickService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="223" column="56" selection-start-line="223" selection-start-column="56" selection-end-line="223" selection-end-column="56" />
+            <state relative-caret-position="87">
+              <caret line="101" column="55" lean-forward="true" selection-start-line="101" selection-start-column="55" selection-end-line="101" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -212,19 +235,6 @@
                 <element signature="e#1413#1414#0" expanded="true" />
                 <element signature="e#1473#1474#0" expanded="true" />
                 <element signature="e#1521#1522#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BitmapFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://D:/work_tools/adt-bundle-windows-x86_64-20140702/sdk/sources/android-21/android/graphics/BitmapFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="415" column="25" selection-start-line="415" selection-start-column="25" selection-end-line="415" selection-end-column="25" />
-              <folding>
-                <element signature="e#18945#18946#0" expanded="true" />
-                <element signature="e#18994#18995#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2191,14 +2201,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/runstate/ActionRun.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickTypeMap.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/pic/SimilarPicture.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/Plug07073.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/AliveService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/screencap/ScreencapPathUtil.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugQQ.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugDesktop.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java" />
       </list>
     </option>
   </component>
@@ -2670,13 +2680,6 @@
       <option name="presentableId" value="Default" />
       <updated>1533171703630</updated>
     </task>
-    <task id="LOCAL-00050" summary="更新代码">
-      <created>1537837470118</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1537837470119</updated>
-    </task>
     <task id="LOCAL-00051" summary="更新代码">
       <created>1537838406412</created>
       <option name="number" value="00051" />
@@ -3013,7 +3016,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540523296963</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="增加桌面纠错插件">
+      <created>1540547276212</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1540547276212</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -3027,7 +3037,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="1" />
       <window_info anchor="bottom" id="TODO" order="13" weight="0.32913166" />
@@ -3039,18 +3048,18 @@
       <window_info anchor="bottom" id="Run" order="9" weight="0.32960895" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.31232494" />
       <window_info anchor="bottom" id="Terminal" order="6" />
-      <window_info active="true" anchor="bottom" id="Logcat" order="3" sideWeight="0.60888255" visible="true" weight="0.46638656" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="3" sideWeight="0.60888255" visible="true" weight="0.51960784" />
       <window_info id="Captures" order="7" sideWeight="0.49859944" weight="0.25" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49859944" visible="true" weight="0.28366762" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49859944" weight="0.28366762" />
       <window_info id="Compare Directories" order="3" />
       <window_info anchor="bottom" id="Build" order="4" weight="0.37114847" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32913166" />
       <window_info anchor="right" id="Gradle" order="5" sideWeight="0.49304175" weight="0.3295129" />
       <window_info id="Structure" order="6" sideWeight="0.5014006" side_tool="true" weight="0.21848138" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.39944133" />
-      <window_info anchor="right" id="Device File Explorer" order="9" sideWeight="0.50695825" side_tool="true" visible="true" weight="0.3030086" />
+      <window_info anchor="right" id="Device File Explorer" order="9" sideWeight="0.50695825" side_tool="true" weight="0.3030086" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info id="Favorites" order="4" sideWeight="0.5014006" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Assistant" order="0" weight="0.6697708" />
@@ -3081,9 +3090,9 @@
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.39111748" side_tool="true" weight="0.4159664" />
       <window_info anchor="right" id="Preview" order="2" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-      <window_info active="true" anchor="right" id="Device File Explorer" order="9" sideWeight="0.50695825" side_tool="true" visible="true" weight="0.39326647" />
+      <window_info anchor="right" id="Device File Explorer" order="9" sideWeight="0.50695825" side_tool="true" weight="0.3030086" />
       <window_info anchor="right" id="Assistant" order="0" weight="0.6697708" />
-      <window_info anchor="bottom" id="Logcat" order="3" sideWeight="0.60888255" visible="true" weight="0.36414567" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="3" sideWeight="0.60888255" visible="true" weight="0.51960784" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.31232494" />
       <window_info anchor="bottom" id="Terminal" order="6" />
       <window_info anchor="right" id="Gradle" order="5" sideWeight="0.49304175" weight="0.3295129" />
@@ -3147,7 +3156,8 @@
     <MESSAGE value="增加07073的插件" />
     <MESSAGE value="更新重新运行的之前错误的任务" />
     <MESSAGE value="更新代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新代码" />
+    <MESSAGE value="增加桌面纠错插件" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加桌面纠错插件" />
   </component>
   <component name="WindowStateProjectService">
     <state width="192" height="270" key="Git.Branch.Popup" />
@@ -3295,16 +3305,6 @@
     <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/xiaomi-mi_8_se-30c3c8d8/sdcard/hot/qq/1.png" />
     <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/xiaomi-mi_8_se-30c3c8d8/sdcard/hot/qq/2.png" />
     <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/xiaomi-mi_8_se-30c3c8d8/sdcard/hot/qqLogin.png" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickTypeMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1044">
-          <caret line="40" column="57" selection-start-line="40" selection-start-column="57" selection-end-line="40" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/work_tools/adt-bundle-windows-x86_64-20140702/sdk/sources/android-21/java/util/Map.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
@@ -3337,31 +3337,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/Plug07073.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1024#1025#0" expanded="true" />
-            <element signature="e#1067#1068#0" expanded="true" />
-            <element signature="e#1093#1094#0" expanded="true" />
-            <element signature="e#1158#1159#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/AliveService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2581">
           <caret line="76" column="32" selection-start-line="76" selection-start-column="32" selection-end-line="76" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="804" column="5" selection-start-line="804" selection-start-column="5" selection-end-line="804" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -3387,32 +3366,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://D:/work_tools/adt-bundle-windows-x86_64-20140702/sdk/sources/android-21/android/graphics/BitmapFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="415" column="25" selection-start-line="415" selection-start-column="25" selection-end-line="415" selection-end-column="25" />
-          <folding>
-            <element signature="e#18945#18946#0" expanded="true" />
-            <element signature="e#18994#18995#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/pic/SimilarPicture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
-          <folding>
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#625#626#0" expanded="true" />
-            <element signature="e#1360#1361#0" expanded="true" />
-            <element signature="e#1413#1414#0" expanded="true" />
-            <element signature="e#1473#1474#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/xiaomi-mi_8_se-30c3c8d8/sdcard/hot/desktop/1-核弹头双开.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -3427,13 +3380,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
           <caret line="346" column="25" selection-start-line="346" selection-start-column="25" selection-end-line="346" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="223" column="56" selection-start-line="223" selection-start-column="56" selection-end-line="223" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -3470,16 +3416,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugQQ.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="111" column="71" selection-start-line="111" selection-start-column="71" selection-end-line="111" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/xiaomi-mi_8_se-30c3c8d8/sdcard/hot/desktop/7-牛刀.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -3495,6 +3431,32 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://D:/work_tools/adt-bundle-windows-x86_64-20140702/sdk/sources/android-21/android/graphics/BitmapFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="415" column="25" selection-start-line="415" selection-start-column="25" selection-end-line="415" selection-end-column="25" />
+          <folding>
+            <element signature="e#18945#18946#0" expanded="true" />
+            <element signature="e#18994#18995#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/pic/SimilarPicture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+          <folding>
+            <element signature="e#571#572#0" expanded="true" />
+            <element signature="e#625#626#0" expanded="true" />
+            <element signature="e#1360#1361#0" expanded="true" />
+            <element signature="e#1413#1414#0" expanded="true" />
+            <element signature="e#1473#1474#0" expanded="true" />
+            <element signature="e#1521#1522#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugDesktop.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -3505,10 +3467,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickTypeMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/Plug07073.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="63" column="70" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1024#1025#0" expanded="true" />
+            <element signature="e#1067#1068#0" expanded="true" />
+            <element signature="e#1093#1094#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugQQ.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="126" column="36" selection-start-line="126" selection-start-column="36" selection-end-line="126" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="806" column="5" selection-start-line="806" selection-start-column="5" selection-end-line="806" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+        <state relative-caret-position="97">
+          <caret line="318" column="24" selection-start-line="318" selection-start-column="24" selection-end-line="318" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="101" column="55" lean-forward="true" selection-start-line="101" selection-start-column="55" selection-end-line="101" selection-end-column="80" />
         </state>
       </provider>
     </entry>

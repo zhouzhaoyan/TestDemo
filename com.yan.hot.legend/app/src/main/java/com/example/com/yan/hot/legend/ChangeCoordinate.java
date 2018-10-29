@@ -799,7 +799,9 @@ public class ChangeCoordinate {
 //        delete("桌面纠错插件",1);
 //        addCoordinateEndRepeate("桌面纠错插件",773 ,2219,500,6);
 
-        show("桌面纠错插件");
+//        setCoordinate("热血单机h5-new",576,1813,587,1811);
+//        setTime("热血单机双开-new",2,30000);
+        show("热血单机双开-new");
 
 //        ActionFile.write(actions);
     }
