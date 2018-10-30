@@ -216,7 +216,7 @@ public class ClickTool {
                     }
                     runNames.add("经验副本");
                     runNames.add("转生");
-                    runNames.add("个人boss");
+                    runNames.add("个人boss快速");
                     runNames.add("自动关卡sample");
                     runNames.add("秘境boss快速sample");
                     runNames.add("野外boss快速sample");

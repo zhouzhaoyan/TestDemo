@@ -801,7 +801,13 @@ public class ChangeCoordinate {
 
 //        setCoordinate("热血单机h5-new",576,1813,587,1811);
 //        setTime("热血单机双开-new",2,30000);
-        show("热血单机双开-new");
+
+//        addNew("个人boss","个人boss快速");
+//        deletePostions("个人boss快速",0,1,2,3);
+//        deletePostionsIndex("个人boss快速",29,82);
+//        setTime("个人boss快速",29,30000);
+
+        show("个人boss快速");
 
 //        ActionFile.write(actions);
     }
