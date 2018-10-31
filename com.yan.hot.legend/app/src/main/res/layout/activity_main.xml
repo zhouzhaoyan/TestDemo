@@ -320,6 +320,19 @@
             android:text="热血h5双开"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/game26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="火树qq浏览器"/>
+    </LinearLayout>
+
     <!--<include-->
     <!--layout="@layout/dialog_action"/>-->
 

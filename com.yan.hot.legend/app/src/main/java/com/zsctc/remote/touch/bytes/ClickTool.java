@@ -153,6 +153,10 @@ public class ClickTool {
         if (tmp.contains(ClientType.热血单机h5双开) && actionRun.isRun(ClientType.热血单机h5双开)) {
             clientTypes.add(ClientType.热血单机h5双开);
         }
+
+        if (tmp.contains(ClientType.火树qq浏览器) && actionRun.isRun(ClientType.火树qq浏览器)) {
+            clientTypes.add(ClientType.火树qq浏览器);
+        }
     }
 
     private static List<ClientType> clientTypes;
@@ -161,7 +165,8 @@ public class ClickTool {
         火树, 游戏07073网页, 乐趣网页, 核弹头网页, 游戏1758网页, 牛刀, 牛刀网页, 玩蛋, 客娱,
         热血单机, 游戏07073, 游戏1758, 乐趣, 核弹头, 热血单机h5, 热血单机双开, 凹凸果,
         乐趣双开, 乐趣网页双开, 火树网页双开, 玩蛋双开,
-        牛刀网页双开,游戏1758网页双开, 核弹头双开, 热血单机h5双开
+        牛刀网页双开,游戏1758网页双开, 核弹头双开, 热血单机h5双开,
+        火树qq浏览器
     }
 
     public static List<Long> getClickTime(long time, Action action) {
@@ -245,6 +250,7 @@ public class ClickTool {
                 case 热血单机h5:
                 case 游戏07073:
                 case 热血单机h5双开:
+                case 火树qq浏览器:
                     runNames.add("游戏-结束");
                     break;
                 case 牛刀网页:

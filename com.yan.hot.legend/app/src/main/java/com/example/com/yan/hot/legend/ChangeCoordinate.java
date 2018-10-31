@@ -807,7 +807,10 @@ public class ChangeCoordinate {
 //        deletePostionsIndex("个人boss快速",29,82);
 //        setTime("个人boss快速",29,30000);
 
-        show("个人boss快速");
+//        addNew("热血单机h5-new","火树qq浏览器");
+//        setCoordinateIndex("火树qq浏览器",1,1,824,1006);
+
+        show("火树qq浏览器");
 
 //        ActionFile.write(actions);
     }

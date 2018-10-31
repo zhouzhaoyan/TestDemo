@@ -58,9 +58,6 @@ public class MainActivity extends Activity {
         } else {
             //			AliveService.openAliveService(getApplicationContext());
         }
-
-        DevoteManager.init();
-        PlugQQ.init();
     }
 
     public void onClick(View view) {
@@ -72,6 +69,8 @@ public class MainActivity extends Activity {
                 finish();
                 break;
             case R.id.action_start:
+                DevoteManager.init();
+                PlugQQ.init();
                 start();
                 updateUi();
                 break;
@@ -260,6 +259,9 @@ public class MainActivity extends Activity {
                 break;
             case 热血单机h5双开:
                 checkBox = ((CheckBox) findViewById(R.id.game25));
+                break;
+            case 火树qq浏览器:
+                checkBox = ((CheckBox) findViewById(R.id.game26));
                 break;
         }
         return checkBox;
