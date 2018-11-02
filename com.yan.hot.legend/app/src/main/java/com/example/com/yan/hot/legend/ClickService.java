@@ -317,6 +317,7 @@ public class ClickService extends GrayService {
     }
 
     private Disposable restartDisposable;
+    private boolean debug = false;
 
     @SuppressLint("CheckResult")
     public void restart() {
@@ -337,7 +338,7 @@ public class ClickService extends GrayService {
                             actionRun.setModeType(ActionRun.ModeType.TASK);
                         }
                         List<ActionRun.ActionState> actionStates = actionRun.getActionStates();
-                        if (actionStates == null || actionStates.isEmpty()){
+                        if (debug && (actionStates == null || actionStates.isEmpty())){
                             ActionRun.ModeType[] modeTypes = new ActionRun.ModeType[]{
                                     ActionRun.ModeType.TASK, ActionRun.ModeType.DAILY,
                                     ActionRun.ModeType.DAILY_TASK, ActionRun.ModeType.SIMPLE,
