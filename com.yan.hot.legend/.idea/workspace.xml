@@ -35,17 +35,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_v4_19_1_0_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/com.yan.hot.legend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/com.yan.hot.legend.iml" afterDir="false" />
     </list>
-    <list default="true" id="de4b68bd-1522-45eb-ba7f-cfd26beeeb4c" name="Default" comment="">
+    <list default="true" id="de4b68bd-1522-45eb-ba7f-cfd26beeeb4c" name="Default" comment="更新代码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickTypeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickTypeMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/runstate/ActionRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/runstate/ActionRun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-    </list>
-    <list id="0d06aa8e-9f7b-44fa-adcb-fb15ddfe86bc" name="app,iml" comment="">
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
     </list>
     <list id="4e1a21c9-b0e5-4635-a867-81517a9fb296" name="build" comment="">
       <change beforePath="$PROJECT_DIR$/app/build/generated/mockable-android-19.v3.jar" beforeDir="false" />
@@ -60,6 +54,9 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/androidTest/debug/output.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/androidTest/debug/resources-debugAndroidTest.ap_" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/splits-support/androidTest/debug/split-list.gson" beforeDir="false" />
+    </list>
+    <list id="0d06aa8e-9f7b-44fa-adcb-fb15ddfe86bc" name="app,iml" comment="">
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -125,6 +122,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="577">
+              <caret line="157" column="19" selection-start-line="157" selection-start-column="19" selection-end-line="157" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="112" column="35" selection-start-line="112" selection-start-column="35" selection-end-line="112" selection-end-column="35" />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ChangeCoordinate.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -134,11 +152,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClickTool.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClickTool.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="233" column="51" lean-forward="true" selection-start-line="233" selection-start-column="51" selection-end-line="233" selection-end-column="51" />
+            <state relative-caret-position="221">
+              <caret line="235" column="51" selection-start-line="235" selection-start-column="51" selection-end-line="235" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -146,8 +164,39 @@
       <file leaf-file-name="ClickService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="101" column="55" selection-start-line="101" selection-start-column="55" selection-end-line="101" selection-end-column="80" />
+            <state relative-caret-position="94">
+              <caret line="342" column="34" selection-start-line="342" selection-start-column="34" selection-end-line="342" selection-end-column="34" />
+              <folding>
+                <element signature="e#12359#14356#0" expanded="true" />
+                <element signature="e#14355#14356#0" expanded="true" />
+                <element signature="e#14430#14731#0" expanded="true" />
+                <element signature="e#14730#14731#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActionRunFile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/runstate/ActionRunFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+              <folding>
+                <element signature="e#1890#1891#0" expanded="true" />
+                <element signature="e#1929#1930#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActionRun.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/runstate/ActionRun.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -164,7 +213,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>running click sleep</find>
       <find>running click sleep，name:</find>
       <find>restartDisposable</find>
       <find>游戏-结束</find>
@@ -174,7 +222,6 @@
       <find>handler.sendEmptyMessag</find>
       <find>竞技</find>
       <find>核弹头</find>
-      <find>delete</find>
       <find>clientType</find>
       <find>热血单机</find>
       <find>核弹头网页</find>
@@ -193,10 +240,13 @@
       <find>个人boss快速</find>
       <find>noru</find>
       <find>norun</find>
+      <find>delete</find>
+      <find>android:checked=&quot;true&quot;</find>
       <find>玩蛋qq浏览器</find>
     </findStrings>
     <replaceStrings>
       <replace />
+      <replace>android:checked=&quot;false&quot;</replace>
     </replaceStrings>
   </component>
   <component name="GenerateSignedApkSettings">
@@ -2114,13 +2164,13 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/screencap/ScreencapPathUtil.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugQQ.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugDesktop.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/runstate/ActionRun.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickTypeMap.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/runstate/ActionRun.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
       </list>
     </option>
   </component>
@@ -2289,7 +2339,7 @@
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="D:/work_tools/adt-bundle-windows-x86_64-20140702/sdk" />
-    <property name="device.picker.selection" value="30c3c8d8" />
+    <property name="device.picker.selection" value="b6fdc496" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="D:/外挂/pic" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
@@ -2570,13 +2620,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1533171703630</updated>
-    </task>
-    <task id="LOCAL-00054" summary="更新代码">
-      <created>1537926452615</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1537926452615</updated>
     </task>
     <task id="LOCAL-00055" summary="更新代码">
       <created>1537926703132</created>
@@ -2914,7 +2957,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540947479038</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="更新代码">
+      <created>1541140232218</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1541140232218</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -2928,40 +2978,41 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="1" />
+      <window_info id="Build Variants" order="0" sideWeight="0.5014006" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.39111748" side_tool="true" weight="0.4159664" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="3" sideWeight="0.60888255" visible="true" weight="0.46778712" />
+      <window_info id="Capture Tool" order="1" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Compare Directories" order="3" />
+      <window_info anchor="bottom" id="Build" order="4" weight="0.37114847" />
+      <window_info id="Structure" order="6" sideWeight="0.5014006" side_tool="true" weight="0.21848138" />
+      <window_info anchor="right" id="Device File Explorer" order="9" sideWeight="0.50695825" side_tool="true" weight="0.29727793" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.39944133" />
       <window_info anchor="bottom" id="TODO" order="13" weight="0.32913166" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="8" />
-      <window_info id="Build Variants" order="0" sideWeight="0.5014006" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.39111748" side_tool="true" weight="0.4159664" />
+      <window_info anchor="right" id="Preview" order="2" />
       <window_info anchor="bottom" id="Run" order="9" weight="0.32960895" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.31232494" />
       <window_info anchor="bottom" id="Terminal" order="6" />
-      <window_info active="true" anchor="bottom" id="Logcat" order="3" sideWeight="0.60888255" visible="true" weight="0.40756303" />
       <window_info id="Captures" order="7" sideWeight="0.49859944" weight="0.25" />
-      <window_info id="Capture Tool" order="1" />
-      <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49859944" weight="0.30014327" />
-      <window_info id="Compare Directories" order="3" />
-      <window_info anchor="bottom" id="Build" order="4" weight="0.37114847" />
+      <window_info anchor="bottom" id="Find" order="8" weight="0.32913166" />
       <window_info anchor="right" id="Gradle" order="5" sideWeight="0.49304175" weight="0.3295129" />
-      <window_info id="Structure" order="6" sideWeight="0.5014006" side_tool="true" weight="0.21848138" />
-      <window_info anchor="right" id="Device File Explorer" order="9" sideWeight="0.50695825" side_tool="true" visible="true" weight="0.29727793" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.39944133" />
       <window_info id="Favorites" order="4" sideWeight="0.5014006" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Assistant" order="0" weight="0.6697708" />
       <window_info anchor="bottom" id="Messages" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Preview" order="2" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="8" weight="0.32913166" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Build" order="4" weight="0.37114847" />
@@ -2982,9 +3033,9 @@
       <window_info anchor="right" id="Preview" order="2" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32913166" />
-      <window_info anchor="right" id="Device File Explorer" order="9" sideWeight="0.50695825" side_tool="true" weight="0.29799426" />
+      <window_info anchor="right" id="Device File Explorer" order="9" sideWeight="0.50695825" side_tool="true" weight="0.29727793" />
       <window_info anchor="right" id="Assistant" order="0" weight="0.6697708" />
-      <window_info active="true" anchor="bottom" id="Logcat" order="3" sideWeight="0.60888255" visible="true" weight="0.46218488" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="3" sideWeight="0.60888255" visible="true" weight="0.46778712" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.31232494" />
       <window_info anchor="bottom" id="Terminal" order="6" />
       <window_info anchor="right" id="Gradle" order="5" sideWeight="0.49304175" weight="0.3295129" />
@@ -3252,27 +3303,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/runstate/ActionRunFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="957">
-          <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
-          <folding>
-            <element signature="e#1890#1891#0" expanded="true" />
-            <element signature="e#1929#1930#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/runstate/ActionRun.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1827">
-          <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickTypeMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1218">
@@ -3280,23 +3310,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9512">
-          <caret line="328" column="24" selection-start-line="328" selection-start-column="24" selection-end-line="328" selection-end-column="24" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="259" column="21" selection-start-line="259" selection-start-column="21" selection-end-line="259" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -3310,10 +3323,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="235" column="51" selection-start-line="235" selection-start-column="51" selection-end-line="235" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/runstate/ActionRunFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+          <folding>
+            <element signature="e#1890#1891#0" expanded="true" />
+            <element signature="e#1929#1930#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/runstate/ActionRun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="101" column="55" selection-start-line="101" selection-start-column="55" selection-end-line="101" selection-end-column="80" />
+        <state relative-caret-position="94">
+          <caret line="342" column="34" selection-start-line="342" selection-start-column="34" selection-end-line="342" selection-end-column="34" />
+          <folding>
+            <element signature="e#12359#14356#0" expanded="true" />
+            <element signature="e#14355#14356#0" expanded="true" />
+            <element signature="e#14430#14731#0" expanded="true" />
+            <element signature="e#14730#14731#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3324,10 +3371,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="112" column="35" selection-start-line="112" selection-start-column="35" selection-end-line="112" selection-end-column="35" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="233" column="51" lean-forward="true" selection-start-line="233" selection-start-column="51" selection-end-line="233" selection-end-column="51" />
+        <state relative-caret-position="577">
+          <caret line="157" column="19" selection-start-line="157" selection-start-column="19" selection-end-line="157" selection-end-column="19" />
         </state>
       </provider>
     </entry>

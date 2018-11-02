@@ -336,6 +336,26 @@ public class ClickService extends GrayService {
                         if (actionRun.getModeType() == ActionRun.ModeType.NIGHT) {
                             actionRun.setModeType(ActionRun.ModeType.TASK);
                         }
+                        List<ActionRun.ActionState> actionStates = actionRun.getActionStates();
+                        if (actionStates == null || actionStates.isEmpty()){
+                            ActionRun.ModeType[] modeTypes = new ActionRun.ModeType[]{
+                                    ActionRun.ModeType.TASK, ActionRun.ModeType.DAILY,
+                                    ActionRun.ModeType.DAILY_TASK, ActionRun.ModeType.SIMPLE,
+                            };
+                            ActionRun.ModeType currentMode = actionRun.getModeType();
+                            ActionRun.ModeType nextMode = null;
+                            for (int i = 0; i < modeTypes.length; i++) {
+                                if (modeTypes[i] == currentMode){
+                                    if (i + 1 < modeTypes.length){
+                                        nextMode = modeTypes[i+1];
+                                        break;
+                                    }
+                                }
+                            }
+                            if (nextMode != null){
+                                actionRun = new ActionRun(nextMode);
+                            }
+                        }
                         ActionRunFile.write(actionRun);
                         return 1;
                     }

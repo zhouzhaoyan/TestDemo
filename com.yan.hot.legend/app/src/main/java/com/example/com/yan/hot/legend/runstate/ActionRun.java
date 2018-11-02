@@ -33,6 +33,7 @@ public class ActionRun {
 
     public ActionRun(ModeType modeType) {
         ClickTool.ClientType[] clientTypes = ClickTool.ClientType.values();
+        this.modeType = modeType;
 
 
         for (ClickTool.ClientType clientType : clientTypes) {
