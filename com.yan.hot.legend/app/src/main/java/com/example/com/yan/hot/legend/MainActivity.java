@@ -266,6 +266,9 @@ public class MainActivity extends Activity {
             case 玩蛋qq浏览器:
                 checkBox = ((CheckBox) findViewById(R.id.game27));
                 break;
+            case 乐趣qq浏览器:
+                checkBox = ((CheckBox) findViewById(R.id.game28));
+                break;
         }
         return checkBox;
     }

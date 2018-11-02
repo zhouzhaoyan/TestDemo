@@ -41,6 +41,7 @@ public class ClickTypeMap {
         actionNameMap.put(ClickTool.ClientType.热血单机h5双开,"热血单机h5双开-new");
         actionNameMap.put(ClickTool.ClientType.火树qq浏览器,"火树qq浏览器");
         actionNameMap.put(ClickTool.ClientType.玩蛋qq浏览器,"玩蛋qq浏览器");
+        actionNameMap.put(ClickTool.ClientType.乐趣qq浏览器,"乐趣qq浏览器");
     }
 
     public static ClickTool.ClientType getClientType(String actionName) {

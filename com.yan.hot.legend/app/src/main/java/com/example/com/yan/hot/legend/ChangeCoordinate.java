@@ -819,7 +819,10 @@ public class ChangeCoordinate {
 //        addCoordinateEnd("个人boss快速",1013, 2021,1000);
 //        setTime("个人boss快速",14,1000);
 
-        show("秘境boss快速sample");
+//        addNew("热血单机h5-new","乐趣qq浏览器");
+//        setCoordinateIndex("乐趣qq浏览器",1,1,556,1309);
+
+        show("乐趣qq浏览器");
 
 //        ActionFile.write(actions);
     }
