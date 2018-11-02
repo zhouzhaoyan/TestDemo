@@ -810,7 +810,16 @@ public class ChangeCoordinate {
 //        addNew("热血单机h5-new","火树qq浏览器");
 //        setCoordinateIndex("火树qq浏览器",1,1,824,1006);
 
-        show("火树qq浏览器");
+//        addNew("热血单机h5-new","玩蛋qq浏览器");
+//        setCoordinateIndex("玩蛋qq浏览器",1,1,222,1313);
+
+//        delete("个人boss快速");
+//        addNew("个人boss","个人boss快速");
+//        deletePostionsIndex("个人boss快速",14,87);
+//        addCoordinateEnd("个人boss快速",1013, 2021,1000);
+//        setTime("个人boss快速",14,1000);
+
+        show("秘境boss快速sample");
 
 //        ActionFile.write(actions);
     }
@@ -1008,15 +1017,8 @@ public class ChangeCoordinate {
     private static void addNew(String oldName, String newName) {
         Action tmp = getAction(oldName);
         if (tmp != null) {
-            List<Coordinate> coordinates = tmp.getCoordinates();
             Action actionCopy = copy(tmp, newName);
-            for (int i = 0; i < coordinates.size(); i++) {
-                Log.e("test", "tmp: " + coordinates.get(i) + "\n");
-            }
-
             actions.add(actionCopy);
-            //            ActionFile.write(actions);
-            Log.e("test", "tmp: " + actionCopy);
         }
     }
 
@@ -1059,6 +1061,11 @@ public class ChangeCoordinate {
             }
             coordinates.remove(position);
         }
+    }
+
+    private static void delete(String name){
+        Action tmp = getAction(name);
+        actions.remove(tmp);
     }
 
     private static void delete(String name, int startIndex) {
