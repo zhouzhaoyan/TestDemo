@@ -27,7 +27,7 @@ public class ActionRun {
 
     private List<ActionState> actionStates = new ArrayList<>();
     private ModeType modeType = ModeType.TASK;
-    private boolean auto = false;
+    private boolean auto = true;
 
     public ActionRun() {
     }
