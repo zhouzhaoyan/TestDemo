@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.com.yan.hot.legend.plug.Plug07073;
 import com.example.com.yan.hot.legend.plug.PlugDesktop;
+import com.example.com.yan.hot.legend.plug.PlugQQ;
 import com.example.com.yan.hot.legend.runstate.ActionRun;
 import com.example.com.yan.hot.legend.runstate.ActionRunFile;
 import com.yan.hot.legend.action.Action;
@@ -112,6 +113,7 @@ public class AliveService extends NotificationListenerService {
         };
 
         actions = ActionFile.read();
+        PlugQQ.init(actions);
         Plug07073.init(actions);
         PlugDesktop.init(actions);
 

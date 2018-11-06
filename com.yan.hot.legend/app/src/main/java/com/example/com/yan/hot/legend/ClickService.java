@@ -114,6 +114,9 @@ public class ClickService extends GrayService {
                         LogManager.newInstance().writeMessage("running click error," + action.getName());
                         break;
                     }
+
+//                    PlugQQ.autoLogin(ClickService.this, clientType, coordinate);
+
                     //运行07073的插件
                     long runTime07073 = plug07073.runPlug(ClickService.this, clientType, coordinate);
 

@@ -8,6 +8,7 @@ import android.util.Log;
 import com.example.com.yan.hot.legend.ClickService;
 import com.example.com.yan.hot.legend.pic.SimilarPicture;
 import com.example.com.yan.hot.legend.screencap.ScreencapPathUtil;
+import com.yan.hot.legend.action.Action;
 import com.yan.hot.legend.action.ActionFile;
 import com.yan.hot.legend.action.Coordinate;
 import com.zsctc.remote.touch.bytes.ClickTool;
@@ -16,6 +17,7 @@ import com.zsctc.remote.touch.bytes.LogManager;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import io.reactivex.Observable;
@@ -29,6 +31,7 @@ import static android.content.ContentValues.TAG;
  * QQ插件
  */
 public class PlugQQ {
+    private static List<Action> actions;
     private static final String DEFAULT_QQ_PATH = ActionFile.HOT_ROOT + File.separator + "qqLogin.png";
     private static final Map<String, Rect> defaultRect = new HashMap<>();
     private static final float runX = 942;
@@ -53,11 +56,11 @@ public class PlugQQ {
     private static boolean isDebug = true;
 
     @SuppressLint("CheckResult")
-    public static void init() {
+    public static void init(List<Action> actions) {
         if (!isDebug){
             return;
         }
-
+        PlugQQ.actions = actions;
         Observable.just(1)
                 .observeOn(Schedulers.io())
                 .subscribe(new Consumer<Integer>() {
@@ -75,7 +78,7 @@ public class PlugQQ {
                 });
     }
 
-    private static Bitmap getBitmap(String path, Rect rect) {
+    public static Bitmap getBitmap(String path, Rect rect) {
         Bitmap bitmap = SimilarPicture.getBitmap(path);
         Log.e(TAG, "getBitmap: " + bitmap.getWidth() + "," + bitmap.getHeight()
                 + ",rect:" + rect);
@@ -83,6 +86,7 @@ public class PlugQQ {
                 rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top);
     }
 
+    //自动选择用户登录
     @SuppressLint("CheckResult")
     public static void runClick(final ClickService clickService, final ClickTool.ClientType clientType, final Coordinate coordinate) {
         if (!isDebug){
@@ -97,27 +101,8 @@ public class PlugQQ {
             return;
         }
 
-//        FileUtils.deleteDirectory(dir);
-        new File(dir).mkdirs();
-        String path = ScreencapPathUtil.getPath(dir, clientType.name());
-        clickService.clickTool.screencap(path);
-
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        File file = new File(path);
-        for (int i = 0; !((file.exists() && file.length() > 0) || i > 3); i++) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
-        if (!(file.exists() && file.length() > 0)) {
+        String path = screencap(clickService, clientType);
+        if (path == null){
             return;
         }
 
@@ -138,5 +123,40 @@ public class PlugQQ {
                 break;
             }
         }
+    }
+
+    //自动加载登录脚本
+    public static void autoLogin(final ClickService clickService, final ClickTool.ClientType clientType, final Coordinate coordinate){
+        PlugQQForBase[] plugQQForBases = new PlugQQForBase[]{new PlugQQFor07073(actions)};
+        for (PlugQQForBase bases: plugQQForBases) {
+            bases.runPlug(clickService, clientType, coordinate);
+        }
+    }
+
+    static String screencap(ClickService clickService, ClickTool.ClientType clientType){
+        new File(dir).mkdirs();
+        String path = ScreencapPathUtil.getPath(dir, clientType.name());
+        clickService.clickTool.screencap(path);
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        File file = new File(path);
+        for (int i = 0; !((file.exists() && file.length() > 0) || i > 3); i++) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (!(file.exists() && file.length() > 0)) {
+            return null;
+        }
+
+        return path;
     }
 }
