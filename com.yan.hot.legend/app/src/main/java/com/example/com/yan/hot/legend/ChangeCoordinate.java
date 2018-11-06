@@ -825,7 +825,9 @@ public class ChangeCoordinate {
 //        addNew("07073游戏-new","乐趣qq浏览器");
 //        setCoordinateIndex("乐趣qq浏览器",1,1,556,1309);
 
-        show("乐趣qq浏览器");
+//        addCoordinateEnd("07073插件",514,
+//                1608,3000);
+        show("07073插件");
 
 //        ActionFile.write(actions);
     }
