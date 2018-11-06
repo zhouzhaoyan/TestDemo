@@ -807,19 +807,22 @@ public class ChangeCoordinate {
 //        deletePostionsIndex("个人boss快速",29,82);
 //        setTime("个人boss快速",29,30000);
 
-//        addNew("热血单机h5-new","火树qq浏览器");
-//        setCoordinateIndex("火树qq浏览器",1,1,824,1006);
-
-//        addNew("热血单机h5-new","玩蛋qq浏览器");
-//        setCoordinateIndex("玩蛋qq浏览器",1,1,222,1313);
-
 //        delete("个人boss快速");
 //        addNew("个人boss","个人boss快速");
 //        deletePostionsIndex("个人boss快速",14,87);
 //        addCoordinateEnd("个人boss快速",1013, 2021,1000);
 //        setTime("个人boss快速",14,1000);
 
-//        addNew("热血单机h5-new","乐趣qq浏览器");
+//        delete("火树qq浏览器");
+//        addNew("07073游戏-new","火树qq浏览器");
+//        setCoordinateIndex("火树qq浏览器",1,1,824,1006);
+//
+//        delete("玩蛋qq浏览器");
+//        addNew("07073游戏-new","玩蛋qq浏览器");
+//        setCoordinateIndex("玩蛋qq浏览器",1,1,222,1313);
+//
+//        delete("乐趣qq浏览器");
+//        addNew("07073游戏-new","乐趣qq浏览器");
 //        setCoordinateIndex("乐趣qq浏览器",1,1,556,1309);
 
         show("乐趣qq浏览器");

@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -37,8 +36,6 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
-import static android.content.ContentValues.TAG;
-
 public class ClickService extends GrayService {
 
     private static final String ACTION_FLAG = "ACTION_FLAG";
@@ -63,6 +60,7 @@ public class ClickService extends GrayService {
             Action action;
             //07073 插件
             Plug07073 plug07073 = new Plug07073();
+            ActionRun actionRun = ActionRunFile.read();
             cancelRestart();
 
             while (!actions.isEmpty()) {
@@ -77,6 +75,8 @@ public class ClickService extends GrayService {
                 if (currentType != null) {
                     clientType = currentType;
                     PlugDesktop.runClick(ClickService.this, clientType);
+                    LogManager.newInstance().writeMessage("running click sleep，mode:" + actionRun.getModeType());
+
                 }
                 //无法进入游戏则退出，不在运行该客户端
                 if (actionName.contains("结束")) {
@@ -147,7 +147,7 @@ public class ClickService extends GrayService {
     }
 
     public void runClick(long sleep, Coordinate coordinate) {
-        Log.e(TAG, "running click sleep，coordinate:" + coordinate.getX() + "," + coordinate.getY());
+//        Log.e(TAG, "running click sleep，coordinate:" + coordinate.getX() + "," + coordinate.getY());
         try {
             Thread.sleep(Math.max(sleep, 200));
         } catch (InterruptedException e) {
@@ -317,7 +317,6 @@ public class ClickService extends GrayService {
     }
 
     private Disposable restartDisposable;
-    private boolean debug = false;
 
     @SuppressLint("CheckResult")
     public void restart() {
@@ -338,7 +337,7 @@ public class ClickService extends GrayService {
                             actionRun.setModeType(ActionRun.ModeType.TASK);
                         }
                         List<ActionRun.ActionState> actionStates = actionRun.getActionStates();
-                        if (debug && (actionStates == null || actionStates.isEmpty())){
+                        if (actionRun.isAuto() && isRunningFinish(actionStates)){
                             ActionRun.ModeType[] modeTypes = new ActionRun.ModeType[]{
                                     ActionRun.ModeType.TASK, ActionRun.ModeType.DAILY,
                                     ActionRun.ModeType.DAILY_TASK, ActionRun.ModeType.SIMPLE,
@@ -355,6 +354,7 @@ public class ClickService extends GrayService {
                             }
                             if (nextMode != null){
                                 actionRun = new ActionRun(nextMode);
+                                actionRun.setAuto(true);
                             }
                         }
                         ActionRunFile.write(actionRun);
@@ -370,6 +370,17 @@ public class ClickService extends GrayService {
                         AliveService.openAliveService(getApplicationContext());
                     }
                 });
+    }
+
+    private boolean isRunningFinish(List<ActionRun.ActionState> actionStates){
+        boolean result = true;
+        for (ActionRun.ActionState state: actionStates) {
+            if (state.isRun()){
+                result &= false;
+                break;
+            }
+        }
+        return result;
     }
 
     public void cancelRestart() {

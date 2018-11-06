@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 import com.example.com.yan.hot.legend.plug.Plug07073;
 import com.example.com.yan.hot.legend.plug.PlugDesktop;
+import com.example.com.yan.hot.legend.runstate.ActionRun;
+import com.example.com.yan.hot.legend.runstate.ActionRunFile;
 import com.yan.hot.legend.action.Action;
 import com.yan.hot.legend.action.ActionFile;
 import com.yan.hot.legend.action.Coordinate;
@@ -36,6 +38,7 @@ public class AliveService extends NotificationListenerService {
     private ScreenView screenView;
     private Map<Action, List<Long>> clickTimesMap = new ArrayMap<Action, List<Long>>();
     private List<Action> actions;
+    private ActionRun actionRun;
 
     @Override
     public void onCreate() {
@@ -43,6 +46,7 @@ public class AliveService extends NotificationListenerService {
         super.onCreate();
         screenView = new ScreenView(this, false);
         alarmEveryDay();
+        actionRun = ActionRunFile.read();
     }
 
     public static void openAliveService(Context context) {
@@ -174,7 +178,7 @@ public class AliveService extends NotificationListenerService {
         if (actions == null) {
             return;
         }
-        String ms = "运行中\n";
+        String ms = "运行中" + "(" + actionRun.getModeType()+ ")" + "\n";
         long currentTime = System.currentTimeMillis();
         int showCount = 0;
         for (Action action : actions) {

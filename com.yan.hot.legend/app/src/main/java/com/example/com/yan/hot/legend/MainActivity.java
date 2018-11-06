@@ -114,10 +114,16 @@ public class MainActivity extends Activity {
         for (ClickTool.ClientType type : ClickTool.ClientType.values()) {
             actionRun.setActionStates(type,getCheckBox(type).isChecked());
         }
+
+        actionRun.setAuto(getAutoCheckBox().isChecked());
         Log.e(TAG, "start: actionRun:" + actionRun );
         ActionRunFile.write(actionRun);
 
         AliveService.openAliveService(getApplicationContext());
+    }
+
+    private CheckBox getAutoCheckBox() {
+        return (CheckBox) findViewById(R.id.auto);
     }
 
     public void setClientColor(ClickTool.ClientType clientType, int color) {
@@ -139,24 +145,32 @@ public class MainActivity extends Activity {
         }
         switch (actionRun.getModeType()){
             case DAILY:
-                ((CheckBox) findViewById(R.id.daily)).setChecked(true);
-                ((CheckBox) findViewById(R.id.daily_task)).setChecked(false);
-                ((CheckBox) findViewById(R.id.simple)).setChecked(false);
+                updateModeType(true, false, false, false);
                 break;
             case DAILY_TASK:
-                ((CheckBox) findViewById(R.id.daily)).setChecked(false);
-                ((CheckBox) findViewById(R.id.daily_task)).setChecked(true);
-                ((CheckBox) findViewById(R.id.simple)).setChecked(false);
+                updateModeType(false, true, false, false);
                 break;
             case SIMPLE:
-                ((CheckBox) findViewById(R.id.daily)).setChecked(false);
-                ((CheckBox) findViewById(R.id.daily_task)).setChecked(false);
-                ((CheckBox) findViewById(R.id.simple)).setChecked(true);
+                updateModeType(false, false, true, false);
+                break;
+            case NIGHT:
+                updateModeType(false, false, false, true);
+                break;
+            case TASK:
+                updateModeType(false, false, false, false);
                 break;
         }
         for (ActionRun.ActionState state: actionRun.getActionStates()) {
             setClientCheck(state.getClientType(), state.isRun());
         }
+        getAutoCheckBox().setChecked(actionRun.isAuto());
+    }
+
+    private void updateModeType(boolean daily, boolean dailyTask, boolean simple, boolean night) {
+        ((CheckBox) findViewById(R.id.daily)).setChecked(daily);
+        ((CheckBox) findViewById(R.id.daily_task)).setChecked(dailyTask);
+        ((CheckBox) findViewById(R.id.simple)).setChecked(simple);
+        ((CheckBox) findViewById(R.id.night)).setChecked(night);
     }
 
     public void setClientCheck(ClickTool.ClientType clientType, boolean check) {

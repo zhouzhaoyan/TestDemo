@@ -5,11 +5,6 @@
               android:orientation="vertical"
               tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -92,13 +87,25 @@
             android:checked="false"
             android:text="多余模式"
             android:visibility="gone"/>
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
         <CheckBox
             android:id="@+id/night"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="夜间模式"/>
+
+        <CheckBox
+            android:id="@+id/auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="自动"/>
     </LinearLayout>
 
     <LinearLayout
