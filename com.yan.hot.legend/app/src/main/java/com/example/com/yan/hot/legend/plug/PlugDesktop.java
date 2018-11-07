@@ -58,13 +58,13 @@ public class PlugDesktop {
         clickService.clickTool.screencap(path);
 
         try {
-            Thread.sleep(2000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
         File file = new File(path);
-        for (int i = 0; !((file.exists() && file.length() > 0) || i > 3); i++) {
+        for (int i = 0; !((file.exists() && file.length() > 1024*1024) || i > 3); i++) {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -72,7 +72,7 @@ public class PlugDesktop {
             }
         }
 
-        if (!(file.exists() && file.length() > 0)) {
+        if (!(file.exists() && file.length() > 1024*1024)) {
             return;
         }
 

@@ -192,7 +192,7 @@ public class ClickTool {
 
             switch (actionRun.getModeType()){
                 case DAILY:
-                    //日常模式，10分
+                    //日常模式，9分
                     runNames.add("熔炼new");
                     runNames.add("竞技new");
                     runNames.add("血战矿洞");
@@ -200,7 +200,7 @@ public class ClickTool {
                     runNames.add("野外boss快速sample");
                     break;
                 case DAILY_TASK:
-                    //日常任务模式，13分
+                    //日常任务模式，12分
                     runNames.add("熔炼new");
                     runNames.add("竞技new");
                     runNames.add("血战矿洞");
