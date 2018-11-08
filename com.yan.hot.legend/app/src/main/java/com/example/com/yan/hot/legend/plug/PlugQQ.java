@@ -23,6 +23,7 @@ import java.util.Map;
 import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
+import timber.log.Timber;
 
 import static android.content.ContentValues.TAG;
 
@@ -94,6 +95,7 @@ public class PlugQQ {
         }
 
         if (!accountMap.keySet().contains(clientType)) {
+            LogManager.newInstance().writeMessage("running click sleep，name: PlugQQ no running:" + clientType);
             return;
         }
 
@@ -103,6 +105,7 @@ public class PlugQQ {
 
         String path = screencap(clickService, clientType);
         if (path == null){
+            LogManager.newInstance().writeMessage("running click sleep,name: PlugQQ no path");
             return;
         }
 
@@ -114,7 +117,7 @@ public class PlugQQ {
             rect = next.getValue();
             float per = SimilarPicture.isEqualsPer(getBitmap(path, rect), bitmap);
             if (per > 80) {
-                LogManager.newInstance().writeMessage("running click sleep，name: PlugQQ:" + clientType);
+                LogManager.newInstance().writeMessage("running click sleep,name: PlugQQ:" + clientType);
 
                 Coordinate coordinate1 = new Coordinate((rect.left + rect.right) / 2, (rect.top + rect.bottom) / 2);
                 Log.e(TAG, "PlugQQ runClick: " + coordinate1.getX() + "," + coordinate1.getY() + ",position:" + next.getKey());
@@ -133,11 +136,13 @@ public class PlugQQ {
         }
     }
 
-    static String screencap(ClickService clickService, ClickTool.ClientType clientType){
+    @SuppressLint("CheckResult")
+    static String screencap(final ClickService clickService, ClickTool.ClientType clientType){
         new File(dir).mkdirs();
-        String path = ScreencapPathUtil.getPath(dir, clientType.name());
-        clickService.clickTool.screencap(path);
+        final String path = ScreencapPathUtil.getPath(dir, clientType.name());
+        long MAX_SIZE = 400*1024;
 
+        clickService.clickTool.screencap(path);
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -145,7 +150,7 @@ public class PlugQQ {
         }
 
         File file = new File(path);
-        for (int i = 0; !((file.exists() && file.length() > 1024*1024) || i > 3); i++) {
+        for (int i = 0; !((file.exists() && file.length() > MAX_SIZE) || i > 3); i++) {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -153,7 +158,8 @@ public class PlugQQ {
             }
         }
 
-        if (!(file.exists() && file.length() > 1024*1024)) {
+        Timber.e("screencap, length():" + file.length());
+        if (!(file.exists() && file.length() > MAX_SIZE)) {
             return null;
         }
 

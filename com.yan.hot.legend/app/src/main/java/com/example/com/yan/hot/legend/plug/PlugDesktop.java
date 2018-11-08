@@ -54,9 +54,9 @@ public class PlugDesktop {
 
 //        FileUtils.deleteDirectory(dir);
         new File(dir).mkdirs();
-        String path = ScreencapPathUtil.getPath(dir, clientType.name());
-        clickService.clickTool.screencap(path);
+        final String path = ScreencapPathUtil.getPath(dir, clientType.name());
 
+        clickService.clickTool.screencap(path);
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -64,7 +64,8 @@ public class PlugDesktop {
         }
 
         File file = new File(path);
-        for (int i = 0; !((file.exists() && file.length() > 1024*1024) || i > 3); i++) {
+        int MAX_SIZE = 1024 * 1024;
+        for (int i = 0; !((file.exists() && file.length() > MAX_SIZE) || i > 3); i++) {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -72,7 +73,7 @@ public class PlugDesktop {
             }
         }
 
-        if (!(file.exists() && file.length() > 1024*1024)) {
+        if (!(file.exists() && file.length() > MAX_SIZE)) {
             return;
         }
 
