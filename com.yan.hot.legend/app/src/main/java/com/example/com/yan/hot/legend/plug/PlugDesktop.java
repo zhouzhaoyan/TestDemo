@@ -80,10 +80,10 @@ public class PlugDesktop {
         Bitmap defaultBitmap = getBitmap(DEFAULT_DESKTOP_PATH, rect);
         Bitmap currentBitmap = getBitmap(path,rect);
         float per = SimilarPicture.isEqualsPer(defaultBitmap, currentBitmap);
-        LogManager.newInstance().writeMessage("running click sleep，name: PlugDesktop "
+        LogManager.newInstance().writeMessage("running click sleep，name:PlugDesktop "
                 + clientType + ",per:" + per);
         if (per < 90){
-            LogManager.newInstance().writeMessage("running click sleep，name: PlugDesktop " + clientType );
+            LogManager.newInstance().writeMessage("running click sleep，name:PlugDesktop " + clientType );
             long currentTime = 0;
             long sleep = 0;
             //运行纠错插件

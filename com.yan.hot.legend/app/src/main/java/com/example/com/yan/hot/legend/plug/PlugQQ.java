@@ -95,7 +95,6 @@ public class PlugQQ {
         }
 
         if (!accountMap.keySet().contains(clientType)) {
-            LogManager.newInstance().writeMessage("running click sleep，name: PlugQQ no running:" + clientType);
             return;
         }
 
@@ -105,7 +104,7 @@ public class PlugQQ {
 
         String path = screencap(clickService, clientType);
         if (path == null){
-            LogManager.newInstance().writeMessage("running click sleep,name: PlugQQ no path");
+            LogManager.newInstance().writeMessage("running click sleep，name:PlugQQ no path");
             return;
         }
 
@@ -116,9 +115,8 @@ public class PlugQQ {
             Map.Entry<String, Rect> next = iterator.next();
             rect = next.getValue();
             float per = SimilarPicture.isEqualsPer(getBitmap(path, rect), bitmap);
+            LogManager.newInstance().writeMessage("running click sleep，name:PlugQQ:" + clientType + ",per:" + per);
             if (per > 80) {
-                LogManager.newInstance().writeMessage("running click sleep,name: PlugQQ:" + clientType);
-
                 Coordinate coordinate1 = new Coordinate((rect.left + rect.right) / 2, (rect.top + rect.bottom) / 2);
                 Log.e(TAG, "PlugQQ runClick: " + coordinate1.getX() + "," + coordinate1.getY() + ",position:" + next.getKey());
                 clickService.runClick(5000,
