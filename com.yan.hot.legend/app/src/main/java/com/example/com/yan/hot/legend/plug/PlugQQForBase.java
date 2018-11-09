@@ -76,7 +76,7 @@ public abstract class PlugQQForBase {
         long sleep = 0;
         long allTime = 0;
         if (isRunPlug(clientType, coordinate)) {
-            LogManager.newInstance().writeMessage("running click sleep，name: PlugQQForBase:" + clientType);
+            LogManager.newInstance().writeMessage("running click sleep，name:PlugQQForBase:" + clientType);
 
             String path = screencap(clickService, clientType);
             if (path == null) {

@@ -832,7 +832,10 @@ public class ChangeCoordinate {
 //        deletePostionsIndex("竞技sample",101,140);
 //        setTime("竞技sample",101,1000);
 //        setTime("竞技sample",103,30000);
-        show("竞技sample");
+//        setCoordinate("核弹头网页new",545, 800,566,1244);
+
+//        setCoordinate("牛刀网页",545, 800,566,1244);
+        show("牛刀网页");
 
 //        ActionFile.write(actions);
     }
