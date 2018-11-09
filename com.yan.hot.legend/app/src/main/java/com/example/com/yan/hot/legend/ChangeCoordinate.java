@@ -827,7 +827,12 @@ public class ChangeCoordinate {
 
 //        addCoordinateEnd("07073插件",514,
 //                1608,3000);
-        show("秘境boss快速sample");
+
+//        addNew("竞技new", "竞技sample");
+//        deletePostionsIndex("竞技sample",101,140);
+//        setTime("竞技sample",101,1000);
+//        setTime("竞技sample",103,30000);
+        show("竞技sample");
 
 //        ActionFile.write(actions);
     }

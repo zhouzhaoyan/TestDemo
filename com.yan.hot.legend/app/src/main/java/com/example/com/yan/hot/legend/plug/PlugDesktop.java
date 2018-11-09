@@ -73,10 +73,6 @@ public class PlugDesktop {
             }
         }
 
-        if (!(file.exists() && file.length() > MAX_SIZE)) {
-            return;
-        }
-
         Bitmap defaultBitmap = getBitmap(DEFAULT_DESKTOP_PATH, rect);
         Bitmap currentBitmap = getBitmap(path,rect);
         float per = SimilarPicture.isEqualsPer(defaultBitmap, currentBitmap);

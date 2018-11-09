@@ -8,7 +8,7 @@
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CUSTOM_FILTER" value="running click sleep，name:" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -49,14 +49,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_v4_19_1_0_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/com.yan.hot.legend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/com.yan.hot.legend.iml" afterDir="false" />
     </list>
-    <list id="0d06aa8e-9f7b-44fa-adcb-fb15ddfe86bc" name="app,iml" comment="">
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-    </list>
-    <list default="true" id="de4b68bd-1522-45eb-ba7f-cfd26beeeb4c" name="Default" comment="">
+    <list default="true" id="de4b68bd-1522-45eb-ba7f-cfd26beeeb4c" name="Default" comment="更新代码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugDesktop.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugDesktop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugQQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugQQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java" afterDir="false" />
+    </list>
+    <list id="0d06aa8e-9f7b-44fa-adcb-fb15ddfe86bc" name="app,iml" comment="">
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -122,20 +123,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ChangeCoordinate.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ChangeCoordinate.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="826" lean-forward="true" selection-start-line="826" selection-end-line="826" />
+              <caret line="829" lean-forward="true" selection-start-line="829" selection-end-line="829" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlugQQ.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlugQQ.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugQQ.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="99" column="9" lean-forward="true" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
+            <state relative-caret-position="220">
+              <caret line="139" column="21" selection-start-line="139" selection-start-column="13" selection-end-line="139" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlugDesktop.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugDesktop.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="94" column="50" selection-start-line="94" selection-start-column="50" selection-end-line="94" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -146,11 +159,20 @@
       <file leaf-file-name="ClickService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="131" column="30" lean-forward="true" selection-start-line="131" selection-start-column="30" selection-end-line="131" selection-end-column="30" />
+            <state relative-caret-position="482">
+              <caret line="131" column="30" selection-start-line="131" selection-start-column="27" selection-end-line="131" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClickTool.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-145">
+              <caret line="223" column="35" selection-start-line="223" selection-end-line="224" />
             </state>
           </provider>
         </entry>
@@ -167,8 +189,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>clickTool</find>
-      <find>plug07073</find>
       <find>isEquals</find>
       <find>热血单机双开</find>
       <find>熔炼</find>
@@ -197,6 +217,8 @@
       <find>，</find>
       <find>running click sleep,name</find>
       <find>name:PlugQQ no running</find>
+      <find>PlugQQ no path</find>
+      <find>MAX_SIZE</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -2123,9 +2145,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugQQForBase.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugQQFor07073.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/MainApplication.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/CrashApplication.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugQQ.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugDesktop.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java" />
@@ -2606,13 +2628,6 @@
       <option name="presentableId" value="Default" />
       <updated>1533171703630</updated>
     </task>
-    <task id="LOCAL-00064" summary="更新贡献值的管控">
-      <created>1538205891739</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1538205891739</updated>
-    </task>
     <task id="LOCAL-00065" summary="更新代码">
       <created>1538299760908</created>
       <option name="number" value="00065" />
@@ -2949,7 +2964,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541640156020</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="更新代码">
+      <created>1541642533471</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1541642533471</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -2963,19 +2985,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="1" />
       <window_info id="Build Variants" order="0" sideWeight="0.5014006" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.39111748" side_tool="true" weight="0.4159664" />
-      <window_info anchor="bottom" id="Logcat" order="3" sideWeight="0.60888255" weight="0.570028" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.3918338" side_tool="true" weight="0.48739496" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="3" sideWeight="0.6081662" visible="true" weight="0.5042017" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="2" />
       <window_info id="Compare Directories" order="3" />
       <window_info anchor="bottom" id="Build" order="4" weight="0.37114847" />
       <window_info id="Structure" order="6" sideWeight="0.5014006" side_tool="true" weight="0.21848138" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.34313726" />
-      <window_info anchor="right" id="Device File Explorer" order="9" sideWeight="0.50695825" side_tool="true" weight="0.35673353" />
+      <window_info anchor="right" id="Device File Explorer" order="9" sideWeight="0.50695825" side_tool="true" weight="0.3875358" />
       <window_info anchor="bottom" id="TODO" order="13" weight="0.32913166" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="8" />
@@ -3018,13 +3039,13 @@
       <window_info anchor="right" id="Preview" order="2" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32913166" />
-      <window_info anchor="right" id="Device File Explorer" order="9" sideWeight="0.50695825" side_tool="true" weight="0.35673353" />
+      <window_info anchor="right" id="Device File Explorer" order="9" sideWeight="0.50695825" side_tool="true" weight="0.3875358" />
       <window_info anchor="right" id="Assistant" order="0" weight="0.6697708" />
-      <window_info active="true" anchor="bottom" id="Logcat" order="3" sideWeight="0.60888255" visible="true" weight="0.570028" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="3" sideWeight="0.60888255" visible="true" weight="0.36834735" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.31232494" />
       <window_info anchor="bottom" id="Terminal" order="6" />
       <window_info anchor="right" id="Gradle" order="5" sideWeight="0.49304175" weight="0.3295129" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49859944" visible="true" weight="0.18696275" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49859944" weight="0.18696275" />
       <window_info anchor="bottom" id="Messages" order="0" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="TODO" order="13" weight="0.32913166" />
@@ -3098,7 +3119,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugQQ.java</url>
-          <line>140</line>
+          <line>138</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
@@ -3127,9 +3148,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/xiaomi-mi_8_se-30c3c8d8/sdcard/DCIM/Screenshots/Screenshot_2018-10-25-13-35-12-509_com.tencent.mtt.png" />
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/xiaomi-mi_8_se-30c3c8d8/sdcard/DCIM/Screenshots/Screenshot_2018-10-23-14-08-04-195_com.miui.home.png" />
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/xiaomi-mi_8_se-30c3c8d8/sdcard/DCIM/Screenshots/Screenshot_2018-10-23-14-08-00-671_com.miui.home.png" />
     <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/xiaomi-mi_8_se-30c3c8d8/sdcard/hot/desktop.png" />
     <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/xiaomi-mi_8_se-30c3c8d8/sdcard/hot/2018-10-26/daily/23-火树网页双开.png" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/yan/hot/legend/action/ActionFile.java">
@@ -3400,34 +3418,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugDesktop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-328">
-          <caret line="84" column="22" lean-forward="true" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/xiaomi-mi_8_se-30c3c8d8/sdcard/hot/qq/123-牛刀网页双开.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="220" column="39" selection-start-line="220" selection-start-column="34" selection-end-line="220" selection-end-column="39" />
-        </state>
+    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/xiaomi-mi_8_se-30c3c8d8/sdcard/hot/qq/122-牛刀网页双开.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="826" lean-forward="true" selection-start-line="826" selection-end-line="826" />
-        </state>
+    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/xiaomi-mi_8_se-30c3c8d8/sdcard/hot/qq/121-牛刀网页双开.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ClickService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="131" column="30" lean-forward="true" selection-start-line="131" selection-start-column="30" selection-end-line="131" selection-end-column="30" />
+        <state relative-caret-position="482">
+          <caret line="131" column="30" selection-start-line="131" selection-start-column="27" selection-end-line="131" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -3436,11 +3445,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugQQ.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="99" column="9" lean-forward="true" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
+        <state relative-caret-position="220">
+          <caret line="139" column="21" selection-start-line="139" selection-start-column="13" selection-end-line="139" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/plug/PlugDesktop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="94" column="50" selection-start-line="94" selection-start-column="50" selection-end-line="94" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zsctc/remote/touch/bytes/ClickTool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-145">
+          <caret line="223" column="35" selection-start-line="223" selection-end-line="224" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/com/yan/hot/legend/ChangeCoordinate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="829" lean-forward="true" selection-start-line="829" selection-end-line="829" />
         </state>
       </provider>
     </entry>

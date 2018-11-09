@@ -23,7 +23,6 @@ import java.util.Map;
 import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
-import timber.log.Timber;
 
 import static android.content.ContentValues.TAG;
 
@@ -138,7 +137,7 @@ public class PlugQQ {
     static String screencap(final ClickService clickService, ClickTool.ClientType clientType){
         new File(dir).mkdirs();
         final String path = ScreencapPathUtil.getPath(dir, clientType.name());
-        long MAX_SIZE = 400*1024;
+        long MAX_SIZE = 300*1024;
 
         clickService.clickTool.screencap(path);
         try {
@@ -156,10 +155,7 @@ public class PlugQQ {
             }
         }
 
-        Timber.e("screencap, length():" + file.length());
-        if (!(file.exists() && file.length() > MAX_SIZE)) {
-            return null;
-        }
+        LogManager.newInstance().writeMessage("running click sleep，name:PlugQQ file lenght:" + file.length());
 
         return path;
     }
