@@ -48,6 +48,7 @@ public class PlugQQ {
     static {
         accountMap.put(ClickTool.ClientType.热血单机双开, "2594365547");
         accountMap.put(ClickTool.ClientType.牛刀网页双开, "2594365547");
+        accountMap.put(ClickTool.ClientType.热血单机h5, "1874419402");
     }
 
     private static Map<String, Bitmap> qqBitmap;
@@ -89,16 +90,26 @@ public class PlugQQ {
     //自动选择用户登录
     @SuppressLint("CheckResult")
     public static void runClick(final ClickService clickService, final ClickTool.ClientType clientType, final Coordinate coordinate) {
+        LogManager.newInstance().writeMessage("running click sleep，name:PlugQQ:" + isDebug);
         if (!isDebug){
             return;
         }
 
+        LogManager.newInstance().writeMessage("running click sleep，name:PlugQQ:" + clientType
+            + ",accountMap:" + accountMap);
         if (!accountMap.keySet().contains(clientType)) {
             return;
         }
 
+        LogManager.newInstance().writeMessage("running click sleep，name:PlugQQ:" + coordinate);
         if (!(coordinate.getX() == runX && coordinate.getY() == runY)) {
             return;
+        }
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
         String path = screencap(clickService, clientType);

@@ -194,7 +194,7 @@ public class ClickTool {
                 case DAILY:
                     //日常模式，9分
                     runNames.add("熔炼new");
-                    runNames.add("竞技sample");
+                    runNames.add("竞技new");
                     runNames.add("血战矿洞");
                     runNames.add("秘境boss快速sample");
                     runNames.add("野外boss快速sample");
@@ -202,7 +202,7 @@ public class ClickTool {
                 case DAILY_TASK:
                     //日常任务模式，12分
                     runNames.add("熔炼new");
-                    runNames.add("竞技sample");
+                    runNames.add("竞技new");
                     runNames.add("血战矿洞");
                     runNames.add("王者争霸");
                     runNames.add("秘境boss快速sample");
@@ -211,7 +211,7 @@ public class ClickTool {
                 case SIMPLE:
                     //简单模式，6分钟30秒
                     runNames.add("熔炼new");
-                    runNames.add("竞技sample");
+                    runNames.add("竞技new");
                     runNames.add("血战矿洞");
                     runNames.add("秘境boss快速sample");
                     break;
@@ -219,7 +219,7 @@ public class ClickTool {
                 case TASK:
                     //任务模式，20分
                     runNames.add("熔炼new");
-                    runNames.add("竞技sample");
+                    runNames.add("竞技new");
                     runNames.add("血战矿洞");
                     runNames.add("通天塔");
                     if (isFastest(clientType)) {
@@ -338,6 +338,8 @@ public class ClickTool {
             case 乐趣网页双开:
             case 火树网页双开:
             case 玩蛋双开:
+            case 牛刀网页双开:
+            case 游戏1758网页双开:
                 result = true;
                 break;
         }
@@ -346,13 +348,13 @@ public class ClickTool {
 
     private static boolean isSlowest(ClientType clientType) {
         boolean result = false;
-        switch (clientType) {
-            case 火树qq浏览器:
-            case 玩蛋qq浏览器:
-            case 乐趣qq浏览器:
-                result = true;
-                break;
-        }
+//        switch (clientType) {
+//            case 火树qq浏览器:
+//            case 玩蛋qq浏览器:
+//            case 乐趣qq浏览器:
+//                result = true;
+//                break;
+//        }
         return result;
     }
 }

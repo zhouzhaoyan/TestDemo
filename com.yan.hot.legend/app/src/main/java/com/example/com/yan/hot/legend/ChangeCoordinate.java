@@ -835,7 +835,13 @@ public class ChangeCoordinate {
 //        setCoordinate("核弹头网页new",545, 800,566,1244);
 
 //        setCoordinate("牛刀网页",545, 800,566,1244);
-        show("牛刀网页");
+//        deletePostionsIndex("07073qq插件",0,2);
+//        deletePostionsIndex("07073qq插件",3,7);
+//        setCoordinateIndex("07073qq插件",2,2,942,1161);
+
+//        setTime("07073qq插件",1,5000);
+//        setTime("07073qq插件",2,5000);
+        show("07073qq插件");
 
 //        ActionFile.write(actions);
     }

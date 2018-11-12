@@ -12,6 +12,8 @@ import com.zsctc.remote.touch.bytes.LogManager;
 import java.util.ArrayList;
 import java.util.List;
 
+import timber.log.Timber;
+
 import static com.example.com.yan.hot.legend.plug.PlugQQ.getBitmap;
 import static com.example.com.yan.hot.legend.plug.PlugQQ.screencap;
 
@@ -19,8 +21,8 @@ import static com.example.com.yan.hot.legend.plug.PlugQQ.screencap;
  * Created by on 2018/11/6.
  */
 public abstract class PlugQQForBase {
-    private static String PLUG_NAME;
-    private static List<ClickTool.ClientType> CLIENT_TYPE_LIST = new ArrayList<>();
+    private String PLUG_NAME;
+    private List<ClickTool.ClientType> CLIENT_TYPE_LIST = new ArrayList<>();
     private List<Coordinate> runCoordinates;
     private float runX;
     private float runY;
@@ -40,10 +42,10 @@ public abstract class PlugQQForBase {
 
     public PlugQQForBase(List<Action> actions) {
         this.actions = actions;
+        PLUG_NAME = getPlugName();
         runCoordinates = new ArrayList<>(getCoordinate());
         LOGIN_PATH = getPath();
         CLIENT_TYPE_LIST = getClientTypeList();
-        PLUG_NAME = getPlugName();
         rect = getRect();
         Coordinate coordinate = getRunCoordinate();
         runX = coordinate.getX();
@@ -53,6 +55,7 @@ public abstract class PlugQQForBase {
     private List<Coordinate> getCoordinate() {
         List<Coordinate> coordinates = new ArrayList<>();
         for (Action action : actions) {
+            Timber.e("action:" + action + ",PLUG_NAME:" + PLUG_NAME);
             if (action.getActionTime().getCount() > 0 && action.getName().contains(PLUG_NAME)) {
                 coordinates = action.getCoordinates();
                 break;
@@ -78,25 +81,31 @@ public abstract class PlugQQForBase {
         if (isRunPlug(clientType, coordinate)) {
             LogManager.newInstance().writeMessage("running click sleep，name:PlugQQForBase:" + clientType);
 
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             String path = screencap(clickService, clientType);
             if (path == null) {
                 return 0;
             }
 
             float per = SimilarPicture.isEqualsPer(getBitmap(path, rect), getBitmap(LOGIN_PATH, rect));
-            if (per > 90) {
+            if (per > 85) {
                 for (Coordinate tmp : runCoordinates) {
+                    Timber.e("PlugQQForBase,tmp:" +tmp);
                     if (currentTime != 0) {
                         sleep = (int) (tmp.getTime() - currentTime);
                     }
                     currentTime = tmp.getTime();
                     if (sleep == 0) {
-                        sleep = 30000;
+                        sleep = 5000;
                     }
                     allTime += sleep;
                     clickService.runClick(sleep, tmp);
 
-                    PlugQQ.runClick(clickService, clientType, coordinate);
+                    PlugQQ.runClick(clickService, clientType, tmp);
                 }
             }
 
