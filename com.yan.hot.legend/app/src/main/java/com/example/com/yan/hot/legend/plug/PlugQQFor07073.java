@@ -34,10 +34,10 @@ public class PlugQQFor07073 extends PlugQQForBase{
     @Override
     public List<ClickTool.ClientType> getClientTypeList() {
         List<ClickTool.ClientType> clientTypes = new ArrayList<>();
-//        clientTypes.add(ClickTool.ClientType.游戏07073网页);
-//        clientTypes.add(ClickTool.ClientType.游戏07073);
+        clientTypes.add(ClickTool.ClientType.游戏07073网页);
+        clientTypes.add(ClickTool.ClientType.游戏07073);
         clientTypes.add(ClickTool.ClientType.热血单机h5);
-//        clientTypes.add(ClickTool.ClientType.热血单机h5双开);
+        clientTypes.add(ClickTool.ClientType.热血单机h5双开);
         return clientTypes;
     }
 

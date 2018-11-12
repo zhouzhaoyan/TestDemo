@@ -90,18 +90,14 @@ public class PlugQQ {
     //自动选择用户登录
     @SuppressLint("CheckResult")
     public static void runClick(final ClickService clickService, final ClickTool.ClientType clientType, final Coordinate coordinate) {
-        LogManager.newInstance().writeMessage("running click sleep，name:PlugQQ:" + isDebug);
         if (!isDebug){
             return;
         }
 
-        LogManager.newInstance().writeMessage("running click sleep，name:PlugQQ:" + clientType
-            + ",accountMap:" + accountMap);
         if (!accountMap.keySet().contains(clientType)) {
             return;
         }
 
-        LogManager.newInstance().writeMessage("running click sleep，name:PlugQQ:" + coordinate);
         if (!(coordinate.getX() == runX && coordinate.getY() == runY)) {
             return;
         }

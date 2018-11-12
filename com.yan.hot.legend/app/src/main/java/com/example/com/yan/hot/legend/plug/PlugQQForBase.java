@@ -92,9 +92,8 @@ public abstract class PlugQQForBase {
             }
 
             float per = SimilarPicture.isEqualsPer(getBitmap(path, rect), getBitmap(LOGIN_PATH, rect));
-            if (per > 85) {
+            if (per > 90) {
                 for (Coordinate tmp : runCoordinates) {
-                    Timber.e("PlugQQForBase,tmp:" +tmp);
                     if (currentTime != 0) {
                         sleep = (int) (tmp.getTime() - currentTime);
                     }
