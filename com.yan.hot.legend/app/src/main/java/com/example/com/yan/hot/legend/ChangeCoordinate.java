@@ -841,6 +841,20 @@ public class ChangeCoordinate {
 
 //        setTime("07073qq插件",1,5000);
 //        setTime("07073qq插件",2,5000);
+//        deletePostions("核弹头qq插件",0,1);
+//        delete("核弹头qq插件",4);
+//        setTime("核弹头qq插件",1,10000);
+//        setTime("核弹头qq插件",2,10000);
+//        setTime("核弹头qq插件",3,10000);
+//        setCoordinateIndex("核弹头qq插件",3,3,942,1161);
+
+//        setCoordinate("热血单机-new",583, 1806,587,1811);
+//        setCoordinate("核弹头-new",570, 1832,587,1811);
+
+//        addCoordinate("07073qq插件",1,713,1249,5000);
+//        setTime("07073qq插件",1,10000);
+//        setTime("07073qq插件",2,10000);
+//        setTime("07073qq插件",3,10000);
         show("07073qq插件");
 
 //        ActionFile.write(actions);

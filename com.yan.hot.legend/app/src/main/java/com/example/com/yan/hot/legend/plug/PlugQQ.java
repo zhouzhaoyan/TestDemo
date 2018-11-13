@@ -15,6 +15,7 @@ import com.zsctc.remote.touch.bytes.ClickTool;
 import com.zsctc.remote.touch.bytes.LogManager;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -23,6 +24,7 @@ import java.util.Map;
 import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
+import timber.log.Timber;
 
 import static android.content.ContentValues.TAG;
 
@@ -36,11 +38,21 @@ public class PlugQQ {
     private static final Map<String, Rect> defaultRect = new HashMap<>();
     private static final float runX = 942;
     private static final float runY = 1161;
+    private static List<Rect> rects = new ArrayList<>();
 
     static {
-        defaultRect.put("1594225121", new Rect(80, 1500, 320, 1560));
-        defaultRect.put("2594365547", new Rect(80, 1670, 320, 1730));
-        defaultRect.put("1874419402", new Rect(80, 1840, 320, 1900));
+        defaultRect.put("273549560", new Rect(80, 1060, 320, 1120));
+        defaultRect.put("2594365547", new Rect(80, 1230, 320, 1290));
+        defaultRect.put("2470518732", new Rect(80, 1400, 320, 1460));
+        defaultRect.put("1874419402", new Rect(80, 1570, 320, 1630));
+        defaultRect.put("1594225121", new Rect(80, 1740, 320, 1800));
+    }
+
+    static {
+        rects.add(new Rect(80, 1336, 320, 1496));
+        rects.add(new Rect(80, 1506, 320, 1566));
+        rects.add(new Rect(80, 1676, 320, 1736));
+        rects.add(new Rect(80, 1846, 320, 1906));
     }
 
     private static final Map<ClickTool.ClientType, String> accountMap = new HashMap<>();
@@ -48,13 +60,50 @@ public class PlugQQ {
     static {
         accountMap.put(ClickTool.ClientType.热血单机双开, "2594365547");
         accountMap.put(ClickTool.ClientType.牛刀网页双开, "2594365547");
+
+        accountMap.put(ClickTool.ClientType.游戏07073网页, "273549560");
+        accountMap.put(ClickTool.ClientType.游戏07073, "1594225121");
         accountMap.put(ClickTool.ClientType.热血单机h5, "1874419402");
+        accountMap.put(ClickTool.ClientType.热血单机h5双开, "2470518732");
+
+        accountMap.put(ClickTool.ClientType.热血单机, "1594225121");
+        accountMap.put(ClickTool.ClientType.核弹头, "1874419402");
     }
 
     private static Map<String, Bitmap> qqBitmap;
 
     private static final String dir = ActionFile.HOT_ROOT + File.separator + "qq";
     private static boolean isDebug = true;
+
+    public static void test(){
+        qqBitmap = new HashMap<>();
+        Iterator<Map.Entry<String, Rect>> iterator = defaultRect.entrySet().iterator();
+        Map.Entry<String, Rect> next;
+        while (iterator.hasNext()) {
+            next = iterator.next();
+            qqBitmap.put(next.getKey(), getBitmap(DEFAULT_QQ_PATH, next.getValue()));
+        }
+
+        ClickTool.ClientType clientType = ClickTool.ClientType.热血单机h5双开;
+        Rect rect = new Rect(80, 1930, 320, 1980);
+        Bitmap bitmap = qqBitmap.get(accountMap.get(clientType));
+
+        for (int i = -4; i < -3; i++) {
+            Timber.e("i:" + i);
+            for (Rect tmp: rects) {
+                tmp = new Rect(tmp.left, tmp.top+i, tmp.right, tmp.bottom+i);
+                float per = SimilarPicture.isEqualsPer(getBitmap(
+                        ActionFile.HOT_ROOT + File.separator + "qqLogin~tmp.png", tmp), bitmap);
+                Timber.e("tmp:" + tmp + ",per:" + per);
+                if (per > 80) {
+                    rect = tmp;
+                    break;
+                }
+            }
+        }
+        Timber.e("rect:" + rect);
+
+    }
 
     @SuppressLint("CheckResult")
     public static void init(List<Action> actions) {
@@ -88,7 +137,7 @@ public class PlugQQ {
     }
 
     //自动选择用户登录
-    @SuppressLint("CheckResult")
+    @SuppressLint({"CheckResult", "LogNotTimber"})
     public static void runClick(final ClickService clickService, final ClickTool.ClientType clientType, final Coordinate coordinate) {
         if (!isDebug){
             return;
@@ -114,27 +163,33 @@ public class PlugQQ {
             return;
         }
 
-        Iterator<Map.Entry<String, Rect>> iterator = defaultRect.entrySet().iterator();
         Bitmap bitmap = qqBitmap.get(accountMap.get(clientType));
-        Rect rect;
-        while (iterator.hasNext()) {
-            Map.Entry<String, Rect> next = iterator.next();
-            rect = next.getValue();
-            float per = SimilarPicture.isEqualsPer(getBitmap(path, rect), bitmap);
+        SimilarPicture.save(bitmap,"a.png");
+        Rect rect = new Rect(80, 1930, 320, 1980);
+        int i = 0;
+        for (Rect tmp: rects) {
+            float per = SimilarPicture.isEqualsPer(getBitmap(path, tmp), bitmap);
+            SimilarPicture.save(getBitmap(path, tmp),i+"a.png");
+            i++;
             LogManager.newInstance().writeMessage("running click sleep，name:PlugQQ:" + clientType + ",per:" + per);
             if (per > 80) {
-                Coordinate coordinate1 = new Coordinate((rect.left + rect.right) / 2, (rect.top + rect.bottom) / 2);
-                Log.e(TAG, "PlugQQ runClick: " + coordinate1.getX() + "," + coordinate1.getY() + ",position:" + next.getKey());
-                clickService.runClick(5000,
-                        coordinate1);
+                rect = tmp;
                 break;
             }
         }
+
+        Coordinate coordinate1 = new Coordinate(rect.left + (rect.right - rect.left) / 2, rect.top + (rect.bottom - rect.top) / 2);
+        Log.e(TAG, "PlugQQ runClick: " + coordinate1.getX() + "," + coordinate1.getY() + ",position:" + rect);
+        clickService.runClick(5000,
+                coordinate1);
     }
 
     //自动加载登录脚本
     public static void autoLogin(final ClickService clickService, final ClickTool.ClientType clientType, final Coordinate coordinate){
-        PlugQQForBase[] plugQQForBases = new PlugQQForBase[]{new PlugQQFor07073(actions)};
+        PlugQQForBase[] plugQQForBases = new PlugQQForBase[]{
+                new PlugQQFor07073(actions),
+//                new PlugQQForWarhead(actions)
+        };
         for (PlugQQForBase bases: plugQQForBases) {
             bases.runPlug(clickService, clientType, coordinate);
         }

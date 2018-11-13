@@ -57,6 +57,8 @@ public class MainActivity extends Activity {
         } else {
             //			AliveService.openAliveService(getApplicationContext());
         }
+
+//        PlugQQ.test();
     }
 
     public void onClick(View view) {
