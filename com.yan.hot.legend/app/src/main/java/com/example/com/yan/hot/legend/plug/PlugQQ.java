@@ -98,10 +98,6 @@ public class PlugQQ {
                     SimilarPicture.save(getBitmap(
                             ActionFile.HOT_ROOT + File.separator + "qqLogin~tmp.png", tmp), "b.png");
                 }
-                //                if (per > 79) {
-                //                    rect = tmp;
-                //                    break;
-                //                }
             }
         }
         Timber.e("rect:" + rect);
@@ -172,8 +168,9 @@ public class PlugQQ {
             for (Rect tmp : rects) {
                 tmp = new Rect(tmp.left, tmp.top + j, tmp.right, tmp.bottom + j);
                 float per = SimilarPicture.isEqualsPer(getBitmap(path, tmp), bitmap);
-                LogManager.newInstance().writeMessage("running click sleep，name:PlugQQ:" + clientType + ",per:" + per);
                 if (per > 90) {
+                    LogManager.newInstance().writeMessage("running click sleep，name:PlugQQ:"
+                            + clientType + ",per:" + per + ",offset:" + j);
                     rect = tmp;
                     break;
                 }
