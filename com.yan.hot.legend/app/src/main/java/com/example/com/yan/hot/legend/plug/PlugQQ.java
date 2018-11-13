@@ -49,9 +49,9 @@ public class PlugQQ {
     }
 
     static {
-        rects.add(new Rect(80, 1336, 320, 1496));
-        rects.add(new Rect(80, 1506, 320, 1566));
-        rects.add(new Rect(80, 1676, 320, 1736));
+        rects.add(new Rect(80, 1336, 320, 1396));
+        rects.add(new Rect(80, 1509, 320, 1569));
+        rects.add(new Rect(80, 1675, 320, 1735));
         rects.add(new Rect(80, 1846, 320, 1906));
     }
 
@@ -75,7 +75,7 @@ public class PlugQQ {
     private static final String dir = ActionFile.HOT_ROOT + File.separator + "qq";
     private static boolean isDebug = true;
 
-    public static void test(){
+    public static void test() {
         qqBitmap = new HashMap<>();
         Iterator<Map.Entry<String, Rect>> iterator = defaultRect.entrySet().iterator();
         Map.Entry<String, Rect> next;
@@ -84,21 +84,24 @@ public class PlugQQ {
             qqBitmap.put(next.getKey(), getBitmap(DEFAULT_QQ_PATH, next.getValue()));
         }
 
-        ClickTool.ClientType clientType = ClickTool.ClientType.热血单机h5双开;
         Rect rect = new Rect(80, 1930, 320, 1980);
-        Bitmap bitmap = qqBitmap.get(accountMap.get(clientType));
+        Bitmap bitmap = qqBitmap.get("2594365547");
+        SimilarPicture.save(bitmap, "a.png");
 
-        for (int i = -4; i < -3; i++) {
-            Timber.e("i:" + i);
-            for (Rect tmp: rects) {
-                tmp = new Rect(tmp.left, tmp.top+i, tmp.right, tmp.bottom+i);
+        for (int i = 0; i < 1; i++) {
+            for (Rect tmp : rects) {
+                tmp = new Rect(tmp.left, tmp.top + i, tmp.right, tmp.bottom + i);
                 float per = SimilarPicture.isEqualsPer(getBitmap(
-                        ActionFile.HOT_ROOT + File.separator + "qqLogin~tmp.png", tmp), bitmap);
-                Timber.e("tmp:" + tmp + ",per:" + per);
-                if (per > 80) {
-                    rect = tmp;
-                    break;
+                        ActionFile.HOT_ROOT + File.separator + "qqLogin~tmp2.png", tmp), bitmap);
+                Timber.e("tmp:" + tmp + ",per1:" + per + ",i:" + i);
+                if (per == 0) {
+                    SimilarPicture.save(getBitmap(
+                            ActionFile.HOT_ROOT + File.separator + "qqLogin~tmp.png", tmp), "b.png");
                 }
+                //                if (per > 79) {
+                //                    rect = tmp;
+                //                    break;
+                //                }
             }
         }
         Timber.e("rect:" + rect);
@@ -107,7 +110,7 @@ public class PlugQQ {
 
     @SuppressLint("CheckResult")
     public static void init(List<Action> actions) {
-        if (!isDebug){
+        if (!isDebug) {
             return;
         }
         PlugQQ.actions = actions;
@@ -139,7 +142,7 @@ public class PlugQQ {
     //自动选择用户登录
     @SuppressLint({"CheckResult", "LogNotTimber"})
     public static void runClick(final ClickService clickService, final ClickTool.ClientType clientType, final Coordinate coordinate) {
-        if (!isDebug){
+        if (!isDebug) {
             return;
         }
 
@@ -158,23 +161,22 @@ public class PlugQQ {
         }
 
         String path = screencap(clickService, clientType);
-        if (path == null){
+        if (path == null) {
             LogManager.newInstance().writeMessage("running click sleep，name:PlugQQ no path");
             return;
         }
 
         Bitmap bitmap = qqBitmap.get(accountMap.get(clientType));
-        SimilarPicture.save(bitmap,"a.png");
         Rect rect = new Rect(80, 1930, 320, 1980);
-        int i = 0;
-        for (Rect tmp: rects) {
-            float per = SimilarPicture.isEqualsPer(getBitmap(path, tmp), bitmap);
-            SimilarPicture.save(getBitmap(path, tmp),i+"a.png");
-            i++;
-            LogManager.newInstance().writeMessage("running click sleep，name:PlugQQ:" + clientType + ",per:" + per);
-            if (per > 80) {
-                rect = tmp;
-                break;
+        for (int j = -5; j < 5; j++) {
+            for (Rect tmp : rects) {
+                tmp = new Rect(tmp.left, tmp.top + j, tmp.right, tmp.bottom + j);
+                float per = SimilarPicture.isEqualsPer(getBitmap(path, tmp), bitmap);
+                LogManager.newInstance().writeMessage("running click sleep，name:PlugQQ:" + clientType + ",per:" + per);
+                if (per > 90) {
+                    rect = tmp;
+                    break;
+                }
             }
         }
 
@@ -185,21 +187,21 @@ public class PlugQQ {
     }
 
     //自动加载登录脚本
-    public static void autoLogin(final ClickService clickService, final ClickTool.ClientType clientType, final Coordinate coordinate){
+    public static void autoLogin(final ClickService clickService, final ClickTool.ClientType clientType, final Coordinate coordinate) {
         PlugQQForBase[] plugQQForBases = new PlugQQForBase[]{
                 new PlugQQFor07073(actions),
-//                new PlugQQForWarhead(actions)
+                //                new PlugQQForWarhead(actions)
         };
-        for (PlugQQForBase bases: plugQQForBases) {
+        for (PlugQQForBase bases : plugQQForBases) {
             bases.runPlug(clickService, clientType, coordinate);
         }
     }
 
     @SuppressLint("CheckResult")
-    static String screencap(final ClickService clickService, ClickTool.ClientType clientType){
+    static String screencap(final ClickService clickService, ClickTool.ClientType clientType) {
         new File(dir).mkdirs();
         final String path = ScreencapPathUtil.getPath(dir, clientType.name());
-        long MAX_SIZE = 300*1024;
+        long MAX_SIZE = 300 * 1024;
 
         clickService.clickTool.screencap(path);
         try {

@@ -340,6 +340,8 @@ public class ClickTool {
             case 玩蛋双开:
             case 牛刀网页双开:
             case 游戏1758网页双开:
+            case 核弹头双开:
+            case 热血单机h5双开:
                 result = true;
                 break;
         }
