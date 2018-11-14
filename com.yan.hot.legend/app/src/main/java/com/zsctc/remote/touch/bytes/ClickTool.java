@@ -194,7 +194,7 @@ public class ClickTool {
                 case DAILY:
                     //日常模式，9分
                     runNames.add("熔炼new");
-                    runNames.add("竞技new");
+                    runNames.add("竞技sample");
                     runNames.add("血战矿洞");
                     runNames.add("秘境boss快速sample");
                     runNames.add("野外boss快速sample");
@@ -202,7 +202,7 @@ public class ClickTool {
                 case DAILY_TASK:
                     //日常任务模式，12分
                     runNames.add("熔炼new");
-                    runNames.add("竞技new");
+                    runNames.add("竞技sample");
                     runNames.add("血战矿洞");
                     runNames.add("王者争霸");
                     runNames.add("秘境boss快速sample");
@@ -211,7 +211,7 @@ public class ClickTool {
                 case SIMPLE:
                     //简单模式，6分钟30秒
                     runNames.add("熔炼new");
-                    runNames.add("竞技new");
+                    runNames.add("竞技sample");
                     runNames.add("血战矿洞");
                     runNames.add("秘境boss快速sample");
                     break;
@@ -219,7 +219,7 @@ public class ClickTool {
                 case TASK:
                     //任务模式，20分
                     runNames.add("熔炼new");
-                    runNames.add("竞技new");
+                    runNames.add("竞技sample");
                     runNames.add("血战矿洞");
                     runNames.add("通天塔");
                     if (isFastest(clientType)) {

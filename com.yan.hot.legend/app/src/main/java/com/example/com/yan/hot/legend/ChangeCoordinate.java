@@ -862,7 +862,13 @@ public class ChangeCoordinate {
 //        setCoordinate("核弹头-new",569, 1301,607,1249);
 //        addCoordinate("07073qq插件",2,760, 2016,2000);
 //        addCoordinate("核弹头qq插件",3,804, 957,10000);
-        show("游戏-登录结束");
+
+//        addNew("竞技new", "竞技sample");
+//        deletePostionsIndex("竞技sample",119,142);
+//        setTime("竞技sample",119,30000);
+//        setCoordinate("竞技sample",875, 976,845, 843);
+//        setTime("竞技sample",1,1000);
+        show("竞技sample");
 
 //        ActionFile.write(actions);
     }
