@@ -12,6 +12,7 @@ import com.yan.hot.legend.action.Action;
 import com.yan.hot.legend.action.ActionFile;
 import com.yan.hot.legend.action.Coordinate;
 import com.zsctc.remote.touch.bytes.ClickTool;
+import com.zsctc.remote.touch.bytes.FileUtils;
 import com.zsctc.remote.touch.bytes.LogManager;
 
 import java.io.File;
@@ -109,6 +110,7 @@ public class PlugQQ {
         if (!isDebug) {
             return;
         }
+        FileUtils.deleteDirectory(dir);
         PlugQQ.actions = actions;
         Observable.just(1)
                 .observeOn(Schedulers.io())
