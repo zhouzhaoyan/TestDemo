@@ -12,8 +12,6 @@ import com.zsctc.remote.touch.bytes.LogManager;
 import java.util.ArrayList;
 import java.util.List;
 
-import timber.log.Timber;
-
 import static com.example.com.yan.hot.legend.plug.PlugQQ.getBitmap;
 import static com.example.com.yan.hot.legend.plug.PlugQQ.screencap;
 
@@ -55,7 +53,7 @@ public abstract class PlugQQForBase {
     private List<Coordinate> getCoordinate() {
         List<Coordinate> coordinates = new ArrayList<>();
         for (Action action : actions) {
-            Timber.e("action:" + action + ",PLUG_NAME:" + PLUG_NAME);
+//            Timber.e("action:" + action + ",PLUG_NAME:" + PLUG_NAME);
             if (action.getActionTime().getCount() > 0 && action.getName().contains(PLUG_NAME)) {
                 coordinates = action.getCoordinates();
                 break;
@@ -92,7 +90,7 @@ public abstract class PlugQQForBase {
             }
 
             float per = SimilarPicture.isEqualsPer(getBitmap(path, rect), getBitmap(LOGIN_PATH, rect));
-            if (per > 90) {
+            if (per > 85) {
                 for (Coordinate tmp : runCoordinates) {
                     if (currentTime != 0) {
                         sleep = (int) (tmp.getTime() - currentTime);

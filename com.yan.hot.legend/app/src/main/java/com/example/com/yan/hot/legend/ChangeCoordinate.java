@@ -855,7 +855,14 @@ public class ChangeCoordinate {
 //        setTime("07073qq插件",1,10000);
 //        setTime("07073qq插件",2,10000);
 //        setTime("07073qq插件",3,10000);
-        show("07073qq插件");
+
+//        addCoordinate("07073qq插件",2,760, 2016,2000);
+//        setCoordinateIndex("牛刀网页双开-new",3,3,682,1195);
+
+//        setCoordinate("核弹头-new",569, 1301,607,1249);
+//        addCoordinate("07073qq插件",2,760, 2016,2000);
+//        addCoordinate("核弹头qq插件",3,804, 957,10000);
+        show("核弹头qq插件","07073qq插件");
 
 //        ActionFile.write(actions);
     }

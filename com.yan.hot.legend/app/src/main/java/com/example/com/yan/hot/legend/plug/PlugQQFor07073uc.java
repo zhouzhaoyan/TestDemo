@@ -15,15 +15,15 @@ import java.util.List;
  * Created by on 2018/11/6.
  * 自动登录07073
  */
-public class PlugQQFor07073 extends PlugQQForBase{
+public class PlugQQFor07073uc extends PlugQQFor07073{
 
-    public PlugQQFor07073(List<Action> actions) {
+    public PlugQQFor07073uc(List<Action> actions) {
         super(actions);
     }
 
     @Override
     public String getPath() {
-        return ActionFile.HOT_ROOT + File.separator + "07073登录.png";
+        return ActionFile.HOT_ROOT + File.separator + "07073登录UC.png";
     }
 
     @Override
@@ -34,9 +34,7 @@ public class PlugQQFor07073 extends PlugQQForBase{
     @Override
     public List<ClickTool.ClientType> getClientTypeList() {
         List<ClickTool.ClientType> clientTypes = new ArrayList<>();
-        clientTypes.add(ClickTool.ClientType.游戏07073网页);
-        clientTypes.add(ClickTool.ClientType.热血单机h5);
-        clientTypes.add(ClickTool.ClientType.热血单机h5双开);
+        clientTypes.add(ClickTool.ClientType.游戏07073);
         return clientTypes;
     }
 

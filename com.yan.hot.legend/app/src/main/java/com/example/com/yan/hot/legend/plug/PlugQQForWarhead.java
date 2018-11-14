@@ -46,6 +46,6 @@ public class PlugQQForWarhead extends PlugQQForBase{
 
     @Override
     public Coordinate getRunCoordinate() {
-        return new Coordinate( 587,1811);
+        return new Coordinate( 607,1249);
     }
 }

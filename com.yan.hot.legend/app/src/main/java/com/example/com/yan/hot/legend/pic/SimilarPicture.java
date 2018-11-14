@@ -65,8 +65,8 @@ public class SimilarPicture {
             int difference = 0;
             for (int x = 0; x < xCount; x++) {
                 for (int y = 0; y < yCount; y++) {
-                    //                    Log.e(TAG, "isEquals: " + b1.getPixel(x, y) + "," + b2.getPixel(x, y)
-                    //                            + ",x:" + x + ",y:" + y);
+//                                        Log.e(TAG, "isEquals: " + b1.getPixel(x, y) + "," + b2.getPixel(x, y)
+//                                                + ",x:" + x + ",y:" + y);
                     //比较每个像素点颜色
                     if (b1.getPixel(x, y) != b2.getPixel(x, y)) {
                         difference ++;
