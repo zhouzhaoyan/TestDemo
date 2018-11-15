@@ -868,7 +868,10 @@ public class ChangeCoordinate {
 //        setTime("竞技sample",119,30000);
 //        setCoordinate("竞技sample",875, 976,845, 843);
 //        setTime("竞技sample",1,1000);
-        show("竞技sample");
+
+//        addNew("07073游戏-new","1758qq浏览器");
+//        setCoordinateIndex("1758qq浏览器",1,1,785,1335);
+        show("1758qq浏览器");
 
 //        ActionFile.write(actions);
     }

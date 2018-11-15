@@ -346,12 +346,26 @@
             android:checked="false"
             android:text="玩蛋qq浏览器"/>
 
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
         <CheckBox
             android:id="@+id/game28"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="乐趣qq浏览器"/>
+
+        <CheckBox
+            android:id="@+id/game29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="1758qq浏览器"/>
     </LinearLayout>
 
     <!--<include-->
