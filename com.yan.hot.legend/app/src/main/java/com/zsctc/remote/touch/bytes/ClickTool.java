@@ -366,7 +366,7 @@ public class ClickTool {
     }
 
     private static boolean isRunCheckPoint(ClientType clientType){
-        boolean result = true;
+        boolean result;
         switch (clientType) {
             //800关卡以上先过滤
             case 火树:
@@ -383,6 +383,9 @@ public class ClickTool {
             case 乐趣:
             case 核弹头:
                 result = false;
+                break;
+            default:
+                result = true;
                 break;
         }
         return result;
