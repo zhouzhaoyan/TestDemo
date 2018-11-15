@@ -14,7 +14,6 @@ public class ActionRun {
 
     static {
         noRun.add(ClickTool.ClientType.客娱);
-        noRun.add(ClickTool.ClientType.游戏1758qq浏览器);
     }
 
 
