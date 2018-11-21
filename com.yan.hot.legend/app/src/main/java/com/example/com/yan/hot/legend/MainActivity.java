@@ -58,6 +58,7 @@ public class MainActivity extends Activity {
             //			AliveService.openAliveService(getApplicationContext());
         }
 
+        DevoteManager.init();
 //        PlugQQ.test();
     }
 

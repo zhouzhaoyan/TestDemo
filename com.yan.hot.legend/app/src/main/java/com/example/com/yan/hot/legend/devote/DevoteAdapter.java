@@ -1,5 +1,6 @@
 package com.example.com.yan.hot.legend.devote;
 
+import android.annotation.SuppressLint;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -30,11 +31,12 @@ public class DevoteAdapter extends RecyclerView.Adapter<DevoteAdapter.DevoteVH> 
         return new DevoteVH(v);
     }
 
+    @SuppressLint({"LogNotTimber", "SetTextI18n"})
     @Override
     public void onBindViewHolder(DevoteVH holder, int position) {
         final DevoteObject object = list.get(position);
         Log.e("test", "onBindViewHolder: position:" + position + ",object:" + object);
-        holder.name.setText(object.getName());
+        holder.name.setText(object.getName() + "(" + object.getAccountName() + ")");
         holder.value.setText(object.getValue() + "");
         holder.value.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override

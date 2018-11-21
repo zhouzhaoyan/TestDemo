@@ -1,5 +1,7 @@
 package com.example.com.yan.hot.legend.devote;
 
+import com.zsctc.remote.touch.bytes.ClickTool;
+
 /**
  * Created by on 2018/9/29.
  */
@@ -12,14 +14,17 @@ public class DevoteObject {
     //累加值
     private int offset;
 
+    private ClickTool.ClientType clientType;
+
     public DevoteObject() {
     }
 
-    public DevoteObject(String name, long date, int value, int offset) {
+    public DevoteObject(String name, long date, int value, int offset, ClickTool.ClientType clientType) {
         this.name = name;
         this.date = date;
         this.value = value;
         this.offset = offset;
+        this.clientType = clientType;
     }
 
     public String getName() {
@@ -54,6 +59,18 @@ public class DevoteObject {
         this.offset = offset;
     }
 
+    public ClickTool.ClientType getClientType() {
+        return clientType;
+    }
+
+    public void setClientType(ClickTool.ClientType clientType) {
+        this.clientType = clientType;
+    }
+
+    public String getAccountName(){
+        return  DevoteManager.getAccountName(clientType);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o instanceof  DevoteObject){
@@ -70,6 +87,7 @@ public class DevoteObject {
                 ", date=" + date +
                 ", value=" + value +
                 ", offset=" + offset +
+                ", clientType=" + clientType +
                 '}';
     }
 }
