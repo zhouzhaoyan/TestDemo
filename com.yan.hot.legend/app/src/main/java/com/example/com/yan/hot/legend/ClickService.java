@@ -90,7 +90,7 @@ public class ClickService extends GrayService {
 
                 handler.sendEmptyMessage(WAIT_LOADING_RESOURCE);
                 LogManager.newInstance().writeMessage("running click sleep");
-                if (actionName.contains("熔炼")) {
+                if (actionName.contains("熔炼") || actionName.contains("竞技")) {
                     screencap(clientType);
                 }
                 try {
