@@ -59,7 +59,7 @@ public class MainActivity extends Activity {
         }
 
         DevoteManager.init();
-//        PlugQQ.test();
+        //        PlugQQ.test();
     }
 
     public void onClick(View view) {
@@ -86,7 +86,7 @@ public class MainActivity extends Activity {
                 break;
             case R.id.action_delete:
                 ActionRunFile.delete();
-                Toast.makeText(this,"成功",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "成功", Toast.LENGTH_LONG).show();
                 updateUi();
                 break;
             default:
@@ -104,8 +104,8 @@ public class MainActivity extends Activity {
 
         ActionRun actionRun = ActionRunFile.read();
         ActionRun.ModeType modeType = ActionRun.ModeType.TASK;
-        for (ActionRun.ModeType type:ActionRun.ModeType.values()){
-            if (getCheckBox(type) != null && getCheckBox(type).isChecked()){
+        for (ActionRun.ModeType type : ActionRun.ModeType.values()) {
+            if (getCheckBox(type) != null && getCheckBox(type).isChecked()) {
                 modeType = type;
                 break;
             }
@@ -113,11 +113,11 @@ public class MainActivity extends Activity {
         actionRun.setModeType(modeType);
 
         for (ClickTool.ClientType type : ClickTool.ClientType.values()) {
-            actionRun.setActionStates(type,getCheckBox(type).isChecked());
+            actionRun.setActionStates(type, getCheckBox(type).isChecked());
         }
 
         actionRun.setAuto(getAutoCheckBox().isChecked());
-        Log.e(TAG, "start: actionRun:" + actionRun );
+        Log.e(TAG, "start: actionRun:" + actionRun);
         ActionRunFile.write(actionRun);
 
         AliveService.openAliveService(getApplicationContext());
@@ -139,12 +139,12 @@ public class MainActivity extends Activity {
 
     private void updateUi() {
         ActionRun actionRun = ActionRunFile.read();
-        Log.e(TAG, "updateUi: actionRun:" + actionRun );
+        Log.e(TAG, "updateUi: actionRun:" + actionRun);
         List<ActionRun.ActionState> actionStates = actionRun.getActionStates();
         for (ActionRun.ActionState state : actionStates) {
             setClientColor(state.getClientType(), state.isRun() ? Color.RED : Color.BLACK);
         }
-        switch (actionRun.getModeType()){
+        switch (actionRun.getModeType()) {
             case DAILY:
                 updateModeType(true, false, false, false);
                 break;
@@ -161,7 +161,7 @@ public class MainActivity extends Activity {
                 updateModeType(false, false, false, false);
                 break;
         }
-        for (ActionRun.ActionState state: actionRun.getActionStates()) {
+        for (ActionRun.ActionState state : actionRun.getActionStates()) {
             setClientCheck(state.getClientType(), state.isRun());
         }
         getAutoCheckBox().setChecked(actionRun.isAuto());
@@ -182,16 +182,16 @@ public class MainActivity extends Activity {
         CheckBox checkBox = null;
         switch (modeType) {
             case DAILY:
-                checkBox = ((CheckBox) findViewById(R.id.daily));
+                checkBox = findViewById(R.id.daily);
                 break;
             case DAILY_TASK:
-                checkBox = ((CheckBox) findViewById(R.id.daily_task));
+                checkBox = findViewById(R.id.daily_task);
                 break;
             case SIMPLE:
-                checkBox = ((CheckBox) findViewById(R.id.simple));
+                checkBox = findViewById(R.id.simple);
                 break;
             case NIGHT:
-                checkBox = ((CheckBox) findViewById(R.id.night));
+                checkBox = findViewById(R.id.night);
                 break;
         }
         return checkBox;
@@ -201,91 +201,91 @@ public class MainActivity extends Activity {
         CheckBox checkBox = null;
         switch (clientType) {
             case 火树:
-                checkBox = ((CheckBox) findViewById(R.id.game1));
+                checkBox = findViewById(R.id.game1);
                 break;
             case 游戏07073网页:
-                checkBox = ((CheckBox) findViewById(R.id.game3));
+                checkBox = findViewById(R.id.game3);
                 break;
             case 乐趣网页:
-                checkBox = ((CheckBox) findViewById(R.id.game2));
+                checkBox = findViewById(R.id.game2);
                 break;
             case 核弹头网页:
-                checkBox = ((CheckBox) findViewById(R.id.game4));
+                checkBox = findViewById(R.id.game4);
                 break;
             case 游戏1758网页:
-                checkBox = ((CheckBox) findViewById(R.id.game5));
+                checkBox = findViewById(R.id.game5);
                 break;
             case 牛刀:
-                checkBox = ((CheckBox) findViewById(R.id.game6));
+                checkBox = findViewById(R.id.game6);
                 break;
             case 牛刀网页:
-                checkBox = ((CheckBox) findViewById(R.id.game7));
+                checkBox = findViewById(R.id.game7);
                 break;
             case 玩蛋:
-                checkBox = ((CheckBox) findViewById(R.id.game8));
+                checkBox = findViewById(R.id.game8);
                 break;
             case 客娱:
-                checkBox = ((CheckBox) findViewById(R.id.game9));
+                checkBox = findViewById(R.id.game9);
                 break;
             case 热血单机:
-                checkBox = ((CheckBox) findViewById(R.id.game10));
+                checkBox = findViewById(R.id.game10);
                 break;
             case 游戏07073:
-                checkBox = ((CheckBox) findViewById(R.id.game11));
+                checkBox = findViewById(R.id.game11);
                 break;
             case 游戏1758:
-                checkBox = ((CheckBox) findViewById(R.id.game12));
+                checkBox = findViewById(R.id.game12);
                 break;
             case 乐趣:
-                checkBox = ((CheckBox) findViewById(R.id.game13));
+                checkBox = findViewById(R.id.game13);
                 break;
             case 核弹头:
-                checkBox = ((CheckBox) findViewById(R.id.game14));
+                checkBox = findViewById(R.id.game14);
                 break;
             case 热血单机h5:
-                checkBox = ((CheckBox) findViewById(R.id.game15));
+                checkBox = findViewById(R.id.game15);
                 break;
             case 热血单机双开:
-                checkBox = ((CheckBox) findViewById(R.id.game16));
+                checkBox = findViewById(R.id.game16);
                 break;
             case 凹凸果:
-                checkBox = ((CheckBox) findViewById(R.id.game17));
+                checkBox = findViewById(R.id.game17);
                 break;
             case 乐趣双开:
-                checkBox = ((CheckBox) findViewById(R.id.game18));
+                checkBox = findViewById(R.id.game18);
                 break;
             case 乐趣网页双开:
-                checkBox = ((CheckBox) findViewById(R.id.game19));
+                checkBox = findViewById(R.id.game19);
                 break;
             case 火树网页双开:
-                checkBox = ((CheckBox) findViewById(R.id.game20));
+                checkBox = findViewById(R.id.game20);
                 break;
             case 玩蛋双开:
-                checkBox = ((CheckBox) findViewById(R.id.game21));
+                checkBox = findViewById(R.id.game21);
                 break;
             case 牛刀网页双开:
-                checkBox = ((CheckBox) findViewById(R.id.game22));
+                checkBox = findViewById(R.id.game22);
                 break;
             case 游戏1758网页双开:
-                checkBox = ((CheckBox) findViewById(R.id.game23));
+                checkBox = findViewById(R.id.game23);
                 break;
             case 核弹头双开:
-                checkBox = ((CheckBox) findViewById(R.id.game24));
+                checkBox = findViewById(R.id.game24);
                 break;
             case 热血单机h5双开:
-                checkBox = ((CheckBox) findViewById(R.id.game25));
+                checkBox = findViewById(R.id.game25);
                 break;
             case 火树qq浏览器:
-                checkBox = ((CheckBox) findViewById(R.id.game26));
+                checkBox = findViewById(R.id.game26);
                 break;
             case 玩蛋qq浏览器:
-                checkBox = ((CheckBox) findViewById(R.id.game27));
+                checkBox = findViewById(R.id.game27);
                 break;
             case 乐趣qq浏览器:
-                checkBox = ((CheckBox) findViewById(R.id.game28));
+                checkBox = findViewById(R.id.game28);
                 break;
             case 游戏1758qq浏览器:
-                checkBox = ((CheckBox) findViewById(R.id.game29));
+                checkBox = findViewById(R.id.game29);
                 break;
         }
         return checkBox;
@@ -295,11 +295,11 @@ public class MainActivity extends Activity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View view = LayoutInflater.from(this).inflate(R.layout.dialog_action, null);
         final EditText nameView, hourView, minView, intervalView, countView;
-        nameView = (EditText) view.findViewById(R.id.action_name);
-        hourView = (EditText) view.findViewById(R.id.action_hour);
-        minView = (EditText) view.findViewById(R.id.action_min);
-        intervalView = (EditText) view.findViewById(R.id.action_interval);
-        countView = (EditText) view.findViewById(R.id.action_count);
+        nameView = view.findViewById(R.id.action_name);
+        hourView = view.findViewById(R.id.action_hour);
+        minView = view.findViewById(R.id.action_min);
+        intervalView = view.findViewById(R.id.action_interval);
+        countView = view.findViewById(R.id.action_count);
         builder.setView(view);
         final Dialog dialog = builder.create();
         dialog.show();
