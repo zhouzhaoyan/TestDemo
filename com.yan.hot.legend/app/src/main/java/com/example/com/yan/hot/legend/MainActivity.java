@@ -1,5 +1,6 @@
 package com.example.com.yan.hot.legend;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -7,7 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
@@ -27,7 +27,7 @@ import com.zsctc.remote.touch.bytes.ClickTool;
 import java.io.Serializable;
 import java.util.List;
 
-import static android.content.ContentValues.TAG;
+import timber.log.Timber;
 
 public class MainActivity extends Activity {
 
@@ -54,8 +54,6 @@ public class MainActivity extends Activity {
         List<Coordinate> eidtCoordinatess = (List<Coordinate>) getIntent().getSerializableExtra(Coordinate_FLAG);
         if (eidtCoordinatess != null) {
             showActionDialog(eidtCoordinatess);
-        } else {
-            //			AliveService.openAliveService(getApplicationContext());
         }
 
         DevoteManager.init();
@@ -117,7 +115,7 @@ public class MainActivity extends Activity {
         }
 
         actionRun.setAuto(getAutoCheckBox().isChecked());
-        Log.e(TAG, "start: actionRun:" + actionRun);
+        Timber.e("start: actionRun:%s", actionRun);
         ActionRunFile.write(actionRun);
 
         AliveService.openAliveService(getApplicationContext());
@@ -139,7 +137,7 @@ public class MainActivity extends Activity {
 
     private void updateUi() {
         ActionRun actionRun = ActionRunFile.read();
-        Log.e(TAG, "updateUi: actionRun:" + actionRun);
+        Timber.e("updateUi: actionRun:%s", actionRun);
         List<ActionRun.ActionState> actionStates = actionRun.getActionStates();
         for (ActionRun.ActionState state : actionStates) {
             setClientColor(state.getClientType(), state.isRun() ? Color.RED : Color.BLACK);
@@ -293,6 +291,7 @@ public class MainActivity extends Activity {
 
     private void showActionDialog(final List<Coordinate> eidtCoordinatess) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        @SuppressLint("InflateParams")
         View view = LayoutInflater.from(this).inflate(R.layout.dialog_action, null);
         final EditText nameView, hourView, minView, intervalView, countView;
         nameView = view.findViewById(R.id.action_name);
