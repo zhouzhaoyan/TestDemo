@@ -180,16 +180,16 @@ public class MainActivity extends Activity {
         CheckBox checkBox = null;
         switch (modeType) {
             case DAILY:
-                checkBox = findViewById(R.id.daily);
+                checkBox = (CheckBox) findViewById(R.id.daily);
                 break;
             case DAILY_TASK:
-                checkBox = findViewById(R.id.daily_task);
+                checkBox = (CheckBox) findViewById(R.id.daily_task);
                 break;
             case SIMPLE:
-                checkBox = findViewById(R.id.simple);
+                checkBox = (CheckBox) findViewById(R.id.simple);
                 break;
             case NIGHT:
-                checkBox = findViewById(R.id.night);
+                checkBox = (CheckBox) findViewById(R.id.night);
                 break;
         }
         return checkBox;
@@ -199,91 +199,91 @@ public class MainActivity extends Activity {
         CheckBox checkBox = null;
         switch (clientType) {
             case 火树:
-                checkBox = findViewById(R.id.game1);
+                checkBox = (CheckBox) findViewById(R.id.game1);
                 break;
             case 游戏07073网页:
-                checkBox = findViewById(R.id.game3);
+                checkBox = (CheckBox) findViewById(R.id.game3);
                 break;
             case 乐趣网页:
-                checkBox = findViewById(R.id.game2);
+                checkBox = (CheckBox) findViewById(R.id.game2);
                 break;
             case 核弹头网页:
-                checkBox = findViewById(R.id.game4);
+                checkBox = (CheckBox) findViewById(R.id.game4);
                 break;
             case 游戏1758网页:
-                checkBox = findViewById(R.id.game5);
+                checkBox = (CheckBox) findViewById(R.id.game5);
                 break;
             case 牛刀:
-                checkBox = findViewById(R.id.game6);
+                checkBox = (CheckBox) findViewById(R.id.game6);
                 break;
             case 牛刀网页:
-                checkBox = findViewById(R.id.game7);
+                checkBox = (CheckBox) findViewById(R.id.game7);
                 break;
             case 玩蛋:
-                checkBox = findViewById(R.id.game8);
+                checkBox = (CheckBox) findViewById(R.id.game8);
                 break;
             case 客娱:
-                checkBox = findViewById(R.id.game9);
+                checkBox = (CheckBox) findViewById(R.id.game9);
                 break;
             case 热血单机:
-                checkBox = findViewById(R.id.game10);
+                checkBox = (CheckBox) findViewById(R.id.game10);
                 break;
             case 游戏07073:
-                checkBox = findViewById(R.id.game11);
+                checkBox = (CheckBox) findViewById(R.id.game11);
                 break;
             case 游戏1758:
-                checkBox = findViewById(R.id.game12);
+                checkBox = (CheckBox) findViewById(R.id.game12);
                 break;
             case 乐趣:
-                checkBox = findViewById(R.id.game13);
+                checkBox = (CheckBox) findViewById(R.id.game13);
                 break;
             case 核弹头:
-                checkBox = findViewById(R.id.game14);
+                checkBox = (CheckBox) findViewById(R.id.game14);
                 break;
             case 热血单机h5:
-                checkBox = findViewById(R.id.game15);
+                checkBox = (CheckBox) findViewById(R.id.game15);
                 break;
             case 热血单机双开:
-                checkBox = findViewById(R.id.game16);
+                checkBox = (CheckBox) findViewById(R.id.game16);
                 break;
             case 凹凸果:
-                checkBox = findViewById(R.id.game17);
+                checkBox = (CheckBox) findViewById(R.id.game17);
                 break;
             case 乐趣双开:
-                checkBox = findViewById(R.id.game18);
+                checkBox = (CheckBox) findViewById(R.id.game18);
                 break;
             case 乐趣网页双开:
-                checkBox = findViewById(R.id.game19);
+                checkBox = (CheckBox) findViewById(R.id.game19);
                 break;
             case 火树网页双开:
-                checkBox = findViewById(R.id.game20);
+                checkBox = (CheckBox) findViewById(R.id.game20);
                 break;
             case 玩蛋双开:
-                checkBox = findViewById(R.id.game21);
+                checkBox = (CheckBox) findViewById(R.id.game21);
                 break;
             case 牛刀网页双开:
-                checkBox = findViewById(R.id.game22);
+                checkBox = (CheckBox) findViewById(R.id.game22);
                 break;
             case 游戏1758网页双开:
-                checkBox = findViewById(R.id.game23);
+                checkBox = (CheckBox) findViewById(R.id.game23);
                 break;
             case 核弹头双开:
-                checkBox = findViewById(R.id.game24);
+                checkBox = (CheckBox) findViewById(R.id.game24);
                 break;
             case 热血单机h5双开:
-                checkBox = findViewById(R.id.game25);
+                checkBox = (CheckBox) findViewById(R.id.game25);
                 break;
             case 火树qq浏览器:
-                checkBox = findViewById(R.id.game26);
+                checkBox = (CheckBox) findViewById(R.id.game26);
                 break;
             case 玩蛋qq浏览器:
-                checkBox = findViewById(R.id.game27);
+                checkBox = (CheckBox) findViewById(R.id.game27);
                 break;
             case 乐趣qq浏览器:
-                checkBox = findViewById(R.id.game28);
+                checkBox = (CheckBox) findViewById(R.id.game28);
                 break;
             case 游戏1758qq浏览器:
-                checkBox = findViewById(R.id.game29);
+                checkBox = (CheckBox) findViewById(R.id.game29);
                 break;
         }
         return checkBox;
@@ -294,11 +294,11 @@ public class MainActivity extends Activity {
         @SuppressLint("InflateParams")
         View view = LayoutInflater.from(this).inflate(R.layout.dialog_action, null);
         final EditText nameView, hourView, minView, intervalView, countView;
-        nameView = view.findViewById(R.id.action_name);
-        hourView = view.findViewById(R.id.action_hour);
-        minView = view.findViewById(R.id.action_min);
-        intervalView = view.findViewById(R.id.action_interval);
-        countView = view.findViewById(R.id.action_count);
+        nameView = (EditText) view.findViewById(R.id.action_name);
+        hourView = (EditText) view.findViewById(R.id.action_hour);
+        minView = (EditText) view.findViewById(R.id.action_min);
+        intervalView = (EditText) view.findViewById(R.id.action_interval);
+        countView = (EditText) view.findViewById(R.id.action_count);
         builder.setView(view);
         final Dialog dialog = builder.create();
         dialog.show();
