@@ -47,6 +47,15 @@ public class ClickTool {
         }
     }
 
+    public void swipe(int x1, int y1, int x2, int y2){
+        try {
+            LinuxShell.write("input swipe " + x1 + " " + y1 + " "
+                    + x2 + " " +y2 );
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private static class RunNameList<E> extends ArrayList<E> {
         public void add(E value, int count) {
             for (int i = 0; i < count; i++) {

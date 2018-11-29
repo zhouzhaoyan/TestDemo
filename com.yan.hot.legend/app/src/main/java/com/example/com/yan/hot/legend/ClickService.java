@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.com.yan.hot.legend.pic.SimilarPicture;
 import com.example.com.yan.hot.legend.plug.Plug07073;
 import com.example.com.yan.hot.legend.plug.PlugDesktop;
+import com.example.com.yan.hot.legend.plug.PlugMiBrowser;
 import com.example.com.yan.hot.legend.plug.PlugQQ;
 import com.example.com.yan.hot.legend.runstate.ActionRun;
 import com.example.com.yan.hot.legend.runstate.ActionRunFile;
@@ -90,6 +91,9 @@ public class ClickService extends GrayService {
 
                 handler.sendEmptyMessage(WAIT_LOADING_RESOURCE);
                 LogManager.newInstance().writeMessage("running click sleep");
+                if (actionName.contains("血战矿洞")){
+                    PlugMiBrowser.run(clickTool, clientType);
+                }
                 if (actionName.contains("熔炼") || actionName.contains("竞技")) {
                     screencap(clientType);
                 }
