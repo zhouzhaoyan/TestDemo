@@ -358,6 +358,9 @@ public class ClickTool {
             case 游戏1758网页双开:
             case 核弹头双开:
             case 热血单机h5双开:
+            case 火树qq浏览器:
+            case 玩蛋qq浏览器:
+            case 乐趣qq浏览器:
                 result = true;
                 break;
         }
@@ -366,11 +369,11 @@ public class ClickTool {
 
     private static boolean isSlowest(ClientType clientType) {
         boolean result = false;
-        switch (clientType) {
-            case 游戏1758qq浏览器:
-                result = true;
-                break;
-        }
+//        switch (clientType) {
+//            case 游戏1758qq浏览器:
+//                result = true;
+//                break;
+//        }
         return result;
     }
 
