@@ -178,6 +178,10 @@ public class ClickTool {
         if (tmp.contains(ClientType.游戏1758qq浏览器) && actionRun.isRun(ClientType.游戏1758qq浏览器)) {
             clientTypes.add(ClientType.游戏1758qq浏览器);
         }
+
+        if (tmp.contains(ClientType.牛刀qq浏览器) && actionRun.isRun(ClientType.牛刀qq浏览器)) {
+            clientTypes.add(ClientType.牛刀qq浏览器);
+        }
     }
 
     private static List<ClientType> clientTypes;
@@ -187,7 +191,7 @@ public class ClickTool {
         热血单机, 游戏07073, 游戏1758, 乐趣, 核弹头, 热血单机h5, 热血单机双开, 凹凸果,
         乐趣双开, 乐趣网页双开, 火树网页双开, 玩蛋双开,
         牛刀网页双开,游戏1758网页双开, 核弹头双开, 热血单机h5双开,
-        火树qq浏览器,玩蛋qq浏览器,乐趣qq浏览器,游戏1758qq浏览器
+        火树qq浏览器,玩蛋qq浏览器,乐趣qq浏览器,游戏1758qq浏览器,牛刀qq浏览器
     }
 
     public static List<Long> getClickTime(long time, Action action) {
@@ -280,6 +284,7 @@ public class ClickTool {
                 case 玩蛋qq浏览器:
                 case 乐趣qq浏览器:
                 case 游戏1758qq浏览器:
+                case 牛刀qq浏览器:
                     runNames.add("游戏-结束");
                     break;
                 case 游戏07073网页:

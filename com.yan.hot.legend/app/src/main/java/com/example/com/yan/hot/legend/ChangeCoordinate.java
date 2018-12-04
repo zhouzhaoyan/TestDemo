@@ -871,7 +871,11 @@ public class ChangeCoordinate {
 
 //        addNew("07073游戏-new","1758qq浏览器");
 //        setCoordinateIndex("1758qq浏览器",1,1,785,1335);
-        show("1758qq浏览器");
+
+//        addNew("牛刀网页双开-new","牛刀qq浏览器");
+//        setCoordinate("牛刀qq浏览器",562, 1056,548,1356);
+//        setCoordinate("牛刀qq浏览器",682, 1195,554,934);
+        show("牛刀qq浏览器");
 
 //        ActionFile.write(actions);
     }
