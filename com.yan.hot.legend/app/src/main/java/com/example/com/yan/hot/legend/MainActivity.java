@@ -115,6 +115,7 @@ public class MainActivity extends Activity {
         }
 
         actionRun.setAuto(getAutoCheckBox().isChecked());
+        actionRun.setAutoCheckPoint(getAutoCheckPointBox().isChecked());
         Timber.e("start: actionRun:%s", actionRun);
         ActionRunFile.write(actionRun);
 
@@ -123,6 +124,10 @@ public class MainActivity extends Activity {
 
     private CheckBox getAutoCheckBox() {
         return (CheckBox) findViewById(R.id.auto);
+    }
+
+    private CheckBox getAutoCheckPointBox() {
+        return (CheckBox) findViewById(R.id.auto_check_point);
     }
 
     public void setClientColor(ClickTool.ClientType clientType, int color) {
@@ -163,6 +168,7 @@ public class MainActivity extends Activity {
             setClientCheck(state.getClientType(), state.isRun());
         }
         getAutoCheckBox().setChecked(actionRun.isAuto());
+        getAutoCheckPointBox().setChecked(actionRun.isAutoCheckPoint());
     }
 
     private void updateModeType(boolean daily, boolean dailyTask, boolean simple, boolean night) {

@@ -28,6 +28,7 @@ public class ActionRun {
     private List<ActionState> actionStates = new ArrayList<>();
     private ModeType modeType = ModeType.TASK;
     private boolean auto = true;
+    private boolean autoCheckPoint = false;
 
     public ActionRun() {
     }
@@ -79,6 +80,14 @@ public class ActionRun {
 
     public void setAuto(boolean auto) {
         this.auto = auto;
+    }
+
+    public boolean isAutoCheckPoint() {
+        return autoCheckPoint;
+    }
+
+    public void setAutoCheckPoint(boolean autoCheckPoint) {
+        this.autoCheckPoint = autoCheckPoint;
     }
 
     public class ActionState {

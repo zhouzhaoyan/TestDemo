@@ -247,7 +247,7 @@ public class ClickTool {
                     }else{
                         runNames.add("个人boss快速");
                     }
-                    if (isRunCheckPoint(clientType)){
+                    if (actionRun.isAutoCheckPoint()){
                         runNames.add("自动关卡sample");
                     }
                     runNames.add("秘境boss快速sample");
@@ -374,33 +374,6 @@ public class ClickTool {
 //                result = true;
 //                break;
 //        }
-        return result;
-    }
-
-    private static boolean isRunCheckPoint(ClientType clientType){
-        boolean result;
-        switch (clientType) {
-            //800关卡以上先过滤
-            case 火树:
-            case 游戏07073网页:
-            case 乐趣网页:
-            case 核弹头网页:
-            case 游戏1758网页:
-            case 牛刀:
-            case 牛刀网页:
-            case 玩蛋:
-            case 热血单机:
-            case 游戏07073:
-            case 游戏1758:
-            case 乐趣:
-            case 核弹头:
-            case 热血单机h5:
-                result = false;
-                break;
-            default:
-                result = true;
-                break;
-        }
         return result;
     }
 }

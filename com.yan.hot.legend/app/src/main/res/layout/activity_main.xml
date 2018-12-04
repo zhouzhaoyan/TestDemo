@@ -106,6 +106,13 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="自动"/>
+
+        <CheckBox
+            android:id="@+id/auto_check_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="自动关卡"/>
     </LinearLayout>
 
     <LinearLayout
