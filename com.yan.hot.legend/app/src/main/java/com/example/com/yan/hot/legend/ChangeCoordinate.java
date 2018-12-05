@@ -875,7 +875,26 @@ public class ChangeCoordinate {
 //        addNew("牛刀网页双开-new","牛刀qq浏览器");
 //        setCoordinate("牛刀qq浏览器",562, 1056,548,1356);
 //        setCoordinate("牛刀qq浏览器",682, 1195,554,934);
-        show("牛刀qq浏览器");
+
+//        delete("核弹头手机登录插件",getSize("核弹头手机登录插件") - 4);
+//        deletePostions("核弹头手机登录插件",0,1);
+//        setCoordinateIndex("核弹头双开",2,2,936, 2026);
+//        addCoordinate("核弹头手机登录插件",17,493, 1512,1000);
+//        setTime("核弹头手机登录插件",1,4000);
+//        for (int i = 2; i <= 12; i++) {
+//            setTime("核弹头手机登录插件",i,1000);
+//        }
+//        setTime("核弹头手机登录插件",13,2000);
+//        for (int i = 14; i <= 22; i++) {
+//            setTime("核弹头手机登录插件",i,1000);
+//        }
+//        setTime("核弹头手机登录插件",23,2000);
+//        setTime("核弹头手机登录插件",24,10000);
+//        setTime("核弹头手机登录插件",25,2000);
+//        setTime("核弹头手机登录插件",26,2000);
+//        setCoordinateIndex("核弹头手机登录插件",24, 26,959, 2067);
+
+        show("核弹头双开");
 
 //        ActionFile.write(actions);
     }

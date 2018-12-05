@@ -192,6 +192,7 @@ public class PlugQQ {
                 new PlugQQFor07073(actions),
                 new PlugQQFor07073uc(actions),
                 new PlugQQForWarhead(actions),
+                new PlugPhoneForWarhead(actions),
         };
         for (PlugQQForBase bases : plugQQForBases) {
             bases.runPlug(clickService, clientType, coordinate);
