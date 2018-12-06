@@ -374,11 +374,11 @@ public class ClickTool {
 
     private static boolean isSlowest(ClientType clientType) {
         boolean result = false;
-//        switch (clientType) {
-//            case 游戏1758qq浏览器:
-//                result = true;
-//                break;
-//        }
+        switch (clientType) {
+            case 牛刀qq浏览器:
+                result = true;
+                break;
+        }
         return result;
     }
 }
