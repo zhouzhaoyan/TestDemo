@@ -66,3 +66,16 @@ fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
 
+.gitignore
+.gradle/4.6/
+.gradle/vcsWorkingDirs/
+.idea/kotlinc.xml
+.idea/libraries/Gradle__android_android_21.xml
+.idea/libraries/Gradle__com_annimon_stream_1_2_1_jar.xml
+.idea/libraries/Gradle__io_reactivex_rxjava2_rxandroid_2_1_0.xml
+.idea/libraries/Gradle__io_reactivex_rxjava2_rxjava_2_2_2_jar.xml
+.idea/libraries/Gradle__org_reactivestreams_reactive_streams_1_0_2_jar.xml
+.idea/markdown-exported-files.xml
+.idea/markdown-navigator.xml
+.idea/vcs.xml
+app/build/
