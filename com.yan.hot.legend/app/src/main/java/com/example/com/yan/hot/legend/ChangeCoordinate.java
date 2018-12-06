@@ -86,22 +86,27 @@ public class ChangeCoordinate {
 //        addNew("跨服boss-埋骨之地","跨服boss-迷离境");
 //        setCoordinate("跨服boss-迷离境",293, 1131,554,556);
 
+//        deletePostionsIndex("跨服boss-迷离境",10,19);
+//        setTime("跨服boss-迷离境",10,1000);
+//        for (int i = 0; i < 3608; i++) {
+//            addCoordinate("跨服boss-迷离境",10 + i,309, 1540,1000);
+//        }
         show("跨服boss-迷离境");
 
 //        ActionFile.write(actions);
     }
 
-    private static void show(String name) {
-        Action tmp = getAction(name);
-        if (tmp != null) {
-            List<Coordinate> coordinates = tmp.getCoordinates();
-            for (int i = 0; i < coordinates.size(); i++) {
-                Log.e("test", "tmp: " + coordinates.get(i) + "\n");
+    private static void show(String...names) {
+        for (String name: names) {
+            Action tmp = getAction(name);
+            if (tmp != null) {
+                List<Coordinate> coordinates = tmp.getCoordinates();
+                Log.e("test", "tmp: size:" + coordinates.size() + "\n");
+                for (int i = 0; i < coordinates.size(); i++) {
+                    Log.e("test", "tmp: " + coordinates.get(i) + "\n");
+                }
+                Log.e("test", "tmp: " + tmp);
             }
-            Log.e("test", "tmp: " + tmp);
-        }else {
-            Log.e("test", "tmp:  null ");
-
         }
     }
 
@@ -117,39 +122,14 @@ public class ChangeCoordinate {
         }
     }
 
-    private static void addDouble(String oldName, String newName) {
-        addNew(oldName,newName);
-        Action tmp = getAction(newName);
-        if (tmp != null) {
-            List<Coordinate> coordinates = tmp.getCoordinates();
-            List<Coordinate> tmpCoordinate = copy(tmp,"").getCoordinates();
-            Coordinate lastCoordinate = null;
-            Coordinate coordinateEnd = coordinates.get(coordinates.size() - 1);
-            int offset = 2000;
-            long firstTime = 0;
-            for (Coordinate coordinate: tmpCoordinate) {
-                if (lastCoordinate == null){
-                    firstTime = coordinate.getTime();
-                    coordinate.setTime(coordinateEnd.getTime() + offset);
-                } else {
-                    long addTime = coordinate.getTime() - lastCoordinate.getTime();
-                    if (addTime < 0 ){
-                        addTime = coordinate.getTime() - firstTime ;
-                    }
-                    coordinate.setTime(coordinateEnd.getTime() + addTime + offset);
-                }
-                lastCoordinate = coordinate;
-                coordinates.add(coordinate);
-            }
-        }
-    }
-
     private static Action getAction(String name) {
         Action tmp = null;
-        for (Action action : actions) {
-            if (action.getName().equals(name)) {
-                tmp = action;
-                break;
+        if (actions != null){
+            for (Action action : actions) {
+                if (action.getName().equals(name)) {
+                    tmp = action;
+                    break;
+                }
             }
         }
         return tmp;
@@ -183,7 +163,7 @@ public class ChangeCoordinate {
 
     private static void addTimeAll(String name, long addTime) {
         int size = getSize(name);
-        for (int i = 0; i < size; i++) {
+        for (int i = 1; i < size; i++) {
             addTime(name, i, addTime);
         }
     }
@@ -293,18 +273,37 @@ public class ChangeCoordinate {
         }
     }
 
+    private static void setCoordinateIndexOffset(String name,
+                                           int startIndex, int endIndex, int offsetX, int offsetY) {
+        Action tmp = getAction(name);
+        if (tmp != null) {
+            List<Coordinate> coordinates = tmp.getCoordinates();
+            Coordinate coordinate;
+            for (int i = startIndex; i <= endIndex; i++) {
+                coordinate = coordinates.get(i);
+                coordinate.setX(coordinate.getX() + offsetX);
+                coordinate.setY(coordinate.getY() + offsetY);
+            }
+        }
+    }
+
     private static void addNew(String oldName, String newName) {
         Action tmp = getAction(oldName);
         if (tmp != null) {
-            List<Coordinate> coordinates = tmp.getCoordinates();
             Action actionCopy = copy(tmp, newName);
-//            for (int i = 0; i < coordinates.size(); i++) {
-//                Log.e("test", "tmp: " + coordinates.get(i) + "\n");
-//            }
-
             actions.add(actionCopy);
-            //            ActionFile.write(actions);
-//            Log.e("test", "tmp: " + actionCopy);
+        }
+    }
+
+    private static void deletePostionsIndex(String name, int startIndex, int endIndex) {
+        Action tmp = getAction(name);
+        if (tmp != null) {
+            List<Coordinate> coordinates = tmp.getCoordinates();
+            List<Coordinate> delete = new ArrayList<Coordinate>();
+            for (int i = startIndex; i <= Math.min(endIndex,coordinates.size()-1); i++) {
+                delete.add(coordinates.get(i));
+            }
+            coordinates.removeAll(delete);
         }
     }
 

@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
 		if (eidtCoordinatess != null){
 			showActionDialog(eidtCoordinatess);
 		}else{
-			AliveService.openAliveService(getApplicationContext());
+//			AliveService.openAliveService(getApplicationContext());
 		}
 		Log.e(TAG, "week: " + TimeUtil.dateToWeek(System.currentTimeMillis()));
 		Log.e(TAG, "day: " + TimeUtil.getCurrentDay());
