@@ -894,7 +894,9 @@ public class ChangeCoordinate {
 //        setTime("核弹头手机登录插件",26,2000);
 //        setCoordinateIndex("核弹头手机登录插件",24, 26,959, 2067);
 
-        show("核弹头双开");
+//        setCoordinate("王者争霸",971, 1233,895,1276);
+
+        show("王者争霸");
 
 //        ActionFile.write(actions);
     }
