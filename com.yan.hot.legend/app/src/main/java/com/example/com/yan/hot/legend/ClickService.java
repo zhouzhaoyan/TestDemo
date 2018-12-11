@@ -231,9 +231,9 @@ public class ClickService extends GrayService {
                         //保存截图
                         String path = ScreencapPathUtil.getPath(clientType.name());
                         clickTool.screencap(path);
-                        return Observable.just(path);
+                            return Observable.just(path);
                     }
-                }).delay(2, TimeUnit.SECONDS)
+                }).delay(5, TimeUnit.SECONDS)
                 .map(new Function<String, Boolean>() {
                     @Override
                     public Boolean apply(String s) throws Exception {

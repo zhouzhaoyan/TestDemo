@@ -9,6 +9,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import timber.log.Timber;
+
 import static android.content.ContentValues.TAG;
 import static com.yan.hot.legend.action.ActionFile.HOT_ROOT;
 
@@ -19,12 +21,15 @@ public class SimilarPicture {
     public static final String RIGHT_PIC_PATH = HOT_ROOT + File.separator + "0-火树.png";
 
     public static boolean isEquals(String path1) {
+        Timber.e("isEquals:" + path1);
         return isEquals(path1, RIGHT_PIC_PATH);
     }
 
     public static boolean isEquals(String path1, String path2) {
         return isEquals(getBitmap(getBitmap(path1), 525, 305, 65, 65),
-                getBitmap(getBitmap(path2), 525, 305, 65, 65));
+                getBitmap(getBitmap(path2), 525, 305, 65, 65))
+                && isEquals(getBitmap(getBitmap(path1), 800, 2050, 90, 30),
+                getBitmap(getBitmap(path2), 800, 2050, 90, 30));
     }
 
     public static Bitmap getBitmap(Bitmap bitmap, int x, int y,
