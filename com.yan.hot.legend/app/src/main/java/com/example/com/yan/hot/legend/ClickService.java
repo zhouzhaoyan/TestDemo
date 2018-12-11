@@ -61,6 +61,7 @@ public class ClickService extends GrayService {
             Action action;
             //07073 插件
             Plug07073 plug07073 = new Plug07073();
+
             ActionRun actionRun = ActionRunFile.read();
             cancelRestart();
 

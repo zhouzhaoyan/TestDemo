@@ -34,13 +34,13 @@ public abstract class PlugQQForBase {
 
     protected abstract List<ClickTool.ClientType> getClientTypeList();
 
-    protected abstract String getPlugName();
+    protected abstract String getPlugName(ClickTool.ClientType clientType);
 
     protected abstract Coordinate getRunCoordinate();
 
-    public PlugQQForBase(List<Action> actions) {
+    public PlugQQForBase(ClickTool.ClientType clientType, List<Action> actions) {
         this.actions = actions;
-        PLUG_NAME = getPlugName();
+        PLUG_NAME = getPlugName(clientType);
         runCoordinates = new ArrayList<>(getCoordinate());
         LOGIN_PATH = getPath();
         CLIENT_TYPE_LIST = getClientTypeList();
@@ -77,7 +77,7 @@ public abstract class PlugQQForBase {
         long sleep = 0;
         long allTime = 0;
         if (isRunPlug(clientType, coordinate)) {
-            LogManager.newInstance().writeMessage("running click sleep，name:PlugQQForBase:" + clientType);
+            LogManager.newInstance().writeMessage("running click sleep，name:PlugQQForBase:" + getClass().getName() + ":" + clientType);
 
             try {
                 Thread.sleep(20000);

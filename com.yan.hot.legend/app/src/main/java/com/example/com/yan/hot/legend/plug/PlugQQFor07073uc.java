@@ -15,10 +15,10 @@ import java.util.List;
  * Created by on 2018/11/6.
  * 自动登录07073
  */
-public class PlugQQFor07073uc extends PlugQQFor07073{
+public class PlugQQFor07073uc extends PlugQQFor07073 {
 
-    public PlugQQFor07073uc(List<Action> actions) {
-        super(actions);
+    public PlugQQFor07073uc(ClickTool.ClientType clientType, List<Action> actions) {
+        super(clientType, actions);
     }
 
     @Override
@@ -28,7 +28,7 @@ public class PlugQQFor07073uc extends PlugQQFor07073{
 
     @Override
     public Rect getRect() {
-        return new Rect(220,1240,360,1380);
+        return new Rect(220, 1240, 360, 1380);
     }
 
     @Override
@@ -39,12 +39,12 @@ public class PlugQQFor07073uc extends PlugQQFor07073{
     }
 
     @Override
-    public String getPlugName() {
+    public String getPlugName(ClickTool.ClientType clientType) {
         return "07073qq插件";
     }
 
     @Override
     public Coordinate getRunCoordinate() {
-        return new Coordinate( 587,1811);
+        return new Coordinate(587, 1811);
     }
 }

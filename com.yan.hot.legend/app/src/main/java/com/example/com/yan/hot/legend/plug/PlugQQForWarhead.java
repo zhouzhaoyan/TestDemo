@@ -15,10 +15,10 @@ import java.util.List;
  * Created by on 2018/11/6.
  * 自动qq登录核弹头
  */
-public class PlugQQForWarhead extends PlugQQForBase{
+public class PlugQQForWarhead extends PlugQQForBase {
 
-    public PlugQQForWarhead(List<Action> actions) {
-        super(actions);
+    public PlugQQForWarhead(ClickTool.ClientType clientType, List<Action> actions) {
+        super(clientType, actions);
     }
 
     @Override
@@ -28,7 +28,7 @@ public class PlugQQForWarhead extends PlugQQForBase{
 
     @Override
     public Rect getRect() {
-        return new Rect(460,1460,590,1590);
+        return new Rect(460, 1460, 590, 1590);
     }
 
     @Override
@@ -40,12 +40,12 @@ public class PlugQQForWarhead extends PlugQQForBase{
     }
 
     @Override
-    public String getPlugName() {
+    public String getPlugName(ClickTool.ClientType clientType) {
         return "核弹头qq插件";
     }
 
     @Override
     public Coordinate getRunCoordinate() {
-        return new Coordinate( 607,1249);
+        return new Coordinate(607, 1249);
     }
 }

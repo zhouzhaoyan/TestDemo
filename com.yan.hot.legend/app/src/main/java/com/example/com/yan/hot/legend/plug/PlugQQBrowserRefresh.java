@@ -12,39 +12,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by on 2018/11/6.
- * 自动手机登录核弹头
+ * Created by on 2018/12/11.
  */
-public class PlugPhoneForWarhead extends PlugQQForBase {
-
-    public PlugPhoneForWarhead(ClickTool.ClientType clientType, List<Action> actions) {
+public class PlugQQBrowserRefresh extends PlugQQForBase{
+    public PlugQQBrowserRefresh(ClickTool.ClientType clientType, List<Action> actions) {
         super(clientType, actions);
     }
 
     @Override
     public String getPath() {
-        return ActionFile.HOT_ROOT + File.separator + "核弹头手机登录.png";
+        return ActionFile.HOT_ROOT + File.separator + "qqBrowserRefresh.png";
     }
 
     @Override
     public Rect getRect() {
-        return new Rect(390, 1900, 480, 1990);
+        return new Rect(960,230,1010,280);
     }
 
     @Override
     public List<ClickTool.ClientType> getClientTypeList() {
         List<ClickTool.ClientType> clientTypes = new ArrayList<>();
-        clientTypes.add(ClickTool.ClientType.核弹头双开);
+        clientTypes.add(ClickTool.ClientType.牛刀qq浏览器);
         return clientTypes;
     }
 
     @Override
     public String getPlugName(ClickTool.ClientType clientType) {
-        return "核弹头手机登录插件";
+        switch (clientType){
+            case 牛刀qq浏览器:
+                return "牛刀qq浏览器刷新插件";
+        }
+        return "";
     }
 
     @Override
     public Coordinate getRunCoordinate() {
-        return new Coordinate(935, 2026);
+        return new Coordinate( 587, 1811);
     }
+
 }

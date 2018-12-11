@@ -189,10 +189,12 @@ public class PlugQQ {
     //自动加载登录脚本
     public static void autoLogin(final ClickService clickService, final ClickTool.ClientType clientType, final Coordinate coordinate) {
         PlugQQForBase[] plugQQForBases = new PlugQQForBase[]{
-                new PlugQQFor07073(actions),
-                new PlugQQFor07073uc(actions),
-                new PlugQQForWarhead(actions),
-                new PlugPhoneForWarhead(actions),
+                new PlugQQFor07073(clientType,actions),
+                new PlugQQFor07073uc(clientType,actions),
+                new PlugQQForWarhead(clientType,actions),
+                new PlugPhoneForWarhead(clientType,actions),
+                //qq浏览器刷新
+                new PlugQQBrowserRefresh(clientType, actions),
         };
         for (PlugQQForBase bases : plugQQForBases) {
             bases.runPlug(clickService, clientType, coordinate);

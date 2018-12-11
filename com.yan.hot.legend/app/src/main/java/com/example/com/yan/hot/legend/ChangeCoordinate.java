@@ -896,7 +896,11 @@ public class ChangeCoordinate {
 
 //        setCoordinate("王者争霸",971, 1233,895,1276);
 
-        show("王者争霸");
+//        delete("牛刀qq浏览器刷新插件",4);
+//        deletePostionsIndex("牛刀qq浏览器刷新插件",0,1);
+//        setTime("牛刀qq浏览器刷新插件",1,4000);
+//        setCoordinate("牛刀qq浏览器",530,1818,587, 1811);
+        show("牛刀qq浏览器");
 
 //        ActionFile.write(actions);
     }
