@@ -28,8 +28,8 @@ public class SimilarPicture {
     public static boolean isEquals(String path1, String path2) {
         return isEquals(getBitmap(getBitmap(path1), 525, 305, 65, 65),
                 getBitmap(getBitmap(path2), 525, 305, 65, 65))
-                && isEquals(getBitmap(getBitmap(path1), 800, 2050, 90, 30),
-                getBitmap(getBitmap(path2), 800, 2050, 90, 30));
+                && isEquals(getBitmap(getBitmap(path1), 520, 2050, 90, 30),
+                getBitmap(getBitmap(path2), 520, 2050, 90, 30));
     }
 
     public static Bitmap getBitmap(Bitmap bitmap, int x, int y,
