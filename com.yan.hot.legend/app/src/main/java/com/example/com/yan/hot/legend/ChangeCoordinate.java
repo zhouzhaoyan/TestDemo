@@ -900,7 +900,16 @@ public class ChangeCoordinate {
 //        deletePostionsIndex("牛刀qq浏览器刷新插件",0,1);
 //        setTime("牛刀qq浏览器刷新插件",1,4000);
 //        setCoordinate("牛刀qq浏览器",530,1818,587, 1811);
-        show("牛刀qq浏览器");
+
+//        setCoordinate("野外boss快速sample",1004, 1490,900,1520);
+//        setCoordinate("秘境boss快速sample",1004, 1490,900,1520);
+//        setCoordinate("个人boss",1004, 1490,900,1520);
+//        setCoordinate("个人boss快速",1004, 1490,900,1520);
+//        setCoordinate("材料副本快速",1017, 1368,879,1388);
+//        setCoordinate("材料副本",1017, 1368,879,1388);
+//        setCoordinate("经验副本",1017, 1368,879,1388);
+//        setCoordinate("通天塔",1041, 1377,879,1388);
+        show("通天塔");
 
 //        ActionFile.write(actions);
     }
