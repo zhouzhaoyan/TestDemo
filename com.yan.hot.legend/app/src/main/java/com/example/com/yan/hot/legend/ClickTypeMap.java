@@ -26,7 +26,7 @@ public class ClickTypeMap {
         actionNameMap.put(ClickTool.ClientType.热血单机,"热血单机-new");
         actionNameMap.put(ClickTool.ClientType.游戏07073,"07073游戏-new");
         actionNameMap.put(ClickTool.ClientType.游戏1758,"1758微游戏");
-        actionNameMap.put(ClickTool.ClientType.乐趣,"乐趣");
+        actionNameMap.put(ClickTool.ClientType.乐趣,"乐趣new");
         actionNameMap.put(ClickTool.ClientType.核弹头,"核弹头-new");
         actionNameMap.put(ClickTool.ClientType.热血单机h5,"热血单机h5-new");
         actionNameMap.put(ClickTool.ClientType.热血单机双开,"热血单机双开-new");

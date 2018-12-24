@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.annimon.stream.function.Predicate;
 import com.yan.hot.legend.action.Action;
+import com.yan.hot.legend.action.ActionFile;
 import com.yan.hot.legend.action.Coordinate;
 
 import java.util.ArrayList;
@@ -909,7 +910,21 @@ public class ChangeCoordinate {
 //        setCoordinate("材料副本",1017, 1368,879,1388);
 //        setCoordinate("经验副本",1017, 1368,879,1388);
 //        setCoordinate("通天塔",1041, 1377,879,1388);
-        show("通天塔");
+
+//        deletePostionsIndex("乐趣new",11,18);
+//        setCoordinateIndex("乐趣new",7,7,942,1161);
+//        deletePostion("乐趣new",8);
+//        setTime("乐趣new",1,5000);
+//        setTime("乐趣new",2,10000);
+//        setTime("乐趣new",3,5000);
+//        setTime("乐趣new",4,5000);
+//        setTime("乐趣new",5,15000);
+//        setTime("乐趣new",6,5000);
+//        setTime("乐趣new",7,5000);
+//        setTime("乐趣new",8,40000);
+//        setTime("乐趣new",9,40000);
+
+        show("乐趣new");
 
 //        ActionFile.write(actions);
     }

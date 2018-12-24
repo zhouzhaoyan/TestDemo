@@ -70,6 +70,8 @@ public class PlugQQ {
         accountMap.put(ClickTool.ClientType.热血单机, "1594225121");
         accountMap.put(ClickTool.ClientType.核弹头, "1874419402");
         accountMap.put(ClickTool.ClientType.牛刀qq浏览器, "2470518732");
+
+        accountMap.put(ClickTool.ClientType.乐趣, "1594225121");
     }
 
     private static Map<String, Bitmap> qqBitmap;
