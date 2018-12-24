@@ -20,6 +20,7 @@ import io.reactivex.functions.Consumer;
 public class DevoteManager {
 
     private static Map<ClickTool.ClientType, String> accountMap = new HashMap<>();
+    private final static int MAX_VALUE = 20000;
 
     static {
         accountMap.put(ClickTool.ClientType.牛刀, "宿命落花");
@@ -54,8 +55,20 @@ public class DevoteManager {
         accountMap.put(ClickTool.ClientType.牛刀qq浏览器, "低调上帝");
     }
 
-    public static String getAccountName(ClickTool.ClientType clientType){
+    public static String getAccountName(ClickTool.ClientType clientType) {
         return accountMap.get(clientType);
+    }
+
+    public static boolean isMax(ClickTool.ClientType clientType) {
+        List<DevoteObject> list = DevoteFile.read();
+        boolean result = false;
+        for (DevoteObject devoteObject : list) {
+            if (devoteObject.getClientType() == clientType && devoteObject.getValue() >= MAX_VALUE){
+                result = true;
+                break;
+            }
+        }
+        return result;
     }
 
     @SuppressLint("CheckResult")
@@ -69,7 +82,7 @@ public class DevoteManager {
                     for (DevoteObject devoteObject : list) {
                         if (devoteObject.getDate() < currentTime) {
                             devoteObject.setDate(currentTime);
-                            devoteObject.setValue(devoteObject.getValue() + devoteObject.getOffset());
+                            devoteObject.setValue(Math.min(devoteObject.getValue() + devoteObject.getOffset(), MAX_VALUE));
                         }
                     }
                     DevoteFile.write(list);
@@ -78,21 +91,21 @@ public class DevoteManager {
         });
     }
 
-    public static List<DevoteObject> getDevoteNew(List<DevoteObject> devoteObjectsOld){
+    public static List<DevoteObject> getDevoteNew(List<DevoteObject> devoteObjectsOld) {
         List<DevoteObject> defaults = getDefault();
-        if (devoteObjectsOld == null || devoteObjectsOld.isEmpty()){
+        if (devoteObjectsOld == null || devoteObjectsOld.isEmpty()) {
             return defaults;
         }
         List<DevoteObject> devoteObjectsNews = new ArrayList<>(devoteObjectsOld);
-        for (DevoteObject devoteObject: defaults) {
-            if (!devoteObjectsOld.contains(devoteObject)){
+        for (DevoteObject devoteObject : defaults) {
+            if (!devoteObjectsOld.contains(devoteObject)) {
                 devoteObjectsNews.add(devoteObject);
             }
         }
 
-        for (DevoteObject devoteObject: defaults) {
-            for (DevoteObject devoteObjectNew: devoteObjectsNews){
-                if (devoteObjectNew.equals(devoteObject)){
+        for (DevoteObject devoteObject : defaults) {
+            for (DevoteObject devoteObjectNew : devoteObjectsNews) {
+                if (devoteObjectNew.equals(devoteObject)) {
                     devoteObjectNew.setClientType(devoteObject.getClientType());
                     break;
                 }

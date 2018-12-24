@@ -1,5 +1,6 @@
 package com.example.com.yan.hot.legend.runstate;
 
+import com.example.com.yan.hot.legend.devote.DevoteManager;
 import com.zsctc.remote.touch.bytes.ClickTool;
 
 import java.util.ArrayList;
@@ -39,7 +40,7 @@ public class ActionRun {
 
 
         for (ClickTool.ClientType clientType : clientTypes) {
-            actionStates.add(new ActionState(clientType, noRun.contains(clientType) ? false : true));
+            actionStates.add(new ActionState(clientType, noRun.contains(clientType) ? false : !DevoteManager.isMax(clientType)));
         }
     }
 
