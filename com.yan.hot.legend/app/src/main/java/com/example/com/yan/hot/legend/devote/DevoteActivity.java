@@ -11,6 +11,8 @@ import android.widget.Toast;
 import com.example.com.yan.hot.legend.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import io.reactivex.Observable;
@@ -38,7 +40,7 @@ public class DevoteActivity extends Activity implements View.OnClickListener {
 
     private void initData() {
         devoteObjects = DevoteFile.read();
-        if (devoteObjects == null){
+        if (devoteObjects == null) {
             devoteObjects = getDefault();
         }
     }
@@ -46,6 +48,12 @@ public class DevoteActivity extends Activity implements View.OnClickListener {
     private void initView() {
         list = (RecyclerView) findViewById(R.id.list);
         list.setLayoutManager(new LinearLayoutManager(this));
+        Collections.sort(devoteObjects, new Comparator<DevoteObject>() {
+            @Override
+            public int compare(DevoteObject lhs, DevoteObject rhs) {
+                return -(lhs.getValue() - rhs.getValue());
+            }
+        });
         list.setAdapter(new DevoteAdapter(devoteObjects));
         devote_save = (Button) findViewById(R.id.devote_save);
         devote_save.setOnClickListener(this);
@@ -66,7 +74,7 @@ public class DevoteActivity extends Activity implements View.OnClickListener {
                 }).subscribeOn(Schedulers.single()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<Boolean>() {
                     @Override
                     public void accept(Boolean aBoolean) throws Exception {
-                        Toast.makeText(DevoteActivity.this,"成功",Toast.LENGTH_LONG).show();
+                        Toast.makeText(DevoteActivity.this, "成功", Toast.LENGTH_LONG).show();
                         finish();
                     }
                 });
