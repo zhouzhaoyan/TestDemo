@@ -924,7 +924,13 @@ public class ChangeCoordinate {
 //        setTime("乐趣new",8,40000);
 //        setTime("乐趣new",9,40000);
 
-        show("乐趣new");
+//        setTime("核弹头-new",2,15000);
+//        setTime("热血单机h5-new",2,15000);
+//        setTime("乐趣new",2,15000);
+
+//        addCoordinateEndRepeate("游戏-结束",794, 2210,300,6);
+
+        show("游戏-结束");
 
 //        ActionFile.write(actions);
     }
