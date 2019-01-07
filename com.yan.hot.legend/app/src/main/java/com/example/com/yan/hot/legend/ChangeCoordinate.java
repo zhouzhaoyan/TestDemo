@@ -930,7 +930,9 @@ public class ChangeCoordinate {
 
 //        addCoordinateEndRepeate("游戏-结束",794, 2210,300,6);
 
-        show("游戏-结束");
+//        addCoordinate("热血单机-new",2,478, 1410,20000);
+
+        show("热血单机-new");
 
 //        ActionFile.write(actions);
     }
