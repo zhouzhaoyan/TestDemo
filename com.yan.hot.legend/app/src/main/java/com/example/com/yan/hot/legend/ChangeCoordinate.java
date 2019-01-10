@@ -932,7 +932,16 @@ public class ChangeCoordinate {
 
 //        addCoordinate("热血单机-new",2,478, 1410,20000);
 
-        show("热血单机-new");
+//        setCoordinate("核弹头手机登录插件",202, 1950,202, 1872);
+//        setCoordinate("核弹头手机登录插件",220, 1938,202, 1872);
+//        setCoordinate("核弹头手机登录插件",583, 1669,583, 1521);
+//        setCoordinate("核弹头手机登录插件",493, 1512,493, 1364);
+//        setCoordinate("核弹头手机登录插件",48, 1515,48, 1364);
+//        setCoordinate("核弹头手机登录插件",493, 1512,493, 1364);
+//        setCoordinate("核弹头手机登录插件",63, 1529,48, 1364);
+//        setCoordinate("核弹头手机登录插件",381, 1527,381, 1364);
+//        setCoordinate("核弹头手机登录插件",410, 1530,381, 1364);
+        show("核弹头手机登录插件");
 
 //        ActionFile.write(actions);
     }
