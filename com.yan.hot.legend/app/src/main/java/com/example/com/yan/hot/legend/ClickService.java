@@ -37,6 +37,8 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
+import static com.zsctc.remote.touch.bytes.TimeUtil.getLastSecondInDay;
+
 public class ClickService extends GrayService {
 
     private static final String ACTION_FLAG = "ACTION_FLAG";
@@ -358,6 +360,13 @@ public class ClickService extends GrayService {
                                         nextMode = modeTypes[i+1];
                                         break;
                                     }
+                                }
+                            }
+                            if (nextMode == null){
+                                if (getLastSecondInDay(System.currentTimeMillis()) - System.currentTimeMillis() < 2*60*60*1000){
+                                    nextMode = ActionRun.ModeType.NIGHT;
+                                } else {
+                                    nextMode = ActionRun.ModeType.TASK;
                                 }
                             }
                             if (nextMode != null){
