@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.annimon.stream.function.Predicate;
 import com.yan.hot.legend.action.Action;
+import com.yan.hot.legend.action.ActionFile;
 import com.yan.hot.legend.action.Coordinate;
 
 import java.util.ArrayList;
@@ -91,6 +92,8 @@ public class ChangeCoordinate {
 //        for (int i = 0; i < 3608; i++) {
 //            addCoordinate("跨服boss-迷离境",10 + i,309, 1540,1000);
 //        }
+
+//        addNew("跨服boss-迷离境","跨服boss-迷离境-自定义");
         show("跨服boss-迷离境");
 
 //        ActionFile.write(actions);
