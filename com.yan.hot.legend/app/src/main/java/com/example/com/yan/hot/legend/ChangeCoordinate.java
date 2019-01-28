@@ -979,7 +979,11 @@ public class ChangeCoordinate {
 //        addCoordinate("乐趣-new",16,831, 1273,5000);
 //        addCoordinate("乐趣-new",17,271, 1380,5000);
 
-        show("乐趣-new");
+//        addNew("牛刀","牛刀new");
+//        addCoordinate("牛刀new",7,98,820,15000);
+//        addCoordinate("牛刀new",8,974,530,3000);
+//        setCoordinate("牛刀new",632, 1434,540,1414);
+        show("牛刀new");
 
 //        ActionFile.write(actions);
     }
