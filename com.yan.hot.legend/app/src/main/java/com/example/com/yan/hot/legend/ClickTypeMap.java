@@ -14,7 +14,7 @@ public class ClickTypeMap {
     private static Map<ClickTool.ClientType, String> actionNameMap = new HashMap<>();
 
     static {
-        actionNameMap.put(ClickTool.ClientType.火树,"火树");
+        actionNameMap.put(ClickTool.ClientType.火树,"火树new");
         actionNameMap.put(ClickTool.ClientType.游戏07073网页,"07073游戏盒子-网页");
         actionNameMap.put(ClickTool.ClientType.乐趣网页,"乐趣网页");
         actionNameMap.put(ClickTool.ClientType.核弹头网页,"核弹头网页new");
@@ -26,12 +26,12 @@ public class ClickTypeMap {
         actionNameMap.put(ClickTool.ClientType.热血单机,"热血单机-new");
         actionNameMap.put(ClickTool.ClientType.游戏07073,"07073游戏-new");
         actionNameMap.put(ClickTool.ClientType.游戏1758,"1758微游戏");
-        actionNameMap.put(ClickTool.ClientType.乐趣,"乐趣new");
+        actionNameMap.put(ClickTool.ClientType.乐趣,"乐趣-new");
         actionNameMap.put(ClickTool.ClientType.核弹头,"核弹头-new");
         actionNameMap.put(ClickTool.ClientType.热血单机h5,"热血单机h5-new");
         actionNameMap.put(ClickTool.ClientType.热血单机双开,"热血单机双开-new");
         actionNameMap.put(ClickTool.ClientType.凹凸果,"凹凸果");
-        actionNameMap.put(ClickTool.ClientType.乐趣双开,"乐趣双开");
+        actionNameMap.put(ClickTool.ClientType.乐趣双开,"乐趣双开new");
         actionNameMap.put(ClickTool.ClientType.乐趣网页双开,"乐趣网页双开");
         actionNameMap.put(ClickTool.ClientType.火树网页双开,"火树网页双开");
         actionNameMap.put(ClickTool.ClientType.玩蛋双开,"玩蛋双开");

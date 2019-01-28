@@ -941,7 +941,45 @@ public class ChangeCoordinate {
 //        setCoordinate("核弹头手机登录插件",63, 1529,48, 1364);
 //        setCoordinate("核弹头手机登录插件",381, 1527,381, 1364);
 //        setCoordinate("核弹头手机登录插件",410, 1530,381, 1364);
-        show("核弹头手机登录插件");
+
+//        setCoordinate("核弹头-new",930, 938,930,1372);
+
+//        addNew("乐趣双开","乐趣双开new");
+//        addCoordinate("乐趣双开new",2,666, 855,2000);
+//        addCoordinate("乐趣双开new",3,251, 794,2000);
+//        for (int i = 0; i < 3; i++) {
+//            addCoordinate("乐趣双开new",2,794, 2210,1000);
+//        }
+
+//        setTime("乐趣双开new",2,10000);
+//        for (int i = 0; i < 3; i++) {
+//            addCoordinate("乐趣双开new",5,794, 2210,1000);
+//        }
+
+//        addNew("火树","火树new");
+//        addCoordinate("火树new",4,794, 2210,10000);
+//        for (int i = 0; i < 5; i++) {
+//            addCoordinate("火树new",5,794, 2210,1000);
+//        }
+//        addCoordinate("火树new",10,688, 2051,2000);
+//        addCoordinate("火树new",11,739, 2064,12000);
+//        addCoordinate("火树new",12,353, 1639,2000);
+//        addCoordinate("火树new",13,858, 332,2000);
+
+//        addNew("乐趣new","乐趣-new");
+//        addTime("乐趣-new",6,30000);
+//        addCoordinate("乐趣-new",6,794, 2210,10000);
+//        for (int i = 0; i < 5; i++) {
+//            addCoordinate("乐趣-new",7,794, 2210,1000);
+//        }
+//        addCoordinate("乐趣-new",12,930, 802,2000);
+//        addCoordinate("乐趣-new",13,845, 803,2000);
+//        addCoordinate("乐趣-new",14,533, 2043,15000);
+//        addCoordinate("乐趣-new",15,320, 1628,5000);
+//        addCoordinate("乐趣-new",16,831, 1273,5000);
+//        addCoordinate("乐趣-new",17,271, 1380,5000);
+
+        show("乐趣-new");
 
 //        ActionFile.write(actions);
     }
