@@ -46,7 +46,7 @@ public class DevoteFile {
             byte[] date = new byte[fis.available()];
             fis.read(date);
             String tmp = new String(date);
-            Log.e("test", "read: tmp:" + tmp );
+//            Log.e("test", "read: tmp:" + tmp );
             p = JSON.parseArray(tmp,DevoteObject.class);
             System.out.println(p);
         } catch (Exception e) {

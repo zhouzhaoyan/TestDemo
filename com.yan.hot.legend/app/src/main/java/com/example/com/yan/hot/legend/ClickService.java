@@ -261,7 +261,7 @@ public class ClickService extends GrayService {
     @Override
     public void onCreate() {
         super.onCreate();
-        screenView = new ScreenView(this);
+        screenView = new ScreenView(this,false);
         if (clickThread != null) {
             clickThread.stopRunnable();
         }

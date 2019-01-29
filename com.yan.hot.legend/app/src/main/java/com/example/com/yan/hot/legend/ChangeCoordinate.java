@@ -983,7 +983,31 @@ public class ChangeCoordinate {
 //        addCoordinate("牛刀new",7,98,820,15000);
 //        addCoordinate("牛刀new",8,974,530,3000);
 //        setCoordinate("牛刀new",632, 1434,540,1414);
-        show("牛刀new");
+
+//        setTime("牛刀new",10,45000);
+
+//        addNew("凹凸果","凹凸果new");
+//        addCoordinate("凹凸果new",4,26,445,15000);
+//        addCoordinate("凹凸果new",5,986,883,2000);
+
+//        addNew("1758微游戏","1758微游戏new");
+//        addCoordinate("1758微游戏new",6,76,237,15000);
+//        addCoordinate("1758微游戏new",7,518,205,2000);
+//        addCoordinate("1758微游戏new",1,76,237,2000);
+//        deletePostion("1758微游戏new",1);
+//        addCoordinate("1758微游戏new",7,76,237,2000);
+//        deletePostion("1758微游戏new",5);
+//        setCoordinate("1758微游戏new",76,237,92, 272);
+//        deletePostion("1758微游戏new",6);
+//        setTime("1758微游戏new",6,4000);
+
+//        setCoordinate("1758微游戏new",518,205,527,210);
+//        for (int i = 0; i < 2; i++) {
+//            addCoordinate("1758微游戏new",7,527,210,1000);
+//        }
+//        setTime("1758微游戏new",5,30000);
+//        deletePostions("1758微游戏new",7,8);
+        show("1758微游戏new");
 
 //        ActionFile.write(actions);
     }
