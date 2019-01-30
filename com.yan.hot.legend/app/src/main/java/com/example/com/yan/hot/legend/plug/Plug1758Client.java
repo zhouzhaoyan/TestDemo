@@ -33,7 +33,7 @@ public class Plug1758Client {
             for (int i = 0; i < 2; i++) {
                 clickTool.swipe(x1, y1, x2, y2);
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(5000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
