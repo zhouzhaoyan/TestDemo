@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.com.yan.hot.legend.pic.SimilarPicture;
 import com.example.com.yan.hot.legend.plug.Plug07073;
+import com.example.com.yan.hot.legend.plug.Plug1758Client;
 import com.example.com.yan.hot.legend.plug.PlugDesktop;
 import com.example.com.yan.hot.legend.plug.PlugMiBrowser;
 import com.example.com.yan.hot.legend.plug.PlugQQ;
@@ -134,6 +135,9 @@ public class ClickService extends GrayService {
                         }
                     }
                     currentTime = coordinate.getTime();
+
+                    Plug1758Client.run(clickTool, clientType, coordinate);
+
                     runClick(sleep, coordinate);
 
                     PlugQQ.runClick(ClickService.this, clientType, coordinate);

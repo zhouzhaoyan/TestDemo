@@ -1007,6 +1007,9 @@ public class ChangeCoordinate {
 //        }
 //        setTime("1758微游戏new",5,30000);
 //        deletePostions("1758微游戏new",7,8);
+
+//        setTime("1758微游戏new",4,10000);
+
         show("1758微游戏new");
 
 //        ActionFile.write(actions);
