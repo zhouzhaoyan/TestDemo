@@ -83,18 +83,77 @@ public class ChangeCoordinate {
 //
 //            addCoordinateEnd("野外神域boss",1029, 1837,1000);
 //        }
+//
+
+//        addNew("魔界入侵","魔界入侵-吸血");
+//        setCoordinate("魔界入侵-吸血",216,1589,852,1599);
+//
+//        addNew("魔界入侵","魔界入侵-烛龙");
+//        setCoordinate("魔界入侵-烛龙",216,1589,653,1593);
+
+//        addNew("魔界入侵-烛龙","魔界入侵-烛龙new");
+//        setCoordinate("魔界入侵-烛龙new",397, 1547,329,1564);
+//        setTime("魔界入侵-烛龙new",11,1000);
+//        setTime("魔界入侵-烛龙new",12,1000);
+//        for (int i = 0; i < 420; i++) {
+//            addCoordinate("魔界入侵-烛龙new",12,329,1564,1000);
+//        }
+
+//        addNew("魔界入侵-烛龙","暗殿boss");
+//        setCoordinateIndex("暗殿boss",0,0, 1013, 1829);
+//		delete("暗殿boss", 1);
+//		addCoordinateEnd("暗殿boss",1013, 1829,1000);
+//
+//        for (int i = 0; i < 56; i++) {
+//
+//            if (i % 7 == 0){
+//                addCoordinateEnd("暗殿boss",1013, 1829,1000);
+//                addCoordinateEnd("暗殿boss",555,576,1000);
+//                addCoordinateEnd("暗殿boss",351,1326,1000);
+//            }
+//
+//            addCoordinateEnd("暗殿boss",554,1664,1000);
+//            addCoordinateEnd("暗殿boss",1053, 1299,1000);
+//            addCoordinateEnd("暗殿boss",365, 1549,1000);
+//        }
+//
+//        for (int i = 0; i < 2; i++) {
+//            addCoordinateEnd("暗殿boss",1013, 1829,1000);
+//        }
+
+//        delete("跨服boss-迷离境");
+//        delete("跨服boss-迷离境-自定义");
 
 //        addNew("跨服boss-埋骨之地","跨服boss-迷离境");
 //        setCoordinate("跨服boss-迷离境",293, 1131,554,556);
-
-//        deletePostionsIndex("跨服boss-迷离境",10,19);
+//
+//        deletePostionsIndex("跨服boss-迷离境",10,1210);
 //        setTime("跨服boss-迷离境",10,1000);
 //        for (int i = 0; i < 3608; i++) {
 //            addCoordinate("跨服boss-迷离境",10 + i,309, 1540,1000);
 //        }
-
+//
 //        addNew("跨服boss-迷离境","跨服boss-迷离境-自定义");
-        show("跨服boss-迷离境");
+
+//        addNew("跨服boss-迷离境","打开wifi");
+//        setCoordinateIndex("打开wifi",0,0,1000, 1800);
+//        delete("打开wifi",1);
+//        for (int i = 0; i < 30; i++) {
+//            addCoordinateEnd("打开wifi",1000, 1800,2000);
+//        }
+//
+//        addNew("打开wifi","关闭wifi");
+//        delete("关闭wifi",2);
+
+//        setCoordinate("打开wifi",1000, 1800,309, 1540);
+//        setCoordinate("关闭wifi",1000, 1800,309, 1540);
+
+//        addNew("个人boss","个人boss-new");
+//        deletePostionsIndex("个人boss-new",7,18);
+//        for (int i = 0; i < 120; i++) {
+//            addCoordinate("个人boss-new",7,446, 1561,1000);
+//        }
+        show("个人boss-new");
 
 //        ActionFile.write(actions);
     }
@@ -104,7 +163,7 @@ public class ChangeCoordinate {
             Action tmp = getAction(name);
             if (tmp != null) {
                 List<Coordinate> coordinates = tmp.getCoordinates();
-                Log.e("test", "tmp: size:" + coordinates.size() + "\n");
+//                Log.e("test", "tmp: size:" + coordinates.size() + "\n");
                 for (int i = 0; i < coordinates.size(); i++) {
                     Log.e("test", "tmp: " + coordinates.get(i) + "\n");
                 }
@@ -349,6 +408,11 @@ public class ChangeCoordinate {
             }
             coordinates.removeAll(delete);
         }
+    }
+
+    private static void delete(String name) {
+        Action tmp = getAction(name);
+        actions.remove(tmp);
     }
 
     private static Action copy(Action source, String name) {

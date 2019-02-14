@@ -16,12 +16,16 @@ public class ActionFile {
 	
 	private final static String path = Environment.getExternalStorageDirectory().getPath()
 			+ File.separator + "hot" + File.separator + "config.txt";
+
+	private final static String pathTmp = Environment.getExternalStorageDirectory().getPath()
+			+ File.separator + "hot" + File.separator + "config_tmp.txt";
 	
 	public static void write(List<Action> action){
 		FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         new File(path).getParentFile().mkdirs();
-        new File(path).delete();
+        new File(pathTmp).delete();
+        new File(path).renameTo(new File(pathTmp));
 		try {
 			fos = new FileOutputStream(path);
 			oos = new ObjectOutputStream(fos);
