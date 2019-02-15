@@ -162,7 +162,18 @@ public class ChangeCoordinate {
 //        deletePostionsIndex("跨服boss-迷离境-自定义",9,9);
 //        addCoordinate("跨服boss-迷离境-自定义",7,603,1680,3000);
 //        setTime("跨服boss-迷离境",10,1000);
-        show("跨服boss-迷离境");
+//        setTime("跨服boss-迷离境-自定义",10,1000);
+
+//        deletePostionsIndex("熔炼",5,43);
+//        setTime("熔炼",4,3000);
+//        addCoordinate("熔炼",5,600, 1646,3000);
+//        for (int i = 0; i < 35; i++) {
+//            addCoordinate("熔炼",6,600, 1646,500);
+//        }
+//        for (int i = 0; i < 4; i++) {
+//            addCoordinate("熔炼",41,1013, 1821,1000);
+//        }
+        show("熔炼");
 
 //        ActionFile.write(actions);
     }
