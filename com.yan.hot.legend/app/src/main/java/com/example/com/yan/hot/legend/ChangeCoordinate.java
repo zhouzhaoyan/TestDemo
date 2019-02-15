@@ -153,7 +153,16 @@ public class ChangeCoordinate {
 //        for (int i = 0; i < 120; i++) {
 //            addCoordinate("个人boss-new",7,446, 1561,1000);
 //        }
-        show("个人boss-new");
+
+//        setCoordinate("跨服boss-迷离境",660, 1653,603,1680);
+//        deletePostionsIndex("跨服boss-迷离境",9,9);
+//        addCoordinate("跨服boss-迷离境",7,603,1680,3000);
+//
+//        setCoordinate("跨服boss-迷离境-自定义",660, 1653,603,1680);
+//        deletePostionsIndex("跨服boss-迷离境-自定义",9,9);
+//        addCoordinate("跨服boss-迷离境-自定义",7,603,1680,3000);
+        setTime("跨服boss-迷离境",10,1000);
+        show("跨服boss-迷离境");
 
 //        ActionFile.write(actions);
     }
