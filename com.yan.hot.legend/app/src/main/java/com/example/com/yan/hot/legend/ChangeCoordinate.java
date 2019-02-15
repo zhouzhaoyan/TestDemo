@@ -161,7 +161,7 @@ public class ChangeCoordinate {
 //        setCoordinate("跨服boss-迷离境-自定义",660, 1653,603,1680);
 //        deletePostionsIndex("跨服boss-迷离境-自定义",9,9);
 //        addCoordinate("跨服boss-迷离境-自定义",7,603,1680,3000);
-        setTime("跨服boss-迷离境",10,1000);
+//        setTime("跨服boss-迷离境",10,1000);
         show("跨服boss-迷离境");
 
 //        ActionFile.write(actions);
