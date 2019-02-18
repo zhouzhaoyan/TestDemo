@@ -168,7 +168,7 @@ public class ChangeCoordinate {
 //        setTime("熔炼",4,3000);
 //        addCoordinate("熔炼",5,600, 1646,3000);
 //        for (int i = 0; i < 35; i++) {
-//            addCoordinate("熔炼",6,600, 1646,500);
+//            addCoordinate("熔炼",6,600, 1646,1000);
 //        }
 //        for (int i = 0; i < 4; i++) {
 //            addCoordinate("熔炼",41,1013, 1821,1000);
