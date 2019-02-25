@@ -173,7 +173,9 @@ public class ChangeCoordinate {
 //        for (int i = 0; i < 4; i++) {
 //            addCoordinate("熔炼",41,1013, 1821,1000);
 //        }
-        show("熔炼");
+
+//        setCoordinate("熔炼",600, 1646,434 ,1570);
+        show("熔炼","");
 
 //        ActionFile.write(actions);
     }
