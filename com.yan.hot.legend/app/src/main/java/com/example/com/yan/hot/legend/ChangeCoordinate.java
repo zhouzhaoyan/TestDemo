@@ -175,7 +175,11 @@ public class ChangeCoordinate {
 //        }
 
 //        setCoordinate("熔炼",600, 1646,434 ,1570);
-        show("熔炼","");
+//        addCoordinate("熔炼",2,1053, 1299,1000);
+//        for (int i = 0; i < 3; i++) {
+//            addCoordinate("熔炼",3,1029, 1837,1000);
+//        }
+        show("熔炼");
 
 //        ActionFile.write(actions);
     }
