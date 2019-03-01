@@ -1010,7 +1010,15 @@ public class ChangeCoordinate {
 
 //        setTime("1758微游戏new",4,10000);
 
-        show("1758微游戏new");
+//        deletePostionsIndex("乐趣-new",0,11);
+//
+//        addCoordinate("乐趣-new",8,1062,860,30000);
+//        addCoordinate("乐趣-new",9,120,174,5000);
+//        addCoordinate("乐趣-new",10,89,2037,5000);
+//        addCoordinate("乐趣-new",11,89,2037,5000);
+//        addCoordinate("乐趣-new",12,86,753,5000);
+
+        show("乐趣-new");
 
 //        ActionFile.write(actions);
     }
