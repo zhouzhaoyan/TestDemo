@@ -1018,7 +1018,11 @@ public class ChangeCoordinate {
 //        addCoordinate("乐趣-new",11,89,2037,5000);
 //        addCoordinate("乐趣-new",12,86,753,5000);
 
-        show("乐趣-new");
+//        deletePostionsIndex("1758微游戏new",2,6);
+//        setTime("1758微游戏new",2,40000);
+
+//        addCoordinate("07073qq插件",4,283,1755,5000);
+        show("07073qq插件");
 
 //        ActionFile.write(actions);
     }
