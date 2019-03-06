@@ -1022,7 +1022,25 @@ public class ChangeCoordinate {
 //        setTime("1758微游戏new",2,40000);
 
 //        addCoordinate("07073qq插件",4,283,1755,5000);
-        show("07073qq插件");
+
+//        deletePostionsIndex("凹凸果new",2,5);
+//        setTime("凹凸果new",2,40000);
+//        setTime("凹凸果new",3,40000);
+
+//        addNew("07073qq插件","07073qq插件double");
+//        setCoordinate("07073qq插件double",283,1755,745,1755);
+
+//        setCoordinate("凹凸果new",575, 1812,587, 1811);
+
+//        deletePostionsIndex("07073qq插件double",4,4);
+//        addCoordinate("07073qq插件double",5,745,1755,5000);
+//
+//        deletePostionsIndex("07073qq插件",4,4);
+//        addCoordinate("07073qq插件",5,283,1755,5000);
+
+//        addCoordinate("热血单机双开-new",6,283,1755,5000);
+
+        show("热血单机双开-new");
 
 //        ActionFile.write(actions);
     }

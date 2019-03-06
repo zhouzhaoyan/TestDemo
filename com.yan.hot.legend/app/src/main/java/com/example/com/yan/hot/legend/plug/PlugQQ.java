@@ -72,6 +72,8 @@ public class PlugQQ {
         accountMap.put(ClickTool.ClientType.牛刀qq浏览器, "2470518732");
 
         accountMap.put(ClickTool.ClientType.乐趣, "1594225121");
+
+        accountMap.put(ClickTool.ClientType.凹凸果, "2594365547");
     }
 
     private static Map<String, Bitmap> qqBitmap;
@@ -193,6 +195,7 @@ public class PlugQQ {
         PlugQQForBase[] plugQQForBases = new PlugQQForBase[]{
                 new PlugQQFor07073(clientType,actions),
                 new PlugQQFor07073uc(clientType,actions),
+                new PlugQQFor07073Double(clientType,actions),
                 new PlugQQForWarhead(clientType,actions),
                 new PlugPhoneForWarhead(clientType,actions),
                 //qq浏览器刷新
