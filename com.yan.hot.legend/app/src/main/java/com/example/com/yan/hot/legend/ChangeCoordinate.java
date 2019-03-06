@@ -1040,7 +1040,9 @@ public class ChangeCoordinate {
 
 //        addCoordinate("热血单机双开-new",6,283,1755,5000);
 
-        show("热血单机双开-new");
+//        addNew("凹凸果new","火树qq浏览器双开");
+//        setCoordinate("火树qq浏览器双开",826, 1344,268 ,786);
+        show("自动关卡sample");
 
 //        ActionFile.write(actions);
     }

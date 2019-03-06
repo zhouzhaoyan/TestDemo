@@ -294,7 +294,9 @@ public class MainActivity extends Activity {
             case 牛刀qq浏览器:
                 checkBox = (CheckBox) findViewById(R.id.game30);
                 break;
-
+            case 火树qq浏览器双开:
+                checkBox = (CheckBox) findViewById(R.id.game31);
+                break;
         }
         return checkBox;
     }
