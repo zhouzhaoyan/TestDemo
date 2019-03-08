@@ -21,7 +21,7 @@ import static com.example.com.yan.hot.legend.plug.PlugQQ.screencap;
 public abstract class PlugQQForBase {
     private String PLUG_NAME;
     private List<ClickTool.ClientType> CLIENT_TYPE_LIST = new ArrayList<>();
-    private List<Coordinate> runCoordinates;
+    protected List<Coordinate> runCoordinates;
     private float runX;
     private float runY;
     private Rect rect;
@@ -54,7 +54,7 @@ public abstract class PlugQQForBase {
         List<Coordinate> coordinates = new ArrayList<>();
         for (Action action : actions) {
 //            Timber.e("action:" + action + ",PLUG_NAME:" + PLUG_NAME);
-            if (action.getActionTime().getCount() > 0 && action.getName().contains(PLUG_NAME)) {
+            if (action.getActionTime().getCount() > 0 && !PLUG_NAME.equals("") && action.getName().contains(PLUG_NAME)) {
                 coordinates = action.getCoordinates();
                 break;
             }
@@ -73,40 +73,48 @@ public abstract class PlugQQForBase {
     }
 
     public long runPlug(ClickService clickService, ClickTool.ClientType clientType, Coordinate coordinate) {
+        long allTime = 0;
+        if (isRunPlug(clientType, coordinate)) {
+            allTime = innerRun(clickService, clientType);
+        }
+        return allTime;
+    }
+
+    protected long innerRun(ClickService clickService, ClickTool.ClientType clientType) {
         long currentTime = 0;
         long sleep = 0;
         long allTime = 0;
-        if (isRunPlug(clientType, coordinate)) {
-            LogManager.newInstance().writeMessage("running click sleep，name:PlugQQForBase:" + getClass().getName() + ":" + clientType);
+        LogManager.newInstance().writeMessage("running click sleep，name:PlugQQForBase:" + getClass().getName() + ":" + clientType);
 
-            try {
-                Thread.sleep(20000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            String path = screencap(clickService, clientType);
-            if (path == null) {
-                return 0;
-            }
+        try {
+            Thread.sleep(20000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        String path = screencap(clickService, clientType);
+        if (path == null) {
+            return 0;
+        }
 
-            float per = SimilarPicture.isEqualsPer(getBitmap(path, rect), getBitmap(LOGIN_PATH, rect));
-            if (per > 85 || clientType == ClickTool.ClientType.游戏07073
-                    || clientType == ClickTool.ClientType.热血单机) {
-                for (Coordinate tmp : runCoordinates) {
-                    if (currentTime != 0) {
-                        sleep = (int) (tmp.getTime() - currentTime);
-                    }
-                    currentTime = tmp.getTime();
-                    if (sleep == 0) {
-                        sleep = 5000;
-                    }
-                    allTime += sleep;
-                    clickService.runClick(sleep, tmp);
-
-                    PlugQQ.runClick(clickService, clientType, tmp);
+        float per = 100;
+        if (LOGIN_PATH != null) {
+            per = SimilarPicture.isEqualsPer(getBitmap(path, rect), getBitmap(LOGIN_PATH, rect));
+        }
+        if (per > 85 || clientType == ClickTool.ClientType.游戏07073
+                || clientType == ClickTool.ClientType.热血单机) {
+            for (Coordinate tmp : runCoordinates) {
+                if (currentTime != 0) {
+                    sleep = (int) (tmp.getTime() - currentTime);
                 }
-            }
+                currentTime = tmp.getTime();
+                if (sleep == 0) {
+                    sleep = 5000;
+                }
+                allTime += sleep;
+                clickService.runClick(sleep, tmp);
 
+                PlugQQ.runClick(clickService, clientType, tmp);
+            }
         }
         return allTime;
     }

@@ -1042,13 +1042,24 @@ public class ChangeCoordinate {
 
 //        addNew("凹凸果new","火树qq浏览器双开");
 //        setCoordinate("火树qq浏览器双开",826, 1344,268 ,786);
-        show("自动关卡sample");
+
+//        addNew("凹凸果new", "小米浏览器刷新插件");
+//        delete("小米浏览器刷新插件", 1);
+//        addCoordinate("小米浏览器刷新插件", 1, 50, 2000, 2000);
+//        addCoordinate("小米浏览器刷新插件", 2, 714, 2053, 2000);
+//        addCoordinate("小米浏览器刷新插件", 3, 722, 1868, 2000);
+//        addCoordinate("小米浏览器刷新插件", 4, 529, 1885, 2000);
+//        deletePostion("小米浏览器刷新插件",0);
+//        addCoordinate("小米浏览器刷新插件", 1, 50, 2000, 20000);
+
+//        setCoordinate("乐趣网页", 495, 1820, 587, 1811);
+        show("小米浏览器刷新插件", "乐趣网页");
 
 //        ActionFile.write(actions);
     }
 
-    private static void show(String...names) {
-        for (String name: names) {
+    private static void show(String... names) {
+        for (String name : names) {
             Action tmp = getAction(name);
             if (tmp != null) {
                 List<Coordinate> coordinates = tmp.getCoordinates();
@@ -1074,7 +1085,7 @@ public class ChangeCoordinate {
 
     private static Action getAction(String name) {
         Action tmp = null;
-        if (actions != null){
+        if (actions != null) {
             for (Action action : actions) {
                 if (action.getName().equals(name)) {
                     tmp = action;
@@ -1224,7 +1235,7 @@ public class ChangeCoordinate {
     }
 
     private static void setCoordinateIndexOffset(String name,
-                                           int startIndex, int endIndex, int offsetX, int offsetY) {
+                                                 int startIndex, int endIndex, int offsetX, int offsetY) {
         Action tmp = getAction(name);
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
@@ -1250,7 +1261,7 @@ public class ChangeCoordinate {
         if (tmp != null) {
             List<Coordinate> coordinates = tmp.getCoordinates();
             List<Coordinate> delete = new ArrayList<Coordinate>();
-            for (int i = startIndex; i <= Math.min(endIndex,coordinates.size()-1); i++) {
+            for (int i = startIndex; i <= Math.min(endIndex, coordinates.size() - 1); i++) {
                 delete.add(coordinates.get(i));
             }
             coordinates.removeAll(delete);
@@ -1286,7 +1297,7 @@ public class ChangeCoordinate {
         }
     }
 
-    private static void delete(String name){
+    private static void delete(String name) {
         Action tmp = getAction(name);
         actions.remove(tmp);
     }

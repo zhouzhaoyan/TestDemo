@@ -200,6 +200,8 @@ public class PlugQQ {
                 new PlugPhoneForWarhead(clientType,actions),
                 //qq浏览器刷新
                 new PlugQQBrowserRefresh(clientType, actions),
+                //小米浏览器刷新
+                new PlugMiBrowserRefresh(clientType, actions),
         };
         for (PlugQQForBase bases : plugQQForBases) {
             bases.runPlug(clickService, clientType, coordinate);
