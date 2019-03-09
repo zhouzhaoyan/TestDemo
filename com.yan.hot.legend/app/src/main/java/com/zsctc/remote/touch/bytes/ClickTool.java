@@ -65,7 +65,7 @@ public class ClickTool {
     }
 
     private static long allRunTime = 0;
-    private static ActionRun actionRun;
+    public static ActionRun actionRun;
 
     public static void initClient(List<Action> actions) {
         allRunTime = 0;
