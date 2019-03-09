@@ -291,6 +291,7 @@ public class ClickTool {
                 case 游戏1758qq浏览器:
                 case 牛刀qq浏览器:
                 case 火树qq浏览器双开:
+                case 游戏1758:
                     runNames.add("游戏-结束");
                     break;
                 case 游戏07073网页:
@@ -301,9 +302,9 @@ public class ClickTool {
                     break;
 //                    runNames.add("07073游戏盒子-结束");
 //                    break;
-                case 游戏1758:
-                    runNames.add("1758微游戏-结束");
-                    break;
+//                case 游戏1758:
+//                    runNames.add("1758微游戏-结束");
+//                    break;
             }
         }
 
