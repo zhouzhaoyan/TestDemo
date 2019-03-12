@@ -374,12 +374,26 @@
             android:checked="false"
             android:text="牛刀qq浏览器"/>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <CheckBox
             android:id="@+id/game31"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="火树qq双开"/>
+            android:text="火树qq浏览器双开"/>
+
+        <CheckBox
+            android:id="@+id/game32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="玩蛋qq浏览器双开"/>
     </LinearLayout>
 
     <LinearLayout

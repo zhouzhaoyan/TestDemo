@@ -1053,7 +1053,11 @@ public class ChangeCoordinate {
 //        addCoordinate("小米浏览器刷新插件", 1, 50, 2000, 20000);
 
 //        setCoordinate("乐趣网页", 495, 1820, 587, 1811);
-        show("小米浏览器刷新插件", "乐趣网页");
+
+//        addNew("火树qq浏览器双开","玩蛋qq浏览器双开");
+//        setCoordinate("玩蛋qq浏览器双开",268, 786,
+//                522,794);
+        show("玩蛋qq浏览器双开");
 
 //        ActionFile.write(actions);
     }
