@@ -1057,7 +1057,14 @@ public class ChangeCoordinate {
 //        addNew("火树qq浏览器双开","玩蛋qq浏览器双开");
 //        setCoordinate("玩蛋qq浏览器双开",268, 786,
 //                522,794);
-        show("玩蛋qq浏览器双开");
+
+//        addCoordinate("牛刀qq浏览器",6,283,1755,5000);
+
+//        delete("乐趣双开new");
+//        addNew("火树qq浏览器双开","乐趣双开new");
+//        setCoordinate("乐趣双开new",268, 786, 249,761);
+//        setCoordinate("乐趣双开new",426, 843, 661,799);
+        show("乐趣网页","牛刀网页","玩蛋");
 
 //        ActionFile.write(actions);
     }

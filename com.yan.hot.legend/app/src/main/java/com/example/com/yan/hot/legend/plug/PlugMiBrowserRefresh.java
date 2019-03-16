@@ -40,6 +40,7 @@ public class PlugMiBrowserRefresh extends PlugQQForBase {
     public String getPlugName(ClickTool.ClientType clientType) {
         switch (clientType) {
             case 乐趣网页:
+            case 玩蛋:
                 return "小米浏览器刷新插件";
         }
         return "";
