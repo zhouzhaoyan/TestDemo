@@ -32,13 +32,16 @@ public class PlugMiBrowserRefresh extends PlugQQForBase {
     @Override
     public List<ClickTool.ClientType> getClientTypeList() {
         List<ClickTool.ClientType> clientTypes = new ArrayList<>();
+        clientTypes.add(ClickTool.ClientType.火树);
         clientTypes.add(ClickTool.ClientType.乐趣网页);
+        clientTypes.add(ClickTool.ClientType.玩蛋);
         return clientTypes;
     }
 
     @Override
     public String getPlugName(ClickTool.ClientType clientType) {
         switch (clientType) {
+            case 火树:
             case 乐趣网页:
             case 玩蛋:
                 return "小米浏览器刷新插件";

@@ -1093,7 +1093,9 @@ public class ChangeCoordinate {
 //        setCoordinate("乐趣-new",523, 1793,587, 1811);
 //        setTime("乐趣-new",6,35000);
 
-        show("乐趣-new");
+//        deletePostionsIndex("火树new",0,9);
+//        setCoordinate("火树new",495, 1820,587, 1811);
+        show("火树new");
 
 //        ActionFile.write(actions);
     }
