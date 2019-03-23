@@ -47,10 +47,10 @@ public class ClickTool {
         }
     }
 
-    public void swipe(int x1, int y1, int x2, int y2){
+    public void swipe(int x1, int y1, int x2, int y2) {
         try {
             LinuxShell.write("input swipe " + x1 + " " + y1 + " "
-                    + x2 + " " +y2 );
+                    + x2 + " " + y2);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -85,122 +85,24 @@ public class ClickTool {
         }
         actionRun = ActionRunFile.read();
         Log.e(TAG, "initClient: tmp" + tmp);
-        if (tmp.contains(ClientType.火树) && actionRun.isRun(ClientType.火树)) {
-            clientTypes.add(ClientType.火树);
+        ClientType[] allClientTypes = ClientType.values();
+        for (ClientType clientType : allClientTypes) {
+            if (tmp.contains(clientType) && actionRun.isRun(clientType)) {
+                clientTypes.add(clientType);
+            }
         }
-        if (tmp.contains(ClientType.乐趣网页) && actionRun.isRun(ClientType.乐趣网页)) {
-            clientTypes.add(ClientType.乐趣网页);
-        }
-        if (tmp.contains(ClientType.游戏07073网页) && actionRun.isRun(ClientType.游戏07073网页)) {
-            clientTypes.add(ClientType.游戏07073网页);
-        }
-        if (tmp.contains(ClientType.核弹头网页) && actionRun.isRun(ClientType.核弹头网页)) {
-            clientTypes.add(ClientType.核弹头网页);
-        }
-        if (tmp.contains(ClientType.游戏1758网页) && actionRun.isRun(ClientType.游戏1758网页)) {
-            clientTypes.add(ClientType.游戏1758网页);
-        }
-        if (tmp.contains(ClientType.牛刀) && actionRun.isRun(ClientType.牛刀)) {
-            clientTypes.add(ClientType.牛刀);
-        }
-        if (tmp.contains(ClientType.牛刀网页) && actionRun.isRun(ClientType.牛刀网页)) {
-            clientTypes.add(ClientType.牛刀网页);
-        }
-        if (tmp.contains(ClientType.玩蛋) && actionRun.isRun(ClientType.玩蛋)) {
-            clientTypes.add(ClientType.玩蛋);
-        }
-        if (tmp.contains(ClientType.客娱) && actionRun.isRun(ClientType.客娱)) {
-            clientTypes.add(ClientType.客娱);
-        }
-        if (tmp.contains(ClientType.热血单机) && actionRun.isRun(ClientType.热血单机)) {
-            clientTypes.add(ClientType.热血单机);
-        }
-        if (tmp.contains(ClientType.游戏07073) && actionRun.isRun(ClientType.游戏07073)) {
-            clientTypes.add(ClientType.游戏07073);
-        }
-        if (tmp.contains(ClientType.游戏1758) && actionRun.isRun(ClientType.游戏1758)) {
-            clientTypes.add(ClientType.游戏1758);
-        }
-        if (tmp.contains(ClientType.乐趣) && actionRun.isRun(ClientType.乐趣)) {
-            clientTypes.add(ClientType.乐趣);
-        }
-        if (tmp.contains(ClientType.核弹头) && actionRun.isRun(ClientType.核弹头)) {
-            clientTypes.add(ClientType.核弹头);
-        }
-        if (tmp.contains(ClientType.热血单机h5) && actionRun.isRun(ClientType.热血单机h5)) {
-            clientTypes.add(ClientType.热血单机h5);
-        }
-        if (tmp.contains(ClientType.热血单机双开) && actionRun.isRun(ClientType.热血单机双开)) {
-            clientTypes.add(ClientType.热血单机双开);
-        }
-        if (tmp.contains(ClientType.凹凸果) && actionRun.isRun(ClientType.凹凸果)) {
-            clientTypes.add(ClientType.凹凸果);
-        }
-        if (tmp.contains(ClientType.乐趣双开) && actionRun.isRun(ClientType.乐趣双开)) {
-            clientTypes.add(ClientType.乐趣双开);
-        }
-        if (tmp.contains(ClientType.乐趣网页双开) && actionRun.isRun(ClientType.乐趣网页双开)) {
-            clientTypes.add(ClientType.乐趣网页双开);
-        }
-        if (tmp.contains(ClientType.火树网页双开) && actionRun.isRun(ClientType.火树网页双开)) {
-            clientTypes.add(ClientType.火树网页双开);
-        }
-        if (tmp.contains(ClientType.玩蛋双开) && actionRun.isRun(ClientType.玩蛋双开)) {
-            clientTypes.add(ClientType.玩蛋双开);
-        }
-        if (tmp.contains(ClientType.牛刀网页双开) && actionRun.isRun(ClientType.牛刀网页双开)) {
-            clientTypes.add(ClientType.牛刀网页双开);
-        }
-        if (tmp.contains(ClientType.游戏1758网页双开) && actionRun.isRun(ClientType.游戏1758网页双开)) {
-            clientTypes.add(ClientType.游戏1758网页双开);
-        }
-
-        if (tmp.contains(ClientType.核弹头双开) && actionRun.isRun(ClientType.核弹头双开)) {
-            clientTypes.add(ClientType.核弹头双开);
-        }
-
-        if (tmp.contains(ClientType.热血单机h5双开) && actionRun.isRun(ClientType.热血单机h5双开)) {
-            clientTypes.add(ClientType.热血单机h5双开);
-        }
-
-        if (tmp.contains(ClientType.火树qq浏览器) && actionRun.isRun(ClientType.火树qq浏览器)) {
-            clientTypes.add(ClientType.火树qq浏览器);
-        }
-
-        if (tmp.contains(ClientType.玩蛋qq浏览器) && actionRun.isRun(ClientType.玩蛋qq浏览器)) {
-            clientTypes.add(ClientType.玩蛋qq浏览器);
-        }
-
-        if (tmp.contains(ClientType.乐趣qq浏览器) && actionRun.isRun(ClientType.乐趣qq浏览器)) {
-            clientTypes.add(ClientType.乐趣qq浏览器);
-        }
-
-        if (tmp.contains(ClientType.游戏1758qq浏览器) && actionRun.isRun(ClientType.游戏1758qq浏览器)) {
-            clientTypes.add(ClientType.游戏1758qq浏览器);
-        }
-
-        if (tmp.contains(ClientType.牛刀qq浏览器) && actionRun.isRun(ClientType.牛刀qq浏览器)) {
-            clientTypes.add(ClientType.牛刀qq浏览器);
-        }
-
-        if (tmp.contains(ClientType.火树qq浏览器双开) && actionRun.isRun(ClientType.火树qq浏览器双开)) {
-            clientTypes.add(ClientType.火树qq浏览器双开);
-        }
-
-        if (tmp.contains(ClientType.玩蛋qq浏览器双开) && actionRun.isRun(ClientType.玩蛋qq浏览器双开)) {
-            clientTypes.add(ClientType.玩蛋qq浏览器双开);
-        }
+        Log.e(TAG, "initClient: " + clientTypes);
     }
 
     private static List<ClientType> clientTypes;
 
     public enum ClientType {
-        火树, 游戏07073网页, 乐趣网页, 核弹头网页, 游戏1758网页, 牛刀, 牛刀网页, 玩蛋, 客娱,
+        火树, 游戏07073网页, 乐趣网页, 玩蛋, 游戏1758网页, 牛刀, 牛刀网页, 核弹头网页, 客娱,
         热血单机, 游戏07073, 游戏1758, 乐趣, 核弹头, 热血单机h5, 热血单机双开, 凹凸果,
         乐趣双开, 乐趣网页双开, 火树网页双开, 玩蛋双开,
-        牛刀网页双开,游戏1758网页双开, 核弹头双开, 热血单机h5双开,
-        火树qq浏览器,玩蛋qq浏览器,乐趣qq浏览器,游戏1758qq浏览器,牛刀qq浏览器,
-        火树qq浏览器双开,玩蛋qq浏览器双开
+        牛刀网页双开, 游戏1758网页双开, 核弹头双开, 热血单机h5双开,
+        火树qq浏览器, 玩蛋qq浏览器, 乐趣qq浏览器, 游戏1758qq浏览器, 牛刀qq浏览器,
+        火树qq浏览器双开, 玩蛋qq浏览器双开
     }
 
     public static List<Long> getClickTime(long time, Action action) {
@@ -216,7 +118,7 @@ public class ClickTool {
 
             runNames.add(ClickTypeMap.getActionName(clientType));
 
-            switch (actionRun.getModeType()){
+            switch (actionRun.getModeType()) {
                 case DAILY:
                     //日常模式，9分
                     runNames.add("血战矿洞");
@@ -255,12 +157,12 @@ public class ClickTool {
                     }
                     runNames.add("经验副本");
                     runNames.add("转生");
-                    if (isSlowest(clientType)){
+                    if (isSlowest(clientType)) {
                         runNames.add("个人boss");
-                    }else{
+                    } else {
                         runNames.add("个人boss快速");
                     }
-                    if (actionRun.isAutoCheckPoint()){
+                    if (actionRun.isAutoCheckPoint()) {
                         runNames.add("自动关卡sample");
                     }
                     runNames.add("秘境boss快速sample");

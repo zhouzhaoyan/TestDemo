@@ -1064,7 +1064,36 @@ public class ChangeCoordinate {
 //        addNew("火树qq浏览器双开","乐趣双开new");
 //        setCoordinate("乐趣双开new",268, 786, 249,761);
 //        setCoordinate("乐趣双开new",426, 843, 661,799);
-        show("乐趣网页","牛刀网页","玩蛋");
+
+//        addNew("07073qq插件double","玩蛋qq插件");
+//        setCoordinate("玩蛋qq插件",280, 1317, 550,1100);
+
+//        addNew("07073qq插件double","玩蛋qq插件");
+//        setCoordinate("玩蛋qq插件",280, 1317, 550,1100);
+
+//        addNew("玩蛋qq插件","玩蛋qq双开插件");
+//        setCoordinate("玩蛋qq双开插件",745, 1755, 745,1755);
+
+//        setCoordinate("玩蛋qq插件",745, 1755, 283,1755);
+
+//        addNew("玩蛋qq插件","1758qq插件");
+//        setCoordinate("1758qq插件",550,1100,280,1100);
+//
+//        addNew("玩蛋qq双开插件","1758qq双开插件");
+//        setCoordinate("1758qq双开插件",550,1100,280,1100);
+
+//        addNew("玩蛋qq插件","乐趣qq插件");
+//        setCoordinate("乐趣qq插件",550,1100,300,1400);
+//
+//        addNew("玩蛋qq双开插件","乐趣qq双开插件");
+//        setCoordinate("乐趣qq双开插件",550,1100,300,1400);
+
+//        deletePostionsIndex("乐趣-new",5,12);
+//        addCoordinate("乐趣-new",5,114,763,20000);
+//        setCoordinate("乐趣-new",523, 1793,587, 1811);
+//        setTime("乐趣-new",6,35000);
+
+        show("乐趣-new");
 
 //        ActionFile.write(actions);
     }

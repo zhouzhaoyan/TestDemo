@@ -13,34 +13,44 @@ import java.util.List;
 
 /**
  * Created by on 2018/11/6.
- * 自动登录07073,qq浏览器双开
+ * 自动qq登录玩蛋
  */
-public class PlugQQFor07073Double extends PlugQQForBase {
+public class PlugQQForPlayEggs extends PlugQQForBase {
 
-    public PlugQQFor07073Double(ClickTool.ClientType clientType, List<Action> actions) {
+    public PlugQQForPlayEggs(ClickTool.ClientType clientType, List<Action> actions) {
         super(clientType, actions);
     }
 
     @Override
     public String getPath() {
-        return ActionFile.HOT_ROOT + File.separator + "07073登录.png";
+        return ActionFile.HOT_ROOT + File.separator + "玩蛋登录.png";
     }
 
     @Override
     public Rect getRect() {
-        return new Rect(220, 1240, 360, 1380);
+        return new Rect(480, 1020, 630, 1170);
     }
 
     @Override
     public List<ClickTool.ClientType> getClientTypeList() {
         List<ClickTool.ClientType> clientTypes = new ArrayList<>();
-        clientTypes.add(ClickTool.ClientType.凹凸果);
+        clientTypes.add(ClickTool.ClientType.玩蛋qq浏览器);
+        clientTypes.add(ClickTool.ClientType.玩蛋qq浏览器双开);
         return clientTypes;
     }
 
     @Override
     public String getPlugName(ClickTool.ClientType clientType) {
-        return "07073qq插件double";
+        String name = "玩蛋qq插件";
+        switch (clientType){
+            case 玩蛋qq浏览器:
+                name = "玩蛋qq插件";
+                break;
+            case 玩蛋qq浏览器双开:
+                name = "玩蛋qq双开插件";
+                break;
+        }
+        return name;
     }
 
     @Override

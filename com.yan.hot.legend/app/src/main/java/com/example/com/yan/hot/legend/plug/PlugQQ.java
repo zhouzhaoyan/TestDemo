@@ -74,6 +74,15 @@ public class PlugQQ {
         accountMap.put(ClickTool.ClientType.乐趣, "1594225121");
 
         accountMap.put(ClickTool.ClientType.凹凸果, "2594365547");
+
+        accountMap.put(ClickTool.ClientType.玩蛋qq浏览器, "2470518732");
+        accountMap.put(ClickTool.ClientType.玩蛋qq浏览器双开, "1594225121");
+
+        accountMap.put(ClickTool.ClientType.游戏1758qq浏览器, "2470518732");
+        accountMap.put(ClickTool.ClientType.游戏1758, "1594225121");
+
+        accountMap.put(ClickTool.ClientType.乐趣qq浏览器, "2470518732");
+        accountMap.put(ClickTool.ClientType.乐趣双开, "1874419402");
     }
 
     private static Map<String, Bitmap> qqBitmap;
@@ -202,6 +211,9 @@ public class PlugQQ {
                 new PlugQQBrowserRefresh(clientType, actions),
                 //小米浏览器刷新
                 new PlugMiBrowserRefresh(clientType, actions),
+                new PlugQQForPlayEggs(clientType, actions),
+                new PlugQQFor1758(clientType, actions),
+                new PlugQQForJoy(clientType, actions),
         };
         for (PlugQQForBase bases : plugQQForBases) {
             bases.runPlug(clickService, clientType, coordinate);
