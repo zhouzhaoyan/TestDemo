@@ -1095,7 +1095,9 @@ public class ChangeCoordinate {
 
 //        deletePostionsIndex("火树new",0,9);
 //        setCoordinate("火树new",495, 1820,587, 1811);
-        show("火树new");
+//        setCoordinate("玩蛋",495, 1820,587, 1811);
+//        setCoordinate("1758微游戏new",569, 1817,587, 1811);
+        show("玩蛋qq浏览器", "玩蛋qq浏览器双开");
 
 //        ActionFile.write(actions);
     }

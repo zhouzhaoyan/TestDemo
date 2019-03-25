@@ -93,7 +93,7 @@ public class AliveService extends NotificationListenerService {
                 textView.setPadding(10, 10, 10, 10);
                 LinearLayout linearLayout = new LinearLayout(this);
                 linearLayout.addView(textView, new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.WRAP_CONTENT, 1000));
+                        LinearLayout.LayoutParams.WRAP_CONTENT, 500));
 
                 screenView.showScreenshot(linearLayout);
             }
