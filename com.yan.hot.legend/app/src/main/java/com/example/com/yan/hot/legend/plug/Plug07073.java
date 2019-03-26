@@ -24,6 +24,7 @@ public class Plug07073 {
         CLIENT_TYPE_LIST.add(ClickTool.ClientType.游戏07073网页);
         CLIENT_TYPE_LIST.add(ClickTool.ClientType.游戏07073);
         CLIENT_TYPE_LIST.add(ClickTool.ClientType.热血单机h5);
+        CLIENT_TYPE_LIST.add(ClickTool.ClientType.凹凸果);
         CLIENT_TYPE_LIST.add(ClickTool.ClientType.热血单机h5双开);
     }
 
@@ -48,6 +49,10 @@ public class Plug07073 {
 
     private boolean isRunPlug(ClickTool.ClientType clientType, Coordinate coordinate){
         boolean result = false;
+//        LogManager.newInstance().writeMessage("running click sleep，name: runPlug:" + CLIENT_TYPE_LIST
+//                + ",runCoordinates:" + runCoordinates
+//                + ",coordinate:" + coordinate);
+
         if (CLIENT_TYPE_LIST.contains(clientType) && !runCoordinates.isEmpty()){
             if (coordinate.getX() == runX && coordinate.getY() == runY){
                 result = true;
@@ -57,11 +62,13 @@ public class Plug07073 {
     }
 
     public long runPlug(ClickService clickService, ClickTool.ClientType clientType, Coordinate coordinate){
+//        LogManager.newInstance().writeMessage("running click sleep，name: runPlug:" + clientType + "," + getClass());
+
         long currentTime = 0;
         long sleep = 0;
         long allTime = 0;
         if (isRunPlug(clientType, coordinate)){
-            LogManager.newInstance().writeMessage("running click sleep，name: runPlug:" + clientType);
+            LogManager.newInstance().writeMessage("running click sleep，name: runPlug running:" + clientType);
 
             for (Coordinate tmp: runCoordinates){
                 if (currentTime != 0) {

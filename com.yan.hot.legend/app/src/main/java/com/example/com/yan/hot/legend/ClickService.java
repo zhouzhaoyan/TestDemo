@@ -123,8 +123,6 @@ public class ClickService extends GrayService {
                         break;
                     }
 
-                    PlugQQ.autoLogin(ClickService.this, clientType, coordinate);
-
                     //运行07073的插件
                     long runTime07073 = plug07073.runPlug(ClickService.this, clientType, coordinate);
 
@@ -135,6 +133,8 @@ public class ClickService extends GrayService {
                         }
                     }
                     currentTime = coordinate.getTime();
+
+                    PlugQQ.autoLogin(ClickService.this, clientType, coordinate);
 
                     Plug1758Client.run(clickTool, clientType, coordinate);
 
