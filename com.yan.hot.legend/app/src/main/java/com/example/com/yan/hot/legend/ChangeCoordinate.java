@@ -179,7 +179,29 @@ public class ChangeCoordinate {
 //        for (int i = 0; i < 3; i++) {
 //            addCoordinate("熔炼",3,1029, 1837,1000);
 //        }
-        show("熔炼");
+
+//        deletePostionsIndex("主宰boss",0,5);
+//        setCoordinate("主宰boss",541, 576,522,1456);
+//        deletePostionsIndex("主宰boss",2,5);
+//        setTime("主宰boss",1,2000);
+//        for (int i = 0; i < 3; i++) {
+//            addCoordinate("主宰boss",2,1029, 1837,1000);
+//        }
+//        addCoordinate("主宰boss",2,420,1550,3000);
+//        for (int i = 0; i < 292; i++) {
+//            addCoordinate("主宰boss",3,420,1550,1000);
+//        }
+
+//        addNew("魔界入侵-烛龙","魔界入侵-深渊");
+//        setCoordinate("魔界入侵-深渊",653, 1593,216,1589);
+//
+//        addNew("魔界入侵-烛龙","魔界入侵-鬼眼");
+//        setCoordinate("魔界入侵-鬼眼",653, 1593,404,1599);
+//
+//        addNew("魔界入侵-烛龙","魔界入侵-吸血");
+//        setCoordinate("魔界入侵-吸血",653, 1593,852,1599);
+
+        show("魔界入侵-深渊");
 
 //        ActionFile.write(actions);
     }
