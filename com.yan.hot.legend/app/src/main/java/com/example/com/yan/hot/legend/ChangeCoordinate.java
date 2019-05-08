@@ -1101,7 +1101,15 @@ public class ChangeCoordinate {
 //        setCoordinate("07073插件",514, 1608,538,1711);
 
 //        setCoordinate("凹凸果",575, 1812,587,1811);
-        show("07073插件","07073游戏-new","凹凸果");
+
+//        addNew("秘境boss快速sample", "秘境boss快速sample1");
+//        deletePostionsIndex("秘境boss快速sample1", 10, 21);
+//        deletePostionsIndex("秘境boss快速sample1", 0, 0);
+//        addNew("秘境boss快速sample", "秘境boss快速sample2");
+//        deletePostionsIndex("秘境boss快速sample2", 0, 9);
+//        deletePostionsIndex("秘境boss快速sample2", 9, 11);
+
+        show("秘境boss快速sample","秘境boss快速sample1","秘境boss快速sample2");
 
 //        ActionFile.write(actions);
     }

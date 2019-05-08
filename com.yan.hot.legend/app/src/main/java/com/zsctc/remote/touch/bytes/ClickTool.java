@@ -114,6 +114,7 @@ public class ClickTool {
 
         RunNameList<String> runNames = new RunNameList<String>();
         Log.e(TAG, "getClickTime,clientTypes: " + clientTypes);
+        int index = 0;
         for (ClientType clientType : clientTypes) {
 
             runNames.add(ClickTypeMap.getActionName(clientType));
@@ -124,7 +125,7 @@ public class ClickTool {
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
                     runNames.add("竞技sample");
-                    runNames.add("秘境boss快速sample");
+                    addMiJingBoss(runNames, index);
                     runNames.add("野外boss快速sample");
                     break;
                 case DAILY_TASK:
@@ -133,7 +134,7 @@ public class ClickTool {
                     runNames.add("熔炼new");
                     runNames.add("竞技sample");
                     runNames.add("王者争霸");
-                    runNames.add("秘境boss快速sample");
+                    addMiJingBoss(runNames, index);
                     runNames.add("野外boss快速sample");
                     break;
                 case SIMPLE:
@@ -141,7 +142,7 @@ public class ClickTool {
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
                     runNames.add("竞技sample");
-                    runNames.add("秘境boss快速sample");
+                    addMiJingBoss(runNames, index);
                     break;
                 case NIGHT:
                 case TASK:
@@ -165,7 +166,7 @@ public class ClickTool {
                     if (actionRun.isAutoCheckPoint()) {
                         runNames.add("自动关卡sample");
                     }
-                    runNames.add("秘境boss快速sample");
+                    addMiJingBoss(runNames, index);
                     runNames.add("野外boss快速sample");
                     break;
             }
@@ -213,6 +214,8 @@ public class ClickTool {
 //                    runNames.add("1758微游戏-结束");
 //                    break;
             }
+
+            index++;
         }
 
         long tmpRunningTime;
@@ -299,5 +302,13 @@ public class ClickTool {
 //                break;
 //        }
         return result;
+    }
+
+    public static void addMiJingBoss(RunNameList<String> runNames, int index){
+        if (index%2 == 0){
+            runNames.add("秘境boss快速sample1");
+        } else {
+            runNames.add("秘境boss快速sample2");
+        }
     }
 }
