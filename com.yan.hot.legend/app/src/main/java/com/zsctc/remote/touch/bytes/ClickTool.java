@@ -102,7 +102,7 @@ public class ClickTool {
         乐趣双开, 乐趣网页双开, 火树网页双开, 玩蛋双开,
         牛刀网页双开, 游戏1758网页双开, 核弹头双开, 热血单机h5双开,
         火树qq浏览器, 玩蛋qq浏览器, 乐趣qq浏览器, 游戏1758qq浏览器, 牛刀qq浏览器,
-        火树qq浏览器双开, 玩蛋qq浏览器双开
+        火树qq浏览器双开, 玩蛋qq浏览器双开,火树猎豹浏览器
     }
 
     public static List<Long> getClickTime(long time, Action action) {
@@ -200,6 +200,7 @@ public class ClickTool {
                 case 火树qq浏览器双开:
                 case 游戏1758:
                 case 玩蛋qq浏览器双开:
+                case 火树猎豹浏览器:
                     runNames.add("游戏-结束");
                     break;
                 case 游戏07073网页:
@@ -295,12 +296,11 @@ public class ClickTool {
 
     private static boolean isSlowest(ClientType clientType) {
         boolean result = false;
-//        switch (clientType) {
-//            case 火树qq浏览器双开:
-//            case 玩蛋qq浏览器双开:
-//                result = true;
-//                break;
-//        }
+        switch (clientType) {
+            case 火树猎豹浏览器:
+                result = true;
+                break;
+        }
         return result;
     }
 

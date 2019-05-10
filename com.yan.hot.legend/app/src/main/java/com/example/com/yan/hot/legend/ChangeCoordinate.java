@@ -1109,7 +1109,10 @@ public class ChangeCoordinate {
 //        deletePostionsIndex("秘境boss快速sample2", 0, 9);
 //        deletePostionsIndex("秘境boss快速sample2", 9, 11);
 
-        show("秘境boss快速sample","秘境boss快速sample1","秘境boss快速sample2");
+//        addNew("热血单机h5-new","火树猎豹浏览器");
+//        setCoordinate("火树猎豹浏览器",930, 1105,469,1603);
+
+        show("热血单机h5-new","火树猎豹浏览器");
 
 //        ActionFile.write(actions);
     }
