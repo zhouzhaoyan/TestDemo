@@ -133,7 +133,8 @@ public class ClickTool {
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
                     runNames.add("竞技sample");
-                    runNames.add("王者争霸");
+//                    runNames.add("王者争霸");
+                    runNames.add("王者争霸sample");
                     addMiJingBoss(runNames, index);
                     runNames.add("野外boss快速sample");
                     break;
@@ -305,7 +306,7 @@ public class ClickTool {
     }
 
     public static void addMiJingBoss(RunNameList<String> runNames, int index){
-        if (index%2 == 0){
+        if (Math.random() > 0.5f){
             runNames.add("秘境boss快速sample1");
         } else {
             runNames.add("秘境boss快速sample2");

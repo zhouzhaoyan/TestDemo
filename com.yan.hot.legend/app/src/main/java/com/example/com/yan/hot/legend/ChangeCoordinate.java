@@ -1112,7 +1112,26 @@ public class ChangeCoordinate {
 //        addNew("热血单机h5-new","火树猎豹浏览器");
 //        setCoordinate("火树猎豹浏览器",930, 1105,469,1603);
 
-        show("热血单机h5-new","火树猎豹浏览器");
+//        addNew("王者争霸","王者争霸sample");
+
+//        deletePostionsIndex("王者争霸sample",4,36);
+//
+//        for (int i = 0; i < 6; i++) {
+//            addCoordinateEnd("王者争霸sample",895, 1276, 1000);
+//            addCoordinateEnd("王者争霸sample",422, 1864, 2000);
+//            addCoordinateEnd("王者争霸sample",422, 1864, 1000);
+//            addCoordinateEnd("王者争霸sample",557, 1723, 1000);
+//            addCoordinateEnd("王者争霸sample",71, 1812, 10000);
+//            for (int j = 0; j < 3; j++) {
+//                addCoordinateEnd("王者争霸sample",511, 1534, 1000);
+//            }
+//        }
+//        addCoordinateEnd("王者争霸sample",895, 1276, 2000);
+//        for (int i = 0; i < 2; i++) {
+//            addCoordinateEnd("王者争霸sample",1013, 2021,1000);
+//        }
+
+        show("王者争霸sample");
 
 //        ActionFile.write(actions);
     }
