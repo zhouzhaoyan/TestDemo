@@ -125,7 +125,7 @@ public class ClickTool {
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
                     runNames.add("竞技sample");
-                    addMiJingBoss(runNames, index);
+                    runNames.add(getMiJingBoss());
                     runNames.add("野外boss快速sample");
                     break;
                 case DAILY_TASK:
@@ -135,7 +135,7 @@ public class ClickTool {
                     runNames.add("竞技sample");
 //                    runNames.add("王者争霸");
                     runNames.add("王者争霸sample");
-                    addMiJingBoss(runNames, index);
+                    runNames.add(getMiJingBoss());
                     runNames.add("野外boss快速sample");
                     break;
                 case SIMPLE:
@@ -143,7 +143,7 @@ public class ClickTool {
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
                     runNames.add("竞技sample");
-                    addMiJingBoss(runNames, index);
+                    runNames.add(getMiJingBoss());
                     break;
                 case NIGHT:
                 case TASK:
@@ -167,7 +167,7 @@ public class ClickTool {
                     if (actionRun.isAutoCheckPoint()) {
                         runNames.add("自动关卡sample");
                     }
-                    addMiJingBoss(runNames, index);
+                    runNames.add(getMiJingBoss());
                     runNames.add("野外boss快速sample");
                     break;
             }
@@ -305,11 +305,11 @@ public class ClickTool {
         return result;
     }
 
-    public static void addMiJingBoss(RunNameList<String> runNames, int index){
+    public static String getMiJingBoss(){
         if (Math.random() > 0.5f){
-            runNames.add("秘境boss快速sample1");
+            return "秘境boss快速sample1";
         } else {
-            runNames.add("秘境boss快速sample2");
+            return "秘境boss快速sample2";
         }
     }
 }
