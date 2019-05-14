@@ -125,7 +125,7 @@ public class ClickTool {
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
                     runNames.add("竞技sample");
-                    runNames.add(getMiJingBoss());
+                    runNames.add(getMiJingBoss(index));
                     runNames.add("野外boss快速sample");
                     break;
                 case DAILY_TASK:
@@ -135,7 +135,7 @@ public class ClickTool {
                     runNames.add("竞技sample");
 //                    runNames.add("王者争霸");
                     runNames.add("王者争霸sample");
-                    runNames.add(getMiJingBoss());
+                    runNames.add(getMiJingBoss(index));
                     runNames.add("野外boss快速sample");
                     break;
                 case SIMPLE:
@@ -143,7 +143,7 @@ public class ClickTool {
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
                     runNames.add("竞技sample");
-                    runNames.add(getMiJingBoss());
+                    runNames.add(getMiJingBoss(index));
                     break;
                 case NIGHT:
                 case TASK:
@@ -167,7 +167,7 @@ public class ClickTool {
                     if (actionRun.isAutoCheckPoint()) {
                         runNames.add("自动关卡sample");
                     }
-                    runNames.add(getMiJingBoss());
+                    runNames.add(getMiJingBoss(index));
                     runNames.add("野外boss快速sample");
                     break;
             }
@@ -305,8 +305,24 @@ public class ClickTool {
         return result;
     }
 
-    public static String getMiJingBoss(){
-        if (Math.random() > 0.5f){
+    public static String getMiJingBoss(int index){
+        int value = 2;
+        switch (actionRun.getModeType()){
+            case NIGHT:
+            case TASK:
+                value = 2;
+                break;
+            case DAILY:
+                value = 4;
+                break;
+            case DAILY_TASK:
+                value = 3;
+                break;
+            case SIMPLE:
+                value = 5;
+                break;
+        }
+        if (index / value % 2== 0){
             return "秘境boss快速sample1";
         } else {
             return "秘境boss快速sample2";

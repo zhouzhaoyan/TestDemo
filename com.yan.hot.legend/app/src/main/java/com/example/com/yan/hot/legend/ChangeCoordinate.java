@@ -1131,7 +1131,9 @@ public class ChangeCoordinate {
 //            addCoordinateEnd("王者争霸sample",1013, 2021,1000);
 //        }
 
-        show("王者争霸sample");
+//        setTime("秘境boss快速sample1",7,2000);
+//        setTime("秘境boss快速sample2",7,2000);
+        show("秘境boss快速sample1","秘境boss快速sample2");
 
 //        ActionFile.write(actions);
     }
