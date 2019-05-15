@@ -201,6 +201,11 @@ public class ChangeCoordinate {
 //        addNew("魔界入侵-烛龙","魔界入侵-吸血");
 //        setCoordinate("魔界入侵-吸血",653, 1593,852,1599);
 
+//        setTime("魔界入侵-深渊",1,8000);
+//        setTime("魔界入侵-鬼眼",1,8000);
+//        setTime("魔界入侵-吸血",1,8000);
+//        setTime("魔界入侵-烛龙",1,8000);
+
         show("魔界入侵-深渊");
 
 //        ActionFile.write(actions);
