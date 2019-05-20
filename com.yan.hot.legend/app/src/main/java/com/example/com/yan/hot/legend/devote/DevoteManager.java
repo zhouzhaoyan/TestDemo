@@ -56,6 +56,7 @@ public class DevoteManager {
         accountMap.put(ClickTool.ClientType.火树qq浏览器双开, "亡灵冥王");
         accountMap.put(ClickTool.ClientType.玩蛋qq浏览器双开, "魂残月");
         accountMap.put(ClickTool.ClientType.火树猎豹浏览器, "恶魔执着");
+        accountMap.put(ClickTool.ClientType.玩蛋猎豹浏览器, "战魂巅峰");
     }
 
     public static String getAccountName(ClickTool.ClientType clientType) {

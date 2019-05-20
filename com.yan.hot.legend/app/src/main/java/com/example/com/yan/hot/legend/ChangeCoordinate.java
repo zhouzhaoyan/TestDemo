@@ -1133,7 +1133,10 @@ public class ChangeCoordinate {
 
 //        setTime("秘境boss快速sample1",7,2000);
 //        setTime("秘境boss快速sample2",7,2000);
-        show("秘境boss快速sample1","秘境boss快速sample2");
+
+//        addNew("热血单机h5-new","玩蛋猎豹浏览器");
+//        setCoordinate("玩蛋猎豹浏览器",930, 1105,390,1772);
+        show("玩蛋猎豹浏览器");
 
 //        ActionFile.write(actions);
     }
