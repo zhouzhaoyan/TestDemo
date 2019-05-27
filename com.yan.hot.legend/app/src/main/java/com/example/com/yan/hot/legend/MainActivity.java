@@ -60,7 +60,6 @@ public class MainActivity extends Activity {
 
         DevoteManager.init();
 //                PlugQQ.test();
-//        SimilarPicture.isEquals("/storage/emulated/0/hot/2019-05-27/daily/38-核弹头双开.png");
     }
 
     public void onClick(View view) {

@@ -5,6 +5,8 @@ import android.graphics.BitmapFactory;
 import android.os.Environment;
 import android.util.Log;
 
+import com.zsctc.remote.touch.bytes.ClickTool;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -18,11 +20,19 @@ import static com.yan.hot.legend.action.ActionFile.HOT_ROOT;
  * Created by on 2018/10/8.
  */
 public class SimilarPicture {
-    public static final String RIGHT_PIC_PATH = HOT_ROOT + File.separator + "0-火树.png";
 
-    public static boolean isEquals(String path1) {
+    public static boolean isEquals(String path1, ClickTool.ClientType clientType) {
         Timber.e("isEquals:" + path1);
-        return isEquals(path1, RIGHT_PIC_PATH);
+        String path = HOT_ROOT + File.separator;
+        switch (clientType){
+            case 核弹头双开:
+                path += "核弹头双开.png";
+                break;
+            default:
+                path += "0-火树.png";
+                break;
+        }
+        return isEquals(path1, path);
     }
 
     public static boolean isEquals(String path1, String path2) {
@@ -57,7 +67,7 @@ public class SimilarPicture {
     }
 
     public static boolean isEquals(Bitmap b1, Bitmap b2) {
-        return isEqualsPer(b1, b2) >= 80;
+        return isEqualsPer(b1, b2) >= 90;
     }
 
     public static float isEqualsPer(Bitmap b1, Bitmap b2) {

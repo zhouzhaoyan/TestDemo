@@ -244,7 +244,7 @@ public class ClickService extends GrayService {
                     @Override
                     public Boolean apply(String s) throws Exception {
                         //对比图片的相似度
-                        boolean result = SimilarPicture.isEquals(s);
+                        boolean result = SimilarPicture.isEquals(s, clientType);
                         if (!result) {
                             isError = true;
                         }
