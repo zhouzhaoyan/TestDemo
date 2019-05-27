@@ -57,7 +57,7 @@ public class SimilarPicture {
     }
 
     public static boolean isEquals(Bitmap b1, Bitmap b2) {
-        return isEqualsPer(b1, b2) >= 90;
+        return isEqualsPer(b1, b2) >= 80;
     }
 
     public static float isEqualsPer(Bitmap b1, Bitmap b2) {
