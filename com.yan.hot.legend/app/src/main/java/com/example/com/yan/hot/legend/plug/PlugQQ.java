@@ -43,17 +43,17 @@ public class PlugQQ {
 
     static {
         defaultRect.put("273549560", new Rect(80, 1060, 320, 1120));
-        defaultRect.put("2594365547", new Rect(80, 1230, 320, 1290));
-        defaultRect.put("2470518732", new Rect(80, 1400, 320, 1460));
+        defaultRect.put("2470518732", new Rect(80, 1230, 320, 1290));
+        defaultRect.put("1594225121", new Rect(80, 1400, 320, 1460));
         defaultRect.put("1874419402", new Rect(80, 1570, 320, 1630));
-        defaultRect.put("1594225121", new Rect(80, 1740, 320, 1800));
+        defaultRect.put("2594365547", new Rect(80, 1740, 320, 1800));
     }
 
     static {
-        rects.add(new Rect(80, 1336, 320, 1396));
-        rects.add(new Rect(80, 1509, 320, 1569));
-        rects.add(new Rect(80, 1675, 320, 1735));
-        rects.add(new Rect(80, 1846, 320, 1906));
+        rects.add(new Rect(80, 1310, 320, 1370));
+        rects.add(new Rect(80, 1480, 320, 1540));
+        rects.add(new Rect(80, 1650, 320, 1710));
+        rects.add(new Rect(80, 1820, 320, 1880));
     }
 
     private static final Map<ClickTool.ClientType, String> accountMap = new HashMap<>();
@@ -99,23 +99,28 @@ public class PlugQQ {
             qqBitmap.put(next.getKey(), getBitmap(DEFAULT_QQ_PATH, next.getValue()));
         }
 
-        Rect rect = new Rect(80, 1930, 320, 1980);
-        Bitmap bitmap = qqBitmap.get("2594365547");
+//        Rect rect = new Rect(80, 1846, 320, 1906);
+        Bitmap bitmap = qqBitmap.get("1874419402");
         SimilarPicture.save(bitmap, "a.png");
 
-        for (int i = 0; i < 1; i++) {
+        for (int i = -5; i < 5; i++) {
+            int j = 0;
             for (Rect tmp : rects) {
                 tmp = new Rect(tmp.left, tmp.top + i, tmp.right, tmp.bottom + i);
-                float per = SimilarPicture.isEqualsPer(getBitmap(
-                        ActionFile.HOT_ROOT + File.separator + "qqLogin~tmp2.png", tmp), bitmap);
-                Timber.e("tmp:" + tmp + ",per1:" + per + ",i:" + i);
+                Bitmap tmpBp = getBitmap(
+                        ActionFile.HOT_ROOT + File.separator + "qqLogin~tmp2.png", tmp);
+                SimilarPicture.save(tmpBp, "a-" + i + "-" + j +
+                        ".png");
+                float per = SimilarPicture.isEqualsPer(tmpBp, bitmap);
+                Timber.e("tmp:" + tmp + ",per1:" + per + ",i:" + i + ",j:" + j);
                 if (per == 0) {
                     SimilarPicture.save(getBitmap(
                             ActionFile.HOT_ROOT + File.separator + "qqLogin~tmp.png", tmp), "b.png");
                 }
+                j++;
             }
         }
-        Timber.e("rect:" + rect);
+//        Timber.e("rect:" + rect);
 
     }
 
