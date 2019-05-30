@@ -28,6 +28,9 @@ public class SimilarPicture {
             case 核弹头双开:
                 path += "核弹头双开.png";
                 break;
+            case 牛刀:
+                path += "牛刀.png";
+                break;
             default:
                 path += "0-火树.png";
                 break;

@@ -26,7 +26,7 @@ public class PlugQQBrowserRefresh extends PlugQQForBase{
 
     @Override
     public Rect getRect() {
-        return new Rect(960,230,1010,280);
+        return new Rect(960,230,1010,260);
     }
 
     @Override
@@ -47,7 +47,7 @@ public class PlugQQBrowserRefresh extends PlugQQForBase{
 
     @Override
     public Coordinate getRunCoordinate() {
-        return new Coordinate( 587, 1811);
+        return new Coordinate( 538, 1346);
     }
 
 }
