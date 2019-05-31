@@ -31,6 +31,15 @@ public class SimilarPicture {
             case 牛刀:
                 path += "牛刀.png";
                 break;
+            case 热血单机:
+            case 游戏07073:
+            case 乐趣网页双开:
+            case 火树网页双开:
+            case 玩蛋双开:
+            case 牛刀网页双开:
+            case 游戏1758网页双开:
+                path += "玩蛋双开.png";
+                break;
             default:
                 path += "0-火树.png";
                 break;

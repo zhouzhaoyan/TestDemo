@@ -60,6 +60,8 @@ public class MainActivity extends Activity {
 
         DevoteManager.init();
 //                PlugQQ.test();
+//        SimilarPicture.isEquals("/storage/emulated/0/hot/2019-05-30/dailyTask/38-乐趣网页双开.png",
+//                ClickTool.ClientType.乐趣网页双开);
     }
 
     public void onClick(View view) {
