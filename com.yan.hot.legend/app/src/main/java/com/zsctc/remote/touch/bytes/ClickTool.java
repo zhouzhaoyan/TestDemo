@@ -165,7 +165,7 @@ public class ClickTool {
                         runNames.add("个人boss快速");
                     }
                     if (actionRun.isAutoCheckPoint()) {
-                        runNames.add("自动关卡sample");
+                        runNames.add("自动关卡-sample");
                     }
                     runNames.add(getMiJingBoss(index));
                     runNames.add("野外boss快速sample");

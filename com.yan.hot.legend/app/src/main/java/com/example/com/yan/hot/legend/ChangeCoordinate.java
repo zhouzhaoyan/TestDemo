@@ -1137,7 +1137,10 @@ public class ChangeCoordinate {
 //        addNew("热血单机h5-new","玩蛋猎豹浏览器");
 //        setCoordinate("玩蛋猎豹浏览器",930, 1105,390,1772);
 //        setCoordinate("热血单机h5-new",930, 1105, 930, 1018);
-        show("牛刀qq浏览器");
+//        addNew("自动关卡sample","自动关卡-sample");
+//        deletePostionsIndex("自动关卡-sample",50,90);
+//        setTime("自动关卡-sample",50,11000);
+        show("自动关卡-sample");
 
 //        ActionFile.write(actions);
     }

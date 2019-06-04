@@ -382,8 +382,11 @@ public class ClickService extends GrayService {
                                 }
                             }
                             if (nextMode != null){
+                                boolean auto = actionRun.isAuto();
+                                boolean checkPoint = actionRun.isAutoCheckPoint();
                                 actionRun = new ActionRun(nextMode);
-                                actionRun.setAuto(true);
+                                actionRun.setAuto(auto);
+                                actionRun.setAutoCheckPoint(checkPoint);
                             }
                         }
                         ActionRunFile.write(actionRun);
