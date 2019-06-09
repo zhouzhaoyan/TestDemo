@@ -1137,10 +1137,16 @@ public class ChangeCoordinate {
 //        addNew("热血单机h5-new","玩蛋猎豹浏览器");
 //        setCoordinate("玩蛋猎豹浏览器",930, 1105,390,1772);
 //        setCoordinate("热血单机h5-new",930, 1105, 930, 1018);
+
 //        addNew("自动关卡sample","自动关卡-sample");
 //        deletePostionsIndex("自动关卡-sample",50,90);
 //        setTime("自动关卡-sample",50,11000);
-        show("自动关卡-sample");
+//        addNew("玩蛋qq浏览器双开","趣头条搜狗浏览器");
+//        setCoordinate("趣头条搜狗浏览器",522, 794,757,784);
+//        addCoordinate("趣头条搜狗浏览器",2,949 ,2055, 10000);
+//        addCoordinate("趣头条搜狗浏览器",3,137,1637, 3000);
+//        addCoordinate("趣头条搜狗浏览器",4,142,349, 3000);
+        show("趣头条搜狗浏览器");
 
 //        ActionFile.write(actions);
     }
