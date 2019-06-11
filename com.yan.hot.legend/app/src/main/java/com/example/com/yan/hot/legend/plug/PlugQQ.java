@@ -37,24 +37,26 @@ public class PlugQQ {
     private static List<Action> actions;
     private static final String DEFAULT_QQ_PATH = ActionFile.HOT_ROOT + File.separator + "qqLogin.png";
     private static final Map<String, Rect> defaultRect = new HashMap<>();
-    private static final float runX = 942;
-    private static final float runY = 1161;
+    private static final float runX = 279;
+    private static final float runY = 613;
     private static List<Rect> rects = new ArrayList<>();
 
     static {
-        defaultRect.put("273549560", new Rect(80, 1060, 320, 1120));
-        defaultRect.put("2470518732", new Rect(80, 1230, 320, 1290));
-        defaultRect.put("1594225121", new Rect(80, 1400, 320, 1460));
-        defaultRect.put("1874419402", new Rect(80, 1570, 320, 1630));
-        defaultRect.put("2594365547", new Rect(80, 1740, 320, 1800));
+        defaultRect.put("273549560", new Rect(210, 1235, 440, 1275));
+        defaultRect.put("2594365547", new Rect(210, 1430, 440, 1470));
+        defaultRect.put("2470518732", new Rect(210, 1630, 440, 1670));
+        defaultRect.put("1594225121", new Rect(210, 1830, 440, 1870));
+        defaultRect.put("1874419402", new Rect(210, 2030, 440, 2070));
     }
 
     static {
-        rects.add(new Rect(80, 1310, 320, 1370));
-        rects.add(new Rect(80, 1480, 320, 1540));
-        rects.add(new Rect(80, 1650, 320, 1710));
-        rects.add(new Rect(80, 1820, 320, 1880));
+        rects.add(new Rect(210, 1330, 440, 1370));
+        rects.add(new Rect(210, 1530, 440, 1570));
+        rects.add(new Rect(210, 1730, 440, 1770));
+        rects.add(new Rect(210, 1930, 440, 1970));
     }
+    //其他账号区域，显示不完整
+    private static Rect otherRect = new Rect(210, 2070, 440, 2010);
 
     private static final Map<ClickTool.ClientType, String> accountMap = new HashMap<>();
 
@@ -184,7 +186,7 @@ public class PlugQQ {
         }
 
         Bitmap bitmap = qqBitmap.get(accountMap.get(clientType));
-        Rect rect = new Rect(80, 1930, 320, 1980);
+        Rect rect = otherRect;
         for (int j = -5; j < 5; j++) {
             for (Rect tmp : rects) {
                 tmp = new Rect(tmp.left, tmp.top + j, tmp.right, tmp.bottom + j);

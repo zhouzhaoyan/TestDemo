@@ -300,7 +300,6 @@ public class ClickTool {
     private static boolean isSlowest(ClientType clientType) {
         boolean result = false;
         switch (clientType) {
-            case 火树猎豹浏览器:
             case 玩蛋猎豹浏览器:
             case 趣头条搜狗浏览器:
                 result = true;

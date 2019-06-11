@@ -1146,7 +1146,26 @@ public class ChangeCoordinate {
 //        addCoordinate("趣头条搜狗浏览器",2,949 ,2055, 10000);
 //        addCoordinate("趣头条搜狗浏览器",3,137,1637, 3000);
 //        addCoordinate("趣头条搜狗浏览器",4,142,349, 3000);
-        show("趣头条搜狗浏览器");
+
+//        setCoordinate("牛刀网页",511, 1455,423,977);
+//        setCoordinate("核弹头网页new",511, 1455,423,977);
+//        setCoordinate("牛刀new",540, 1414,423,977);
+//        setCoordinate("1758qq插件",942, 1161, 279,613);
+//        setCoordinate("1758qq双开插件",942, 1161, 279,613);
+//        setCoordinate("07073qq插件",942, 1161, 279,613);
+//        setCoordinate("07073qq插件double",942, 1161, 279,613);
+//        setCoordinate("07073qq插件",942, 1161, 279,613);
+//        setCoordinate("乐趣qq双开插件",942, 1161, 279,613);
+//        setCoordinate("乐趣qq插件",942, 1161, 279,613);
+//        setCoordinate("玩蛋qq插件",942, 1161, 279,613);
+//        setCoordinate("玩蛋qq双开插件",942, 1161, 279,613);
+//        setCoordinate("核弹头qq插件",942, 1161, 279,613);
+//         setCoordinate("牛刀网页双开-new",942, 1161, 279,613);
+//        setCoordinate("牛刀qq浏览器",942, 1161, 279,613);
+//          setCoordinate("热血单机双开-new",942, 1161, 279,613);
+
+//        addCoordinate("乐趣网页双开",2,114, 763,20000);
+        show("乐趣-new","乐趣网页双开");
 
 //        ActionFile.write(actions);
     }
