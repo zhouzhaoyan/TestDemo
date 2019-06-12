@@ -79,7 +79,7 @@ public class ClickService extends GrayService {
                 ClickTool.ClientType currentType = ClickTypeMap.getClientType(actionName);
                 if (currentType != null) {
                     clientType = currentType;
-                    PlugDesktop.runClick(ClickService.this, clientType);
+//                    PlugDesktop.runClick(ClickService.this, clientType);
                     LogManager.newInstance().writeMessage("running click sleep，mode:" + actionRun.getModeType());
 
                 }
@@ -136,7 +136,7 @@ public class ClickService extends GrayService {
 
                     PlugQQ.autoLogin(ClickService.this, clientType, coordinate);
 
-                    Plug1758Client.run(clickTool, clientType, coordinate);
+//                    Plug1758Client.run(clickTool, clientType, coordinate);
 
                     runClick(sleep, coordinate);
 
