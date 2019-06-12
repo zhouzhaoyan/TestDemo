@@ -79,7 +79,7 @@ public class ClickService extends GrayService {
                 ClickTool.ClientType currentType = ClickTypeMap.getClientType(actionName);
                 if (currentType != null) {
                     clientType = currentType;
-//                    PlugDesktop.runClick(ClickService.this, clientType);
+                    PlugDesktop.runClick(ClickService.this);
                     LogManager.newInstance().writeMessage("running click sleep，mode:" + actionRun.getModeType());
 
                 }
@@ -375,11 +375,11 @@ public class ClickService extends GrayService {
                                 }
                             }
                             if (nextMode == null){
-                                if (getLastSecondInDay(System.currentTimeMillis()) - System.currentTimeMillis() < 6*60*60*1000){
-                                    nextMode = ActionRun.ModeType.NIGHT;
-                                } else {
+//                                if (getLastSecondInDay(System.currentTimeMillis()) - System.currentTimeMillis() < 6*60*60*1000){
+//                                    nextMode = ActionRun.ModeType.NIGHT;
+//                                } else {
                                     nextMode = ActionRun.ModeType.TASK;
-                                }
+//                                }
                             }
                             if (nextMode != null){
                                 boolean auto = actionRun.isAuto();

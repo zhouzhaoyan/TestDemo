@@ -1165,7 +1165,7 @@ public class ChangeCoordinate {
 //          setCoordinate("热血单机双开-new",942, 1161, 279,613);
 
 //        addCoordinate("乐趣网页双开",2,114, 763,20000);
-        show("乐趣-new","乐趣网页双开");
+        show("桌面纠错插件");
 
 //        ActionFile.write(actions);
     }

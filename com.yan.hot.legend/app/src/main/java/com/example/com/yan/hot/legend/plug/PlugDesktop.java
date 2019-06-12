@@ -46,6 +46,22 @@ public class PlugDesktop {
                 rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top);
     }
 
+    public static void runClick(ClickService clickService){
+        clickService.runClick(1000, new Coordinate(502, 2188));
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        clickService.clickTool.swipe(1000, 1700, 50, 1700);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     @SuppressLint("CheckResult")
     public static void runClick(final ClickService clickService, final ClickTool.ClientType clientType) {
         if (!isDebug){

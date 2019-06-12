@@ -79,6 +79,13 @@ public class MainActivity extends Activity {
                 break;
             case R.id.action_stop:
                 stop();
+                ActionRun actionRun = ActionRunFile.read();
+                ActionRun.ModeType modeType = actionRun.getModeType();
+                if (modeType == ActionRun.ModeType.NIGHT){
+                    actionRun.setModeType(ActionRun.ModeType.TASK);
+                    ActionRunFile.write(actionRun);
+                }
+                updateUi();
                 break;
             case R.id.action_devote:
                 startActivity(new Intent(this, DevoteActivity.class));
