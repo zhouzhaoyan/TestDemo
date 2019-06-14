@@ -29,7 +29,7 @@ public class ActionRun {
     private List<ActionState> actionStates = new ArrayList<>();
     private ModeType modeType = ModeType.TASK;
     private boolean auto = true;
-    private boolean autoCheckPoint = false;
+    private boolean autoCheckPoint = true;
 
     public ActionRun() {
     }
