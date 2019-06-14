@@ -46,6 +46,9 @@ public class ActionRun {
 
     public void setActionStates(ClickTool.ClientType clientType, boolean run) {
         for (ActionState state : actionStates) {
+            if (state.getClientType() == null){
+                continue;
+            }
             if (state.getClientType().equals(clientType)) {
                 state.setRun(run);
                 return;
@@ -56,6 +59,9 @@ public class ActionRun {
 
     public boolean isRun(ClickTool.ClientType clientType) {
         for (ActionState state : actionStates) {
+            if (state.getClientType() == null){
+                continue;
+            }
             if (state.getClientType().equals(clientType)) {
                 return state.isRun();
             }

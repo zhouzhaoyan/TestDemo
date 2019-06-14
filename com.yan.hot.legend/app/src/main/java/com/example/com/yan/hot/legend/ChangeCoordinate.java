@@ -1168,7 +1168,9 @@ public class ChangeCoordinate {
 //        setCoordinate("牛刀网页双开-new",682, 1195,804, 957);
 //        setCoordinate("牛刀网页",566, 1244,804, 957);
 
-        show("牛刀网页双开-new","热血单机-new");
+//        addNew("趣头条搜狗浏览器","趣头条qq浏览器双开");
+//        deletePostionsIndex("趣头条qq浏览器双开",2,4);
+        show("趣头条qq浏览器双开");
 
 //        ActionFile.write(actions);
     }

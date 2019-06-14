@@ -426,7 +426,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="趣头条搜狗浏览器"/>
+            android:text="趣头条qq浏览器双开"/>
 
     </LinearLayout>
 

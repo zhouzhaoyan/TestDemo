@@ -16,8 +16,6 @@ import android.widget.Toast;
 
 import com.example.com.yan.hot.legend.devote.DevoteActivity;
 import com.example.com.yan.hot.legend.devote.DevoteManager;
-import com.example.com.yan.hot.legend.pic.SimilarPicture;
-import com.example.com.yan.hot.legend.plug.PlugQQ;
 import com.example.com.yan.hot.legend.runstate.ActionRun;
 import com.example.com.yan.hot.legend.runstate.ActionRunFile;
 import com.yan.hot.legend.action.Action;
@@ -142,7 +140,11 @@ public class MainActivity extends Activity {
     }
 
     public void setClientColor(ClickTool.ClientType clientType, int color) {
-        getCheckBox(clientType).setTextColor(color);
+        try {
+            getCheckBox(clientType).setTextColor(color);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -190,7 +192,11 @@ public class MainActivity extends Activity {
     }
 
     public void setClientCheck(ClickTool.ClientType clientType, boolean check) {
-        getCheckBox(clientType).setChecked(check);
+        try {
+            getCheckBox(clientType).setChecked(check);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private CheckBox getCheckBox(ActionRun.ModeType modeType) {
@@ -214,6 +220,9 @@ public class MainActivity extends Activity {
 
     private CheckBox getCheckBox(ClickTool.ClientType clientType) {
         CheckBox checkBox = null;
+        if (clientType == null){
+            return checkBox;
+        }
         switch (clientType) {
             case 火树:
                 checkBox = (CheckBox) findViewById(R.id.game1);
@@ -317,7 +326,7 @@ public class MainActivity extends Activity {
             case 玩蛋猎豹浏览器:
                 checkBox = (CheckBox) findViewById(R.id.game34);
                 break;
-            case 趣头条搜狗浏览器:
+            case 趣头条qq浏览器双开:
                 checkBox = (CheckBox) findViewById(R.id.game35);
                 break;
         }

@@ -48,6 +48,13 @@ public class DevoteActivity extends Activity implements View.OnClickListener {
     private void initView() {
         list = (RecyclerView) findViewById(R.id.list);
         list.setLayoutManager(new LinearLayoutManager(this));
+        List<DevoteObject> delete = new ArrayList<>();
+        for (DevoteObject devoteObject: devoteObjects) {
+            if (devoteObject.getAccountName() == null){
+                delete.add(devoteObject);
+            }
+        }
+        devoteObjects.removeAll(delete);
         Collections.sort(devoteObjects, new Comparator<DevoteObject>() {
             @Override
             public int compare(DevoteObject lhs, DevoteObject rhs) {
