@@ -1170,7 +1170,8 @@ public class ChangeCoordinate {
 
 //        addNew("趣头条搜狗浏览器","趣头条qq浏览器双开");
 //        deletePostionsIndex("趣头条qq浏览器双开",2,4);
-        show("趣头条qq浏览器双开");
+//        setTime("趣头条qq浏览器双开",2,40000);
+        show("火树qq浏览器双开","趣头条qq浏览器双开");
 
 //        ActionFile.write(actions);
     }
