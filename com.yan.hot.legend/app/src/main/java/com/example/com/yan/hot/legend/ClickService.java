@@ -375,11 +375,11 @@ public class ClickService extends GrayService {
                                 }
                             }
                             if (nextMode == null){
-//                                if (getLastSecondInDay(System.currentTimeMillis()) - System.currentTimeMillis() < 6*60*60*1000){
-//                                    nextMode = ActionRun.ModeType.NIGHT;
-//                                } else {
+                                if (getLastSecondInDay(System.currentTimeMillis()) - System.currentTimeMillis() < 6*60*60*1000){
+                                    nextMode = ActionRun.ModeType.NIGHT;
+                                } else {
                                     nextMode = ActionRun.ModeType.TASK;
-//                                }
+                                }
                             }
                             if (nextMode != null){
                                 boolean auto = actionRun.isAuto();
