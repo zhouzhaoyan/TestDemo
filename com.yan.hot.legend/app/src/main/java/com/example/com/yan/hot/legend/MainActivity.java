@@ -29,6 +29,8 @@ import java.util.List;
 
 import timber.log.Timber;
 
+import static com.zsctc.remote.touch.bytes.TimeUtil.getLastSecondInDay;
+
 public class MainActivity extends Activity {
 
     //	private List<Coordinate> eidtCoordinatess;
@@ -79,7 +81,8 @@ public class MainActivity extends Activity {
                 stop();
                 ActionRun actionRun = ActionRunFile.read();
                 ActionRun.ModeType modeType = actionRun.getModeType();
-                if (modeType == ActionRun.ModeType.NIGHT){
+                if (modeType == ActionRun.ModeType.NIGHT
+                        && getLastSecondInDay(System.currentTimeMillis()) - System.currentTimeMillis() > 12 * 60 * 60 * 1000) {
                     actionRun.setModeType(ActionRun.ModeType.TASK);
                     ActionRunFile.write(actionRun);
                 }
@@ -220,7 +223,7 @@ public class MainActivity extends Activity {
 
     private CheckBox getCheckBox(ClickTool.ClientType clientType) {
         CheckBox checkBox = null;
-        if (clientType == null){
+        if (clientType == null) {
             return checkBox;
         }
         switch (clientType) {

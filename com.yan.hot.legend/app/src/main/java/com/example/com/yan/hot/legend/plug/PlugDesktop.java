@@ -55,7 +55,7 @@ public class PlugDesktop {
         }
         clickService.clickTool.swipe(1000, 1700, 50, 1700);
         try {
-            Thread.sleep(3000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
