@@ -175,6 +175,13 @@ public class AliveService extends NotificationListenerService {
 				long filerRunTime = (int) (filerCoordinates.get(filerCoordinates.size() - 1).getTime()
 						- filerCoordinates.get(0).getTime()) + 1000;
 
+				if (filerAction.getName().contains("魔界入侵") && filerTimes.size() > 0){
+					//因为有时点击事件的延迟太久，导致无法准时的参加魔界入侵，所以提前5分钟空白期让系统休息
+					int buffer = 5*60*1000;
+					filerTimes.set(0,filerTimes.get(0) - buffer);
+					filerRunTime = filerRunTime + buffer;
+				}
+
 				for (long tmp: filerTimes) {
 					if (isBreak(filerAction.getName(), tmp)) continue;
 
@@ -202,7 +209,7 @@ public class AliveService extends NotificationListenerService {
 					}
 					if (add){
 						LogManager.newInstance().writeMessage("alarm:" +  filerAction.getName()
-								+ " add Time:" + TimeUtil.getFormatTime(tmp) + "," + TimeUtil.getFormatTime(filerRunTime));
+								+ " add Time:" + TimeUtil.getFormatTime(tmp) + "," + TimeUtil.getFormatTime((int)filerRunTime));
 						allClick.put(tmp, filerRunTime);
 					}
 
