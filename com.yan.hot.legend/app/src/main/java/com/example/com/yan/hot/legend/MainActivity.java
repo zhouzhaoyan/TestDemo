@@ -27,6 +27,9 @@ import com.zsctc.remote.touch.bytes.ClickTool;
 import java.io.Serializable;
 import java.util.List;
 
+import io.reactivex.Observable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
 import static com.zsctc.remote.touch.bytes.TimeUtil.getLastSecondInDay;
@@ -44,6 +47,7 @@ public class MainActivity extends Activity {
         context.startActivity(intent);
     }
 
+    @SuppressLint("CheckResult")
     @SuppressWarnings("unchecked")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +66,14 @@ public class MainActivity extends Activity {
 //                PlugQQ.test();
 //        SimilarPicture.isEquals("/storage/emulated/0/hot/2019-05-30/dailyTask/38-乐趣网页双开.png",
 //                ClickTool.ClientType.乐趣网页双开);
+//        Observable.just(1)
+//                .observeOn(Schedulers.newThread())
+//                .subscribe(new Consumer<Integer>() {
+//                    @Override
+//                    public void accept(Integer integer) throws Exception {
+//                        EmailManager.getInstance().send();
+//                    }
+//                });
     }
 
     public void onClick(View view) {

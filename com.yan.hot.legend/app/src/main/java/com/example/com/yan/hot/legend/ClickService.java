@@ -351,7 +351,7 @@ public class ClickService extends GrayService {
                             actionRun.setModeType(ActionRun.ModeType.TASK);
                         }
                         List<ActionRun.ActionState> actionStates = actionRun.getActionStates();
-                        if (actionRun.isAuto() && isRunningFinish(actionStates)){
+                        if (/**actionRun.isAuto() && **/isRunningFinish(actionStates)){
                             ActionRun.ModeType[] modeTypes;
                             if (ClickTool.actionRun.isAutoCheckPoint()){
                                 modeTypes = new ActionRun.ModeType[]{
@@ -388,6 +388,9 @@ public class ClickService extends GrayService {
                                 actionRun.setAuto(auto);
                                 actionRun.setAutoCheckPoint(checkPoint);
                             }
+                        } else {
+                            //发送邮件
+                            EmailManager.getInstance().send();
                         }
                         ActionRunFile.write(actionRun);
                         return 1;
