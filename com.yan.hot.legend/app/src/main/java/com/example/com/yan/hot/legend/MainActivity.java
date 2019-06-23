@@ -18,6 +18,7 @@ import com.example.com.yan.hot.legend.devote.DevoteActivity;
 import com.example.com.yan.hot.legend.devote.DevoteManager;
 import com.example.com.yan.hot.legend.runstate.ActionRun;
 import com.example.com.yan.hot.legend.runstate.ActionRunFile;
+import com.example.com.yan.hot.legend.screencap.ScreencapPathUtil;
 import com.yan.hot.legend.action.Action;
 import com.yan.hot.legend.action.ActionFile;
 import com.yan.hot.legend.action.ActionTime;
@@ -74,6 +75,7 @@ public class MainActivity extends Activity {
 //                        EmailManager.getInstance().send();
 //                    }
 //                });
+//        ScreencapPathUtil.getExistPath(ClickTool.ClientType.火树.name());
     }
 
     public void onClick(View view) {

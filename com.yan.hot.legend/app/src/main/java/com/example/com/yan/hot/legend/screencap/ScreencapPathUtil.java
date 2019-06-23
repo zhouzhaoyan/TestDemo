@@ -9,6 +9,9 @@ import com.zsctc.remote.touch.bytes.FileUtils;
 import com.zsctc.remote.touch.bytes.TimeUtil;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by on 2018/10/8.
@@ -79,6 +82,26 @@ public class ScreencapPathUtil {
                 }
             } else {
                 break;
+            }
+        }
+        Log.e(TAG, "getPath: " + path );
+        return path;
+    }
+
+    public static String getExistPath(String clientType) {
+        String parent = getParent();
+        String path = "";
+        File parentFile = new File(parent);
+        String[] exists = null;
+        if (parentFile.exists()){
+            exists = parentFile.list();
+        }
+        Arrays.sort(exists);
+        Log.e(TAG, "getPath,clientType: " + clientType + ",parent:" + parent );
+        for (String name: exists) {
+            Log.e(TAG, "getPath,name: " + name );
+            if (name.contains(clientType+".png")){
+                path = parent + File.separator + name;
             }
         }
         Log.e(TAG, "getPath: " + path );
