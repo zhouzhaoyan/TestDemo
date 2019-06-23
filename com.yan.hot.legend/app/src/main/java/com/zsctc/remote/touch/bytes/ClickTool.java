@@ -292,6 +292,7 @@ public class ClickTool {
             case 火树qq浏览器双开:
             case 玩蛋qq浏览器双开:
             case 火树猎豹浏览器:
+            case 玩蛋猎豹浏览器:
                 result = true;
                 break;
         }
@@ -300,12 +301,11 @@ public class ClickTool {
 
     private static boolean isSlowest(ClientType clientType) {
         boolean result = false;
-        switch (clientType) {
-            case 玩蛋猎豹浏览器:
-            case 趣头条qq浏览器双开:
-                result = true;
-                break;
-        }
+//        switch (clientType) {
+//            case 趣头条qq浏览器双开:
+//                result = true;
+//                break;
+//        }
         return result;
     }
 
