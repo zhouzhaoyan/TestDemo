@@ -1171,7 +1171,27 @@ public class ChangeCoordinate {
 //        addNew("趣头条搜狗浏览器","趣头条qq浏览器双开");
 //        deletePostionsIndex("趣头条qq浏览器双开",2,4);
 //        setTime("趣头条qq浏览器双开",2,40000);
-        show("火树qq浏览器双开","趣头条qq浏览器双开");
+//        addNew("通天塔","通天塔sample");
+//        addCoordinate("通天塔sample",12,92,1812, 3000);
+//        setTime("通天塔sample",13,1000);
+//        setTime("通天塔sample",14,1000);
+//        setTime("通天塔sample",15,1000);
+//        setTime("通天塔sample",16,1000);
+//        deletePostionsIndex("通天塔sample",0,0);
+//        setTime("通天塔sample",1,3000);
+//        setTime("通天塔sample",2,1000);
+//        setTime("通天塔sample",3,1000);
+//        setCoordinate("通天塔sample",649, 1863,644, 1876);
+//        setCoordinate("通天塔sample",651, 1869,644, 1876);
+//        setTime("通天塔sample",4,1000);
+//        setTime("通天塔sample",5,1000);
+//        setTime("通天塔sample",6,1000);
+//        setTime("通天塔sample",7,1000);
+//        setTime("通天塔sample",8,1000);
+//        setTime("通天塔sample",9,1000);
+//        setTime("通天塔sample",10,1000);
+
+        show("通天塔sample");
 
 //        ActionFile.write(actions);
     }

@@ -151,7 +151,7 @@ public class ClickTool {
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
                     runNames.add("竞技sample");
-                    runNames.add("通天塔");
+                    runNames.add("通天塔sample");
                     if (isFastest(clientType)) {
                         runNames.add("材料副本快速");
                     } else {
