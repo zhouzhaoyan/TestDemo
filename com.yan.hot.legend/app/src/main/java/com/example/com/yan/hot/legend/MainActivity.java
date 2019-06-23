@@ -67,14 +67,7 @@ public class MainActivity extends Activity {
 //                PlugQQ.test();
 //        SimilarPicture.isEquals("/storage/emulated/0/hot/2019-05-30/dailyTask/38-乐趣网页双开.png",
 //                ClickTool.ClientType.乐趣网页双开);
-//        Observable.just(1)
-//                .observeOn(Schedulers.newThread())
-//                .subscribe(new Consumer<Integer>() {
-//                    @Override
-//                    public void accept(Integer integer) throws Exception {
-//                        EmailManager.getInstance().send();
-//                    }
-//                });
+//        EmailManager.getInstance().sendSync();
 //        ScreencapPathUtil.getExistPath(ClickTool.ClientType.火树.name());
     }
 

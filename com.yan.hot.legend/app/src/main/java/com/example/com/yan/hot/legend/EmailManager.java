@@ -32,6 +32,10 @@ import javax.mail.internet.MimeMultipart;
 import javax.mail.internet.MimeUtility;
 import javax.mail.util.ByteArrayDataSource;
 
+import io.reactivex.Observable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
+
 class EmailManager {
     private static final EmailManager ourInstance = new EmailManager();
 
@@ -40,6 +44,18 @@ class EmailManager {
     }
 
     private EmailManager() {
+    }
+
+    @SuppressLint("CheckResult")
+    public void sendSync(){
+        Observable.just(1)
+                .observeOn(Schedulers.newThread())
+                .subscribe(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception {
+                        EmailManager.getInstance().send();
+                    }
+                });
     }
 
     @SuppressLint("CheckResult")

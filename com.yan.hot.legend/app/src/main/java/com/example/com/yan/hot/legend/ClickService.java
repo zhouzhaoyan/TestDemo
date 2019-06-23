@@ -389,8 +389,9 @@ public class ClickService extends GrayService {
                                 actionRun.setAutoCheckPoint(checkPoint);
                             }
                         } else {
+                            LogManager.newInstance().writeMessage("running click error, send email");
                             //发送邮件
-                            EmailManager.getInstance().send();
+                            EmailManager.getInstance().sendSync();
                         }
                         ActionRunFile.write(actionRun);
                         return 1;
