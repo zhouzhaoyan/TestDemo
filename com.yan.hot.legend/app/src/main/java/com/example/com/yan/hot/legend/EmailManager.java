@@ -86,7 +86,7 @@ class EmailManager {
             }
             // 4. 根据 Session 获取邮件传输对象
             Transport transport = session.getTransport();
-            transport.connect("15900081492@139.com", "zzy515144");
+            transport.connect("15900081492@139.com", "Zzy515144");
             // 6. 发送邮件, 发到所有的收件地址, message.getAllRecipients() 获取到的是在创建邮件对象时添加的所有收件人, 抄送人, 密送人
             transport.sendMessage(message, message.getAllRecipients());
             // 7. 关闭连接
@@ -193,7 +193,7 @@ class EmailManager {
         FileDataSource fds = new FileDataSource(file);
         attachment.setDataHandler(new DataHandler(fds));
         // 为附件设置文件名
-        attachment.setFileName(MimeUtility.encodeWord(file.getName()));
+        attachment.setFileName(MimeUtility.encodeText(file.getName(),"gbk",null));
         attachment.setContentID(file.getName().replace(".jpg", "").replace(".png", ""));
         mainPart.addBodyPart(attachment);
         // 将MiniMultipart对象设置为邮件内容
