@@ -428,6 +428,13 @@
             android:checked="false"
             android:text="趣头条qq浏览器双开"/>
 
+        <CheckBox
+            android:id="@+id/game36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="趣头条uc浏览器"/>
+
     </LinearLayout>
 
     <LinearLayout

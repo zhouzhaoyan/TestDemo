@@ -1191,7 +1191,9 @@ public class ChangeCoordinate {
 //        setTime("通天塔sample",9,1000);
 //        setTime("通天塔sample",10,1000);
 
-        show("通天塔sample");
+//        addNew("火树网页双开","趣头条uc浏览器");
+//        setCoordinate("趣头条uc浏览器",799, 792, 779,1358);
+        show("趣头条uc浏览器");
 
 //        ActionFile.write(actions);
     }

@@ -339,6 +339,9 @@ public class MainActivity extends Activity {
             case 趣头条qq浏览器双开:
                 checkBox = (CheckBox) findViewById(R.id.game35);
                 break;
+            case 趣头条uc浏览器:
+                checkBox = (CheckBox) findViewById(R.id.game36);
+                break;
         }
         return checkBox;
     }
