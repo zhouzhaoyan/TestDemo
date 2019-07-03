@@ -210,14 +210,12 @@ public class PlugQQ {
     public static void autoLogin(final ClickService clickService, final ClickTool.ClientType clientType, final Coordinate coordinate) {
         PlugQQForBase[] plugQQForBases = new PlugQQForBase[]{
                 new PlugQQFor07073(clientType,actions),
-                new PlugQQFor07073uc(clientType,actions),
-                new PlugQQFor07073Double(clientType,actions),
                 new PlugQQForWarhead(clientType,actions),
                 new PlugPhoneForWarhead(clientType,actions),
                 //qq浏览器刷新
                 new PlugQQBrowserRefresh(clientType, actions),
                 //小米浏览器刷新
-                new PlugMiBrowserRefresh(clientType, actions),
+//                new PlugMiBrowserRefresh(clientType, actions),
                 new PlugQQForPlayEggs(clientType, actions),
                 new PlugQQFor1758(clientType, actions),
                 new PlugQQForJoy(clientType, actions),

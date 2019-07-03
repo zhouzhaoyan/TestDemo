@@ -3,11 +3,9 @@ package com.example.com.yan.hot.legend.plug;
 import android.graphics.Rect;
 
 import com.yan.hot.legend.action.Action;
-import com.yan.hot.legend.action.ActionFile;
 import com.yan.hot.legend.action.Coordinate;
 import com.zsctc.remote.touch.bytes.ClickTool;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,11 +17,6 @@ public class PlugPhoneForWarhead extends PlugQQForBase {
 
     public PlugPhoneForWarhead(ClickTool.ClientType clientType, List<Action> actions) {
         super(clientType, actions);
-    }
-
-    @Override
-    public String getPath() {
-        return ActionFile.HOT_ROOT + File.separator + "核弹头手机登录.png";
     }
 
     @Override

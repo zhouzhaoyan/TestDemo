@@ -20,7 +20,7 @@ public class PlugQQBrowserRefresh extends PlugQQForBase{
     }
 
     @Override
-    public String getPath() {
+    public String getPath(ClickTool.ClientType clientType) {
         return ActionFile.HOT_ROOT + File.separator + "qqBrowserRefresh.png";
     }
 

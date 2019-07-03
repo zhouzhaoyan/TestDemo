@@ -22,11 +22,6 @@ public class PlugQQForWarhead extends PlugQQForBase {
     }
 
     @Override
-    public String getPath() {
-        return ActionFile.HOT_ROOT + File.separator + "核弹头登录.png";
-    }
-
-    @Override
     public Rect getRect() {
         return new Rect(460, 1460, 590, 1590);
     }

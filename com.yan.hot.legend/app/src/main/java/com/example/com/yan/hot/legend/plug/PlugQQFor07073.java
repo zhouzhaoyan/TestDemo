@@ -22,11 +22,6 @@ public class PlugQQFor07073 extends PlugQQForBase {
     }
 
     @Override
-    public String getPath() {
-        return ActionFile.HOT_ROOT + File.separator + "07073登录.png";
-    }
-
-    @Override
     public Rect getRect() {
         return new Rect(220, 1240, 360, 1380);
     }
@@ -37,11 +32,17 @@ public class PlugQQFor07073 extends PlugQQForBase {
         clientTypes.add(ClickTool.ClientType.游戏07073网页);
         clientTypes.add(ClickTool.ClientType.热血单机h5);
         clientTypes.add(ClickTool.ClientType.热血单机h5双开);
+        clientTypes.add(ClickTool.ClientType.游戏07073);
+        clientTypes.add(ClickTool.ClientType.凹凸果);
         return clientTypes;
     }
 
     @Override
     public String getPlugName(ClickTool.ClientType clientType) {
+        switch (clientType){
+            case 游戏07073:
+                return "07073qq插件double";
+        }
         return "07073qq插件";
     }
 

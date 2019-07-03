@@ -16,7 +16,8 @@ public class ActionFile {
 			+ File.separator + "hot";
 	private final static String path = HOT_ROOT + File.separator + "config.txt";
     private final static String pathTmp = HOT_ROOT + File.separator + "config_tmp.txt";
-
+    public final static String HOT_SUCCESS = HOT_ROOT + File.separator + "success";
+    public final static String HOT_LOGIN = HOT_ROOT + File.separator + "login";
 
     public static void write(List<Action> action){
 		FileOutputStream fos = null;

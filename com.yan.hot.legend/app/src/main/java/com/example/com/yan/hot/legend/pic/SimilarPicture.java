@@ -14,7 +14,7 @@ import java.io.IOException;
 import timber.log.Timber;
 
 import static android.content.ContentValues.TAG;
-import static com.yan.hot.legend.action.ActionFile.HOT_ROOT;
+import static com.yan.hot.legend.action.ActionFile.HOT_SUCCESS;
 
 /**
  * Created by on 2018/10/8.
@@ -23,27 +23,8 @@ public class SimilarPicture {
 
     public static boolean isEquals(String path1, ClickTool.ClientType clientType) {
         Timber.e("isEquals:" + path1);
-        String path = HOT_ROOT + File.separator;
-        switch (clientType){
-            case 核弹头双开:
-                path += "核弹头双开.png";
-                break;
-            case 牛刀:
-                path += "牛刀.png";
-                break;
-            case 热血单机:
-            case 游戏07073:
-            case 乐趣网页双开:
-            case 火树网页双开:
-            case 玩蛋双开:
-            case 牛刀网页双开:
-            case 游戏1758网页双开:
-                path += "玩蛋双开.png";
-                break;
-            default:
-                path += "0-火树.png";
-                break;
-        }
+        String path = HOT_SUCCESS + File.separator;
+        path += clientType.name() + ".png";
         return isEquals(path1, path);
     }
 

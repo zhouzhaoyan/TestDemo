@@ -9,11 +9,13 @@ import com.yan.hot.legend.action.Coordinate;
 import com.zsctc.remote.touch.bytes.ClickTool;
 import com.zsctc.remote.touch.bytes.LogManager;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.example.com.yan.hot.legend.plug.PlugQQ.getBitmap;
 import static com.example.com.yan.hot.legend.plug.PlugQQ.screencap;
+import static com.yan.hot.legend.action.ActionFile.HOT_LOGIN;
 
 /**
  * Created by on 2018/11/6.
@@ -28,7 +30,9 @@ public abstract class PlugQQForBase {
     private String LOGIN_PATH;
     private List<Action> actions;
 
-    protected abstract String getPath();
+    public String getPath(ClickTool.ClientType clientType) {
+        return HOT_LOGIN + File.separator + clientType.name() + ".png";
+    }
 
     protected abstract Rect getRect();
 
@@ -42,7 +46,7 @@ public abstract class PlugQQForBase {
         this.actions = actions;
         PLUG_NAME = getPlugName(clientType);
         runCoordinates = new ArrayList<>(getCoordinate());
-        LOGIN_PATH = getPath();
+        LOGIN_PATH = getPath(clientType);
         CLIENT_TYPE_LIST = getClientTypeList();
         rect = getRect();
         Coordinate coordinate = getRunCoordinate();

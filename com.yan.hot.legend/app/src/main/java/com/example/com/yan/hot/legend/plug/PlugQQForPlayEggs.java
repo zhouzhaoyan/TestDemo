@@ -22,11 +22,6 @@ public class PlugQQForPlayEggs extends PlugQQForBase {
     }
 
     @Override
-    public String getPath() {
-        return ActionFile.HOT_ROOT + File.separator + "玩蛋登录.png";
-    }
-
-    @Override
     public Rect getRect() {
         return new Rect(480, 1020, 630, 1170);
     }

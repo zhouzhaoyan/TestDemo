@@ -22,11 +22,6 @@ public class PlugQQForJoy extends PlugQQForBase {
     }
 
     @Override
-    public String getPath() {
-        return ActionFile.HOT_ROOT + File.separator + "乐趣登录.png";
-    }
-
-    @Override
     public Rect getRect() {
         return new Rect(240, 1030, 350, 1490);
     }
