@@ -117,7 +117,11 @@ public abstract class PlugQQForBase {
                 allTime += sleep;
                 clickService.runClick(sleep, tmp);
 
-                PlugQQ.runClick(clickService, clientType, tmp);
+                boolean result = PlugQQ.runClick(clickService, clientType, tmp);
+                if (result){
+                    //检查是否能成功登陆
+                    PlugRelogin.runClick(clickService, clientType);
+                }
             }
         }
         return allTime;

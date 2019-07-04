@@ -160,17 +160,18 @@ public class PlugQQ {
 
     //自动选择用户登录
     @SuppressLint({"CheckResult", "LogNotTimber"})
-    public static void runClick(final ClickService clickService, final ClickTool.ClientType clientType, final Coordinate coordinate) {
+    public static boolean runClick(final ClickService clickService, final ClickTool.ClientType clientType, final Coordinate coordinate) {
+        boolean result = false;
         if (!isDebug) {
-            return;
+            return result;
         }
 
         if (!accountMap.keySet().contains(clientType)) {
-            return;
+            return result;
         }
 
         if (!(coordinate.getX() == runX && coordinate.getY() == runY)) {
-            return;
+            return result;
         }
 
         try {
@@ -182,7 +183,7 @@ public class PlugQQ {
         String path = screencap(clickService, clientType);
         if (path == null) {
             LogManager.newInstance().writeMessage("running click sleep，name:PlugQQ no path");
-            return;
+            return result;
         }
 
         Bitmap bitmap = qqBitmap.get(accountMap.get(clientType));
@@ -204,6 +205,7 @@ public class PlugQQ {
         Log.e(TAG, "PlugQQ runClick: " + coordinate1.getX() + "," + coordinate1.getY() + ",position:" + rect);
         clickService.runClick(5000,
                 coordinate1);
+        return true;
     }
 
     //自动加载登录脚本
