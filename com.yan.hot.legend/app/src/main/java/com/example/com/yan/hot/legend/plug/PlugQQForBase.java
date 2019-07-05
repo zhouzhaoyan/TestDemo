@@ -120,7 +120,7 @@ public abstract class PlugQQForBase {
                 boolean result = PlugQQ.runClick(clickService, clientType, tmp);
                 if (result){
                     //检查是否能成功登陆
-                    PlugRelogin.runClick(clickService, clientType);
+//                    PlugRelogin.runClick(clickService, clientType);
                 }
             }
         }
