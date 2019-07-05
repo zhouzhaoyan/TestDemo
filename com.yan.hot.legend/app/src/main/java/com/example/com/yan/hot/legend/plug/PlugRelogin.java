@@ -25,12 +25,12 @@ public class PlugRelogin {
     private static Map<ClickTool.ClientType, Relogin> reloginMap = new HashMap();
 
     static {
-        clientTypes.add(ClickTool.ClientType.牛刀);
+//        clientTypes.add(ClickTool.ClientType.牛刀);
         clientTypes.add(ClickTool.ClientType.热血单机双开);
         clientTypes.add(ClickTool.ClientType.牛刀qq浏览器);
 
         for (ClickTool.ClientType clientType: clientTypes) {
-            reloginMap.put(ClickTool.ClientType.牛刀, new Relogin(HOT_RELOGIN
+            reloginMap.put(clientType, new Relogin(HOT_RELOGIN
                     + clientType.name() + ".png", clientType + "relogin"));
         }
     }
@@ -72,10 +72,10 @@ public class PlugRelogin {
         }
 
         float per = SimilarPicture.isEqualsPer(SimilarPicture.getBitmap(path), SimilarPicture.getBitmap(relogin.reloginPath));
-        if (per > 90) {
-            LogManager.newInstance().writeMessage("running click sleep，name:PlugRelogin:"
-                    + clientType + ",per:" + per);
 
+        LogManager.newInstance().writeMessage("running click sleep，name:PlugRelogin:"
+                + clientType + ",per:" + per);
+        if (per > 90) {
             List<Coordinate> coordinates = new ArrayList<>();
             for (Action action : actions) {
                 if (action.getActionTime().getCount() > 0 && !relogin.plugName.equals("") && action.getName().contains(relogin.plugName)) {

@@ -1193,7 +1193,19 @@ public class ChangeCoordinate {
 
 //        addNew("火树网页双开","趣头条uc浏览器");
 //        setCoordinate("趣头条uc浏览器",799, 792, 779,1358);
-        show("趣头条uc浏览器");
+
+//        setTime("牛刀qq浏览器",6,10000);
+
+//        addNew("牛刀qq浏览器", "牛刀qq浏览器relogin");
+//        deletePostions("牛刀qq浏览器relogin",7,8);
+//        deletePostions("牛刀qq浏览器relogin",0,1);
+
+//        setTime("热血单机双开-new",6,10000);
+//        addNew("热血单机双开-new","热血单机双开relogin");
+//        deletePostions("热血单机双开relogin",7,8);
+//        deletePostions("热血单机双开relogin",0,1);
+
+        show("热血单机双开relogin");
 
 //        ActionFile.write(actions);
     }

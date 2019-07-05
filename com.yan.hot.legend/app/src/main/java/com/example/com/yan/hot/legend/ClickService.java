@@ -14,6 +14,7 @@ import com.example.com.yan.hot.legend.plug.Plug07073;
 import com.example.com.yan.hot.legend.plug.PlugDesktop;
 import com.example.com.yan.hot.legend.plug.PlugMiBrowser;
 import com.example.com.yan.hot.legend.plug.PlugQQ;
+import com.example.com.yan.hot.legend.plug.PlugRelogin;
 import com.example.com.yan.hot.legend.runstate.ActionRun;
 import com.example.com.yan.hot.legend.runstate.ActionRunFile;
 import com.example.com.yan.hot.legend.screencap.ScreencapPathUtil;
@@ -139,7 +140,13 @@ public class ClickService extends GrayService {
 
                     runClick(sleep, coordinate);
 
-                    PlugQQ.runClick(ClickService.this, clientType, coordinate);
+                    boolean result = PlugQQ.runClick(ClickService.this, clientType, coordinate);
+                    if (result){
+                        for (int i = 0; i < 3; i++) {
+                            //检查是否能成功登陆
+                            PlugRelogin.runClick(ClickService.this, clientType);
+                        }
+                    }
                 }
                 actions.remove(action);
                 runTimeMap.remove(0);
