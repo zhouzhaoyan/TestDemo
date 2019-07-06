@@ -1205,7 +1205,14 @@ public class ChangeCoordinate {
 //        deletePostions("热血单机双开relogin",7,8);
 //        deletePostions("热血单机双开relogin",0,1);
 
-        show("热血单机双开relogin");
+//        addNew("趣头条qq浏览器双开","趣头条qq浏览器");
+//        setCoordinate("趣头条qq浏览器",757, 784,802,1050);
+
+//        addNew("牛刀new","牛刀relogin");
+//        deletePostions("牛刀relogin",9,10);
+//        deletePostions("牛刀relogin",0,1);
+//        deletePostions("牛刀relogin",4,5,6);
+        show("牛刀relogin");
 
 //        ActionFile.write(actions);
     }

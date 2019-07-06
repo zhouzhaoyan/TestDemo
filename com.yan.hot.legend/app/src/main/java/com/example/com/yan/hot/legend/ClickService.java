@@ -140,12 +140,10 @@ public class ClickService extends GrayService {
 
                     runClick(sleep, coordinate);
 
-                    boolean result = PlugQQ.runClick(ClickService.this, clientType, coordinate);
-                    if (result){
-                        for (int i = 0; i < 3; i++) {
-                            //检查是否能成功登陆
-                            PlugRelogin.runClick(ClickService.this, clientType);
-                        }
+                    PlugQQ.runClick(ClickService.this, clientType, coordinate);
+                    for (int i = 0; i < 3; i++) {
+                        //检查是否能成功登陆
+                        PlugRelogin.runClick(ClickService.this, clientType,coordinate);
                     }
                 }
                 actions.remove(action);

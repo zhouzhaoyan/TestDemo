@@ -50,6 +50,7 @@ public class ClickTypeMap {
         actionNameMap.put(ClickTool.ClientType.玩蛋猎豹浏览器,"玩蛋猎豹浏览器");
         actionNameMap.put(ClickTool.ClientType.趣头条qq浏览器双开,"趣头条qq浏览器双开");
         actionNameMap.put(ClickTool.ClientType.趣头条uc浏览器,"趣头条uc浏览器");
+        actionNameMap.put(ClickTool.ClientType.趣头条qq浏览器,"趣头条qq浏览器");
     }
 
     public static ClickTool.ClientType getClientType(String actionName) {
