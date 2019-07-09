@@ -22,6 +22,7 @@ import com.yan.hot.legend.action.Action;
 import com.yan.hot.legend.action.Coordinate;
 import com.zsctc.remote.touch.bytes.ClickTool;
 import com.zsctc.remote.touch.bytes.LogManager;
+import com.zsctc.remote.touch.bytes.NetUtils;
 import com.zsctc.remote.touch.bytes.TimeUtil;
 
 import java.util.ArrayList;
@@ -348,6 +349,15 @@ public class ClickService extends GrayService {
                     @Override
                     public Integer apply(Integer integer) throws Exception {
                         LogManager.newInstance().writeMessage("running click error, restart doing");
+
+                        if (!NetUtils.ping()){
+                            LogManager.newInstance().writeMessage("running click error, net err");
+
+                            WifiUtils.getInstance().set(false);
+                            Thread.sleep(5000);
+                            WifiUtils.getInstance().set(true);
+                            Thread.sleep(5000);
+                        }
 
                         AliveService.stopService(getApplicationContext());
                         ClickService.stopService(getApplicationContext());

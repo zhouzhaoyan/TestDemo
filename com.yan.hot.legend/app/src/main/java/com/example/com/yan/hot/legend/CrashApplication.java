@@ -11,5 +11,6 @@ public class CrashApplication extends Application {
 		super.onCreate();
 		CrashHandler.init(this);
 		Timber.plant(new Timber.DebugTree());
+		WifiUtils.getInstance().init(this);
 	}
 }
