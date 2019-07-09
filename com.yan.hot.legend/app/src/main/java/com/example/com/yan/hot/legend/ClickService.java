@@ -335,6 +335,8 @@ public class ClickService extends GrayService {
     }
 
     private Disposable restartDisposable;
+    //重新执行失败的任务
+    private int repeatTask = 0;
 
     @SuppressLint("CheckResult")
     public void restart() {
@@ -355,7 +357,8 @@ public class ClickService extends GrayService {
                             actionRun.setModeType(ActionRun.ModeType.TASK);
                         }
                         List<ActionRun.ActionState> actionStates = actionRun.getActionStates();
-                        if (/**actionRun.isAuto() && **/isRunningFinish(actionStates)){
+                        if (/**actionRun.isAuto() && **/isRunningFinish(actionStates) || repeatTask > 5){
+                            repeatTask = 0;
                             ActionRun.ModeType[] modeTypes;
                             if (ClickTool.actionRun.isAutoCheckPoint()){
                                 modeTypes = new ActionRun.ModeType[]{
@@ -393,6 +396,7 @@ public class ClickService extends GrayService {
                                 actionRun.setAutoCheckPoint(checkPoint);
                             }
                         } else {
+                            repeatTask++;
                             LogManager.newInstance().writeMessage("running click error, send email");
                             //发送邮件
                             EmailManager.getInstance().sendSync();
