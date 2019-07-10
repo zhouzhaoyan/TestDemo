@@ -1212,7 +1212,9 @@ public class ChangeCoordinate {
 //        deletePostions("牛刀relogin",9,10);
 //        deletePostions("牛刀relogin",0,1);
 //        deletePostions("牛刀relogin",4,5,6);
-        show("牛刀relogin");
+//        setCoordinate("牛刀relogin",423, 977,535,1106);
+//        setCoordinate("牛刀new",423, 977,535,1106);
+        show("牛刀relogin","牛刀new");
 
 //        ActionFile.write(actions);
     }
