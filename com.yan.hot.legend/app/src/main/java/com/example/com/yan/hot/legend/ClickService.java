@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -167,6 +168,7 @@ public class ClickService extends GrayService {
 
     public void runClick(long sleep, Coordinate coordinate) {
 //        Log.e(TAG, "running click sleep，coordinate:" + coordinate.getX() + "," + coordinate.getY());
+
         try {
             Thread.sleep(Math.max(sleep, 200));
         } catch (InterruptedException e) {
@@ -336,8 +338,6 @@ public class ClickService extends GrayService {
     }
 
     private Disposable restartDisposable;
-    //重新执行失败的任务
-    private int repeatTask = 0;
 
     @SuppressLint("CheckResult")
     public void restart() {
@@ -363,12 +363,13 @@ public class ClickService extends GrayService {
                         ClickService.stopService(getApplicationContext());
 
                         ActionRun actionRun = ActionRunFile.read();
+                        Log.e("test", "running click error, actionRun:" + actionRun);
                         if (actionRun.getModeType() == ActionRun.ModeType.NIGHT) {
                             actionRun.setModeType(ActionRun.ModeType.TASK);
                         }
                         List<ActionRun.ActionState> actionStates = actionRun.getActionStates();
+                        int repeatTask = actionRun.getRepeatTask();
                         if (/**actionRun.isAuto() && **/isRunningFinish(actionStates) || repeatTask > 5){
-                            repeatTask = 0;
                             ActionRun.ModeType[] modeTypes;
                             if (ClickTool.actionRun.isAutoCheckPoint()){
                                 modeTypes = new ActionRun.ModeType[]{
@@ -406,7 +407,7 @@ public class ClickService extends GrayService {
                                 actionRun.setAutoCheckPoint(checkPoint);
                             }
                         } else {
-                            repeatTask++;
+                            actionRun.setRepeatTask(++repeatTask);
                             LogManager.newInstance().writeMessage("running click error, send email");
                             //发送邮件
                             EmailManager.getInstance().sendSync();

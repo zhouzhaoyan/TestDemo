@@ -18,18 +18,13 @@ public class ActionRun {
     }
 
 
-    @Override
-    public String toString() {
-        return "ActionRun{" +
-                "actionStates=" + actionStates +
-                ", modeType=" + modeType +
-                '}';
-    }
-
     private List<ActionState> actionStates = new ArrayList<>();
     private ModeType modeType = ModeType.TASK;
     private boolean auto = true;
     private boolean autoCheckPoint = true;
+    //重新执行失败的任务的次数
+    private int repeatTask = 0;
+
 
     public ActionRun() {
     }
@@ -97,6 +92,14 @@ public class ActionRun {
         this.autoCheckPoint = autoCheckPoint;
     }
 
+    public int getRepeatTask() {
+        return repeatTask;
+    }
+
+    public void setRepeatTask(int repeatTask) {
+        this.repeatTask = repeatTask;
+    }
+
     public class ActionState {
         public ActionState() {
         }
@@ -136,5 +139,16 @@ public class ActionRun {
 
     public enum ModeType {
         TASK, DAILY, DAILY_TASK, SIMPLE, NIGHT
+    }
+
+    @Override
+    public String toString() {
+        return "ActionRun{" +
+                "actionStates=" + actionStates +
+                ", modeType=" + modeType +
+                ", auto=" + auto +
+                ", autoCheckPoint=" + autoCheckPoint +
+                ", repeatTask=" + repeatTask +
+                '}';
     }
 }
