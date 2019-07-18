@@ -1214,7 +1214,10 @@ public class ChangeCoordinate {
 //        deletePostions("牛刀relogin",4,5,6);
 //        setCoordinate("牛刀relogin",423, 977,535,1106);
 //        setCoordinate("牛刀new",423, 977,535,1106);
-        show("牛刀relogin","牛刀new");
+
+//        addNew("核弹头双开","核弹头客户端");
+//        setCoordinate("核弹头客户端",701, 796,416,777);
+        show("核弹头客户端");
 
 //        ActionFile.write(actions);
     }
