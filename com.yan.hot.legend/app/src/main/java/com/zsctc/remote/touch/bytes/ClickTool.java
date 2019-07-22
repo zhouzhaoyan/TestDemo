@@ -144,6 +144,7 @@ public class ClickTool {
                     runNames.add("熔炼new");
                     runNames.add("竞技sample");
                     runNames.add(getMiJingBoss(index));
+//                    runNames.add("签到");
                     break;
                 case NIGHT:
                 case TASK:
@@ -151,6 +152,7 @@ public class ClickTool {
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
                     runNames.add("竞技sample");
+                    runNames.add("签到");
                     runNames.add("通天塔sample");
                     if (isFastest(clientType)) {
                         runNames.add("材料副本快速");

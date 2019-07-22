@@ -1214,10 +1214,92 @@ public class ChangeCoordinate {
 //        deletePostions("牛刀relogin",4,5,6);
 //        setCoordinate("牛刀relogin",423, 977,535,1106);
 //        setCoordinate("牛刀new",423, 977,535,1106);
-
+//
 //        addNew("核弹头双开","核弹头客户端");
 //        setCoordinate("核弹头客户端",701, 796,416,777);
-        show("核弹头客户端");
+
+//        addNew("转生","签到");
+//        deletePostion("签到",0);
+
+//        delete("签到",2);
+//        addCoordinateEnd("签到",399,298,2000);
+//
+//        addCoordinateEnd("签到",150,320,3000);
+//        addCoordinateEnd("签到",150,520,1000);
+//        addCoordinateEnd("签到",150,720,1000);
+//        addCoordinateEnd("签到",150,920,1000);
+//        addCoordinateEnd("签到",150,1120,1000);
+//        addCoordinateEnd("签到",150,1320,1000);
+//
+//        addCoordinateEnd("签到",350,320,1000);
+//        addCoordinateEnd("签到",700,1300,2000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//
+//        addCoordinateEnd("签到",350,520,1000);
+//        addCoordinateEnd("签到",700,1300,2000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//
+//        addCoordinateEnd("签到",350,720,1000);
+//        addCoordinateEnd("签到",700,1300,2000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//
+//        addCoordinateEnd("签到",350,920,1000);
+//        addCoordinateEnd("签到",700,1300,2000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//
+//        addCoordinateEnd("签到",350,1120,1000);
+//        addCoordinateEnd("签到",700,1300,2000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//
+//        addCoordinateEnd("签到",350,1320,1000);
+//        addCoordinateEnd("签到",700,1300,2000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//
+//        addCoordinateEnd("签到",550,320,1000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//        addCoordinateEnd("签到",550,520,1000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//        addCoordinateEnd("签到",550,720,1000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//        addCoordinateEnd("签到",550,920,1000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//        addCoordinateEnd("签到",550,1120,1000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//        addCoordinateEnd("签到",550,1320,1000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//
+//        addCoordinateEnd("签到",750,320,1000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//        addCoordinateEnd("签到",750,520,1000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//        addCoordinateEnd("签到",750,720,1000);
+//        addCoordinateEnd("签到",750,920,1000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//        addCoordinateEnd("签到",750,1120,1000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//        addCoordinateEnd("签到",750,1320,1000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//
+//        addCoordinateEnd("签到",950,320,1000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//        addCoordinateEnd("签到",950,520,1000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//        addCoordinateEnd("签到",950,720,1000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//        addCoordinateEnd("签到",950,920,1000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//        addCoordinateEnd("签到",950,1120,1000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//        addCoordinateEnd("签到",950,1320,1000);
+//        addCoordinateEnd("签到",700,1300,2000);
+//        addCoordinateEnd("签到",700,1500,1000);
+//
+//        addCoordinateEnd("签到",900,1600,2000);
+//
+//        addCoordinateEndRepeate("签到",1013, 2021,1000,3);
+//        setCoordinate("签到",700,1500,1000,1500);
+
+        show("签到");
 
 //        ActionFile.write(actions);
     }
