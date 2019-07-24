@@ -206,7 +206,25 @@ public class ChangeCoordinate {
 //        setTime("魔界入侵-吸血",1,8000);
 //        setTime("魔界入侵-烛龙",1,8000);
 
-        show("魔界入侵-深渊");
+//        setTime("跨服boss-迷离境",5,10000);
+//        setTime("跨服boss-迷离境",6,10000);
+//        setTime("跨服boss-迷离境",7,1000);
+//        setTime("跨服boss-迷离境",8,60000);
+//        setTime("跨服boss-迷离境",9,10000);
+//        for (int i = 0; i < 3; i++) {
+//            addCoordinate("跨服boss-迷离境",7,603, 1680,1000);
+//        }
+
+//        setTime("跨服boss-迷离境-自定义",5,10000);
+//        setTime("跨服boss-迷离境-自定义",6,10000);
+//        setTime("跨服boss-迷离境-自定义",7,1000);
+//        setTime("跨服boss-迷离境-自定义",8,60000);
+//        setTime("跨服boss-迷离境-自定义",9,10000);
+//        for (int i = 0; i < 3; i++) {
+//            addCoordinate("跨服boss-迷离境-自定义",7,603, 1680,1000);
+//        }
+
+        show("跨服boss-迷离境-自定义");
 
 //        ActionFile.write(actions);
     }
