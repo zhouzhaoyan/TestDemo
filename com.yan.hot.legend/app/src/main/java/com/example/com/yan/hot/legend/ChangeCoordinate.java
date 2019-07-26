@@ -224,6 +224,10 @@ public class ChangeCoordinate {
 //            addCoordinate("跨服boss-迷离境-自定义",7,603, 1680,1000);
 //        }
 
+//        for (int i = 0; i < 3; i++) {
+//            addCoordinate("跨服boss-迷离境-自定义",12,175, 694,1000);
+//            addCoordinate("跨服boss-迷离境",12,175, 694,1000);
+//        }
         show("跨服boss-迷离境-自定义");
 
 //        ActionFile.write(actions);
