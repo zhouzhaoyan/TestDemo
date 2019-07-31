@@ -228,7 +228,8 @@ public class ChangeCoordinate {
 //            addCoordinate("跨服boss-迷离境-自定义",12,175, 694,1000);
 //            addCoordinate("跨服boss-迷离境",12,175, 694,1000);
 //        }
-        show("跨服boss-迷离境-自定义");
+//        deletePostion("熔炼",getSize("熔炼")-1);
+        show("熔炼");
 
 //        ActionFile.write(actions);
     }
