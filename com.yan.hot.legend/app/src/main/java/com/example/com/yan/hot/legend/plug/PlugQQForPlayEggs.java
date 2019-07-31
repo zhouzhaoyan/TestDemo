@@ -31,6 +31,7 @@ public class PlugQQForPlayEggs extends PlugQQForBase {
         List<ClickTool.ClientType> clientTypes = new ArrayList<>();
         clientTypes.add(ClickTool.ClientType.玩蛋qq浏览器);
         clientTypes.add(ClickTool.ClientType.玩蛋qq浏览器双开);
+        clientTypes.add(ClickTool.ClientType.玩蛋猎豹浏览器);
         return clientTypes;
     }
 
@@ -49,7 +50,7 @@ public class PlugQQForPlayEggs extends PlugQQForBase {
     }
 
     @Override
-    public Coordinate getRunCoordinate() {
+    public Coordinate getRunCoordinate(ClickTool.ClientType clientType) {
         return new Coordinate(587, 1811);
     }
 }

@@ -45,7 +45,7 @@ public class PlugMiBrowserRefresh extends PlugQQForBase {
     }
 
     @Override
-    public Coordinate getRunCoordinate() {
+    public Coordinate getRunCoordinate(ClickTool.ClientType clientType) {
         return new Coordinate(587, 1811);
     }
 

@@ -61,6 +61,8 @@ public class PlugQQ {
     private static final Map<ClickTool.ClientType, String> accountMap = new HashMap<>();
 
     static {
+        accountMap.put(ClickTool.ClientType.火树网页双开, "2594365547");
+
         accountMap.put(ClickTool.ClientType.热血单机双开, "2594365547");
         accountMap.put(ClickTool.ClientType.牛刀网页双开, "2594365547");
 
@@ -79,6 +81,7 @@ public class PlugQQ {
 
         accountMap.put(ClickTool.ClientType.玩蛋qq浏览器, "2470518732");
         accountMap.put(ClickTool.ClientType.玩蛋qq浏览器双开, "1594225121");
+        accountMap.put(ClickTool.ClientType.玩蛋猎豹浏览器, "1874419402");
 
         accountMap.put(ClickTool.ClientType.游戏1758qq浏览器, "2470518732");
         accountMap.put(ClickTool.ClientType.游戏1758, "1594225121");
@@ -105,7 +108,7 @@ public class PlugQQ {
         Bitmap bitmap = qqBitmap.get("1874419402");
         SimilarPicture.save(bitmap, "a.png");
 
-        for (int i = -5; i < 5; i++) {
+        for (int i = -10; i < 10; i++) {
             int j = 0;
             for (Rect tmp : rects) {
                 tmp = new Rect(tmp.left, tmp.top + i, tmp.right, tmp.bottom + i);
@@ -175,7 +178,7 @@ public class PlugQQ {
         }
 
         try {
-            Thread.sleep(5000);
+            Thread.sleep(15000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -188,7 +191,8 @@ public class PlugQQ {
 
         Bitmap bitmap = qqBitmap.get(accountMap.get(clientType));
         Rect rect = otherRect;
-        for (int j = -5; j < 5; j++) {
+        boolean get = false;
+        for (int j = -10; j < 10; j++) {
             for (Rect tmp : rects) {
                 tmp = new Rect(tmp.left, tmp.top + j, tmp.right, tmp.bottom + j);
                 float per = SimilarPicture.isEqualsPer(getBitmap(path, tmp), bitmap);
@@ -196,8 +200,12 @@ public class PlugQQ {
                     LogManager.newInstance().writeMessage("running click sleep，name:PlugQQ:"
                             + clientType + ",per:" + per + ",offset:" + j);
                     rect = tmp;
+                    get = true;
                     break;
                 }
+            }
+            if (get){
+                break;
             }
         }
 
@@ -221,6 +229,7 @@ public class PlugQQ {
                 new PlugQQForPlayEggs(clientType, actions),
                 new PlugQQFor1758(clientType, actions),
                 new PlugQQForJoy(clientType, actions),
+                new PlugQQForFireTree(clientType, actions),
         };
         for (PlugQQForBase bases : plugQQForBases) {
             bases.runPlug(clickService, clientType, coordinate);

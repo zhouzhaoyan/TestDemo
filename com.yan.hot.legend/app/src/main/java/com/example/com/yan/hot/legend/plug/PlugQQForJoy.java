@@ -31,6 +31,7 @@ public class PlugQQForJoy extends PlugQQForBase {
         List<ClickTool.ClientType> clientTypes = new ArrayList<>();
         clientTypes.add(ClickTool.ClientType.乐趣qq浏览器);
         clientTypes.add(ClickTool.ClientType.乐趣双开);
+        clientTypes.add(ClickTool.ClientType.乐趣);
         return clientTypes;
     }
 
@@ -49,7 +50,11 @@ public class PlugQQForJoy extends PlugQQForBase {
     }
 
     @Override
-    public Coordinate getRunCoordinate() {
+    public Coordinate getRunCoordinate(ClickTool.ClientType clientType) {
+        switch (clientType){
+            case 乐趣:
+                return new Coordinate(89,2026);
+        }
         return new Coordinate(587, 1811);
     }
 }

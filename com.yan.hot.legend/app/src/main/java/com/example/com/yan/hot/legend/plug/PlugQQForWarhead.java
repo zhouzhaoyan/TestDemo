@@ -40,7 +40,7 @@ public class PlugQQForWarhead extends PlugQQForBase {
     }
 
     @Override
-    public Coordinate getRunCoordinate() {
+    public Coordinate getRunCoordinate(ClickTool.ClientType clientType) {
         return new Coordinate(607, 1249);
     }
 }

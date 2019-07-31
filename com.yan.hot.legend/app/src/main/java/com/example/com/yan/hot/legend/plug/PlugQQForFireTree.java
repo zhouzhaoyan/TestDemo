@@ -11,33 +11,34 @@ import java.util.List;
 
 /**
  * Created by on 2018/11/6.
- * 自动手机登录核弹头
+ * 自动qq登录火树
  */
-public class PlugPhoneForWarhead extends PlugQQForBase {
+public class PlugQQForFireTree extends PlugQQForBase {
 
-    public PlugPhoneForWarhead(ClickTool.ClientType clientType, List<Action> actions) {
+    public PlugQQForFireTree(ClickTool.ClientType clientType, List<Action> actions) {
         super(clientType, actions);
     }
 
     @Override
     public Rect getRect() {
-        return new Rect(390, 1900, 480, 1990);
+        return new Rect(450, 1180, 590, 1310);
     }
 
     @Override
     public List<ClickTool.ClientType> getClientTypeList() {
         List<ClickTool.ClientType> clientTypes = new ArrayList<>();
-        clientTypes.add(ClickTool.ClientType.核弹头双开);
+        clientTypes.add(ClickTool.ClientType.火树网页双开);
         return clientTypes;
     }
 
     @Override
     public String getPlugName(ClickTool.ClientType clientType) {
-        return "核弹头手机登录插件";
+        String name = "火树qq插件";
+        return name;
     }
 
     @Override
     public Coordinate getRunCoordinate(ClickTool.ClientType clientType) {
-        return new Coordinate(935, 2026);
+        return new Coordinate(578, 1812);
     }
 }

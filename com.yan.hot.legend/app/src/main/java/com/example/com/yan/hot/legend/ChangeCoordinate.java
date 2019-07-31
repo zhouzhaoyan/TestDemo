@@ -1299,7 +1299,19 @@ public class ChangeCoordinate {
 //        addCoordinateEndRepeate("签到",1013, 2021,1000,3);
 //        setCoordinate("签到",700,1500,1000,1500);
 
-        show("签到");
+//        addCoordinate("乐趣-new",6,1015, 2021,35000);
+//        addCoordinate("乐趣-new",7,89,2026,5000);
+//        setCoordinate("乐趣-new",320, 1628,324, 1614);
+//        setCoordinate("乐趣-new",533, 2043,563, 2063);
+//        deletePostion("乐趣-new",5);
+//        setTime("乐趣-new",5,20000);
+//        addCoordinate("乐趣-new",7,114, 763,20000);
+
+        //        setCoordinate("乐趣-new",533, 2043,563, 2063);
+
+//        addNew("玩蛋qq插件","火树qq插件");
+//        setCoordinate("火树qq插件",550, 1100,520,1240);
+        show("火树qq插件","火树网页双开");
 
 //        ActionFile.write(actions);
     }

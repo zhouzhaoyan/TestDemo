@@ -40,7 +40,7 @@ public abstract class PlugQQForBase {
 
     protected abstract String getPlugName(ClickTool.ClientType clientType);
 
-    protected abstract Coordinate getRunCoordinate();
+    protected abstract Coordinate getRunCoordinate(ClickTool.ClientType clientType);
 
     public PlugQQForBase(ClickTool.ClientType clientType, List<Action> actions) {
         this.actions = actions;
@@ -49,7 +49,7 @@ public abstract class PlugQQForBase {
         LOGIN_PATH = getPath(clientType);
         CLIENT_TYPE_LIST = getClientTypeList();
         rect = getRect();
-        Coordinate coordinate = getRunCoordinate();
+        Coordinate coordinate = getRunCoordinate(clientType);
         runX = coordinate.getX();
         runY = coordinate.getY();
     }

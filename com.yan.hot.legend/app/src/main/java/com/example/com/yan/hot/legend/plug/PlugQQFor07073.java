@@ -47,7 +47,7 @@ public class PlugQQFor07073 extends PlugQQForBase {
     }
 
     @Override
-    public Coordinate getRunCoordinate() {
+    public Coordinate getRunCoordinate(ClickTool.ClientType clientType) {
         return new Coordinate(587, 1811);
     }
 }

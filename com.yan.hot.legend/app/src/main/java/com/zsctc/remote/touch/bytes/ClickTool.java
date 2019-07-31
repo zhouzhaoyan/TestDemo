@@ -298,6 +298,7 @@ public class ClickTool {
             case 火树猎豹浏览器:
             case 玩蛋猎豹浏览器:
             case 趣头条qq浏览器双开:
+            case 趣头条uc浏览器:
                 result = true;
                 break;
         }
