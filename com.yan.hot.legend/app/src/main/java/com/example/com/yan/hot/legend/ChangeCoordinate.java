@@ -1311,7 +1311,18 @@ public class ChangeCoordinate {
 
 //        addNew("玩蛋qq插件","火树qq插件");
 //        setCoordinate("火树qq插件",550, 1100,520,1240);
-        show("火树qq插件","火树网页双开");
+
+//        addNew("凹凸果new","火树360浏览器");
+//        addCoordinate("火树360浏览器",2,528,1339,10000);
+//        addCoordinate("火树360浏览器",3,542,2006,3000);
+//        addCoordinate("火树360浏览器",4,159,1424,3000);
+//        addCoordinate("火树360浏览器",5,142,686,3000);
+
+//        deletePostion("火树360浏览器",1);
+//        setTime("火树360浏览器",1,2000);
+//        setTime("火树360浏览器",2,10000);
+
+        show("野外boss快速sample");
 
 //        ActionFile.write(actions);
     }

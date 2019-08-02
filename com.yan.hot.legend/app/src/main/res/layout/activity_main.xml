@@ -449,6 +449,13 @@
             android:checked="false"
             android:text="趣头条qq浏览器"/>
 
+        <CheckBox
+            android:id="@+id/game38"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="火树360浏览器"/>
+
     </LinearLayout>
 
     <LinearLayout

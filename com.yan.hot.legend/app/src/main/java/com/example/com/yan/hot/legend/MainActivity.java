@@ -18,7 +18,6 @@ import com.example.com.yan.hot.legend.devote.DevoteActivity;
 import com.example.com.yan.hot.legend.devote.DevoteManager;
 import com.example.com.yan.hot.legend.runstate.ActionRun;
 import com.example.com.yan.hot.legend.runstate.ActionRunFile;
-import com.example.com.yan.hot.legend.screencap.ScreencapPathUtil;
 import com.yan.hot.legend.action.Action;
 import com.yan.hot.legend.action.ActionFile;
 import com.yan.hot.legend.action.ActionTime;
@@ -27,11 +26,6 @@ import com.zsctc.remote.touch.bytes.ClickTool;
 
 import java.io.Serializable;
 import java.util.List;
-
-import io.reactivex.Observable;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
-import timber.log.Timber;
 
 import static com.zsctc.remote.touch.bytes.TimeUtil.getLastSecondInDay;
 
@@ -135,7 +129,6 @@ public class MainActivity extends Activity {
 
         actionRun.setAuto(getAutoCheckBox().isChecked());
         actionRun.setAutoCheckPoint(getAutoCheckPointBox().isChecked());
-        Timber.e("start: actionRun:%s", actionRun);
         ActionRunFile.write(actionRun);
 
         AliveService.openAliveService(getApplicationContext());
@@ -165,7 +158,6 @@ public class MainActivity extends Activity {
 
     private void updateUi() {
         ActionRun actionRun = ActionRunFile.read();
-        Timber.e("updateUi: actionRun:%s", actionRun);
         List<ActionRun.ActionState> actionStates = actionRun.getActionStates();
         for (ActionRun.ActionState state : actionStates) {
             setClientColor(state.getClientType(), state.isRun() ? Color.RED : Color.BLACK);
@@ -344,6 +336,9 @@ public class MainActivity extends Activity {
                 break;
             case 趣头条qq浏览器:
                 checkBox = (CheckBox) findViewById(R.id.game37);
+                break;
+            case 火树360浏览器:
+                checkBox = (CheckBox) findViewById(R.id.game38);
                 break;
         }
         return checkBox;

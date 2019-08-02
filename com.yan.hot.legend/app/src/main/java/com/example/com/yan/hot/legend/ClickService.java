@@ -373,8 +373,8 @@ public class ClickService extends GrayService {
                             ActionRun.ModeType[] modeTypes;
                             if (ClickTool.actionRun.isAutoCheckPoint()){
                                 modeTypes = new ActionRun.ModeType[]{
-                                        ActionRun.ModeType.TASK, ActionRun.ModeType.DAILY,
-                                        ActionRun.ModeType.DAILY_TASK,
+                                        ActionRun.ModeType.TASK,
+                                        ActionRun.ModeType.DAILY_TASK,ActionRun.ModeType.SIMPLE,
                                 };
                             } else {
                                 modeTypes = new ActionRun.ModeType[]{

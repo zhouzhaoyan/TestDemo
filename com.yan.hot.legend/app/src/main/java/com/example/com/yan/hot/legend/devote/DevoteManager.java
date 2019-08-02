@@ -60,6 +60,7 @@ public class DevoteManager {
         accountMap.put(ClickTool.ClientType.趣头条qq浏览器双开, "时光石头");
         accountMap.put(ClickTool.ClientType.趣头条uc浏览器, "蓝色流星");
         accountMap.put(ClickTool.ClientType.趣头条qq浏览器, "魔神疯子");
+        accountMap.put(ClickTool.ClientType.火树360浏览器, "神龙狂人");
     }
 
     public static String getAccountName(ClickTool.ClientType clientType) {

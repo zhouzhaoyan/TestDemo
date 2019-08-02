@@ -25,7 +25,6 @@ import java.util.Map;
 import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
-import timber.log.Timber;
 
 import static android.content.ContentValues.TAG;
 
@@ -117,7 +116,6 @@ public class PlugQQ {
                 SimilarPicture.save(tmpBp, "a-" + i + "-" + j +
                         ".png");
                 float per = SimilarPicture.isEqualsPer(tmpBp, bitmap);
-                Timber.e("tmp:" + tmp + ",per1:" + per + ",i:" + i + ",j:" + j);
                 if (per == 0) {
                     SimilarPicture.save(getBitmap(
                             ActionFile.HOT_ROOT + File.separator + "qqLogin~tmp.png", tmp), "b.png");
