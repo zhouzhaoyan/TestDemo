@@ -340,6 +340,9 @@ public class MainActivity extends Activity {
             case 火树360浏览器:
                 checkBox = (CheckBox) findViewById(R.id.game38);
                 break;
+            case 趣头条360浏览器:
+                checkBox = (CheckBox) findViewById(R.id.game39);
+                break;
         }
         return checkBox;
     }

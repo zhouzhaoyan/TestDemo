@@ -1322,7 +1322,9 @@ public class ChangeCoordinate {
 //        setTime("火树360浏览器",1,2000);
 //        setTime("火树360浏览器",2,10000);
 
-        show("野外boss快速sample");
+//        addNew("火树360浏览器","趣头条360浏览器");
+//        setCoordinate("趣头条360浏览器",142, 686,164, 838);
+        show("趣头条360浏览器");
 
 //        ActionFile.write(actions);
     }
