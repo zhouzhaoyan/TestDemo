@@ -1324,7 +1324,11 @@ public class ChangeCoordinate {
 
 //        addNew("火树360浏览器","趣头条360浏览器");
 //        setCoordinate("趣头条360浏览器",142, 686,164, 838);
-        show("趣头条360浏览器");
+
+//        addNew("火树360浏览器","玩蛋360浏览器");
+//        setCoordinate("玩蛋360浏览器",142, 686,213,951);
+
+        show("火树360浏览器","趣头条360浏览器","玩蛋360浏览器");
 
 //        ActionFile.write(actions);
     }
