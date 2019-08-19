@@ -189,7 +189,6 @@ public class ClickService extends GrayService {
 	
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		Log.e("test", "onStartCommand:" + intent.getSerializableExtra(ACTION_FLAG));
 		run(intent);
 		return super.onStartCommand(intent, flags, startId);
 	}
