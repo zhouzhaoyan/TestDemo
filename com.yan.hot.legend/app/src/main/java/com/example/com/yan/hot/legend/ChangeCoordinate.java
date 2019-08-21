@@ -1332,7 +1332,10 @@ public class ChangeCoordinate {
 //        addNew("火树360浏览器","游戏1758浏览器360");
 //        setCoordinate("游戏1758浏览器360",142, 686,205,1084);
 
-        show("火树360浏览器","游戏1758浏览器360");
+//        addNew("火树360浏览器","乐趣360浏览器");
+//        setCoordinate("乐趣360浏览器",142, 686,274,1225);
+
+        show("火树360浏览器","乐趣360浏览器");
 
 //        ActionFile.write(actions);
     }

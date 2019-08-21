@@ -491,6 +491,13 @@
             android:checked="false"
             android:text="游戏1758浏览器360"/>
 
+        <CheckBox
+            android:id="@+id/game42"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="乐趣360浏览器"/>
+
     </LinearLayout>
 
     <LinearLayout

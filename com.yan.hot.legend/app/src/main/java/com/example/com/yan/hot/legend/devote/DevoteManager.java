@@ -64,6 +64,7 @@ public class DevoteManager {
         accountMap.put(ClickTool.ClientType.趣头条360浏览器, "无名傻瓜");
         accountMap.put(ClickTool.ClientType.玩蛋360浏览器, "梦魇大帝");
         accountMap.put(ClickTool.ClientType.游戏1758浏览器360, "弑神剑舞");
+        accountMap.put(ClickTool.ClientType.乐趣360浏览器, "天外鱼儿");
     }
 
     public static String getAccountName(ClickTool.ClientType clientType) {
