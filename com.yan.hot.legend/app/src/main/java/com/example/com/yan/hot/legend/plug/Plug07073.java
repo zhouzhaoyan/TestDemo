@@ -26,6 +26,7 @@ public class Plug07073 {
         CLIENT_TYPE_LIST.add(ClickTool.ClientType.热血单机h5);
         CLIENT_TYPE_LIST.add(ClickTool.ClientType.凹凸果);
         CLIENT_TYPE_LIST.add(ClickTool.ClientType.热血单机h5双开);
+        CLIENT_TYPE_LIST.add(ClickTool.ClientType.游戏07073浏览器360);
     }
 
     public static void init(List<Action> actions){
