@@ -105,7 +105,8 @@ public abstract class PlugQQForBase {
             per = SimilarPicture.isEqualsPer(getBitmap(path, rect), getBitmap(LOGIN_PATH, rect));
         }
         if (per > 85 || clientType == ClickTool.ClientType.游戏07073
-                || clientType == ClickTool.ClientType.热血单机) {
+                || clientType == ClickTool.ClientType.热血单机
+                || clientType == ClickTool.ClientType.牛刀浏览器360) {
             for (Coordinate tmp : runCoordinates) {
                 if (currentTime != 0) {
                     sleep = (int) (tmp.getTime() - currentTime);

@@ -1339,7 +1339,19 @@ public class ChangeCoordinate {
 //        addNew("火树360浏览器","游戏07073浏览器360");
 //        setCoordinate("游戏07073浏览器360",142, 686,353,1345);
 
-        show("火树360浏览器","游戏07073浏览器360");
+//        addNew("火树360浏览器","牛刀浏览器360");
+//        setCoordinate("牛刀浏览器360",142, 686,357,1475);
+//        addCoordinate("牛刀浏览器360",5,355,994,10000);
+
+//        addNew("核弹头手机登录插件","牛刀手机登录插件");
+//        deletePostionsIndex("牛刀手机登录插件",23,26);
+//        deletePostion("牛刀手机登录插件",0);
+//        setCoordinateIndex("牛刀手机登录插件",0,0,368, 672);
+//        setCoordinate("牛刀手机登录插件",726, 525,434,831);
+
+//        addCoordinate("牛刀手机登录插件",1,233, 2032,3000);
+
+        show("牛刀手机登录插件","牛刀浏览器360");
 
 //        ActionFile.write(actions);
     }

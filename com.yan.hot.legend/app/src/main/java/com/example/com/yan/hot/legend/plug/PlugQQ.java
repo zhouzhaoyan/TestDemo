@@ -228,6 +228,7 @@ public class PlugQQ {
                 new PlugQQFor1758(clientType, actions),
                 new PlugQQForJoy(clientType, actions),
                 new PlugQQForFireTree(clientType, actions),
+                new PlugPhoneForNiudao(clientType, actions),
         };
         for (PlugQQForBase bases : plugQQForBases) {
             bases.runPlug(clickService, clientType, coordinate);
