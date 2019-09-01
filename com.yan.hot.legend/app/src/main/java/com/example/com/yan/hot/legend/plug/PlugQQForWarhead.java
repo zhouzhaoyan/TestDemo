@@ -30,7 +30,7 @@ public class PlugQQForWarhead extends PlugQQForBase {
     public List<ClickTool.ClientType> getClientTypeList() {
         List<ClickTool.ClientType> clientTypes = new ArrayList<>();
         clientTypes.add(ClickTool.ClientType.热血单机);
-//        clientTypes.add(ClickTool.ClientType.核弹头);
+        clientTypes.add(ClickTool.ClientType.核弹头);
         return clientTypes;
     }
 

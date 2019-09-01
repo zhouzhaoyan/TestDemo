@@ -1351,7 +1351,10 @@ public class ChangeCoordinate {
 
 //        addCoordinate("牛刀手机登录插件",1,233, 2032,3000);
 
-        show("牛刀手机登录插件","牛刀浏览器360");
+//        addCoordinate("乐趣网页双开",2,1015, 2021,35000);
+//        addCoordinate("乐趣网页双开",3,89,2026,5000);
+//        setCoordinate("乐趣网页双开",89,2026,155,2038);
+        show("乐趣网页双开","乐趣-new");
 
 //        ActionFile.write(actions);
     }

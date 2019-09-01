@@ -31,6 +31,7 @@ public class PlugQQForJoy extends PlugQQForBase {
         List<ClickTool.ClientType> clientTypes = new ArrayList<>();
         clientTypes.add(ClickTool.ClientType.乐趣qq浏览器);
         clientTypes.add(ClickTool.ClientType.乐趣双开);
+        clientTypes.add(ClickTool.ClientType.乐趣网页双开);
         clientTypes.add(ClickTool.ClientType.乐趣);
         return clientTypes;
     }
@@ -39,6 +40,8 @@ public class PlugQQForJoy extends PlugQQForBase {
     public String getPlugName(ClickTool.ClientType clientType) {
         String name = "乐趣qq插件";
         switch (clientType){
+            case 乐趣:
+            case 乐趣网页双开:
             case 乐趣qq浏览器:
                 name = "乐趣qq插件";
                 break;
@@ -54,6 +57,8 @@ public class PlugQQForJoy extends PlugQQForBase {
         switch (clientType){
             case 乐趣:
                 return new Coordinate(89,2026);
+            case 乐趣网页双开:
+                return new Coordinate(155,2038);
         }
         return new Coordinate(587, 1811);
     }
