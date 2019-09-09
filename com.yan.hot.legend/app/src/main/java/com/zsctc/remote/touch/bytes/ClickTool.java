@@ -309,6 +309,8 @@ public class ClickTool {
             case 趣头条uc浏览器:
             case 趣头条qq浏览器:
             case 火树360浏览器:
+            case 趣头条360浏览器:
+            case 玩蛋360浏览器:
                 result = true;
                 break;
         }
