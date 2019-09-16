@@ -1354,7 +1354,10 @@ public class ChangeCoordinate {
 //        addCoordinate("乐趣网页双开",2,1015, 2021,35000);
 //        addCoordinate("乐趣网页双开",3,89,2026,5000);
 //        setCoordinate("乐趣网页双开",89,2026,155,2038);
-        show("乐趣网页双开","乐趣-new");
+
+//        addNew("火树猎豹浏览器","游戏1758猎豹浏览器");
+//        setCoordinate("游戏1758猎豹浏览器",469,1603,359,1914);
+        show("火树猎豹浏览器","游戏1758猎豹浏览器");
 
 //        ActionFile.write(actions);
     }
