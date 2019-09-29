@@ -314,6 +314,7 @@ public class ClickTool {
             case 趣头条360浏览器:
             case 玩蛋360浏览器:
             case 游戏1758浏览器360:
+            case 乐趣360浏览器:
                 result = true;
                 break;
         }
