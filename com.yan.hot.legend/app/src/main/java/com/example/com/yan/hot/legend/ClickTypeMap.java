@@ -60,6 +60,8 @@ public class ClickTypeMap {
         actionNameMap.put(ClickTool.ClientType.游戏07073浏览器360,"游戏07073浏览器360");
         actionNameMap.put(ClickTool.ClientType.牛刀浏览器360,"牛刀浏览器360");
         actionNameMap.put(ClickTool.ClientType.游戏1758猎豹浏览器,"游戏1758猎豹浏览器");
+        actionNameMap.put(ClickTool.ClientType.趣头条猎豹,"趣头条猎豹");
+        actionNameMap.put(ClickTool.ClientType.牛刀猎豹,"牛刀猎豹");
     }
 
     public static ClickTool.ClientType getClientType(String actionName) {

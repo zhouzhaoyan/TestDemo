@@ -41,6 +41,7 @@ public class AliveService extends NotificationListenerService {
     private Map<Action, List<Long>> clickTimesMap = new ArrayMap<Action, List<Long>>();
     private List<Action> actions;
     private ActionRun actionRun;
+    private final String FLAG = ",";
 
     @Override
     public void onCreate() {
@@ -91,10 +92,10 @@ public class AliveService extends NotificationListenerService {
                 textView.setText(content);
                 textView.setTextSize(13);
                 textView.setTextColor(Color.RED);
-                textView.setPadding(10, 10, 10, 10);
+                textView.setPadding(10, 0, 10, 0);
                 LinearLayout linearLayout = new LinearLayout(this);
                 linearLayout.addView(textView, new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.WRAP_CONTENT, 500));
+                        LinearLayout.LayoutParams.WRAP_CONTENT, 50));
 
                 screenView.showScreenshot(linearLayout);
             }
@@ -182,7 +183,7 @@ public class AliveService extends NotificationListenerService {
         if (actions == null) {
             return;
         }
-        String ms = "运行中" + "(" + actionRun.getModeType()+ ")" + "\n";
+        String ms = "运行中" + "(" + actionRun.getModeType()+ ")" + FLAG;
         long currentTime = System.currentTimeMillis();
         int showCount = 0;
         for (Action action : actions) {
@@ -212,7 +213,7 @@ public class AliveService extends NotificationListenerService {
                 if (currentTime < clickTimes[i] && showCount < 1 && isCurrentDay) {
                     addContent = true;
                     if (showCount == 0) {
-                        ms += action.getName() + "\n";
+                        ms += action.getName() + FLAG;
                     }
                     ms += TimeUtil.getFormatTime(clickTimes[i] + offset) + "     ";
                     showCount++;
@@ -224,7 +225,7 @@ public class AliveService extends NotificationListenerService {
                 long runTime = (coordinates.get(coordinates.size() - 1).getTime()
                         - coordinates.get(0).getTime()) / 1000;
                 //				ms += (runTime/60 + ":" + runTime%60);
-                ms += "\n";
+                ms += FLAG;
             }
         }
 

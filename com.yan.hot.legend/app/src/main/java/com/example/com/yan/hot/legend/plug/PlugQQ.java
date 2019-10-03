@@ -88,6 +88,8 @@ public class PlugQQ {
         accountMap.put(ClickTool.ClientType.乐趣qq浏览器, "2470518732");
         accountMap.put(ClickTool.ClientType.乐趣双开, "1874419402");
         accountMap.put(ClickTool.ClientType.乐趣网页双开, "2594365547");
+
+        accountMap.put(ClickTool.ClientType.牛刀猎豹, "1874419402");
     }
 
     private static Map<String, Bitmap> qqBitmap;

@@ -30,9 +30,7 @@ public class SimilarPicture {
 
     public static boolean isEquals(String path1, String path2) {
         Bitmap bitmap1_1 = getBitmap(getBitmap(path1), 525, 305, 65, 65);
-//        SimilarPicture.save(bitmap1_1, "path1-1.png");
         Bitmap bitmap1_2 = getBitmap(getBitmap(path2), 525, 305, 65, 65);
-//        SimilarPicture.save(bitmap1_2, "path1-2.png");
         Bitmap bitmap2_1 = getBitmap(getBitmap(path1), 520, 2050, 90, 30);
         Bitmap bitmap2_2 = getBitmap(getBitmap(path2), 520, 2050, 90, 30);
         return isEquals(bitmap1_1, bitmap1_2)

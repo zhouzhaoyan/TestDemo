@@ -52,6 +52,7 @@ public class ClickService extends GrayService {
     public static ClickTool.ClientType clientType = null;
     //无法登陆客户端
     private boolean isError = false;
+    private final String FLAG = ",";
 
     class ClickThread extends Thread {
         //主动停止
@@ -212,7 +213,7 @@ public class ClickService extends GrayService {
             switch (msg.what) {
                 case WAIT_LOADING_RESOURCE:
                     if (ClickService.clientType != null) {
-                        textView.setText("等待加载资源， " + ClickService.clientType.name() + "\n"
+                        textView.setText("等待加载资源， " + ClickService.clientType.name() + FLAG
                                 + actionName + s);
                     } else {
                         textView.setText("等待加载资源， " + actionName + s);
@@ -220,7 +221,7 @@ public class ClickService extends GrayService {
                     break;
                 case AUTO_CLICK:
                     if (ClickService.clientType != null) {
-                        textView.setText("自动运行点击, " + ClickService.clientType.name() + "\n"
+                        textView.setText("自动运行点击, " + ClickService.clientType.name() + FLAG
                                 + actionName + s + ",x:" + msg.arg1 + ",y:" + msg.arg2);
                     } else {
                         textView.setText("自动运行点击, " + actionName + s + ",x:" + msg.arg1 + ",y:" + msg.arg2);
@@ -300,10 +301,10 @@ public class ClickService extends GrayService {
                 textView.setText(content);
                 textView.setTextSize(15);
                 textView.setTextColor(Color.BLUE);
-                textView.setPadding(10, 20, 10, 10);
+                textView.setPadding(10, 0, 10, 0);
                 LinearLayout linearLayout = new LinearLayout(this);
                 linearLayout.addView(textView, new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                        LinearLayout.LayoutParams.WRAP_CONTENT, 50));
 
                 screenView.showScreenshot(linearLayout);
             }
@@ -369,7 +370,7 @@ public class ClickService extends GrayService {
                         }
                         List<ActionRun.ActionState> actionStates = actionRun.getActionStates();
                         int repeatTask = actionRun.getRepeatTask();
-                        if (/**actionRun.isAuto() && **/isRunningFinish(actionStates) || repeatTask > 5){
+                        if (/**actionRun.isAuto() && **/isRunningFinish(actionStates) || repeatTask > 3){
                             ActionRun.ModeType[] modeTypes;
                             if (ClickTool.actionRun.isAutoCheckPoint()){
                                 modeTypes = new ActionRun.ModeType[]{

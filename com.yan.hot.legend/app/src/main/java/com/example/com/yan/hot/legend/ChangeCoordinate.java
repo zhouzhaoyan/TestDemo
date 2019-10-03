@@ -1357,7 +1357,15 @@ public class ChangeCoordinate {
 
 //        addNew("火树猎豹浏览器","游戏1758猎豹浏览器");
 //        setCoordinate("游戏1758猎豹浏览器",469,1603,359,1914);
-        show("火树猎豹浏览器","游戏1758猎豹浏览器");
+
+//        addNew("火树网页双开","趣头条猎豹");
+//        setCoordinateIndex("趣头条猎豹",0,0,147,841);
+//        setCoordinateIndex("趣头条猎豹",1,1,799,1007);
+
+//        addNew("牛刀网页双开-new","牛刀猎豹");
+//        setCoordinateIndex("牛刀猎豹",0,0,147,841);
+//        setCoordinateIndex("牛刀猎豹",1,1,275,1342);
+        show("牛刀网页双开-new","牛刀猎豹");
 
 //        ActionFile.write(actions);
     }
@@ -1370,7 +1378,8 @@ public class ChangeCoordinate {
                 for (int i = 0; i < coordinates.size(); i++) {
                     Log.e("test", "tmp: " + coordinates.get(i) + "\n");
                 }
-                Log.e("test", "tmp: " + tmp);
+                Log.e("test", "tm" +
+                        "p: " + tmp);
             }
         }
     }
