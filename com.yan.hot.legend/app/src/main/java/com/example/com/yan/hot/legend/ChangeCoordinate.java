@@ -1362,10 +1362,13 @@ public class ChangeCoordinate {
 //        setCoordinateIndex("趣头条猎豹",0,0,147,841);
 //        setCoordinateIndex("趣头条猎豹",1,1,799,1007);
 
-//        addNew("牛刀网页双开-new","牛刀猎豹");
-//        setCoordinateIndex("牛刀猎豹",0,0,147,841);
-//        setCoordinateIndex("牛刀猎豹",1,1,275,1342);
-        show("牛刀网页双开-new","牛刀猎豹");
+//        addNew("趣头条猎豹","遨游火树");
+//        setCoordinate("遨游火树",799, 1007,536,1350);
+//        setTime("遨游火树",1,3000);
+//        setTime("遨游火树",2,10000);
+//        addCoordinate("遨游火树",2,749,2056,3000);
+//        addCoordinate("遨游火树",3,264,421,3000);
+        show("遨游火树");
 
 //        ActionFile.write(actions);
     }

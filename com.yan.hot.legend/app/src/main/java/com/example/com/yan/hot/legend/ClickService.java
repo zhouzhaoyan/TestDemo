@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.com.yan.hot.legend.pic.SimilarPicture;
 import com.example.com.yan.hot.legend.plug.Plug07073;
+import com.example.com.yan.hot.legend.plug.PlugAoyou;
 import com.example.com.yan.hot.legend.plug.PlugDesktop;
 import com.example.com.yan.hot.legend.plug.PlugMiBrowser;
 import com.example.com.yan.hot.legend.plug.PlugQQ;
@@ -67,6 +68,7 @@ public class ClickService extends GrayService {
             Action action;
             //07073 插件
             Plug07073 plug07073 = new Plug07073();
+            PlugAoyou plugAoyou = new PlugAoyou();
 
             ActionRun actionRun = ActionRunFile.read();
             cancelRestart();
@@ -140,6 +142,7 @@ public class ClickService extends GrayService {
                     PlugQQ.autoLogin(ClickService.this, clientType, coordinate);
 
 //                    Plug1758Client.run(clickTool, clientType, coordinate);
+                    plugAoyou.runClick(ClickService.this, clientType, coordinate);
 
                     runClick(sleep, coordinate);
 

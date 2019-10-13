@@ -70,6 +70,7 @@ public class DevoteManager {
         accountMap.put(ClickTool.ClientType.游戏1758猎豹浏览器, "甲士媚儿");
         accountMap.put(ClickTool.ClientType.趣头条猎豹, "黑夜谎言");
         accountMap.put(ClickTool.ClientType.牛刀猎豹, "蚂蚁清风");
+        accountMap.put(ClickTool.ClientType.遨游火树, "寒冰依然");
     }
 
     public static String getAccountName(ClickTool.ClientType clientType) {

@@ -367,6 +367,9 @@ public class MainActivity extends Activity {
             case 牛刀猎豹:
                 checkBox = (CheckBox) findViewById(R.id.game47);
                 break;
+            case 遨游火树:
+                checkBox = (CheckBox) findViewById(R.id.game48);
+                break;
         }
         return checkBox;
     }
