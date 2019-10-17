@@ -538,7 +538,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="遨游火树"/>
+            android:text="火树遨游"/>
     </LinearLayout>
 
     <LinearLayout

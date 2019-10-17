@@ -1362,13 +1362,25 @@ public class ChangeCoordinate {
 //        setCoordinateIndex("趣头条猎豹",0,0,147,841);
 //        setCoordinateIndex("趣头条猎豹",1,1,799,1007);
 
-//        addNew("趣头条猎豹","遨游火树");
-//        setCoordinate("遨游火树",799, 1007,536,1350);
-//        setTime("遨游火树",1,3000);
-//        setTime("遨游火树",2,10000);
-//        addCoordinate("遨游火树",2,749,2056,3000);
-//        addCoordinate("遨游火树",3,264,421,3000);
-        show("遨游火树");
+//        addNew("趣头条猎豹","火树遨游");
+//        setCoordinate("火树遨游",799, 1007,536,1350);
+//        setTime("火树遨游",1,3000);
+//        setTime("火树遨游",2,10000);
+//        addCoordinate("火树遨游",2,749,2056,3000);
+//        addCoordinate("火树遨游",3,264,421,3000);
+
+//        setTime("趣头条360浏览器",2,10000);
+//        setTime("玩蛋360浏览器",2,10000);
+//        setTime("游戏1758浏览器360",2,10000);
+//        setTime("乐趣360浏览器",2,10000);
+//        setTime("游戏07073浏览器360",2,10000);
+//        setTime("牛刀浏览器360",2,10000);
+//        setTime("火树遨游",2,20000);
+
+//        setCoordinate("通天塔sample",644, 1876,600, 1876);
+
+//        addNew("遨游火树","火树遨游");
+        show("火树遨游");
 
 //        ActionFile.write(actions);
     }
