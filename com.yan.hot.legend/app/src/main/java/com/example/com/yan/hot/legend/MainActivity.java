@@ -64,6 +64,8 @@ public class MainActivity extends Activity {
 //                ClickTool.ClientType.乐趣网页双开);
 //        EmailManager.getInstance().sendSync();
 //        ScreencapPathUtil.getExistPath(ClickTool.ClientType.火树.name());
+//        long remainInDay = TimeUtil.getRemainInDay();
+//        Timber.e("onCreate: Remain:" + remainInDay + ",min:" + (remainInDay / 60));
     }
 
     public void onClick(View view) {

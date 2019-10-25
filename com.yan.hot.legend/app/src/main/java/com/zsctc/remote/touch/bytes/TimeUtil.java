@@ -76,6 +76,15 @@ public class TimeUtil {
     }
 
     /**
+     * 获取当天剩余的秒
+     */
+    public static long getRemainInDay(){
+        long currentMillis = System.currentTimeMillis();
+        long remain = getLastSecondInDay(currentMillis) - currentMillis;
+        return remain/1000;
+    }
+
+    /**
      * 获取一星期的第一毫秒
      *
      * @param timeInMillis

@@ -2,9 +2,12 @@ package com.example.com.yan.hot.legend.runstate;
 
 import com.example.com.yan.hot.legend.devote.DevoteManager;
 import com.zsctc.remote.touch.bytes.ClickTool;
+import com.zsctc.remote.touch.bytes.TimeUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import timber.log.Timber;
 
 /**
  * Created by on 2018/10/13.
@@ -15,6 +18,28 @@ public class ActionRun {
 
     static {
         noRun.add(ClickTool.ClientType.客娱);
+    }
+    //不跑简单模式
+    private static List<ClickTool.ClientType> noRunForSimple = new ArrayList<>();
+
+    static {
+        noRunForSimple.add(ClickTool.ClientType.牛刀);
+        noRunForSimple.add(ClickTool.ClientType.客娱);
+        noRunForSimple.add(ClickTool.ClientType.牛刀网页);
+        noRunForSimple.add(ClickTool.ClientType.核弹头网页);
+
+        noRunForSimple.add(ClickTool.ClientType.热血单机);
+
+        noRunForSimple.add(ClickTool.ClientType.核弹头);
+        noRunForSimple.add(ClickTool.ClientType.牛刀猎豹);
+
+        noRunForSimple.add(ClickTool.ClientType.热血单机双开);
+        noRunForSimple.add(ClickTool.ClientType.牛刀qq浏览器);
+
+        noRunForSimple.add(ClickTool.ClientType.核弹头双开);
+        noRunForSimple.add(ClickTool.ClientType.牛刀浏览器360);
+
+        noRunForSimple.add(ClickTool.ClientType.牛刀网页双开);
     }
 
 
@@ -33,10 +58,31 @@ public class ActionRun {
         ClickTool.ClientType[] clientTypes = ClickTool.ClientType.values();
         this.modeType = modeType;
 
-
-        for (ClickTool.ClientType clientType : clientTypes) {
-            actionStates.add(new ActionState(clientType, noRun.contains(clientType) ? false : !DevoteManager.isMax(clientType)));
+        switch (modeType){
+            case SIMPLE:
+                long second = TimeUtil.getRemainInDay();
+                int time = (int) (second/60/6) - 2;
+                boolean run;
+                int i = 0;
+                for (ClickTool.ClientType clientType : clientTypes) {
+                    run = !noRunForSimple.contains(clientType) && !DevoteManager.isMax(clientType);
+                    if (run){
+                        if (i > time){
+                            run = false;
+                        }
+                        i ++;
+                    }
+                    actionStates.add(new ActionState(clientType, run));
+                }
+                Timber.e("actionStates:" +actionStates);
+                break;
+            default:
+                for (ClickTool.ClientType clientType : clientTypes) {
+                    actionStates.add(new ActionState(clientType, !noRun.contains(clientType) && !DevoteManager.isMax(clientType)));
+                }
+                break;
         }
+
     }
 
     public void setActionStates(ClickTool.ClientType clientType, boolean run) {
