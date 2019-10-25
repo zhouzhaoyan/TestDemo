@@ -1,4 +1,4 @@
-package com.example.com.yan.hot.legend.devote;
+package com.example.com.yan.hot.legend.power;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -22,46 +22,52 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-import static com.example.com.yan.hot.legend.devote.DevoteManager.getDefault;
+import static com.example.com.yan.hot.legend.power.PowerManager.getDefault;
 
-public class DevoteActivity extends Activity implements View.OnClickListener {
+public class PowerActivity extends Activity implements View.OnClickListener {
 
     private RecyclerView list;
-    private List<DevoteObject> devoteObjects = new ArrayList<>();
+    private List<PowerObject> powerObjects = new ArrayList<>();
     private Button devote_save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_devote);
+        setContentView(R.layout.activity_power);
         initData();
         initView();
     }
 
     private void initData() {
-        devoteObjects = DevoteFile.read();
-        if (devoteObjects == null) {
-            devoteObjects = getDefault();
+        powerObjects = PowerFile.read();
+        if (powerObjects == null) {
+            powerObjects = getDefault();
         }
     }
 
     private void initView() {
         list = (RecyclerView) findViewById(R.id.list);
         list.setLayoutManager(new LinearLayoutManager(this));
-        List<DevoteObject> delete = new ArrayList<>();
-        for (DevoteObject devoteObject: devoteObjects) {
-            if (devoteObject.getAccountName() == null){
-                delete.add(devoteObject);
+        List<PowerObject> delete = new ArrayList<>();
+        for (PowerObject powerObject: powerObjects) {
+            if (powerObject.getAccountName() == null){
+                delete.add(powerObject);
             }
         }
-        devoteObjects.removeAll(delete);
-        Collections.sort(devoteObjects, new Comparator<DevoteObject>() {
+        powerObjects.removeAll(delete);
+        Collections.sort(powerObjects, new Comparator<PowerObject>() {
             @Override
-            public int compare(DevoteObject lhs, DevoteObject rhs) {
-                return -(lhs.getValue() - rhs.getValue());
+            public int compare(PowerObject lhs, PowerObject rhs) {
+                if (lhs.getDate() - rhs.getDate() == 0){
+                    //战力
+                    return (lhs.getValue() - rhs.getValue());
+                } else {
+                    //更新时间
+                    return (int) (lhs.getDate() - rhs.getDate());
+                }
             }
         });
-        list.setAdapter(new DevoteAdapter(devoteObjects));
+        list.setAdapter(new PowerAdapter(powerObjects));
         devote_save = (Button) findViewById(R.id.devote_save);
         devote_save.setOnClickListener(this);
     }
@@ -74,15 +80,15 @@ public class DevoteActivity extends Activity implements View.OnClickListener {
                 Observable.create(new ObservableOnSubscribe<Boolean>() {
                     @Override
                     public void subscribe(ObservableEmitter<Boolean> emitter) throws Exception {
-                        updateTime(devoteObjects);
-                        DevoteFile.write(devoteObjects);
+                        updateTime(powerObjects);
+                        PowerFile.write(powerObjects);
                         emitter.onNext(true);
                         emitter.onComplete();
                     }
                 }).subscribeOn(Schedulers.single()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<Boolean>() {
                     @Override
                     public void accept(Boolean aBoolean) throws Exception {
-                        Toast.makeText(DevoteActivity.this, "成功", Toast.LENGTH_LONG).show();
+                        Toast.makeText(PowerActivity.this, "成功", Toast.LENGTH_LONG).show();
                         finish();
                     }
                 });
@@ -90,14 +96,14 @@ public class DevoteActivity extends Activity implements View.OnClickListener {
         }
     }
 
-    private void updateTime(List<DevoteObject> newPowerObjects){
-        List<DevoteObject> oldPowerObjects = DevoteFile.read();
-        for (DevoteObject oldObj: oldPowerObjects) {
-            for (DevoteObject newObj: newPowerObjects) {
-                if (oldObj.getClientType() == newObj.getClientType()){
-                    if (oldObj.getValue() != newObj.getValue()
-                            || oldObj.getOffset() != oldObj.getOffset()){
-                        DevoteManager.updateTime(newObj);
+    private void updateTime(List<PowerObject> newPowerObjects){
+        List<PowerObject> oldPowerObjects = PowerFile.read();
+        for (PowerObject oldPowerObject: oldPowerObjects) {
+            for (PowerObject newPowerObject: newPowerObjects) {
+                if (oldPowerObject.getClientType() == newPowerObject.getClientType()){
+                    if (oldPowerObject.getValue() != newPowerObject.getValue()
+                        || oldPowerObject.getReincarn() != newPowerObject.getReincarn()){
+                        PowerManager.updateTime(newPowerObject);
                     }
                     break;
                 }

@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.com.yan.hot.legend.devote.DevoteActivity;
 import com.example.com.yan.hot.legend.devote.DevoteManager;
+import com.example.com.yan.hot.legend.power.PowerActivity;
 import com.example.com.yan.hot.legend.runstate.ActionRun;
 import com.example.com.yan.hot.legend.runstate.ActionRunFile;
 import com.yan.hot.legend.action.Action;
@@ -94,6 +95,9 @@ public class MainActivity extends Activity {
                 break;
             case R.id.action_all:
                 startActivity(new Intent(this, AllActionActivity.class));
+                break;
+            case R.id.action_power:
+                startActivity(new Intent(this, PowerActivity.class));
                 break;
             case R.id.action_delete:
                 ActionRunFile.delete();

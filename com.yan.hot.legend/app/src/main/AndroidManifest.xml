@@ -66,6 +66,7 @@
         </service>
         -->
         <activity android:name=".devote.DevoteActivity"></activity>
+        <activity android:name=".power.PowerActivity"></activity>
         <activity android:name=".AllActionActivity"></activity>
     </application>
 

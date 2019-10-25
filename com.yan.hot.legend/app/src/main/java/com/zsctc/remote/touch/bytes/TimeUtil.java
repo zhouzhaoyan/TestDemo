@@ -332,6 +332,12 @@ public class TimeUtil {
         return dateString;
     }
 
+    public static String getFormatDay(long time){
+        SimpleDateFormat formatter = new SimpleDateFormat("MM-dd");
+        String dateString = formatter.format(time);
+        return dateString;
+    }
+
     public static int getHour(long time){
         SimpleDateFormat formatter = new SimpleDateFormat("HH");
         String dateString = formatter.format(time);
