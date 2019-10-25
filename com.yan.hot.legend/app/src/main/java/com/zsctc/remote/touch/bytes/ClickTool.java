@@ -98,14 +98,15 @@ public class ClickTool {
     private static List<ClientType> clientTypes;
 
     public enum ClientType {
-        玩蛋遨游,趣头条遨游,火树遨游,牛刀猎豹,趣头条猎豹,游戏1758猎豹浏览器,牛刀浏览器360,游戏07073浏览器360,乐趣360浏览器,游戏1758浏览器360,玩蛋360浏览器,趣头条360浏览器,火树360浏览器,
-        趣头条qq浏览器,趣头条uc浏览器,趣头条qq浏览器双开,火树, 游戏07073网页, 乐趣网页, 玩蛋, 游戏1758网页, 牛刀, 牛刀网页, 核弹头网页, 客娱,
+        玩蛋遨游, 趣头条遨游, 火树遨游, 牛刀猎豹, 趣头条猎豹, 游戏1758猎豹浏览器,
+        牛刀浏览器360, 游戏07073浏览器360, 乐趣360浏览器, 游戏1758浏览器360, 玩蛋360浏览器, 趣头条360浏览器, 火树360浏览器,
+        趣头条qq浏览器, 趣头条uc浏览器, 趣头条qq浏览器双开,
+        玩蛋猎豹浏览器, 火树猎豹浏览器, 玩蛋qq浏览器双开, 火树qq浏览器双开,
+        火树, 游戏07073网页, 乐趣网页, 玩蛋, 游戏1758网页, 牛刀, 牛刀网页, 核弹头网页, 客娱,
         热血单机, 游戏07073, 游戏1758, 乐趣, 核弹头, 热血单机h5, 热血单机双开, 凹凸果,
         乐趣双开, 乐趣网页双开, 火树网页双开, 玩蛋双开,
         牛刀网页双开, 游戏1758网页双开, 核弹头双开, 热血单机h5双开,
         火树qq浏览器, 玩蛋qq浏览器, 乐趣qq浏览器, 游戏1758qq浏览器, 牛刀qq浏览器,
-        火树qq浏览器双开, 玩蛋qq浏览器双开,火树猎豹浏览器,玩蛋猎豹浏览器,
-
     }
 
     public static List<Long> getClickTime(long time, Action action) {
@@ -136,7 +137,7 @@ public class ClickTool {
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
 //                    runNames.add("王者争霸");
-                    if (isRunKing(actionRun.getModeType())){
+                    if (isRunKing(actionRun.getModeType())) {
                         runNames.add("王者争霸sample");
                     }
                     runNames.add(getMiJingBoss(index));
@@ -176,7 +177,7 @@ public class ClickTool {
                     runNames.add(getMiJingBoss(index));
                     runNames.add("野外boss快速sample");
                     runNames.add("竞技sample");
-                    if (isRunKing(actionRun.getModeType())){
+                    if (isRunKing(actionRun.getModeType())) {
                         runNames.add("王者争霸sample");
                     }
                     break;
@@ -345,9 +346,9 @@ public class ClickTool {
         return result;
     }
 
-    public static String getMiJingBoss(int index){
+    public static String getMiJingBoss(int index) {
         int value = 2;
-        switch (actionRun.getModeType()){
+        switch (actionRun.getModeType()) {
             case NIGHT:
             case TASK:
                 value = 2;
@@ -362,7 +363,7 @@ public class ClickTool {
                 value = 5;
                 break;
         }
-        if (index / value % 2== 0){
+        if (index / value % 2 == 0) {
             return "秘境boss快速sample1";
         } else {
             return "秘境boss快速sample2";
@@ -370,10 +371,10 @@ public class ClickTool {
     }
 
     //王者争霸
-    private static boolean isRunKing(ActionRun.ModeType modeType){
+    private static boolean isRunKing(ActionRun.ModeType modeType) {
         boolean result = false;
         int week;
-        switch (modeType){
+        switch (modeType) {
             case NIGHT:
                 week = TimeUtil.dateToWeek(TimeUtil.getLastSecondInDay(System.currentTimeMillis()) + 2000);
                 result = week != Calendar.MONDAY;
