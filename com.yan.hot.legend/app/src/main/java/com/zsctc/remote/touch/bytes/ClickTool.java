@@ -9,6 +9,7 @@ import com.yan.hot.legend.action.Action;
 import com.yan.hot.legend.action.Coordinate;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
@@ -135,7 +136,9 @@ public class ClickTool {
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
 //                    runNames.add("王者争霸");
-                    runNames.add("王者争霸sample");
+                    if (isRunKing(actionRun.getModeType())){
+                        runNames.add("王者争霸sample");
+                    }
                     runNames.add(getMiJingBoss(index));
                     runNames.add("野外boss快速sample");
                     runNames.add("竞技sample");
@@ -173,6 +176,9 @@ public class ClickTool {
                     runNames.add(getMiJingBoss(index));
                     runNames.add("野外boss快速sample");
                     runNames.add("竞技sample");
+                    if (isRunKing(actionRun.getModeType())){
+                        runNames.add("王者争霸sample");
+                    }
                     break;
             }
 
@@ -361,5 +367,26 @@ public class ClickTool {
         } else {
             return "秘境boss快速sample2";
         }
+    }
+
+    //王者争霸
+    private static boolean isRunKing(ActionRun.ModeType modeType){
+        boolean result = false;
+        int week;
+        switch (modeType){
+            case NIGHT:
+                week = TimeUtil.dateToWeek(TimeUtil.getLastSecondInDay(System.currentTimeMillis()) + 2000);
+                result = week != Calendar.MONDAY;
+                break;
+            case TASK:
+                week = TimeUtil.dateToWeek(System.currentTimeMillis());
+                result = week != Calendar.MONDAY;
+                break;
+            case DAILY_TASK:
+                week = TimeUtil.dateToWeek(System.currentTimeMillis());
+                result = week == Calendar.MONDAY;
+                break;
+        }
+        return result;
     }
 }

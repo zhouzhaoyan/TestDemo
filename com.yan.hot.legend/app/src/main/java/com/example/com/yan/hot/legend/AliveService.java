@@ -233,8 +233,7 @@ public class AliveService extends NotificationListenerService {
     }
 
     private boolean isBreak(String name, long clickTime) {
-        int week;
-        week = TimeUtil.dateToWeek(clickTime);
+        int week = TimeUtil.dateToWeek(clickTime);
         if (name.equals("血战比奇")) {
             if (!(week == Calendar.MONDAY || week == Calendar.WEDNESDAY || week == Calendar.FRIDAY)) {
                 return true;
