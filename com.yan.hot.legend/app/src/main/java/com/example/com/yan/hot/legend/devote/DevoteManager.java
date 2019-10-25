@@ -71,6 +71,8 @@ public class DevoteManager {
         accountMap.put(ClickTool.ClientType.趣头条猎豹, "黑夜谎言");
         accountMap.put(ClickTool.ClientType.牛刀猎豹, "蚂蚁清风");
         accountMap.put(ClickTool.ClientType.火树遨游, "寒冰依然");
+        accountMap.put(ClickTool.ClientType.趣头条遨游, "雨天百合");
+        accountMap.put(ClickTool.ClientType.玩蛋遨游, "天空独行");
     }
 
     public static String getAccountName(ClickTool.ClientType clientType) {

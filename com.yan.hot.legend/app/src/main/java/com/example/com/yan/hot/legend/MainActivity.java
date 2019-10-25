@@ -370,6 +370,12 @@ public class MainActivity extends Activity {
             case 火树遨游:
                 checkBox = (CheckBox) findViewById(R.id.game48);
                 break;
+            case 趣头条遨游:
+                checkBox = (CheckBox) findViewById(R.id.game49);
+                break;
+            case 玩蛋遨游:
+                checkBox = (CheckBox) findViewById(R.id.game50);
+                break;
         }
         return checkBox;
     }

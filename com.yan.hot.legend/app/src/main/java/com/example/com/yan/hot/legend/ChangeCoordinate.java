@@ -1380,7 +1380,12 @@ public class ChangeCoordinate {
 //        setCoordinate("通天塔sample",644, 1876,600, 1876);
 
 //        addNew("遨游火树","火树遨游");
-        show("火树遨游");
+//        addNew("火树遨游","趣头条遨游");
+//        setCoordinateIndex("趣头条遨游",3,3,195,537);
+//
+//        addNew("火树遨游","玩蛋遨游");
+//        setCoordinateIndex("玩蛋遨游",3,3,241,699);
+        show("火树遨游","趣头条遨游","玩蛋遨游");
 
 //        ActionFile.write(actions);
     }

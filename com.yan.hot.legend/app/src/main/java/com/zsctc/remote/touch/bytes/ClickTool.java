@@ -97,7 +97,7 @@ public class ClickTool {
     private static List<ClientType> clientTypes;
 
     public enum ClientType {
-        火树遨游,牛刀猎豹,趣头条猎豹,游戏1758猎豹浏览器,牛刀浏览器360,游戏07073浏览器360,乐趣360浏览器,游戏1758浏览器360,玩蛋360浏览器,趣头条360浏览器,火树360浏览器,
+        玩蛋遨游,趣头条遨游,火树遨游,牛刀猎豹,趣头条猎豹,游戏1758猎豹浏览器,牛刀浏览器360,游戏07073浏览器360,乐趣360浏览器,游戏1758浏览器360,玩蛋360浏览器,趣头条360浏览器,火树360浏览器,
         趣头条qq浏览器,趣头条uc浏览器,趣头条qq浏览器双开,火树, 游戏07073网页, 乐趣网页, 玩蛋, 游戏1758网页, 牛刀, 牛刀网页, 核弹头网页, 客娱,
         热血单机, 游戏07073, 游戏1758, 乐趣, 核弹头, 热血单机h5, 热血单机双开, 凹凸果,
         乐趣双开, 乐趣网页双开, 火树网页双开, 玩蛋双开,
@@ -126,26 +126,26 @@ public class ClickTool {
                     //日常模式，9分
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
-                    runNames.add("竞技sample");
                     runNames.add(getMiJingBoss(index));
                     runNames.add("野外boss快速sample");
+                    runNames.add("竞技sample");
                     break;
                 case DAILY_TASK:
                     //日常任务模式，12分
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
-                    runNames.add("竞技sample");
 //                    runNames.add("王者争霸");
                     runNames.add("王者争霸sample");
                     runNames.add(getMiJingBoss(index));
                     runNames.add("野外boss快速sample");
+                    runNames.add("竞技sample");
                     break;
                 case SIMPLE:
                     //简单模式，6分钟30秒
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
-                    runNames.add("竞技sample");
                     runNames.add(getMiJingBoss(index));
+                    runNames.add("竞技sample");
 //                    runNames.add("签到");
                     break;
                 case NIGHT:
@@ -153,7 +153,6 @@ public class ClickTool {
                     //任务模式，20分
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
-                    runNames.add("竞技sample");
                     runNames.add("签到");
                     runNames.add("通天塔sample");
                     if (isFastest(clientType)) {
@@ -173,6 +172,7 @@ public class ClickTool {
                     }
                     runNames.add(getMiJingBoss(index));
                     runNames.add("野外boss快速sample");
+                    runNames.add("竞技sample");
                     break;
             }
 
@@ -221,6 +221,8 @@ public class ClickTool {
                 case 趣头条猎豹:
                 case 牛刀猎豹:
                 case 火树遨游:
+                case 趣头条遨游:
+                case 玩蛋遨游:
                     runNames.add("游戏-结束");
                     break;
                 case 游戏07073网页:

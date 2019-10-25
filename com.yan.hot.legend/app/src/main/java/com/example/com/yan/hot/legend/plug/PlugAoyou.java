@@ -22,6 +22,8 @@ public class PlugAoyou {
     {
         clientTypes = new ArrayList<>();
         clientTypes.add(ClickTool.ClientType.火树遨游);
+        clientTypes.add(ClickTool.ClientType.趣头条遨游);
+        clientTypes.add(ClickTool.ClientType.玩蛋遨游);
     }
 
     public void runClick(ClickService clickService, ClickTool.ClientType clientType, Coordinate newCoordinate) {

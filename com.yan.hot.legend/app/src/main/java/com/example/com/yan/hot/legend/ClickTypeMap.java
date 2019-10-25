@@ -63,6 +63,8 @@ public class ClickTypeMap {
         actionNameMap.put(ClickTool.ClientType.趣头条猎豹,"趣头条猎豹");
         actionNameMap.put(ClickTool.ClientType.牛刀猎豹,"牛刀猎豹");
         actionNameMap.put(ClickTool.ClientType.火树遨游,"火树遨游");
+        actionNameMap.put(ClickTool.ClientType.趣头条遨游,"趣头条遨游");
+        actionNameMap.put(ClickTool.ClientType.玩蛋遨游,"玩蛋遨游");
     }
 
     public static ClickTool.ClientType getClientType(String actionName) {
