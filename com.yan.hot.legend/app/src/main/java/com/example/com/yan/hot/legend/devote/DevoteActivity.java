@@ -91,8 +91,11 @@ public class DevoteActivity extends Activity implements View.OnClickListener {
     }
 
     private void updateTime(List<DevoteObject> newPowerObjects){
-        List<DevoteObject> oldPowerObjects = DevoteFile.read();
-        for (DevoteObject oldObj: oldPowerObjects) {
+        List<DevoteObject> oldDevoteObject = DevoteFile.read();
+        if (oldDevoteObject == null || oldDevoteObject.isEmpty()){
+            oldDevoteObject = DevoteManager.getDefault();
+        }
+        for (DevoteObject oldObj: oldDevoteObject) {
             for (DevoteObject newObj: newPowerObjects) {
                 if (oldObj.getClientType() == newObj.getClientType()){
                     if (oldObj.getValue() != newObj.getValue()

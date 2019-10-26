@@ -98,6 +98,9 @@ public class PowerActivity extends Activity implements View.OnClickListener {
 
     private void updateTime(List<PowerObject> newPowerObjects){
         List<PowerObject> oldPowerObjects = PowerFile.read();
+        if (oldPowerObjects == null || oldPowerObjects.isEmpty()){
+            oldPowerObjects = PowerManager.getDefault();
+        }
         for (PowerObject oldPowerObject: oldPowerObjects) {
             for (PowerObject newPowerObject: newPowerObjects) {
                 if (oldPowerObject.getClientType() == newPowerObject.getClientType()){
