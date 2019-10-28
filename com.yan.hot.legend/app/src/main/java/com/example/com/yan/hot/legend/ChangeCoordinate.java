@@ -1385,7 +1385,12 @@ public class ChangeCoordinate {
 //
 //        addNew("火树遨游","玩蛋遨游");
 //        setCoordinateIndex("玩蛋遨游",3,3,241,699);
-        show("火树遨游","趣头条遨游","玩蛋遨游");
+
+//        addNew("竞技sample","竞技sample-8转");
+//        deletePostionsIndex("竞技sample-8转",0,99);
+//        setTime("竞技sample-8转",6,30000);
+//        setTime("竞技sample-8转",12,30000);
+        show("竞技sample-8转");
 
 //        ActionFile.write(actions);
     }

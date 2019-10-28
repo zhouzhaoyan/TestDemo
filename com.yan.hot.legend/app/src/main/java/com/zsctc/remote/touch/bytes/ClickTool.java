@@ -130,7 +130,7 @@ public class ClickTool {
                     runNames.add("熔炼new");
                     runNames.add(getMiJingBoss(index));
                     runNames.add("野外boss快速sample");
-                    runNames.add("竞技sample");
+                    runNames.add(getPersonalSport(clientType));
                     break;
                 case DAILY_TASK:
                     //日常任务模式，12分
@@ -142,14 +142,14 @@ public class ClickTool {
                     }
                     runNames.add(getMiJingBoss(index));
                     runNames.add("野外boss快速sample");
-                    runNames.add("竞技sample");
+                    runNames.add(getPersonalSport(clientType));
                     break;
                 case SIMPLE:
                     //简单模式，6分钟30秒
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
                     runNames.add(getMiJingBoss(index));
-                    runNames.add("竞技sample");
+                    runNames.add(getPersonalSport(clientType));
 //                    runNames.add("签到");
                     break;
                 case NIGHT:
@@ -176,7 +176,7 @@ public class ClickTool {
                     }
                     runNames.add(getMiJingBoss(index));
                     runNames.add("野外boss快速sample");
-                    runNames.add("竞技sample");
+                    runNames.add(getPersonalSport(clientType));
                     if (isRunKing(actionRun.getModeType())) {
                         runNames.add("王者争霸sample");
                     }
@@ -389,5 +389,22 @@ public class ClickTool {
                 break;
         }
         return result;
+    }
+
+    //个人竞技
+    private static String getPersonalSport(ClientType clientType) {
+        boolean result = false;
+        switch (clientType) {
+            //8转使用double竞技
+            case 火树:
+            case 玩蛋:
+                result = true;
+                break;
+        }
+        if (result){
+            return "竞技sample-8转";
+        } else {
+            return "竞技sample";
+        }
     }
 }
