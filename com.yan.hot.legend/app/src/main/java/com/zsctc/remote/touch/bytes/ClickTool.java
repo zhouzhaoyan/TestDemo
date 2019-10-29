@@ -330,6 +330,7 @@ public class ClickTool {
             case 游戏07073浏览器360:
             case 牛刀浏览器360:
             case 游戏1758猎豹浏览器:
+            case 趣头条猎豹:
                 result = true;
                 break;
         }
@@ -398,6 +399,7 @@ public class ClickTool {
             //8转使用double竞技
             case 火树:
             case 玩蛋:
+            case 游戏1758网页:
                 result = true;
                 break;
         }
