@@ -127,10 +127,13 @@ public class MainActivity extends Activity {
                 break;
             }
         }
-        actionRun.setModeType(modeType);
-
-        for (ClickTool.ClientType type : ClickTool.ClientType.values()) {
-            actionRun.setActionStates(type, getCheckBox(type).isChecked());
+        if (modeType == ActionRun.ModeType.SIMPLE){
+            actionRun = new ActionRun(modeType);
+        } else {
+            actionRun.setModeType(modeType);
+            for (ClickTool.ClientType type : ClickTool.ClientType.values()) {
+                actionRun.setActionStates(type, getCheckBox(type).isChecked());
+            }
         }
 
         actionRun.setAuto(getAutoCheckBox().isChecked());

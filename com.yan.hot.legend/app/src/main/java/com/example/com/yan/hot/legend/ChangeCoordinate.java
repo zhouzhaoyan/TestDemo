@@ -1390,7 +1390,19 @@ public class ChangeCoordinate {
 //        deletePostionsIndex("竞技sample-8转",0,99);
 //        setTime("竞技sample-8转",6,30000);
 //        setTime("竞技sample-8转",12,30000);
-        show("竞技sample-8转");
+
+//        deletePostion("竞技sample",100);
+
+//        delete("竞技sample-8转");
+//        addCoordinate("竞技sample",110, 410, 1216,1000);
+//        setTime("竞技sample",120, 29000);
+
+//        addNew("经验副本", "经验副本sample");
+//        setTime("经验副本sample",10,1000);
+//        setTime("经验副本sample",11,1000);
+//        setTime("经验副本sample",12,1000);
+//        setTime("经验副本sample",13,1000);
+        show("经验副本sample");
 
 //        ActionFile.write(actions);
     }

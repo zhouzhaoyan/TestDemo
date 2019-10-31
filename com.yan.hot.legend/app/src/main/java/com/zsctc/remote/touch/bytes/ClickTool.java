@@ -130,7 +130,7 @@ public class ClickTool {
                     runNames.add("熔炼new");
                     runNames.add(getMiJingBoss(index));
                     runNames.add("野外boss快速sample");
-                    runNames.add(getPersonalSport(clientType));
+                    runNames.add("竞技sample");
                     break;
                 case DAILY_TASK:
                     //日常任务模式，12分
@@ -142,14 +142,14 @@ public class ClickTool {
                     }
                     runNames.add(getMiJingBoss(index));
                     runNames.add("野外boss快速sample");
-                    runNames.add(getPersonalSport(clientType));
+                    runNames.add("竞技sample");
                     break;
                 case SIMPLE:
                     //简单模式，6分钟30秒
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
                     runNames.add(getMiJingBoss(index));
-                    runNames.add(getPersonalSport(clientType));
+                    runNames.add("竞技sample");
 //                    runNames.add("签到");
                     break;
                 case NIGHT:
@@ -164,7 +164,7 @@ public class ClickTool {
                     } else {
                         runNames.add("材料副本");
                     }
-                    runNames.add("经验副本");
+                    runNames.add(getJingYan(clientType));
                     runNames.add("转生");
                     if (isSlowest(clientType)) {
                         runNames.add("个人boss");
@@ -176,7 +176,7 @@ public class ClickTool {
                     }
                     runNames.add(getMiJingBoss(index));
                     runNames.add("野外boss快速sample");
-                    runNames.add(getPersonalSport(clientType));
+                    runNames.add("竞技sample");
                     if (isRunKing(actionRun.getModeType())) {
                         runNames.add("王者争霸sample");
                     }
@@ -392,11 +392,10 @@ public class ClickTool {
         return result;
     }
 
-    //个人竞技
-    private static String getPersonalSport(ClientType clientType) {
+    //经验副本
+    private static String getJingYan(ClientType clientType) {
         boolean result = false;
         switch (clientType) {
-            //8转使用double竞技
             case 火树:
             case 玩蛋:
             case 游戏1758网页:
@@ -404,9 +403,9 @@ public class ClickTool {
                 break;
         }
         if (result){
-            return "竞技sample-8转";
+            return "经验副本sample";
         } else {
-            return "竞技sample";
+            return "经验副本";
         }
     }
 }
