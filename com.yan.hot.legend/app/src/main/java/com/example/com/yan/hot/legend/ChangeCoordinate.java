@@ -1402,7 +1402,8 @@ public class ChangeCoordinate {
 //        setTime("经验副本sample",11,1000);
 //        setTime("经验副本sample",12,1000);
 //        setTime("经验副本sample",13,1000);
-        show("经验副本sample");
+//        setCoordinate("转生",683, 1851,600, 1851);
+        show("转生");
 
 //        ActionFile.write(actions);
     }

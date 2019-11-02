@@ -165,7 +165,9 @@ public class ClickTool {
                         runNames.add("材料副本");
                     }
                     runNames.add(getJingYan(clientType));
-                    runNames.add("转生");
+                    if (isZhuansheng(actionRun.getModeType())){
+                        runNames.add("转生");
+                    }
                     if (isSlowest(clientType)) {
                         runNames.add("个人boss");
                     } else {
@@ -331,6 +333,7 @@ public class ClickTool {
             case 牛刀浏览器360:
             case 游戏1758猎豹浏览器:
             case 趣头条猎豹:
+            case 牛刀猎豹:
                 result = true;
                 break;
         }
@@ -397,8 +400,38 @@ public class ClickTool {
         boolean result = false;
         switch (clientType) {
             case 火树:
+            case 乐趣网页:
+            case 牛刀网页:
             case 玩蛋:
+            case 游戏07073网页:
             case 游戏1758网页:
+            case 核弹头网页:
+            case 热血单机h5:
+            case 乐趣:
+            case 核弹头:
+            case 玩蛋猎豹浏览器:
+            case 火树qq浏览器双开:
+            case 玩蛋qq浏览器双开:
+            case 游戏1758:
+            case 牛刀:
+            case 凹凸果:
+            case 乐趣双开:
+            case 乐趣网页双开:
+            case 火树网页双开:
+            case 玩蛋双开:
+            case 牛刀网页双开:
+            case 游戏1758网页双开:
+            case 核弹头双开:
+            case 牛刀qq浏览器:
+            case 游戏07073:
+            case 热血单机:
+            case 火树猎豹浏览器:
+            case 热血单机双开:
+            case 热血单机h5双开:
+            case 火树qq浏览器:
+            case 玩蛋qq浏览器:
+            case 乐趣qq浏览器:
+            case 游戏1758qq浏览器:
                 result = true;
                 break;
         }
@@ -407,5 +440,21 @@ public class ClickTool {
         } else {
             return "经验副本";
         }
+    }
+
+    //转生
+    private static boolean isZhuansheng(ActionRun.ModeType modeType) {
+        boolean result;
+        int week;
+        switch (modeType) {
+            case NIGHT:
+                week = TimeUtil.dateToWeek(TimeUtil.getLastSecondInDay(System.currentTimeMillis()) + 2000);
+                break;
+            default:
+                week = TimeUtil.dateToWeek(System.currentTimeMillis());
+                break;
+        }
+        result =  week == Calendar.MONDAY || week == Calendar.WEDNESDAY || week == Calendar.FRIDAY || week == Calendar.SUNDAY;
+        return result;
     }
 }
