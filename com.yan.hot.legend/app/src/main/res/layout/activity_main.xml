@@ -360,19 +360,19 @@
             android:checked="false"
             android:text="乐趣qq"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
         <CheckBox
             android:id="@+id/game29"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="1758qq"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/game30"
@@ -388,19 +388,18 @@
             android:checked="false"
             android:text="火树qq双开"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
         <CheckBox
             android:id="@+id/game32"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="玩蛋qq双开"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/game33"
@@ -415,12 +414,6 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="玩蛋猎豹"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/game35"
@@ -428,6 +421,12 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="趣头条qq双开"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/game36"
@@ -442,12 +441,6 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="趣头条qq"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/game38"
@@ -455,6 +448,12 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="火树360"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/game39"
@@ -469,19 +468,19 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="玩蛋360"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/game41"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="游戏1758浏览器360"/>
+            android:text="1758游戏360"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/game42"
@@ -490,19 +489,12 @@
             android:checked="false"
             android:text="乐趣360"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
         <CheckBox
             android:id="@+id/game43"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="07073浏览器360"/>
+            android:text="07073游戏360"/>
 
         <CheckBox
             android:id="@+id/game44"
@@ -511,19 +503,19 @@
             android:checked="false"
             android:text="牛刀360"/>
 
-        <CheckBox
-            android:id="@+id/game45"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-            android:text="1758猎豹"/>
-
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/game45"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="1758猎豹"/>
 
         <CheckBox
             android:id="@+id/game46"
@@ -539,18 +531,19 @@
             android:checked="false"
             android:text="牛刀猎豹"/>
 
-        <CheckBox
-            android:id="@+id/game48"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-            android:text="火树遨游"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/game48"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="火树遨游"/>
 
         <CheckBox
             android:id="@+id/game49"
@@ -565,6 +558,34 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="玩蛋遨游"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/game51"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="火树360极"/>
+
+        <CheckBox
+            android:id="@+id/game52"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="趣头条360极"/>
+
+        <CheckBox
+            android:id="@+id/game53"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="玩蛋360极"/>
+
     </LinearLayout>
 
     <LinearLayout

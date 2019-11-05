@@ -374,18 +374,10 @@ public class ClickService extends GrayService {
                         List<ActionRun.ActionState> actionStates = actionRun.getActionStates();
                         int repeatTask = actionRun.getRepeatTask();
                         if (/**actionRun.isAuto() && **/isRunningFinish(actionStates) || repeatTask > 3){
-                            ActionRun.ModeType[] modeTypes;
-                            if (ClickTool.actionRun.isAutoCheckPoint()){
-                                modeTypes = new ActionRun.ModeType[]{
+                            ActionRun.ModeType[] modeTypes = new ActionRun.ModeType[]{
                                         ActionRun.ModeType.TASK,
-                                        ActionRun.ModeType.DAILY_TASK,ActionRun.ModeType.SIMPLE,
+                                        ActionRun.ModeType.DAILY_TASK
                                 };
-                            } else {
-                                modeTypes = new ActionRun.ModeType[]{
-                                        ActionRun.ModeType.TASK, ActionRun.ModeType.DAILY,
-                                        ActionRun.ModeType.DAILY_TASK, ActionRun.ModeType.SIMPLE,
-                                };
-                            }
                             ActionRun.ModeType currentMode = actionRun.getModeType();
                             ActionRun.ModeType nextMode = null;
                             for (int i = 0; i < modeTypes.length; i++) {

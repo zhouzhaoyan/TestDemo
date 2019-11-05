@@ -10,6 +10,8 @@ import com.yan.hot.legend.action.Coordinate;
 import java.util.ArrayList;
 import java.util.List;
 
+import timber.log.Timber;
+
 /**
  * Created by on 2018/8/2.
  * 改变坐标
@@ -1403,7 +1405,23 @@ public class ChangeCoordinate {
 //        setTime("经验副本sample",12,1000);
 //        setTime("经验副本sample",13,1000);
 //        setCoordinate("转生",683, 1851,600, 1851);
-        show("转生");
+//        addNew("火树360浏览器","火树360极速");
+//
+//        setCoordinate("火树360极速",528, 1339,793,1392);
+//        setCoordinate("火树360极速",159, 1424,173,1658);
+//        setCoordinate("火树360极速",142, 686,299,276);
+
+//        addNew("火树360极速","趣头条360极速");
+//        setCoordinate("趣头条360极速",299,276,225,458);
+//
+//        addNew("火树360极速","玩蛋360极速");
+//        setCoordinate("玩蛋360极速",299,276,250,617);
+
+//        setCoordinate("火树360极速",426, 843,168,802);
+//        setCoordinate("趣头条360极速",426, 843,168,802);
+//        setCoordinate("玩蛋360极速",426, 843,168,802);
+
+        show("趣头条360极速","玩蛋360极速");
 
 //        ActionFile.write(actions);
     }
@@ -1414,10 +1432,9 @@ public class ChangeCoordinate {
             if (tmp != null) {
                 List<Coordinate> coordinates = tmp.getCoordinates();
                 for (int i = 0; i < coordinates.size(); i++) {
-                    Log.e("test", "tmp: " + coordinates.get(i) + "\n");
+                    Timber.e("tmp: " + coordinates.get(i) + "\n");
                 }
-                Log.e("test", "tm" +
-                        "p: " + tmp);
+                Timber.e("tm" + "p: " + tmp);
             }
         }
     }
