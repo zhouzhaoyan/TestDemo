@@ -57,7 +57,7 @@ public class ClickService extends GrayService {
     //错误次数
     private int errorTime = 0;
     //错误最大次数
-    private final int ERROR_TIME_MAX = 5;
+    private final int ERROR_TIME_MAX = 3;
 
     class ClickThread extends Thread {
         //主动停止
