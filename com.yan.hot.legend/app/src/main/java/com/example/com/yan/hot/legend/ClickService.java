@@ -54,6 +54,10 @@ public class ClickService extends GrayService {
     //无法登陆客户端
     private boolean isError = false;
     private final String FLAG = ",";
+    //错误次数
+    private int errorTime = 0;
+    //错误最大次数
+    private final int ERROR_TIME_MAX = 5;
 
     class ClickThread extends Thread {
         //主动停止
@@ -74,6 +78,12 @@ public class ClickService extends GrayService {
             cancelRestart();
 
             while (!actions.isEmpty()) {
+                if (errorTime >= ERROR_TIME_MAX){
+                    errorTime = 0;
+                    restartWifi();
+                    LogManager.newInstance().writeMessage("running next click restartWifi");
+                }
+
                 if (isStop) {
                     LogManager.newInstance().writeMessage("running next click stop");
                     break;
@@ -90,6 +100,9 @@ public class ClickService extends GrayService {
                 }
                 //无法进入游戏则退出，不在运行该客户端
                 if (actionName.contains("结束")) {
+                    if (isError){
+                        errorTime ++;
+                    }
                     isError = false;
                 } else {
                     if (isError) {
@@ -352,16 +365,11 @@ public class ClickService extends GrayService {
                 .map(new Function<Integer, Integer>() {
                     @Override
                     public Integer apply(Integer integer) throws Exception {
+                        //重置错误次数
+                        errorTime = 0;
                         LogManager.newInstance().writeMessage("running click error, restart doing");
 
-                        if (!NetUtils.ping()){
-                            LogManager.newInstance().writeMessage("running click error, net err");
-
-                            WifiUtils.getInstance().set(false);
-                            Thread.sleep(5000);
-                            WifiUtils.getInstance().set(true);
-                            Thread.sleep(5000);
-                        }
+                        restartWifi();
 
                         AliveService.stopService(getApplicationContext());
                         ClickService.stopService(getApplicationContext());
@@ -421,6 +429,20 @@ public class ClickService extends GrayService {
                         AliveService.openAliveService(getApplicationContext());
                     }
                 });
+    }
+
+    //重新打开wifi
+    private void restartWifi() {
+        try {
+            if (!NetUtils.ping()){
+                LogManager.newInstance().writeMessage("running click error, net err");
+
+                WifiUtils.getInstance().set(false);
+                Thread.sleep(5000);
+                WifiUtils.getInstance().set(true);
+                Thread.sleep(5000);
+            }
+        } catch (Exception e){}
     }
 
     private boolean isRunningFinish(List<ActionRun.ActionState> actionStates){
