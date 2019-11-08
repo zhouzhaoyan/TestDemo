@@ -26,10 +26,10 @@ public class ClickTypeMap {
         actionNameMap.put(ClickTool.ClientType.热血单机,"热血单机-new");
         actionNameMap.put(ClickTool.ClientType.游戏07073,"07073游戏-new");
         actionNameMap.put(ClickTool.ClientType.游戏1758,"1758微游戏new");
-        actionNameMap.put(ClickTool.ClientType.乐趣,"乐趣-new");
+        actionNameMap.put(ClickTool.ClientType.乐趣,"乐趣猎豹");
 //        actionNameMap.put(ClickTool.ClientType.核弹头,"核弹头客户端");
-        actionNameMap.put(ClickTool.ClientType.核弹头,"核弹头-new");
-        actionNameMap.put(ClickTool.ClientType.热血单机h5,"热血单机h5-new");
+        actionNameMap.put(ClickTool.ClientType.核弹头,"核弹头猎豹");
+        actionNameMap.put(ClickTool.ClientType.热血单机h5,"热血单机h5猎豹");
         actionNameMap.put(ClickTool.ClientType.热血单机双开,"热血单机双开-new");
         actionNameMap.put(ClickTool.ClientType.凹凸果,"凹凸果new");
         actionNameMap.put(ClickTool.ClientType.乐趣双开,"乐趣双开new");
@@ -48,7 +48,7 @@ public class ClickTypeMap {
         actionNameMap.put(ClickTool.ClientType.火树qq浏览器双开,"火树qq浏览器双开");
         actionNameMap.put(ClickTool.ClientType.玩蛋qq浏览器双开,"玩蛋qq浏览器双开");
         actionNameMap.put(ClickTool.ClientType.火树猎豹浏览器,"火树猎豹浏览器");
-        actionNameMap.put(ClickTool.ClientType.玩蛋猎豹浏览器,"玩蛋猎豹浏览器");
+        actionNameMap.put(ClickTool.ClientType.玩蛋猎豹浏览器,"玩蛋猎豹");
         actionNameMap.put(ClickTool.ClientType.趣头条qq浏览器双开,"趣头条qq浏览器双开");
         actionNameMap.put(ClickTool.ClientType.趣头条uc浏览器,"趣头条uc浏览器");
         actionNameMap.put(ClickTool.ClientType.趣头条qq浏览器,"趣头条qq浏览器");
@@ -59,7 +59,7 @@ public class ClickTypeMap {
         actionNameMap.put(ClickTool.ClientType.乐趣360浏览器,"乐趣360浏览器");
         actionNameMap.put(ClickTool.ClientType.游戏07073浏览器360,"游戏07073浏览器360");
         actionNameMap.put(ClickTool.ClientType.牛刀浏览器360,"牛刀浏览器360");
-        actionNameMap.put(ClickTool.ClientType.游戏1758猎豹浏览器,"游戏1758猎豹浏览器");
+        actionNameMap.put(ClickTool.ClientType.游戏1758猎豹浏览器,"游戏1758猎豹");
         actionNameMap.put(ClickTool.ClientType.趣头条猎豹,"趣头条猎豹");
         actionNameMap.put(ClickTool.ClientType.牛刀猎豹,"牛刀猎豹");
         actionNameMap.put(ClickTool.ClientType.火树遨游,"火树遨游");

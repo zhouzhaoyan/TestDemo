@@ -1421,7 +1421,27 @@ public class ChangeCoordinate {
 //        setCoordinate("趣头条360极速",426, 843,168,802);
 //        setCoordinate("玩蛋360极速",426, 843,168,802);
 
-        show("趣头条360极速","玩蛋360极速");
+//        addNew("趣头条猎豹","热血单机h5猎豹");
+//        setCoordinateIndex("热血单机h5猎豹",1,1,289,749);
+//
+//        addNew("趣头条猎豹","乐趣猎豹");
+//        setCoordinateIndex("乐趣猎豹",1,1,559,733);
+//
+//        addNew("趣头条猎豹","核弹头猎豹");
+//        setCoordinateIndex("核弹头猎豹",1,1,800,743);
+//
+//        addNew("趣头条猎豹","玩蛋猎豹");
+//        setCoordinateIndex("玩蛋猎豹",1,1,298,1048);
+//
+//        addNew("趣头条猎豹","游戏1758猎豹");
+//        setCoordinateIndex("游戏1758猎豹",1,1,561,1067);
+
+//        addCoordinate("乐趣猎豹",2,1015, 2021,20000);
+//        addCoordinate("乐趣猎豹",3,89, 2026,5000);
+//        addCoordinate("乐趣猎豹",4,114, 763,5000);
+
+//        addCoordinate("核弹头猎豹",2,607, 1249,20000);
+        show("核弹头猎豹","核弹头-new");
 
 //        ActionFile.write(actions);
     }
