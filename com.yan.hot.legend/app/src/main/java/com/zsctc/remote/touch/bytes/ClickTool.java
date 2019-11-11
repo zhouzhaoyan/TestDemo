@@ -193,8 +193,6 @@ public class ClickTool {
                 case 玩蛋:
                 case 热血单机:
                 case 游戏07073:
-                case 乐趣:
-                case 核弹头:
                 case 热血单机双开:
                 case 凹凸果:
                 case 乐趣双开:
@@ -204,7 +202,6 @@ public class ClickTool {
                 case 牛刀网页双开:
                 case 游戏1758网页双开:
                 case 核弹头双开:
-                case 热血单机h5:
                 case 热血单机h5双开:
                 case 火树qq浏览器:
                 case 玩蛋qq浏览器:
@@ -214,8 +211,6 @@ public class ClickTool {
                 case 火树qq浏览器双开:
                 case 游戏1758:
                 case 玩蛋qq浏览器双开:
-                case 火树猎豹浏览器:
-                case 玩蛋猎豹浏览器:
                 case 趣头条qq浏览器双开:
                 case 趣头条uc浏览器:
                 case 趣头条qq浏览器:
@@ -226,9 +221,6 @@ public class ClickTool {
                 case 乐趣360浏览器:
                 case 游戏07073浏览器360:
                 case 牛刀浏览器360:
-                case 游戏1758猎豹浏览器:
-                case 趣头条猎豹:
-                case 牛刀猎豹:
                 case 火树遨游:
                 case 趣头条遨游:
                 case 玩蛋遨游:
@@ -243,8 +235,16 @@ public class ClickTool {
                 case 核弹头网页:
                     runNames.add("游戏-登录结束");
                     break;
-//                    runNames.add("07073游戏盒子-结束");
-//                    break;
+                case 乐趣:
+                case 核弹头:
+                case 热血单机h5:
+                case 牛刀猎豹:
+                case 游戏1758猎豹浏览器:
+                case 趣头条猎豹:
+                case 火树猎豹浏览器:
+                case 玩蛋猎豹浏览器:
+                    runNames.add("游戏猎豹-结束");
+                    break;
 //                case 游戏1758:
 //                    runNames.add("1758微游戏-结束");
 //                    break;

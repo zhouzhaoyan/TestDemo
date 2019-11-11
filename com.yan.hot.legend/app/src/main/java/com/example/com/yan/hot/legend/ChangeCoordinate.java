@@ -1441,7 +1441,14 @@ public class ChangeCoordinate {
 //        addCoordinate("乐趣猎豹",4,114, 763,5000);
 
 //        addCoordinate("核弹头猎豹",2,607, 1249,20000);
-        show("核弹头猎豹","核弹头-new");
+
+//        addNew("游戏-结束","游戏猎豹-结束");
+//        addCoordinateEnd("游戏猎豹-结束",502, 2188,1000);
+//        addCoordinateEnd("游戏猎豹-结束",347,2203,3000);
+//        addCoordinateEnd("游戏猎豹-结束",545,1922,3000);
+//        addCoordinateEndRepeate("游戏猎豹-结束",794, 2210,1000,3);
+
+        show("游戏猎豹-结束");
 
 //        ActionFile.write(actions);
     }

@@ -127,14 +127,8 @@ public class MainActivity extends Activity {
                 break;
             }
         }
-        if (modeType == ActionRun.ModeType.SIMPLE){
-            actionRun = new ActionRun(modeType);
-        } else {
-            actionRun.setModeType(modeType);
-            for (ClickTool.ClientType type : ClickTool.ClientType.values()) {
-                actionRun.setActionStates(type, getCheckBox(type).isChecked());
-            }
-        }
+
+
 
         actionRun.setAuto(getAutoCheckBox().isChecked());
         actionRun.setAutoCheckPoint(getAutoCheckPointBox().isChecked());
