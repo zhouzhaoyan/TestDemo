@@ -89,6 +89,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 21 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: __local_aars__:D.\git_workshape\TestDemo\com.yan.hot.legend\app\libs\ocr-sdk.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.sun.mail:android-mail:1.6.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.sun.mail:android-activation:1.6.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.annimon:stream:1.2.1@jar" level="project" />

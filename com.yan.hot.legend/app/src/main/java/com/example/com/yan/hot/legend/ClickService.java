@@ -17,6 +17,7 @@ import com.example.com.yan.hot.legend.plug.PlugDesktop;
 import com.example.com.yan.hot.legend.plug.PlugMiBrowser;
 import com.example.com.yan.hot.legend.plug.PlugQQ;
 import com.example.com.yan.hot.legend.plug.PlugRelogin;
+import com.example.com.yan.hot.legend.recognition.CharacterRecognitionManager;
 import com.example.com.yan.hot.legend.runstate.ActionRun;
 import com.example.com.yan.hot.legend.runstate.ActionRunFile;
 import com.example.com.yan.hot.legend.screencap.ScreencapPathUtil;
@@ -78,7 +79,7 @@ public class ClickService extends GrayService {
             cancelRestart();
 
             while (!actions.isEmpty()) {
-                if (errorTime >= ERROR_TIME_MAX){
+                if (errorTime >= ERROR_TIME_MAX) {
                     errorTime = 0;
                     restartWifi();
                     LogManager.newInstance().writeMessage("running next click restartWifi");
@@ -100,8 +101,8 @@ public class ClickService extends GrayService {
                 }
                 //无法进入游戏则退出，不在运行该客户端
                 if (actionName.contains("结束")) {
-                    if (isError){
-                        errorTime ++;
+                    if (isError) {
+                        errorTime++;
                     }
                     isError = false;
                 } else {
@@ -113,7 +114,7 @@ public class ClickService extends GrayService {
 
                 handler.sendEmptyMessage(WAIT_LOADING_RESOURCE);
                 LogManager.newInstance().writeMessage("running click sleep");
-                if (actionName.contains("血战矿洞")){
+                if (actionName.contains("血战矿洞")) {
                     PlugMiBrowser.run(clickTool, clientType);
                 }
                 if (actionName.contains("熔炼")/** || actionName.contains("竞技")*/) {
@@ -162,7 +163,7 @@ public class ClickService extends GrayService {
                     PlugQQ.runClick(ClickService.this, clientType, coordinate);
                     for (int i = 0; i < 3; i++) {
                         //检查是否能成功登陆
-                        PlugRelogin.runClick(ClickService.this, clientType,coordinate);
+                        PlugRelogin.runClick(ClickService.this, clientType, coordinate);
                     }
                 }
                 actions.remove(action);
@@ -261,35 +262,57 @@ public class ClickService extends GrayService {
                         //保存截图
                         String path = ScreencapPathUtil.getPath(clientType.name());
                         clickTool.screencap(path);
-                            return Observable.just(path);
+                        return Observable.just(path);
                     }
                 }).delay(5, TimeUnit.SECONDS)
-                .map(new Function<String, Boolean>() {
+                .subscribe(new Consumer<String>() {
                     @Override
-                    public Boolean apply(String s) throws Exception {
-                        //对比图片的相似度
-                        boolean result = SimilarPicture.isEquals(s, clientType);
-                        if (!result) {
-                            isError = true;
-                        }
-                        return isError;
-                    }
-                })
-                .subscribe(new Consumer<Boolean>() {
-                    @Override
-                    public void accept(Boolean error) throws Exception {
-                        ActionRun actionRun = ActionRunFile.read();
-                        actionRun.setActionStates(clientType, error);
-                        ActionRunFile.write(actionRun);
+                    public void accept(String path) throws Exception {
+                        characterRecognition(path, clientType);
                     }
                 });
     }
 
+    //文本识别
+    private void characterRecognition(final String path, final ClickTool.ClientType clientType){
+        CharacterRecognitionManager.getInstance().getCharacter(path, new CharacterRecognitionManager.ServiceListener() {
+            @Override
+            public void onSuccessResult(String result) {
+                String accountName = AccountManager.getAccountName(clientType);
+                boolean error = !result.contains(accountName);
+                ActionRun actionRun = ActionRunFile.read();
+                actionRun.setActionStates(clientType, error);
+                ActionRunFile.write(actionRun);
+                isError = error;
+            }
+
+            @Override
+            public void onTokenFail() {
+                similarPicture(path, clientType);
+            }
+
+            @Override
+            public void onFailResult(String result) {
+                similarPicture(path, clientType);
+            }
+        });
+    }
+
+    //图片对比
+    private void similarPicture(String path, final ClickTool.ClientType clientType){
+        //对比图片的相似度
+        boolean result = SimilarPicture.isEquals(path, clientType);
+        boolean error = !result;
+        ActionRun actionRun = ActionRunFile.read();
+        actionRun.setActionStates(clientType, error);
+        ActionRunFile.write(actionRun);
+        isError = error;
+    }
 
     @Override
     public void onCreate() {
         super.onCreate();
-        screenView = new ScreenView(this,false);
+        screenView = new ScreenView(this, false);
         if (clickThread != null) {
             clickThread.stopRunnable();
         }
@@ -381,29 +404,29 @@ public class ClickService extends GrayService {
                         }
                         List<ActionRun.ActionState> actionStates = actionRun.getActionStates();
                         int repeatTask = actionRun.getRepeatTask();
-                        if (/**actionRun.isAuto() && **/isRunningFinish(actionStates) || repeatTask > 3){
+                        if (/**actionRun.isAuto() && **/isRunningFinish(actionStates) || repeatTask > 3) {
                             ActionRun.ModeType[] modeTypes = new ActionRun.ModeType[]{
-                                        ActionRun.ModeType.TASK,
-                                        ActionRun.ModeType.DAILY_TASK
-                                };
+                                    ActionRun.ModeType.TASK,
+                                    ActionRun.ModeType.DAILY_TASK
+                            };
                             ActionRun.ModeType currentMode = actionRun.getModeType();
                             ActionRun.ModeType nextMode = null;
                             for (int i = 0; i < modeTypes.length; i++) {
-                                if (modeTypes[i] == currentMode){
-                                    if (i + 1 < modeTypes.length){
-                                        nextMode = modeTypes[i+1];
+                                if (modeTypes[i] == currentMode) {
+                                    if (i + 1 < modeTypes.length) {
+                                        nextMode = modeTypes[i + 1];
                                         break;
                                     }
                                 }
                             }
-                            if (nextMode == null){
-                                if (getLastSecondInDay(System.currentTimeMillis()) - System.currentTimeMillis() < 6*60*60*1000){
+                            if (nextMode == null) {
+                                if (getLastSecondInDay(System.currentTimeMillis()) - System.currentTimeMillis() < 6 * 60 * 60 * 1000) {
                                     nextMode = ActionRun.ModeType.NIGHT;
                                 } else {
                                     nextMode = ActionRun.ModeType.TASK;
                                 }
                             }
-                            if (nextMode != null){
+                            if (nextMode != null) {
                                 boolean auto = actionRun.isAuto();
                                 boolean checkPoint = actionRun.isAutoCheckPoint();
                                 actionRun = new ActionRun(nextMode);
@@ -434,7 +457,7 @@ public class ClickService extends GrayService {
     //重新打开wifi
     private void restartWifi() {
         try {
-            if (!NetUtils.ping()){
+            if (!NetUtils.ping()) {
                 LogManager.newInstance().writeMessage("running click error, net err");
 
                 WifiUtils.getInstance().set(false);
@@ -442,13 +465,14 @@ public class ClickService extends GrayService {
                 WifiUtils.getInstance().set(true);
                 Thread.sleep(5000);
             }
-        } catch (Exception e){}
+        } catch (Exception e) {
+        }
     }
 
-    private boolean isRunningFinish(List<ActionRun.ActionState> actionStates){
+    private boolean isRunningFinish(List<ActionRun.ActionState> actionStates) {
         boolean result = true;
-        for (ActionRun.ActionState state: actionStates) {
-            if (state.isRun()){
+        for (ActionRun.ActionState state : actionStates) {
+            if (state.isRun()) {
                 result &= false;
                 break;
             }

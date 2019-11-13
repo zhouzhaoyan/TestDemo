@@ -2,6 +2,8 @@ package com.example.com.yan.hot.legend;
 
 import android.app.Application;
 
+import com.example.com.yan.hot.legend.recognition.CharacterRecognitionManager;
+
 import timber.log.Timber;
 
 public class CrashApplication extends Application {
@@ -12,5 +14,6 @@ public class CrashApplication extends Application {
 		CrashHandler.init(this);
 		Timber.plant(new Timber.DebugTree());
 		WifiUtils.getInstance().init(this);
+		CharacterRecognitionManager.getInstance().init(this);
 	}
 }

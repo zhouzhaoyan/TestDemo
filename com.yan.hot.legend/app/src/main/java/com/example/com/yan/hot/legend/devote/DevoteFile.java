@@ -48,7 +48,6 @@ public class DevoteFile {
             String tmp = new String(date);
 //            Log.e("test", "read: tmp:" + tmp );
             p = JSON.parseArray(tmp,DevoteObject.class);
-            System.out.println(p);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
