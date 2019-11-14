@@ -1,6 +1,9 @@
 package com.example.com.yan.hot.legend.recognition;
 
 import android.content.Context;
+import android.os.Handler;
+import android.os.Message;
+import android.widget.Toast;
 
 import com.baidu.ocr.sdk.OCR;
 import com.baidu.ocr.sdk.OnResultListener;
@@ -34,12 +37,14 @@ public class CharacterRecognitionManager {
         initAccessTokenWithAkSk(context);
     }
 
-    public void getCharacter(String path, ServiceListener serviceListener){
-        if (hasGotToken){
+    public void getCharacter(String path, ServiceListener serviceListener) {
+        if (hasGotToken) {
             recGeneralBasic(context, path, serviceListener);
         } else {
             LogManager.newInstance().writeMessage("service token fail");
-            serviceListener.onTokenFail();
+            if (serviceListener != null){
+                serviceListener.onTokenFail();
+            }
             initAccessTokenWithAkSk(context);
         }
     }
@@ -47,21 +52,32 @@ public class CharacterRecognitionManager {
     /**
      * 用明文ak，sk初始化
      */
-    private void initAccessTokenWithAkSk(Context context) {
+    private void initAccessTokenWithAkSk(final Context context) {
         OCR.getInstance(context).initAccessTokenWithAkSk(new OnResultListener<AccessToken>() {
             @Override
             public void onResult(AccessToken result) {
                 String token = result.getAccessToken();
                 hasGotToken = true;
                 LogManager.newInstance().writeMessage("AK，SK方式获取token成功，" + token);
+                showToast("初始化成功");
             }
 
             @Override
             public void onError(OCRError error) {
                 error.printStackTrace();
                 LogManager.newInstance().writeMessage("AK，SK方式获取token失败，" + error.getMessage());
+                showToast("AK，SK方式获取token失败");
             }
-        }, context.getApplicationContext(),  "XbwoHfAhT7RUC8DOjq0ZtH5D", "l9mkyFqLp0lHm1Ckpl5BNKmEkQQv7WpS");
+        }, context.getApplicationContext(), "XbwoHfAhT7RUC8DOjq0ZtH5D", "l9mkyFqLp0lHm1Ckpl5BNKmEkQQv7WpS");
+    }
+
+    private void showToast(final String message) {
+        new Handler(context.getMainLooper()) {
+            @Override
+            public void handleMessage(Message msg) {
+                Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+            }
+        }.sendEmptyMessage(0);
     }
 
     /**
@@ -98,20 +114,28 @@ public class CharacterRecognitionManager {
                     sb.append(word.getWords());
                     sb.append("\n");
                 }
-                listener.onSuccessResult(result.getJsonRes());
+                LogManager.newInstance().writeMessage("service success，" + result.getJsonRes());
+
+                if (listener != null) {
+                    listener.onSuccessResult(result.getJsonRes());
+                }
             }
 
             @Override
             public void onError(OCRError error) {
                 LogManager.newInstance().writeMessage("service onError，" + error.getMessage());
-                listener.onFailResult(error.getMessage());
+                if (listener != null) {
+                    listener.onFailResult(error.getMessage());
+                }
             }
         });
     }
 
     public interface ServiceListener {
         void onSuccessResult(String result);
+
         void onTokenFail();
+
         void onFailResult(String result);
     }
 }

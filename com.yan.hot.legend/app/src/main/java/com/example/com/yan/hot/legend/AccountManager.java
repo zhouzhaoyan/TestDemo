@@ -45,7 +45,7 @@ public class AccountManager {
         accountMap.put(ClickTool.ClientType.玩蛋猎豹浏览器, "战魂巅峰");
         accountMap.put(ClickTool.ClientType.趣头条qq浏览器双开, "时光石头");
         accountMap.put(ClickTool.ClientType.趣头条uc浏览器, "蓝色流星");
-        accountMap.put(ClickTool.ClientType.趣头条qq浏览器, "魔神疯子");
+        accountMap.put(ClickTool.ClientType.趣头条qq浏览器, "神魔疯子");
         accountMap.put(ClickTool.ClientType.火树360浏览器, "神龙狂人");
         accountMap.put(ClickTool.ClientType.趣头条360浏览器, "无名傻瓜");
         accountMap.put(ClickTool.ClientType.玩蛋360浏览器, "梦魇大帝");
