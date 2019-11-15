@@ -337,6 +337,7 @@ public class ClickTool {
             case 游戏1758猎豹浏览器:
             case 趣头条猎豹:
             case 牛刀猎豹:
+            case 火树遨游:
                 result = true;
                 break;
         }
