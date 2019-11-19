@@ -21,14 +21,14 @@ public class DevoteManager {
     private final static int MAX_VALUE = 20000;
 
     public static boolean isMax(ClickTool.ClientType clientType) {
-        List<DevoteObject> list = DevoteFile.read();
         boolean result = false;
-        for (DevoteObject devoteObject : list) {
-            if (devoteObject.getClientType() == clientType && devoteObject.getValue() >= MAX_VALUE){
-                result = true;
-                break;
-            }
-        }
+//        List<DevoteObject> list = DevoteFile.read();
+//        for (DevoteObject devoteObject : list) {
+//            if (devoteObject.getClientType() == clientType && devoteObject.getValue() >= MAX_VALUE){
+//                result = true;
+//                break;
+//            }
+//        }
         return result;
     }
 

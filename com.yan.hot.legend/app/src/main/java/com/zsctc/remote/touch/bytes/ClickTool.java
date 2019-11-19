@@ -338,6 +338,7 @@ public class ClickTool {
             case 趣头条猎豹:
             case 牛刀猎豹:
             case 火树遨游:
+            case 趣头条遨游:
                 result = true;
                 break;
         }
