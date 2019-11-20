@@ -1,8 +1,6 @@
 package com.example.com.yan.hot.legend;
 
 import android.annotation.SuppressLint;
-import android.util.Log;
-import android.util.Xml;
 
 import com.example.com.yan.hot.legend.runstate.ActionRun;
 import com.example.com.yan.hot.legend.runstate.ActionRunFile;
@@ -11,13 +9,12 @@ import com.zsctc.remote.touch.bytes.ClickTool;
 import com.zsctc.remote.touch.bytes.LogManager;
 
 import java.io.File;
-import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import javax.activation.DataHandler;
-import javax.activation.DataSource;
 import javax.activation.FileDataSource;
 import javax.mail.Address;
 import javax.mail.BodyPart;
@@ -30,7 +27,6 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.mail.internet.MimeUtility;
-import javax.mail.util.ByteArrayDataSource;
 
 import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
@@ -49,6 +45,7 @@ class EmailManager {
     @SuppressLint("CheckResult")
     public void sendSync(){
         Observable.just(1)
+                .delay(5, TimeUnit.SECONDS)
                 .observeOn(Schedulers.newThread())
                 .subscribe(new Consumer<Integer>() {
                     @Override
