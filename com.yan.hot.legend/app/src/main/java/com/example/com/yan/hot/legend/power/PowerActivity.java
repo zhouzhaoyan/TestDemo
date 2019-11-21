@@ -60,10 +60,10 @@ public class PowerActivity extends Activity implements View.OnClickListener {
             public int compare(PowerObject lhs, PowerObject rhs) {
                 if (lhs.getDate() - rhs.getDate() == 0){
                     //战力
-                    return (lhs.getValue() - rhs.getValue());
+                    return (lhs.getValue() - rhs.getValue()) > 0 ? 1 : -1;
                 } else {
                     //更新时间
-                    return (int) (lhs.getDate() - rhs.getDate());
+                    return (lhs.getDate() - rhs.getDate()) > 0 ? 1 : -1;
                 }
             }
         });
