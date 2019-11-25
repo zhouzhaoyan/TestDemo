@@ -343,6 +343,7 @@ public class ClickTool {
                 result = true;
                 break;
         }
+
         return result;
     }
 

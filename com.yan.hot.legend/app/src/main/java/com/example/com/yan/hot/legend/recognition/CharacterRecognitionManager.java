@@ -105,7 +105,8 @@ public class CharacterRecognitionManager {
         GeneralBasicParams param = new GeneralBasicParams();
         param.setDetectDirection(true);
         param.setImageFile(new File(filePath));
-        OCR.getInstance(ctx).recognizeGeneralBasic(param, new OnResultListener<GeneralResult>() {
+        //高精度
+        OCR.getInstance(ctx).recognizeAccurateBasic(param, new OnResultListener<GeneralResult>() {
             @Override
             public void onResult(GeneralResult result) {
                 StringBuilder sb = new StringBuilder();
