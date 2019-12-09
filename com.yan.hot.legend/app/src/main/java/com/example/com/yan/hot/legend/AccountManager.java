@@ -62,6 +62,9 @@ public class AccountManager {
         accountMap.put(ClickTool.ClientType.火树360极速, "花香雨落");
         accountMap.put(ClickTool.ClientType.趣头条360极速, "苍穹落叶");
         accountMap.put(ClickTool.ClientType.玩蛋360极速, "风清青春");
+        accountMap.put(ClickTool.ClientType.火树uc极速, "黄泉妖姬");
+        accountMap.put(ClickTool.ClientType.趣头条uc极速, "笑看叶子");
+        accountMap.put(ClickTool.ClientType.玩蛋uc极速, "小青天道");
     }
 
     public static String getAccountName(ClickTool.ClientType clientType) {

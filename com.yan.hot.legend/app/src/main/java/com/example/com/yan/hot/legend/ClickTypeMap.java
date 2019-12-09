@@ -68,6 +68,10 @@ public class ClickTypeMap {
         actionNameMap.put(ClickTool.ClientType.火树360极速,"火树360极速");
         actionNameMap.put(ClickTool.ClientType.趣头条360极速,"趣头条360极速");
         actionNameMap.put(ClickTool.ClientType.玩蛋360极速,"玩蛋360极速");
+        actionNameMap.put(ClickTool.ClientType.火树uc极速,"火树uc极速");
+        actionNameMap.put(ClickTool.ClientType.趣头条uc极速,"趣头条uc极速");
+        actionNameMap.put(ClickTool.ClientType.玩蛋uc极速,"玩蛋uc极速");
+
     }
 
     public static ClickTool.ClientType getClientType(String actionName) {

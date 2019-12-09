@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Timer;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -55,15 +57,16 @@ public class PowerActivity extends Activity implements View.OnClickListener {
             }
         }
         powerObjects.removeAll(delete);
+        Log.e("test", "initView: " + powerObjects );
         Collections.sort(powerObjects, new Comparator<PowerObject>() {
             @Override
             public int compare(PowerObject lhs, PowerObject rhs) {
                 if (lhs.getDate() - rhs.getDate() == 0){
                     //战力
-                    return (lhs.getValue() - rhs.getValue()) > 0 ? 1 : -1;
+                    return (lhs.getValue() - rhs.getValue()) == 0 ? 0 : (lhs.getValue() - rhs.getValue()) > 0 ? 1 : -1;
                 } else {
                     //更新时间
-                    return (lhs.getDate() - rhs.getDate()) > 0 ? 1 : -1;
+                    return (lhs.getDate() - rhs.getDate()) == 0 ? 0 : (lhs.getDate() - rhs.getDate()) > 0 ? 1 : -1;
                 }
             }
         });

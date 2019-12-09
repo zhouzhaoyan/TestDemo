@@ -1448,7 +1448,20 @@ public class ChangeCoordinate {
 //        addCoordinateEnd("游戏猎豹-结束",545,1922,3000);
 //        addCoordinateEndRepeate("游戏猎豹-结束",794, 2210,1000,3);
 
-        show("游戏猎豹-结束");
+//        addNew("火树360极速","火树uc极速");
+//        setCoordinate("火树uc极速",168, 802,382,815);
+//        setCoordinate("火树uc极速",793, 1392,292,1315);
+//        setCoordinate("火树uc极速",542, 2006,541,2064);
+//        setCoordinate("火树uc极速",173, 1658,145,1608);
+//        setCoordinate("火树uc极速",299, 276,253,559);
+
+//        addNew("火树uc极速","趣头条uc极速");
+//        setCoordinate("趣头条uc极速",253,559,213,681);
+//
+//        addNew("火树uc极速","玩蛋uc极速");
+//        setCoordinate("玩蛋uc极速",253,559,264,834);
+
+        show("火树uc极速","趣头条uc极速","玩蛋uc极速");
 
 //        ActionFile.write(actions);
     }
