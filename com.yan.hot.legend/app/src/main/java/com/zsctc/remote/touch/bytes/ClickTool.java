@@ -158,7 +158,7 @@ public class ClickTool {
                     //任务模式，20分
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
-                    runNames.add("签到");
+//                    runNames.add("签到");
                     runNames.add("通天塔sample");
                     if (isFastest(clientType)) {
                         runNames.add("材料副本快速");
@@ -345,6 +345,8 @@ public class ClickTool {
             case 趣头条遨游:
             case 玩蛋遨游:
             case 火树360极速:
+            case 趣头条360极速:
+            case 玩蛋360极速:
                 result = true;
                 break;
         }
