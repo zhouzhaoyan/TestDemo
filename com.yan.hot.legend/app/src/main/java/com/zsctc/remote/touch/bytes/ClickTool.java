@@ -160,20 +160,29 @@ public class ClickTool {
                     runNames.add("熔炼new");
 //                    runNames.add("签到");
                     runNames.add("通天塔sample");
+
                     if (isFastest(clientType)) {
                         runNames.add("材料副本快速");
                     } else {
                         runNames.add("材料副本");
                     }
-                    runNames.add(getJingYan(clientType));
+
+                    if (is8Turn(clientType)) {
+                        runNames.add("经验副本sample");
+                    } else {
+                        runNames.add("经验副本");
+                    }
+
                     if (isZhuansheng(actionRun.getModeType())) {
                         runNames.add("转生");
                     }
+
                     if (isSlowest(clientType)) {
                         runNames.add("个人boss");
                     } else {
                         runNames.add("个人boss快速");
                     }
+
                     if (actionRun.isAutoCheckPoint()) {
                         runNames.add("自动关卡-sample");
                     }
@@ -407,15 +416,6 @@ public class ClickTool {
                 break;
         }
         return result;
-    }
-
-    //经验副本
-    private static String getJingYan(ClientType clientType) {
-        if (is8Turn(clientType)) {
-            return "经验副本sample";
-        } else {
-            return "经验副本";
-        }
     }
 
     //8转
