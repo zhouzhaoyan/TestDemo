@@ -411,6 +411,15 @@ public class ClickTool {
 
     //经验副本
     private static String getJingYan(ClientType clientType) {
+        if (is8Turn(clientType)) {
+            return "经验副本sample";
+        } else {
+            return "经验副本";
+        }
+    }
+
+    //8转
+    private static boolean is8Turn(ClientType clientType) {
         boolean result = false;
         switch (clientType) {
             case 火树:
@@ -449,11 +458,7 @@ public class ClickTool {
                 result = true;
                 break;
         }
-        if (result) {
-            return "经验副本sample";
-        } else {
-            return "经验副本";
-        }
+        return result;
     }
 
     //转生
