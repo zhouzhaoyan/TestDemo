@@ -98,6 +98,7 @@ public class ClickTool {
     private static List<ClientType> clientTypes;
 
     public enum ClientType {
+        玩蛋搜狗,趣头条搜狗,火树搜狗,
         玩蛋uc极速,趣头条uc极速,火树uc极速,
         玩蛋360极速, 趣头条360极速, 火树360极速, 玩蛋遨游, 趣头条遨游, 火树遨游, 牛刀猎豹, 趣头条猎豹, 游戏1758猎豹浏览器,
         牛刀浏览器360, 游戏07073浏览器360, 乐趣360浏览器, 游戏1758浏览器360, 玩蛋360浏览器, 趣头条360浏览器, 火树360浏览器,
@@ -143,7 +144,11 @@ public class ClickTool {
                     }
                     runNames.add(getMiJingBoss(index));
                     runNames.add("野外boss快速sample");
-                    runNames.add("竞技sample");
+                    if (is8Turn(clientType)){
+                        runNames.add("竞技sample-8转");
+                    } else {
+                        runNames.add("竞技sample");
+                    }
                     break;
                 case SIMPLE:
                     //简单模式，6分钟30秒
@@ -240,6 +245,9 @@ public class ClickTool {
                 case 火树uc极速:
                 case 趣头条uc极速:
                 case 玩蛋uc极速:
+                case 火树搜狗:
+                case 趣头条搜狗:
+                case 玩蛋搜狗:
                     runNames.add("游戏-结束");
                     break;
                 case 游戏07073网页:

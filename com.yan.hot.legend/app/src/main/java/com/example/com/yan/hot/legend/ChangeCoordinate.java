@@ -1461,7 +1461,24 @@ public class ChangeCoordinate {
 //        addNew("火树uc极速","玩蛋uc极速");
 //        setCoordinate("玩蛋uc极速",253,559,264,834);
 
-        show("火树uc极速","趣头条uc极速","玩蛋uc极速");
+//        addNew("竞技sample","竞技sample-8转");
+//        deletePostionsIndex("竞技sample-8转",0,69);
+
+//        addNew("趣头条猎豹","火树搜狗");
+//        setCoordinate("火树搜狗",147, 841,180,1096);
+//        setCoordinate("火树搜狗",799, 1007,278,1045);
+//        addCoordinate("火树搜狗",2,979,2063,5000);
+//        addCoordinate("火树搜狗",3,920,1405,1000);
+
+//        addNew("火树搜狗","趣头条搜狗");
+//        setCoordinate("趣头条搜狗",278,1045,553,999);
+//        addNew("火树搜狗","玩蛋搜狗");
+//        setCoordinate("玩蛋搜狗",278,1045,771,1041);
+
+//        setTime("火树搜狗",2,10000);
+//        setTime("趣头条搜狗",2,10000);
+//        setTime("玩蛋搜狗",2,10000);
+        show("趣头条搜狗","玩蛋搜狗");
 
 //        ActionFile.write(actions);
     }

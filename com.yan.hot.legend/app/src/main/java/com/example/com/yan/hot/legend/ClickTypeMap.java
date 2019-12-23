@@ -71,6 +71,9 @@ public class ClickTypeMap {
         actionNameMap.put(ClickTool.ClientType.火树uc极速,"火树uc极速");
         actionNameMap.put(ClickTool.ClientType.趣头条uc极速,"趣头条uc极速");
         actionNameMap.put(ClickTool.ClientType.玩蛋uc极速,"玩蛋uc极速");
+        actionNameMap.put(ClickTool.ClientType.火树搜狗,"火树搜狗");
+        actionNameMap.put(ClickTool.ClientType.趣头条搜狗,"趣头条搜狗");
+        actionNameMap.put(ClickTool.ClientType.玩蛋搜狗,"玩蛋搜狗");
 
     }
 
