@@ -1478,7 +1478,9 @@ public class ChangeCoordinate {
 //        setTime("火树搜狗",2,10000);
 //        setTime("趣头条搜狗",2,10000);
 //        setTime("玩蛋搜狗",2,10000);
-        show("趣头条搜狗","玩蛋搜狗");
+
+//        setCoordinate("热血单机h5猎豹",578, 1812,587, 1811);
+        show("热血单机h5猎豹");
 
 //        ActionFile.write(actions);
     }
