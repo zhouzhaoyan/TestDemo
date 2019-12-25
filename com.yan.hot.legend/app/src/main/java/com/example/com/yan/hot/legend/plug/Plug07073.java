@@ -13,7 +13,6 @@ import java.util.List;
  * Created by on 2018/10/11.
  */
 public class Plug07073 {
-    private static final String PLUG_NAME = "07073插件";
     private static final List<ClickTool.ClientType> CLIENT_TYPE_LIST = new ArrayList<>();
     private List<Coordinate> runCoordinates;
     private static final float runX = 587;
@@ -39,20 +38,14 @@ public class Plug07073 {
 
     private List<Coordinate> getCoordinate(){
         List<Coordinate> coordinates = new ArrayList<>();
-        for (Action action: actions) {
-            if (action.getActionTime().getCount() > 0 && action.getName().contains(PLUG_NAME)){
-                coordinates = action.getCoordinates();
-                break;
-            }
-        }
+        Coordinate coordinate = new Coordinate(990, 630);
+        coordinate.setTime(System.currentTimeMillis());
+        coordinates.add(coordinate);
         return coordinates;
     }
 
     private boolean isRunPlug(ClickTool.ClientType clientType, Coordinate coordinate){
         boolean result = false;
-//        LogManager.newInstance().writeMessage("running click sleep，name: runPlug:" + CLIENT_TYPE_LIST
-//                + ",runCoordinates:" + runCoordinates
-//                + ",coordinate:" + coordinate);
 
         if (CLIENT_TYPE_LIST.contains(clientType) && !runCoordinates.isEmpty()){
             if (coordinate.getX() == runX && coordinate.getY() == runY){
