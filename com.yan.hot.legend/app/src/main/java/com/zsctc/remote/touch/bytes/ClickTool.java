@@ -463,6 +463,7 @@ public class ClickTool {
             case 玩蛋qq浏览器:
             case 乐趣qq浏览器:
             case 游戏1758qq浏览器:
+            case 趣头条uc浏览器:
                 result = true;
                 break;
         }
