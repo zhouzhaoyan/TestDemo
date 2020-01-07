@@ -41,7 +41,7 @@ public class DevoteManager {
                 if (list != null) {
                     long currentTime = getCurrentTime();
                     for (DevoteObject devoteObject : list) {
-                        if (devoteObject.getDate() < currentTime) {
+                        if (devoteObject.getDate() < currentTime && devoteObject.getValue() < MAX_VALUE) {
                             devoteObject.setDate(currentTime);
                             devoteObject.setValue(Math.min(devoteObject.getValue() + devoteObject.getOffset(), MAX_VALUE));
                         }

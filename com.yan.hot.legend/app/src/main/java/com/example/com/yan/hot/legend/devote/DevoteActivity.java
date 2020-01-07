@@ -58,7 +58,11 @@ public class DevoteActivity extends Activity implements View.OnClickListener {
         Collections.sort(devoteObjects, new Comparator<DevoteObject>() {
             @Override
             public int compare(DevoteObject lhs, DevoteObject rhs) {
-                return -(lhs.getValue() - rhs.getValue());
+                if (lhs.getValue() - rhs.getValue() == 0){
+                    return (int)(lhs.getDate() - rhs.getDate());
+                } else {
+                    return -(lhs.getValue() - rhs.getValue());
+                }
             }
         });
         list.setAdapter(new DevoteAdapter(devoteObjects));
