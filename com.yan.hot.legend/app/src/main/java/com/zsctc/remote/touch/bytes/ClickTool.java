@@ -101,7 +101,7 @@ public class ClickTool {
         玩蛋搜狗,趣头条搜狗,火树搜狗,
         玩蛋uc极速,趣头条uc极速,火树uc极速,
         玩蛋360极速, 趣头条360极速, 火树360极速, 玩蛋遨游, 趣头条遨游, 火树遨游, 牛刀猎豹, 趣头条猎豹, 游戏1758猎豹浏览器,
-        牛刀浏览器360, 游戏07073浏览器360, 乐趣360浏览器, 游戏1758浏览器360, 玩蛋360浏览器, 趣头条360浏览器, 火树360浏览器,
+        游戏07073浏览器360, 乐趣360浏览器, 游戏1758浏览器360, 玩蛋360浏览器, 趣头条360浏览器, 火树360浏览器,牛刀浏览器360,
         趣头条qq浏览器, 趣头条uc浏览器, 趣头条qq浏览器双开,
         玩蛋猎豹浏览器, 玩蛋qq浏览器双开, 火树猎豹浏览器, 火树qq浏览器双开,
         火树, 游戏07073网页, 乐趣网页, 玩蛋, 游戏1758网页, 牛刀, 牛刀网页, 核弹头网页, 客娱,
@@ -172,7 +172,7 @@ public class ClickTool {
                         runNames.add("材料副本");
                     }
 
-                    if (is8Turn(clientType)) {
+                    if (is8Turn(clientType) || is7Turn(clientType)) {
                         runNames.add("经验副本sample");
                     } else {
                         runNames.add("经验副本");
@@ -464,6 +464,23 @@ public class ClickTool {
             case 乐趣qq浏览器:
             case 游戏1758qq浏览器:
             case 趣头条uc浏览器:
+                result = true;
+                break;
+        }
+        return result;
+    }
+
+    //7转
+    private static boolean is7Turn(ClientType clientType) {
+        boolean result = false;
+        switch (clientType) {
+            case 火树360浏览器:
+            case 趣头条360浏览器:
+            case 玩蛋360浏览器:
+            case 游戏1758浏览器360:
+            case 乐趣360浏览器:
+            case 游戏07073浏览器360:
+            case 牛刀浏览器360:
                 result = true;
                 break;
         }
