@@ -364,6 +364,7 @@ public class ClickTool {
             case 火树360极速:
             case 趣头条360极速:
             case 玩蛋360极速:
+            case 火树uc极速:
                 result = true;
                 break;
         }
