@@ -20,6 +20,7 @@ import com.example.com.yan.hot.legend.power.PowerActivity;
 import com.example.com.yan.hot.legend.recognition.CharacterRecognitionManager;
 import com.example.com.yan.hot.legend.runstate.ActionRun;
 import com.example.com.yan.hot.legend.runstate.ActionRunFile;
+import com.example.com.yan.hot.legend.signin.SigninActivity;
 import com.yan.hot.legend.action.Action;
 import com.yan.hot.legend.action.ActionFile;
 import com.yan.hot.legend.action.ActionTime;
@@ -106,6 +107,9 @@ public class MainActivity extends Activity {
                 break;
             case R.id.action_power:
                 startActivity(new Intent(this, PowerActivity.class));
+                break;
+            case R.id.action_signin:
+                startActivity(new Intent(this, SigninActivity.class));
                 break;
             case R.id.action_delete:
                 ActionRunFile.delete();
