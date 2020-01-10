@@ -8,15 +8,10 @@ import java.io.Serializable;
  *
  */
 public class Coordinate implements Serializable {
-    private long time;
-    public long getTime() {
-        return time;
-    }
-    public void setTime(long time) {
-        this.time = time;
-    }
     private int x;
     private int y;
+    private long time;
+
     public Coordinate(int x, int y) {
         super();
         this.x = x;
@@ -36,6 +31,12 @@ public class Coordinate implements Serializable {
     }
     public int getY() {
         return y;
+    }
+    public long getTime() {
+        return time;
+    }
+    public void setTime(long time) {
+        this.time = time;
     }
     public boolean isFinish(){
         return x != 0 && y != 0;

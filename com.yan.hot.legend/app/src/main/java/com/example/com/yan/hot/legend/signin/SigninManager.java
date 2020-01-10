@@ -35,7 +35,7 @@ public class SigninManager {
         List<SigninObject> signinObjects = new ArrayList<>();
         ClickTool.ClientType[] clientTypes = ClickTool.ClientType.values();
         for (ClickTool.ClientType clientType : clientTypes) {
-            signinObjects.add(new SigninObject(clientType, clientType.name(), getCurrentTime(), 0));
+            signinObjects.add(new SigninObject(clientType, getCurrentTime(), 0));
         }
         return signinObjects;
     }
@@ -44,7 +44,7 @@ public class SigninManager {
         signinObject.setDate(getCurrentTime());
     }
 
-    private static long getCurrentTime() {
+    public static long getCurrentTime() {
         return TimeUtil.getFirstSecondInDay(System.currentTimeMillis());
     }
 }

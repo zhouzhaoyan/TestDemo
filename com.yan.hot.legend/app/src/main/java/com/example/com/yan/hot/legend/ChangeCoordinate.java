@@ -1497,7 +1497,13 @@ public class ChangeCoordinate {
 //        setCoordinate("游戏07073浏览器360",353, 1345,300, 1400);
 //        setCoordinate("牛刀浏览器360",357, 1475,300, 1580);
 
-        show("签到");
+//        addNew("签到","签到new");
+//        deletePostionsIndex("签到new",3,62);
+//        setTime("签到new",3,1000);
+//        setTime("签到new",2,1000);
+//        setTime("签到new",1,1000);
+
+        show("签到new");
 
 //        ActionFile.write(actions);
     }
@@ -1510,7 +1516,7 @@ public class ChangeCoordinate {
                 for (int i = 0; i < coordinates.size(); i++) {
                     Timber.e("tmp: " + coordinates.get(i) + "\n");
                 }
-                Timber.e("tm" + "p: " + tmp);
+                Timber.e("tmp: " + tmp);
             }
         }
     }

@@ -31,7 +31,7 @@ public class SigninAdapter extends RecyclerView.Adapter<SigninAdapter.SigninVH> 
     public void onBindViewHolder(SigninAdapter.SigninVH holder, int position) {
         final SigninObject object = list.get(position);
         Log.e("test", "onBindViewHolder: position:" + position + ",object:" + object);
-        holder.name.setText(object.getName() + "(" + object.getAccountName() + ")");
+        holder.name.setText(object.getClientType() + "(" + object.getAccountName() + ")");
         holder.index.setText(object.getIndex() + "");
         holder.index.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override

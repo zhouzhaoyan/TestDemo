@@ -17,7 +17,6 @@ import android.widget.Toast;
 import com.example.com.yan.hot.legend.devote.DevoteActivity;
 import com.example.com.yan.hot.legend.devote.DevoteManager;
 import com.example.com.yan.hot.legend.power.PowerActivity;
-import com.example.com.yan.hot.legend.recognition.CharacterRecognitionManager;
 import com.example.com.yan.hot.legend.runstate.ActionRun;
 import com.example.com.yan.hot.legend.runstate.ActionRunFile;
 import com.example.com.yan.hot.legend.signin.SigninActivity;
@@ -27,11 +26,9 @@ import com.yan.hot.legend.action.ActionTime;
 import com.yan.hot.legend.action.Coordinate;
 import com.zsctc.remote.touch.bytes.ClickTool;
 
-import java.io.File;
 import java.io.Serializable;
 import java.util.List;
 
-import static com.yan.hot.legend.action.ActionFile.HOT_SUCCESS;
 import static com.zsctc.remote.touch.bytes.TimeUtil.getLastSecondInDay;
 
 public class MainActivity extends Activity {
@@ -73,6 +70,7 @@ public class MainActivity extends Activity {
 
 //        CharacterRecognitionManager.getInstance().getCharacter(
 //                HOT_SUCCESS + File.separator + ClickTool.ClientType.趣头条qq浏览器.name()+".png", null);
+//        new PlugSignin().runClick(null, ClickTool.ClientType.火树搜狗, new Coordinate(399, 298));
     }
 
     public void onClick(View view) {

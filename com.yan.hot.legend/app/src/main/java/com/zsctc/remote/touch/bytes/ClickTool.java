@@ -154,16 +154,16 @@ public class ClickTool {
                     //简单模式，6分钟30秒
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
-                    runNames.add(getMiJingBoss(index));
-                    runNames.add("竞技sample");
-//                    runNames.add("签到");
+//                    runNames.add(getMiJingBoss(index));
+//                    runNames.add("竞技sample");
+                    runNames.add("签到new");
                     break;
                 case NIGHT:
                 case TASK:
                     //任务模式，20分
                     runNames.add("血战矿洞");
                     runNames.add("熔炼new");
-//                    runNames.add("签到");
+                    runNames.add("签到new");
                     runNames.add("通天塔sample");
 
                     if (isFastest(clientType)) {

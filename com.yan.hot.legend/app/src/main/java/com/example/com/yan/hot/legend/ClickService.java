@@ -17,6 +17,7 @@ import com.example.com.yan.hot.legend.plug.PlugDesktop;
 import com.example.com.yan.hot.legend.plug.PlugMiBrowser;
 import com.example.com.yan.hot.legend.plug.PlugQQ;
 import com.example.com.yan.hot.legend.plug.PlugRelogin;
+import com.example.com.yan.hot.legend.plug.PlugSignin;
 import com.example.com.yan.hot.legend.recognition.CharacterRecognitionManager;
 import com.example.com.yan.hot.legend.runstate.ActionRun;
 import com.example.com.yan.hot.legend.runstate.ActionRunFile;
@@ -74,6 +75,7 @@ public class ClickService extends GrayService {
             //07073 插件
             Plug07073 plug07073 = new Plug07073();
             PlugAoyou plugAoyou = new PlugAoyou();
+            PlugSignin plugSignin = new PlugSignin();
 
             ActionRun actionRun = ActionRunFile.read();
             cancelRestart();
@@ -159,6 +161,10 @@ public class ClickService extends GrayService {
                     plugAoyou.runClick(ClickService.this, clientType, coordinate);
 
                     runClick(sleep, coordinate);
+
+                    if (actionName.contains("签到")){
+                        plugSignin.runClick(ClickService.this, clientType, coordinate);
+                    }
 
                     PlugQQ.runClick(ClickService.this, clientType, coordinate);
                     for (int i = 0; i < 3; i++) {
