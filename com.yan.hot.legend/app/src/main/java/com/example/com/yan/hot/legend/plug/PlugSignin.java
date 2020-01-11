@@ -88,19 +88,30 @@ public class PlugSignin {
         if (signinObject.getIndex() > siginCoordinates.size()){
             signinObject.setIndex(1);
         }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         if (clickService != null){
-            clickService.clickTool.swipe(600, 300, 600, 1600);
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
+            switch (clientType){
+                case 火树遨游:
+                case 趣头条遨游:
+                case 玩蛋遨游:
+                    break;
+                default:
+                    clickService.clickTool.swipe(600, 300, 600, 1600);
+                    break;
+            }
+
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
             List<Coordinate> coordinates = siginCoordinates.get(signinObject.getIndex() - 1);
             for (Coordinate coordinate : coordinates) {
                 clickService.runClick(1000, coordinate);
