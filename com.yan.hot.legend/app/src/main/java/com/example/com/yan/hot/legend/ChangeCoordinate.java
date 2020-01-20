@@ -1503,7 +1503,83 @@ public class ChangeCoordinate {
 //        setTime("签到new",2,1000);
 //        setTime("签到new",1,1000);
 
-        show("签到new");
+//        addCoordinate("材料副本快速",3,1013, 2021,1000);
+//        addCoordinate("材料副本快速",6,1013, 2021,1000);
+//        addCoordinate("材料副本快速",9,1013, 2021,1000);
+//        addCoordinate("材料副本快速",12,1013, 2021,1000);
+//        setTime("材料副本快速",1,1000);
+//        setTime("材料副本快速",2,2000);
+//
+//        setTime("材料副本快速",4,1000);
+//        setTime("材料副本快速",5,2000);
+//
+//        setTime("材料副本快速",7,1000);
+//        setTime("材料副本快速",8,2000);
+//
+//        setTime("材料副本快速",10,1000);
+//        setTime("材料副本快速",11,2000);
+//
+//        setTime("材料副本快速",13,1000);
+//        setTime("材料副本快速",14,2000);
+//
+//        setTime("材料副本快速",15,1000);
+//        setCoordinate("材料副本快速",869, 971,1013, 2021);
+//        deletePostions("材料副本快速",16,17);
+
+//        addNew("火树360浏览器","火树360浏览器new");
+//        deletePostions("火树360浏览器new",2,3,4);
+//        setCoordinate("火树360浏览器new",426, 843,342,1087);
+//        setCoordinate("火树360浏览器new",528, 1339,212,744);
+//        setTime("火树360浏览器new",2,40000);
+
+//        addNew("趣头条360浏览器","趣头条360浏览器new");
+//        deletePostions("趣头条360浏览器new",2,3,4);
+//        setCoordinate("趣头条360浏览器new",426, 843,342,1087);
+//        setCoordinate("趣头条360浏览器new",528, 1339,508,760);
+//        setTime("趣头条360浏览器new",2,40000);
+
+//        addNew("玩蛋360浏览器","玩蛋360浏览器new");
+//        deletePostions("玩蛋360浏览器new",2,3,4);
+//        setCoordinate("玩蛋360浏览器new",426, 843,342,1087);
+//        setCoordinate("玩蛋360浏览器new",528, 1339,747,766);
+//        setTime("玩蛋360浏览器new",2,40000);
+//
+//        addNew("游戏1758浏览器360","游戏1758浏览器360new");
+//        deletePostions("游戏1758浏览器360new",2,3,4);
+//        setCoordinate("游戏1758浏览器360new",426, 843,342,1087);
+//        setCoordinate("游戏1758浏览器360new",528, 1339,264,1039);
+//        setTime("游戏1758浏览器360new",2,40000);
+//
+//        addNew("乐趣360浏览器","乐趣360浏览器new");
+//        deletePostions("乐趣360浏览器new",2,3,4);
+//        setCoordinate("乐趣360浏览器new",426, 843,342,1087);
+//        setCoordinate("乐趣360浏览器new",528, 1339,503,1076);
+//        setTime("乐趣360浏览器new",2,40000);
+//
+//        addNew("游戏07073浏览器360","游戏07073浏览器360new");
+//        deletePostions("游戏07073浏览器360new",2,3,4);
+//        setCoordinate("游戏07073浏览器360new",426, 843,342,1087);
+//        setCoordinate("游戏07073浏览器360new",528, 1339,801,1072);
+//        setTime("游戏07073浏览器360new",2,40000);
+
+//        addNew("牛刀浏览器360","牛刀浏览器360new");
+//        deletePostions("牛刀浏览器360new",2,3,4);
+//        setCoordinate("牛刀浏览器360new",426, 843,342,1087);
+//        setCoordinate("牛刀浏览器360new",528, 1339,254,1330);
+//        setTime("牛刀浏览器360new",2,10000);
+
+//        addNew("火树搜狗","火树搜狗极速");
+//        setCoordinate("火树搜狗极速",180, 1096,178,1072);
+//        setCoordinate("火树搜狗极速",278, 1045,276,1334);
+//        addCoordinate("火树搜狗极速",2,975 ,797,10000);
+
+//        addNew("火树搜狗极速","趣头条搜狗极速");
+//        setCoordinate("趣头条搜狗极速",975 ,797,92,969);
+
+//        addNew("火树搜狗极速","玩蛋搜狗极速");
+//        setCoordinate("玩蛋搜狗极速",975 ,797,288,1002);
+
+        show("趣头条搜狗极速","玩蛋搜狗极速");
 
 //        ActionFile.write(actions);
     }

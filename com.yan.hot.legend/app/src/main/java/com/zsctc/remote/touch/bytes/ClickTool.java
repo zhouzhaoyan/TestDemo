@@ -98,6 +98,7 @@ public class ClickTool {
     private static List<ClientType> clientTypes;
 
     public enum ClientType {
+        玩蛋搜狗极速,趣头条搜狗极速,火树搜狗极速,
         玩蛋搜狗,趣头条搜狗,火树搜狗,
         玩蛋uc极速,趣头条uc极速,火树uc极速,
         玩蛋360极速, 趣头条360极速, 火树360极速, 玩蛋遨游, 趣头条遨游, 火树遨游, 牛刀猎豹, 趣头条猎豹, 游戏1758猎豹浏览器,
@@ -178,7 +179,7 @@ public class ClickTool {
                         runNames.add("经验副本");
                     }
 
-                    if (isZhuansheng(actionRun.getModeType())) {
+                    if (isZhuansheng(actionRun.getModeType(), clientType)) {
                         runNames.add("转生");
                     }
 
@@ -193,8 +194,11 @@ public class ClickTool {
                     }
                     runNames.add(getMiJingBoss(index));
                     runNames.add("野外boss快速sample");
-                    runNames.add("竞技sample");
-                    if (isRunKing(actionRun.getModeType())) {
+                    if (is8Turn(clientType)){
+                        runNames.add("竞技sample-8转");
+                    } else {
+                        runNames.add("竞技sample");
+                    }                    if (isRunKing(actionRun.getModeType())) {
                         runNames.add("王者争霸sample");
                     }
                     break;
@@ -248,6 +252,9 @@ public class ClickTool {
                 case 火树搜狗:
                 case 趣头条搜狗:
                 case 玩蛋搜狗:
+                case 火树搜狗极速:
+                case 趣头条搜狗极速:
+                case 玩蛋搜狗极速:
                     runNames.add("游戏-结束");
                     break;
                 case 游戏07073网页:
@@ -365,6 +372,7 @@ public class ClickTool {
             case 趣头条360极速:
             case 玩蛋360极速:
             case 火树uc极速:
+            case 趣头条uc极速:
                 result = true;
                 break;
         }
@@ -489,18 +497,19 @@ public class ClickTool {
     }
 
     //转生
-    private static boolean isZhuansheng(ActionRun.ModeType modeType) {
-        boolean result;
-        int week;
-        switch (modeType) {
-            case NIGHT:
-                week = TimeUtil.dateToWeek(TimeUtil.getLastSecondInDay(System.currentTimeMillis()) + 2000);
-                break;
-            default:
-                week = TimeUtil.dateToWeek(System.currentTimeMillis());
-                break;
-        }
-        result = week == Calendar.MONDAY || week == Calendar.WEDNESDAY || week == Calendar.FRIDAY || week == Calendar.SUNDAY;
-        return result;
+    private static boolean isZhuansheng(ActionRun.ModeType modeType, ClientType clientType) {
+//        boolean result;
+//        int week;
+//        switch (modeType) {
+//            case NIGHT:
+//                week = TimeUtil.dateToWeek(TimeUtil.getLastSecondInDay(System.currentTimeMillis()) + 2000);
+//                break;
+//            default:
+//                week = TimeUtil.dateToWeek(System.currentTimeMillis());
+//                break;
+//        }
+//        result = week == Calendar.MONDAY || week == Calendar.WEDNESDAY || week == Calendar.FRIDAY || week == Calendar.SUNDAY;
+//        return result;
+        return !is8Turn(clientType);
     }
 }

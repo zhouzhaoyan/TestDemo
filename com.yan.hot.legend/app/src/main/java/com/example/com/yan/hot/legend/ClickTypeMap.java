@@ -52,13 +52,13 @@ public class ClickTypeMap {
         actionNameMap.put(ClickTool.ClientType.趣头条qq浏览器双开,"趣头条qq浏览器双开");
         actionNameMap.put(ClickTool.ClientType.趣头条uc浏览器,"趣头条uc浏览器");
         actionNameMap.put(ClickTool.ClientType.趣头条qq浏览器,"趣头条qq浏览器");
-        actionNameMap.put(ClickTool.ClientType.火树360浏览器,"火树360浏览器");
-        actionNameMap.put(ClickTool.ClientType.趣头条360浏览器,"趣头条360浏览器");
-        actionNameMap.put(ClickTool.ClientType.玩蛋360浏览器,"玩蛋360浏览器");
-        actionNameMap.put(ClickTool.ClientType.游戏1758浏览器360,"游戏1758浏览器360");
-        actionNameMap.put(ClickTool.ClientType.乐趣360浏览器,"乐趣360浏览器");
-        actionNameMap.put(ClickTool.ClientType.游戏07073浏览器360,"游戏07073浏览器360");
-        actionNameMap.put(ClickTool.ClientType.牛刀浏览器360,"牛刀浏览器360");
+        actionNameMap.put(ClickTool.ClientType.火树360浏览器,"火树360浏览器new");
+        actionNameMap.put(ClickTool.ClientType.趣头条360浏览器,"趣头条360浏览器new");
+        actionNameMap.put(ClickTool.ClientType.玩蛋360浏览器,"玩蛋360浏览器new");
+        actionNameMap.put(ClickTool.ClientType.游戏1758浏览器360,"游戏1758浏览器360new");
+        actionNameMap.put(ClickTool.ClientType.乐趣360浏览器,"乐趣360浏览器new");
+        actionNameMap.put(ClickTool.ClientType.游戏07073浏览器360,"游戏07073浏览器360new");
+        actionNameMap.put(ClickTool.ClientType.牛刀浏览器360,"牛刀浏览器360new");
         actionNameMap.put(ClickTool.ClientType.游戏1758猎豹浏览器,"游戏1758猎豹");
         actionNameMap.put(ClickTool.ClientType.趣头条猎豹,"趣头条猎豹");
         actionNameMap.put(ClickTool.ClientType.牛刀猎豹,"牛刀猎豹");
@@ -74,7 +74,9 @@ public class ClickTypeMap {
         actionNameMap.put(ClickTool.ClientType.火树搜狗,"火树搜狗");
         actionNameMap.put(ClickTool.ClientType.趣头条搜狗,"趣头条搜狗");
         actionNameMap.put(ClickTool.ClientType.玩蛋搜狗,"玩蛋搜狗");
-
+        actionNameMap.put(ClickTool.ClientType.火树搜狗极速,"火树搜狗极速");
+        actionNameMap.put(ClickTool.ClientType.趣头条搜狗极速,"趣头条搜狗极速");
+        actionNameMap.put(ClickTool.ClientType.玩蛋搜狗极速,"玩蛋搜狗极速");
     }
 
     public static ClickTool.ClientType getClientType(String actionName) {

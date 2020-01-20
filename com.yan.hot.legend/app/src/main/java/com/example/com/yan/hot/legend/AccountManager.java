@@ -68,6 +68,9 @@ public class AccountManager {
         accountMap.put(ClickTool.ClientType.火树搜狗, "笑梦幻");
         accountMap.put(ClickTool.ClientType.趣头条搜狗, "爱在小小");
         accountMap.put(ClickTool.ClientType.玩蛋搜狗, "无道演绎");
+        accountMap.put(ClickTool.ClientType.火树搜狗极速, "晴天柠檬");
+        accountMap.put(ClickTool.ClientType.趣头条搜狗极速, "开心琉璃");
+        accountMap.put(ClickTool.ClientType.玩蛋搜狗极速, "孤狼飞飞");
     }
 
     public static String getAccountName(ClickTool.ClientType clientType) {
