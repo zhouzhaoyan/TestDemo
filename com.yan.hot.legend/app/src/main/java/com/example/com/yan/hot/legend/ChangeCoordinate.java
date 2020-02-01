@@ -1579,7 +1579,19 @@ public class ChangeCoordinate {
 //        addNew("火树搜狗极速","玩蛋搜狗极速");
 //        setCoordinate("玩蛋搜狗极速",975 ,797,288,1002);
 
-        show("趣头条搜狗极速","玩蛋搜狗极速");
+//        deletePostions("火树搜狗极速",3,4);
+//        setTime("火树搜狗极速",3,40000);
+//        setTime("火树搜狗极速",4,40000);
+
+//        deletePostions("趣头条搜狗极速",3,4);
+//        setTime("趣头条搜狗极速",3,40000);
+//        setTime("趣头条搜狗极速",4,40000);
+
+//        deletePostions("玩蛋搜狗极速",3,4);
+//        setTime("玩蛋搜狗极速",3,40000);
+//        setTime("玩蛋搜狗极速",4,40000);
+
+        show("火树搜狗极速","趣头条搜狗极速","玩蛋搜狗极速");
 
 //        ActionFile.write(actions);
     }

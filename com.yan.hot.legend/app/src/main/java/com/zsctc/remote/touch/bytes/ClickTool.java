@@ -373,6 +373,10 @@ public class ClickTool {
             case 玩蛋360极速:
             case 火树uc极速:
             case 趣头条uc极速:
+            case 玩蛋uc极速:
+            case 趣头条搜狗:
+            case 火树搜狗:
+            case 玩蛋搜狗:
                 result = true;
                 break;
         }
@@ -439,21 +443,30 @@ public class ClickTool {
     private static boolean is8Turn(ClientType clientType) {
         boolean result = false;
         switch (clientType) {
+            case 趣头条360浏览器:
+            case 火树360浏览器:
+            case 趣头条qq浏览器:
+            case 趣头条uc浏览器:
+            case 趣头条qq浏览器双开:
+            case 玩蛋猎豹浏览器:
+            case 玩蛋qq浏览器双开:
+            case 火树猎豹浏览器:
+            case 火树qq浏览器双开:
             case 火树:
-            case 乐趣网页:
-            case 牛刀网页:
-            case 玩蛋:
             case 游戏07073网页:
+            case 乐趣网页:
+            case 玩蛋:
             case 游戏1758网页:
+            case 牛刀:
+            case 牛刀网页:
             case 核弹头网页:
-            case 热血单机h5:
+            case 热血单机:
+            case 游戏07073:
+            case 游戏1758:
             case 乐趣:
             case 核弹头:
-            case 玩蛋猎豹浏览器:
-            case 火树qq浏览器双开:
-            case 玩蛋qq浏览器双开:
-            case 游戏1758:
-            case 牛刀:
+            case 热血单机h5:
+            case 热血单机双开:
             case 凹凸果:
             case 乐趣双开:
             case 乐趣网页双开:
@@ -462,17 +475,12 @@ public class ClickTool {
             case 牛刀网页双开:
             case 游戏1758网页双开:
             case 核弹头双开:
-            case 牛刀qq浏览器:
-            case 游戏07073:
-            case 热血单机:
-            case 火树猎豹浏览器:
-            case 热血单机双开:
             case 热血单机h5双开:
             case 火树qq浏览器:
             case 玩蛋qq浏览器:
             case 乐趣qq浏览器:
             case 游戏1758qq浏览器:
-            case 趣头条uc浏览器:
+            case 牛刀qq浏览器:
                 result = true;
                 break;
         }
@@ -483,13 +491,15 @@ public class ClickTool {
     private static boolean is7Turn(ClientType clientType) {
         boolean result = false;
         switch (clientType) {
-            case 火树360浏览器:
-            case 趣头条360浏览器:
             case 玩蛋360浏览器:
             case 游戏1758浏览器360:
             case 乐趣360浏览器:
             case 游戏07073浏览器360:
             case 牛刀浏览器360:
+            case 游戏1758猎豹浏览器:
+            case 趣头条猎豹:
+            case 牛刀猎豹:
+            case 火树遨游:
                 result = true;
                 break;
         }
