@@ -36,7 +36,7 @@ public class PlugSignin {
         siginCoordinates.add(Arrays.asList(new Coordinate(750, 520)));
         siginCoordinates.add(Arrays.asList(new Coordinate(900, 520)));
 
-        siginCoordinates.add(Arrays.asList(new Coordinate(190, 720)));
+        siginCoordinates.add(Arrays.asList(new Coordinate(190, 680)));
         siginCoordinates.add(Arrays.asList(new Coordinate(350, 720), new Coordinate(700, 1300), new Coordinate(1000, 1500)));
         siginCoordinates.add(Arrays.asList(new Coordinate(550, 720)));
         siginCoordinates.add(Arrays.asList(new Coordinate(750, 720)));

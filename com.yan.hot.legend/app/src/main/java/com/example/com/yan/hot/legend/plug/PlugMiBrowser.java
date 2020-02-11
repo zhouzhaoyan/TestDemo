@@ -25,6 +25,14 @@ public class PlugMiBrowser {
         runClientTypes.add(ClickTool.ClientType.游戏1758网页);
         runClientTypes.add(ClickTool.ClientType.牛刀网页);
         runClientTypes.add(ClickTool.ClientType.玩蛋);
+
+        runClientTypes.add(ClickTool.ClientType.火树360浏览器);
+        runClientTypes.add(ClickTool.ClientType.趣头条360浏览器);
+        runClientTypes.add(ClickTool.ClientType.玩蛋360浏览器);
+        runClientTypes.add(ClickTool.ClientType.游戏1758浏览器360);
+        runClientTypes.add(ClickTool.ClientType.乐趣360浏览器);
+        runClientTypes.add(ClickTool.ClientType.游戏07073浏览器360);
+        runClientTypes.add(ClickTool.ClientType.牛刀浏览器360);
     }
 
     public static void run(ClickTool clickTool, ClickTool.ClientType clientType) {

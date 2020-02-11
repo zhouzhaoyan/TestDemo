@@ -1591,7 +1591,17 @@ public class ChangeCoordinate {
 //        setTime("玩蛋搜狗极速",3,40000);
 //        setTime("玩蛋搜狗极速",4,40000);
 
-        show("火树搜狗极速","趣头条搜狗极速","玩蛋搜狗极速");
+//        addNew("游戏07073浏览器360new","玩蛋uc极速双开");
+//        setCoordinate("玩蛋uc极速双开",801, 1072,550,1334);
+
+//        addNew("玩蛋uc极速双开","火树uc极速双开");
+//        setCoordinate("火树uc极速双开",342, 1087,178, 1072);
+
+//        addNew("火树uc极速双开","趣头条uc极速双开");
+//        setCoordinate("趣头条uc极速双开",550,1334,780,1343);
+
+        show("火树uc极速","火树搜狗","火树360浏览器new","趣头条360浏览器new",
+                "玩蛋360浏览器new","游戏1758浏览器360new","乐趣360浏览器new","游戏07073浏览器360new","牛刀浏览器360new");
 
 //        ActionFile.write(actions);
     }

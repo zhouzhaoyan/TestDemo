@@ -16,6 +16,7 @@ import com.example.com.yan.hot.legend.plug.PlugAoyou;
 import com.example.com.yan.hot.legend.plug.PlugDesktop;
 import com.example.com.yan.hot.legend.plug.PlugMiBrowser;
 import com.example.com.yan.hot.legend.plug.PlugQQ;
+import com.example.com.yan.hot.legend.plug.PlugQQBrowserFullScreen;
 import com.example.com.yan.hot.legend.plug.PlugRelogin;
 import com.example.com.yan.hot.legend.plug.PlugSignin;
 import com.example.com.yan.hot.legend.recognition.CharacterRecognitionManager;
@@ -76,6 +77,7 @@ public class ClickService extends GrayService {
             Plug07073 plug07073 = new Plug07073();
             PlugAoyou plugAoyou = new PlugAoyou();
             PlugSignin plugSignin = new PlugSignin();
+            PlugQQBrowserFullScreen plugQQBrowserFullScreen = new PlugQQBrowserFullScreen();
 
             ActionRun actionRun = ActionRunFile.read();
             cancelRestart();
@@ -144,13 +146,15 @@ public class ClickService extends GrayService {
                         break;
                     }
 
+                    long pauseTime = 0;
                     //运行07073的插件
-                    long runTime07073 = plug07073.runPlug(ClickService.this, clientType, coordinate);
+                    pauseTime = pauseTime + plug07073.runPlug(ClickService.this, clientType, coordinate);
+                    pauseTime = pauseTime + plugQQBrowserFullScreen.runPlug(ClickService.this, clientType, coordinate);
 
                     if (currentTime != 0) {
                         sleep = (int) (coordinate.getTime() - currentTime);
-                        if (runTime07073 != 0) {
-                            sleep = Math.max(sleep - runTime07073, 5000);
+                        if (pauseTime != 0) {
+                            sleep = Math.max(sleep - pauseTime, 5000);
                         }
                     }
                     currentTime = coordinate.getTime();
@@ -285,7 +289,7 @@ public class ClickService extends GrayService {
             @Override
             public void onSuccessResult(String result) {
                 String accountName = AccountManager.getAccountName(clientType);
-                boolean error = !result.contains(accountName);
+                boolean error = !result.contains(accountName) || result.contains("前往熔炼");
                 ActionRun actionRun = ActionRunFile.read();
                 actionRun.setActionStates(clientType, error);
                 ActionRunFile.write(actionRun);

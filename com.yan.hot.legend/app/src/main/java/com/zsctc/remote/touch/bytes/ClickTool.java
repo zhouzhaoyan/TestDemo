@@ -98,6 +98,7 @@ public class ClickTool {
     private static List<ClientType> clientTypes;
 
     public enum ClientType {
+        玩蛋uc极速双开,趣头条uc极速双开,火树uc极速双开,
         玩蛋搜狗极速,趣头条搜狗极速,火树搜狗极速,
         玩蛋搜狗,趣头条搜狗,火树搜狗,
         玩蛋uc极速,趣头条uc极速,火树uc极速,
@@ -255,6 +256,9 @@ public class ClickTool {
                 case 火树搜狗极速:
                 case 趣头条搜狗极速:
                 case 玩蛋搜狗极速:
+                case 火树uc极速双开:
+                case 趣头条uc极速双开:
+                case 玩蛋uc极速双开:
                     runNames.add("游戏-结束");
                     break;
                 case 游戏07073网页:
@@ -443,6 +447,8 @@ public class ClickTool {
     private static boolean is8Turn(ClientType clientType) {
         boolean result = false;
         switch (clientType) {
+            case 游戏1758浏览器360:
+            case 玩蛋360浏览器:
             case 趣头条360浏览器:
             case 火树360浏览器:
             case 趣头条qq浏览器:
@@ -491,8 +497,6 @@ public class ClickTool {
     private static boolean is7Turn(ClientType clientType) {
         boolean result = false;
         switch (clientType) {
-            case 玩蛋360浏览器:
-            case 游戏1758浏览器360:
             case 乐趣360浏览器:
             case 游戏07073浏览器360:
             case 牛刀浏览器360:
@@ -500,6 +504,8 @@ public class ClickTool {
             case 趣头条猎豹:
             case 牛刀猎豹:
             case 火树遨游:
+            case 趣头条遨游:
+            case 玩蛋遨游:
                 result = true;
                 break;
         }
