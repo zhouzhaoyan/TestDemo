@@ -1600,8 +1600,28 @@ public class ChangeCoordinate {
 //        addNew("火树uc极速双开","趣头条uc极速双开");
 //        setCoordinate("趣头条uc极速双开",550,1334,780,1343);
 
-        show("火树uc极速","火树搜狗","火树360浏览器new","趣头条360浏览器new",
-                "玩蛋360浏览器new","游戏1758浏览器360new","乐趣360浏览器new","游戏07073浏览器360new","牛刀浏览器360new");
+//        addNew("乐趣猎豹","乐趣猎豹new");
+//        deletePostions("乐趣猎豹new",2,3,4);
+//        addCoordinate("乐趣猎豹new",2,1050,850,40000);
+//        addCoordinate("乐趣猎豹new",3,126,155,3000);
+//        addCoordinate("乐趣猎豹new",4,767,2169,3000);
+//        addCoordinate("乐趣猎豹new",5,972,1089,2000);
+//        setTime("乐趣猎豹new",6,30000);
+//        setTime("乐趣猎豹new",7,40000);
+
+//        addNew("乐趣qq浏览器","乐趣qq浏览器new");
+//        deletePostion("乐趣qq浏览器new",2);
+//        addCoordinate("乐趣qq浏览器new",2,1050,850,40000);
+//        addCoordinate("乐趣qq浏览器new",3,126,155,3000);
+//        addCoordinate("乐趣qq浏览器new",4,767,2169,3000);
+//        addCoordinate("乐趣qq浏览器new",5,972,1089,2000);
+//        setTime("乐趣qq浏览器new",6,30000);
+//        setTime("乐趣qq浏览器new",7,40000);
+
+//        delete("乐趣猎豹new");
+//        delete("乐趣qq浏览器new");
+
+        show("乐趣猎豹new","乐趣qq浏览器new");
 
 //        ActionFile.write(actions);
     }

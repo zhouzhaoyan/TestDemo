@@ -114,6 +114,12 @@ public class MainActivity extends Activity {
                 Toast.makeText(this, "成功", Toast.LENGTH_LONG).show();
                 updateUi();
                 break;
+            case R.id.action_no_select:
+                ClickTool.ClientType[] values = ClickTool.ClientType.values();
+                for (ClickTool.ClientType clientType: values) {
+                    getCheckBox(clientType).setChecked(false);
+                }
+                break;
             default:
                 break;
         }

@@ -739,6 +739,14 @@
             android:onClick="onClick"
             android:text="删除" />
 
+        <Button
+            android:id="@+id/action_no_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:onClick="onClick"
+            android:text="取消选择" />
+
     </LinearLayout>
 
 

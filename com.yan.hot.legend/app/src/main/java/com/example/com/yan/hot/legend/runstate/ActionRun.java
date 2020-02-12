@@ -18,9 +18,6 @@ public class ActionRun {
 
     static {
         noRun.add(ClickTool.ClientType.客娱);
-        noRun.add(ClickTool.ClientType.乐趣双开);
-        noRun.add(ClickTool.ClientType.乐趣网页双开);
-        noRun.add(ClickTool.ClientType.乐趣qq浏览器);
     }
     //不跑简单模式
     private static List<ClickTool.ClientType> noRunForSimple = new ArrayList<>();

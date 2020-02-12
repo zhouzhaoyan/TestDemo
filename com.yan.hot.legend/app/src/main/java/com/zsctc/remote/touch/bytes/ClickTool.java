@@ -199,7 +199,8 @@ public class ClickTool {
                         runNames.add("竞技sample-8转");
                     } else {
                         runNames.add("竞技sample");
-                    }                    if (isRunKing(actionRun.getModeType())) {
+                    }
+                    if (isRunKing(actionRun.getModeType())) {
                         runNames.add("王者争霸sample");
                     }
                     break;
