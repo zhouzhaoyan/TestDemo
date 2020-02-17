@@ -145,7 +145,8 @@ public class ClickTool {
                         runNames.add("王者争霸sample");
                     }
                     runNames.add(getMiJingBoss(index));
-                    runNames.add("野外boss快速sample");
+//                    runNames.add("野外boss快速sample");
+
                     if (is8Turn(clientType)){
                         runNames.add("竞技sample-8转");
                     } else {
@@ -184,24 +185,26 @@ public class ClickTool {
                         runNames.add("转生");
                     }
 
-                    if (isSlowest(clientType)) {
-                        runNames.add("个人boss");
-                    } else {
+                    if (isFastest(clientType)) {
                         runNames.add("个人boss快速");
                     }
 
                     if (actionRun.isAutoCheckPoint()) {
-                        runNames.add("自动关卡-sample");
+//                        runNames.add("自动关卡-sample");
+                        runNames.add("自动关卡double");
                     }
+
                     runNames.add(getMiJingBoss(index));
                     runNames.add("野外boss快速sample");
+
+                    if (isRunKing(actionRun.getModeType())) {
+                        runNames.add("王者争霸sample");
+                    }
+
                     if (is8Turn(clientType)){
                         runNames.add("竞技sample-8转");
                     } else {
                         runNames.add("竞技sample");
-                    }
-                    if (isRunKing(actionRun.getModeType())) {
-                        runNames.add("王者争霸sample");
                     }
                     break;
             }
@@ -389,16 +392,6 @@ public class ClickTool {
         return result;
     }
 
-    private static boolean isSlowest(ClientType clientType) {
-        boolean result = false;
-//        switch (clientType) {
-//            case 趣头条qq浏览器双开:
-//                result = true;
-//                break;
-//        }
-        return result;
-    }
-
     public static String getMiJingBoss(int index) {
         int value = 2;
         switch (actionRun.getModeType()) {
@@ -448,6 +441,10 @@ public class ClickTool {
     private static boolean is8Turn(ClientType clientType) {
         boolean result = false;
         switch (clientType) {
+            case 游戏1758猎豹浏览器:
+            case 牛刀浏览器360:
+            case 游戏07073浏览器360:
+            case 乐趣360浏览器:
             case 游戏1758浏览器360:
             case 玩蛋360浏览器:
             case 趣头条360浏览器:
@@ -498,10 +495,6 @@ public class ClickTool {
     private static boolean is7Turn(ClientType clientType) {
         boolean result = false;
         switch (clientType) {
-            case 乐趣360浏览器:
-            case 游戏07073浏览器360:
-            case 牛刀浏览器360:
-            case 游戏1758猎豹浏览器:
             case 趣头条猎豹:
             case 牛刀猎豹:
             case 火树遨游:

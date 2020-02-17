@@ -29,6 +29,7 @@ import com.zsctc.remote.touch.bytes.ClickTool;
 import java.io.Serializable;
 import java.util.List;
 
+import static com.example.com.yan.hot.legend.runstate.ActionRun.isRunStatic;
 import static com.zsctc.remote.touch.bytes.TimeUtil.getLastSecondInDay;
 
 public class MainActivity extends Activity {
@@ -110,13 +111,12 @@ public class MainActivity extends Activity {
                 startActivity(new Intent(this, SigninActivity.class));
                 break;
             case R.id.action_delete:
-                ActionRunFile.delete();
-                Toast.makeText(this, "成功", Toast.LENGTH_LONG).show();
-                updateUi();
+                for (ClickTool.ClientType clientType: ClickTool.ClientType.values()) {
+                    getCheckBox(clientType).setChecked(isRunStatic(clientType));
+                }
                 break;
             case R.id.action_no_select:
-                ClickTool.ClientType[] values = ClickTool.ClientType.values();
-                for (ClickTool.ClientType clientType: values) {
+                for (ClickTool.ClientType clientType: ClickTool.ClientType.values()) {
                     getCheckBox(clientType).setChecked(false);
                 }
                 break;

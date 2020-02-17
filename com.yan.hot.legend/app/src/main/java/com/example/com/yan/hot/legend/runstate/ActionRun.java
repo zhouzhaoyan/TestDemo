@@ -22,6 +22,10 @@ public class ActionRun {
     //不跑简单模式
     private static List<ClickTool.ClientType> noRunForSimple = new ArrayList<>();
 
+    public static boolean isRunStatic(ClickTool.ClientType clientType){
+        return !noRun.contains(clientType);
+    }
+
     static {
         noRunForSimple.add(ClickTool.ClientType.牛刀);
         noRunForSimple.add(ClickTool.ClientType.客娱);

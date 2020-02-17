@@ -1621,7 +1621,21 @@ public class ChangeCoordinate {
 //        delete("乐趣猎豹new");
 //        delete("乐趣qq浏览器new");
 
-        show("乐趣猎豹new","乐趣qq浏览器new");
+//        addNew("自动关卡", "自动关卡double");
+//        int size = getSize("自动关卡double");
+//        delete("自动关卡double",size-1-150);
+
+//        setCoordinateIndex("自动关卡double",0,0,1013, 2021);
+//        setCoordinateIndex("自动关卡double",1,1,1013, 2021);
+
+//        int size = getSize("自动关卡double");
+//        setCoordinateIndex("自动关卡double",size-1,size-1,1013, 2021);
+//        setCoordinateIndex("自动关卡double",size-2,size-2,1013, 2021);
+//        deletePostionsIndex("自动关卡double",size-14,size-3);
+//        setTime("自动关卡double",size-2,12000);
+
+//        setTime("竞技sample-8转",50,9000);
+        show("竞技sample-8转");
 
 //        ActionFile.write(actions);
     }
