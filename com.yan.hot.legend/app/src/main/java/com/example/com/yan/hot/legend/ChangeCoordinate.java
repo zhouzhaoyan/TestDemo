@@ -1635,7 +1635,54 @@ public class ChangeCoordinate {
 //        setTime("自动关卡double",size-2,12000);
 
 //        setTime("竞技sample-8转",50,9000);
-        show("竞技sample-8转");
+//        addNew("野外boss快速sample","野外boss快速sample-new");
+//        deletePostionsIndex("野外boss快速sample-new",0,59+16);
+
+//        addNew("火树360浏览器new","火树360极速双开");
+//        setCoordinate("火树360极速双开",342, 1087,701,1083);
+//
+//        addNew("趣头条360浏览器new","趣头条360极速双开");
+//        setCoordinate("趣头条360极速双开",342, 1087,701,1083);
+//
+//        addNew("玩蛋360浏览器new","玩蛋360极速双开");
+//        setCoordinate("玩蛋360极速双开",342, 1087,701,1083);
+
+//        addNew("游戏1758浏览器360new","火树360极速new");
+//        setCoordinate("火树360极速new",342, 1087,701,1083);
+//
+//        addNew("乐趣360浏览器new","趣头条360极速new");
+//        setCoordinate("趣头条360极速new",342, 1087,701,1083);
+//
+//        addNew("游戏07073浏览器360new","玩蛋360极速new");
+//        setCoordinate("玩蛋360极速new",342, 1087,701,1083);
+
+//        addNew("火树360浏览器new","火树uc极速new");
+//        setCoordinate("火树uc极速new",342, 1087,180,1083);
+//
+//        addNew("趣头条360浏览器new","趣头条uc极速new");
+//        setCoordinate("趣头条uc极速new",342, 1087,180,1083);
+//
+//        addNew("玩蛋360浏览器new","玩蛋uc极速new");
+//        setCoordinate("玩蛋uc极速new",342, 1087,180,1083);
+
+//        setCoordinate("凹凸果new",826, 1344,254,1330);
+
+//        delete("野外boss快速sample-new",1);
+//        for (int i = 0; i < 10; i++) {
+//            addCoordinateEnd("野外boss快速sample-new",1030, 1490,1000);
+//            addCoordinateEnd("野外boss快速sample-new",325, 1843,1000);
+//            addCoordinateEnd("野外boss快速sample-new",864, 507,1000);
+//            addCoordinateEnd("野外boss快速sample-new",550, 1500,1000);
+//            addCoordinateEnd("野外boss快速sample-new",1013, 2021,1000);
+//        }
+//        addCoordinateEnd("野外boss快速sample-new",1013, 2021,20000);
+//        addCoordinateEnd("野外boss快速sample-new",1013, 2021,1000);
+
+//        delete("野外boss快速sample-new");
+//        addNew("野外boss快速sample","野外boss快速sample-new");
+//        deletePostionsIndex("野外boss快速sample-new",0,59+16);
+
+        show("野外boss快速sample-new");
 
 //        ActionFile.write(actions);
     }

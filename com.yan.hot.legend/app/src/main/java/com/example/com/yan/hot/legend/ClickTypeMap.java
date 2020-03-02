@@ -52,6 +52,7 @@ public class ClickTypeMap {
         actionNameMap.put(ClickTool.ClientType.趣头条qq浏览器双开,"趣头条qq浏览器双开");
         actionNameMap.put(ClickTool.ClientType.趣头条uc浏览器,"趣头条uc浏览器");
         actionNameMap.put(ClickTool.ClientType.趣头条qq浏览器,"趣头条qq浏览器");
+
         actionNameMap.put(ClickTool.ClientType.火树360浏览器,"火树360浏览器new");
         actionNameMap.put(ClickTool.ClientType.趣头条360浏览器,"趣头条360浏览器new");
         actionNameMap.put(ClickTool.ClientType.玩蛋360浏览器,"玩蛋360浏览器new");
@@ -59,18 +60,22 @@ public class ClickTypeMap {
         actionNameMap.put(ClickTool.ClientType.乐趣360浏览器,"乐趣360浏览器new");
         actionNameMap.put(ClickTool.ClientType.游戏07073浏览器360,"游戏07073浏览器360new");
         actionNameMap.put(ClickTool.ClientType.牛刀浏览器360,"牛刀浏览器360new");
+
         actionNameMap.put(ClickTool.ClientType.游戏1758猎豹浏览器,"游戏1758猎豹");
         actionNameMap.put(ClickTool.ClientType.趣头条猎豹,"趣头条猎豹");
         actionNameMap.put(ClickTool.ClientType.牛刀猎豹,"牛刀猎豹");
         actionNameMap.put(ClickTool.ClientType.火树遨游,"火树遨游");
         actionNameMap.put(ClickTool.ClientType.趣头条遨游,"趣头条遨游");
         actionNameMap.put(ClickTool.ClientType.玩蛋遨游,"玩蛋遨游");
-        actionNameMap.put(ClickTool.ClientType.火树360极速,"火树360极速");
-        actionNameMap.put(ClickTool.ClientType.趣头条360极速,"趣头条360极速");
-        actionNameMap.put(ClickTool.ClientType.玩蛋360极速,"玩蛋360极速");
-        actionNameMap.put(ClickTool.ClientType.火树uc极速,"火树uc极速");
-        actionNameMap.put(ClickTool.ClientType.趣头条uc极速,"趣头条uc极速");
-        actionNameMap.put(ClickTool.ClientType.玩蛋uc极速,"玩蛋uc极速");
+
+        actionNameMap.put(ClickTool.ClientType.火树360极速,"火树360极速new");
+        actionNameMap.put(ClickTool.ClientType.趣头条360极速,"趣头条360极速new");
+        actionNameMap.put(ClickTool.ClientType.玩蛋360极速,"玩蛋360极速new");
+
+        actionNameMap.put(ClickTool.ClientType.火树uc极速,"火树uc极速new");
+        actionNameMap.put(ClickTool.ClientType.趣头条uc极速,"趣头条uc极速new");
+        actionNameMap.put(ClickTool.ClientType.玩蛋uc极速,"玩蛋uc极速new");
+
         actionNameMap.put(ClickTool.ClientType.火树搜狗,"火树搜狗");
         actionNameMap.put(ClickTool.ClientType.趣头条搜狗,"趣头条搜狗");
         actionNameMap.put(ClickTool.ClientType.玩蛋搜狗,"玩蛋搜狗");
@@ -80,6 +85,9 @@ public class ClickTypeMap {
         actionNameMap.put(ClickTool.ClientType.火树uc极速双开,"火树uc极速双开");
         actionNameMap.put(ClickTool.ClientType.趣头条uc极速双开,"趣头条uc极速双开");
         actionNameMap.put(ClickTool.ClientType.玩蛋uc极速双开,"玩蛋uc极速双开");
+        actionNameMap.put(ClickTool.ClientType.火树360极速双开,"火树360极速双开");
+        actionNameMap.put(ClickTool.ClientType.趣头条360极速双开,"趣头条360极速双开");
+        actionNameMap.put(ClickTool.ClientType.玩蛋360极速双开,"玩蛋360极速双开");
     }
 
     public static ClickTool.ClientType getClientType(String actionName) {

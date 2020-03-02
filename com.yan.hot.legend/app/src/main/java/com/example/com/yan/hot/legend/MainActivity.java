@@ -441,6 +441,15 @@ public class MainActivity extends Activity {
             case 玩蛋uc极速双开:
                 checkBox = (CheckBox) findViewById(R.id.game65);
                 break;
+            case 火树360极速双开:
+                checkBox = (CheckBox) findViewById(R.id.game66);
+                break;
+            case 趣头条360极速双开:
+                checkBox = (CheckBox) findViewById(R.id.game67);
+                break;
+            case 玩蛋360极速双开:
+                checkBox = (CheckBox) findViewById(R.id.game68);
+                break;
         }
         return checkBox;
     }

@@ -98,11 +98,14 @@ public class ClickTool {
     private static List<ClientType> clientTypes;
 
     public enum ClientType {
+        玩蛋360极速双开, 趣头条360极速双开, 火树360极速双开,
         玩蛋uc极速双开,趣头条uc极速双开,火树uc极速双开,
         玩蛋搜狗极速,趣头条搜狗极速,火树搜狗极速,
         玩蛋搜狗,趣头条搜狗,火树搜狗,
         玩蛋uc极速,趣头条uc极速,火树uc极速,
-        玩蛋360极速, 趣头条360极速, 火树360极速, 玩蛋遨游, 趣头条遨游, 火树遨游, 牛刀猎豹, 趣头条猎豹, 游戏1758猎豹浏览器,
+        玩蛋360极速, 趣头条360极速, 火树360极速,
+        玩蛋遨游, 趣头条遨游, 火树遨游,
+        牛刀猎豹, 趣头条猎豹, 游戏1758猎豹浏览器,
         游戏07073浏览器360, 乐趣360浏览器, 游戏1758浏览器360, 玩蛋360浏览器, 趣头条360浏览器, 火树360浏览器,牛刀浏览器360,
         趣头条qq浏览器, 趣头条uc浏览器, 趣头条qq浏览器双开,
         玩蛋猎豹浏览器, 玩蛋qq浏览器双开, 火树猎豹浏览器, 火树qq浏览器双开,
@@ -145,7 +148,7 @@ public class ClickTool {
                         runNames.add("王者争霸sample");
                     }
                     runNames.add(getMiJingBoss(index));
-//                    runNames.add("野外boss快速sample");
+                    runNames.add("野外boss快速sample-new");
 
                     if (is8Turn(clientType)){
                         runNames.add("竞技sample-8转");
@@ -155,11 +158,11 @@ public class ClickTool {
                     break;
                 case SIMPLE:
                     //简单模式，6分钟30秒
-                    runNames.add("血战矿洞");
                     runNames.add("熔炼new");
+                    runNames.add("野外boss快速sample-new");
 //                    runNames.add(getMiJingBoss(index));
 //                    runNames.add("竞技sample");
-                    runNames.add("签到new");
+//                    runNames.add("签到new");
                     break;
                 case NIGHT:
                 case TASK:
@@ -195,7 +198,7 @@ public class ClickTool {
                     }
 
                     runNames.add(getMiJingBoss(index));
-                    runNames.add("野外boss快速sample");
+                    runNames.add("野外boss快速sample-new");
 
                     if (isRunKing(actionRun.getModeType())) {
                         runNames.add("王者争霸sample");
@@ -263,6 +266,9 @@ public class ClickTool {
                 case 火树uc极速双开:
                 case 趣头条uc极速双开:
                 case 玩蛋uc极速双开:
+                case 火树360极速双开:
+                case 趣头条360极速双开:
+                case 玩蛋360极速双开:
                     runNames.add("游戏-结束");
                     break;
                 case 游戏07073网页:
@@ -385,6 +391,9 @@ public class ClickTool {
             case 趣头条搜狗:
             case 火树搜狗:
             case 玩蛋搜狗:
+            case 火树搜狗极速:
+            case 趣头条搜狗极速:
+            case 玩蛋搜狗极速:
                 result = true;
                 break;
         }
