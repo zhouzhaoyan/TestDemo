@@ -98,7 +98,7 @@ public class ClickTool {
     private static List<ClientType> clientTypes;
 
     public enum ClientType {
-        玩蛋360极速双开, 趣头条360极速双开, 火树360极速双开,
+        追书360极速双开, 玩蛋360极速双开, 趣头条360极速双开, 火树360极速双开,
         玩蛋uc极速双开,趣头条uc极速双开,火树uc极速双开,
         玩蛋搜狗极速,趣头条搜狗极速,火树搜狗极速,
         玩蛋搜狗,趣头条搜狗,火树搜狗,
@@ -269,6 +269,7 @@ public class ClickTool {
                 case 火树360极速双开:
                 case 趣头条360极速双开:
                 case 玩蛋360极速双开:
+                case 追书360极速双开:
                     runNames.add("游戏-结束");
                     break;
                 case 游戏07073网页:
@@ -394,6 +395,9 @@ public class ClickTool {
             case 火树搜狗极速:
             case 趣头条搜狗极速:
             case 玩蛋搜狗极速:
+            case 火树uc极速双开:
+            case 趣头条uc极速双开:
+            case 玩蛋uc极速双开:
                 result = true;
                 break;
         }
@@ -509,6 +513,9 @@ public class ClickTool {
             case 火树遨游:
             case 趣头条遨游:
             case 玩蛋遨游:
+            case 火树360极速:
+            case 趣头条360极速:
+            case 玩蛋360极速:
                 result = true;
                 break;
         }

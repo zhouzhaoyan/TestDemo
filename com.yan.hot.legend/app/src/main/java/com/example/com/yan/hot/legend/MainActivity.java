@@ -450,6 +450,9 @@ public class MainActivity extends Activity {
             case 玩蛋360极速双开:
                 checkBox = (CheckBox) findViewById(R.id.game68);
                 break;
+            case 追书360极速双开:
+                checkBox = (CheckBox) findViewById(R.id.game69);
+                break;
         }
         return checkBox;
     }
@@ -488,5 +491,10 @@ public class MainActivity extends Activity {
 
             }
         });
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
     }
 }

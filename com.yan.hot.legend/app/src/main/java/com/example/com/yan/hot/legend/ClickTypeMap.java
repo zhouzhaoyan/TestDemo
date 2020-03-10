@@ -88,6 +88,7 @@ public class ClickTypeMap {
         actionNameMap.put(ClickTool.ClientType.火树360极速双开,"火树360极速双开");
         actionNameMap.put(ClickTool.ClientType.趣头条360极速双开,"趣头条360极速双开");
         actionNameMap.put(ClickTool.ClientType.玩蛋360极速双开,"玩蛋360极速双开");
+        actionNameMap.put(ClickTool.ClientType.追书360极速双开,"追书360极速双开");
     }
 
     public static ClickTool.ClientType getClientType(String actionName) {

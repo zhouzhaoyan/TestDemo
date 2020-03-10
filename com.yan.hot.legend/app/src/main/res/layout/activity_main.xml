@@ -750,6 +750,20 @@
                     android:text="玩蛋360极双" />
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/game69"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="追书360极双" />
+
+            </LinearLayout>
         </LinearLayout>
 
     </ScrollView>

@@ -1682,7 +1682,9 @@ public class ChangeCoordinate {
 //        addNew("野外boss快速sample","野外boss快速sample-new");
 //        deletePostionsIndex("野外boss快速sample-new",0,59+16);
 
-        show("野外boss快速sample-new");
+//        addNew("玩蛋360极速双开","追书360极速双开");
+//        setCoordinate("追书360极速双开",747,766,254, 1330);
+        show("追书360极速双开","牛刀浏览器360new");
 
 //        ActionFile.write(actions);
     }
