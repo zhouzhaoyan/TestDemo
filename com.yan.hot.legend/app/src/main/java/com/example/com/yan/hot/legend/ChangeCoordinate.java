@@ -1684,7 +1684,15 @@ public class ChangeCoordinate {
 
 //        addNew("玩蛋360极速双开","追书360极速双开");
 //        setCoordinate("追书360极速双开",747,766,254, 1330);
-        show("追书360极速双开","牛刀浏览器360new");
+
+//        addNew("熔炼new","邮件");
+//        delete("邮件",2);
+//        addCoordinateEnd("邮件",70,1570,1000);
+//        for (int i = 0; i < 3; i++) {
+//            addCoordinateEnd("邮件",950,1900,1000);
+//        }
+
+        show("邮件");
 
 //        ActionFile.write(actions);
     }

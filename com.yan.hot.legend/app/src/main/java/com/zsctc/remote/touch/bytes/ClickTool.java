@@ -155,14 +155,12 @@ public class ClickTool {
                     } else {
                         runNames.add("竞技sample");
                     }
+                    runNames.add("邮件");
                     break;
                 case SIMPLE:
-                    //简单模式，6分钟30秒
+                    //简单模式
+                    runNames.add("血战矿洞");
                     runNames.add("熔炼new");
-                    runNames.add("野外boss快速sample-new");
-//                    runNames.add(getMiJingBoss(index));
-//                    runNames.add("竞技sample");
-//                    runNames.add("签到new");
                     break;
                 case NIGHT:
                 case TASK:
