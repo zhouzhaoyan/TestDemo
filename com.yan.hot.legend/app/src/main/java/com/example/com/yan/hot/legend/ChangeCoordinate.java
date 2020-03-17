@@ -1692,7 +1692,7 @@ public class ChangeCoordinate {
 //            addCoordinateEnd("邮件",950,1900,1000);
 //        }
 
-        show("邮件");
+        show("转生");
 
 //        ActionFile.write(actions);
     }
