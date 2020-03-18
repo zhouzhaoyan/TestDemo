@@ -38,14 +38,22 @@ public class Plug07073 {
 
     private List<Coordinate> getCoordinate(){
         List<Coordinate> coordinates = new ArrayList<>();
-        Coordinate coordinate = new Coordinate(990, 630);
         int timeIndex = 824085;
+
+        Coordinate coordinate = new Coordinate(990, 630);
         coordinate.setTime(timeIndex);
         coordinates.add(coordinate);
+
         coordinate = new Coordinate(530, 1230);
         timeIndex += 2000;
         coordinate.setTime(timeIndex);
         coordinates.add(coordinate);
+
+        coordinate = new Coordinate(990, 630);
+        timeIndex += 2000;
+        coordinate.setTime(timeIndex);
+        coordinates.add(coordinate);
+
         return coordinates;
     }
 
@@ -75,7 +83,7 @@ public class Plug07073 {
                 }
                 currentTime = tmp.getTime();
                 if (sleep == 0){
-                    sleep = 15000;
+                    sleep = 20000;
                 }
                 allTime += sleep;
                 clickService.runClick(sleep, tmp);
