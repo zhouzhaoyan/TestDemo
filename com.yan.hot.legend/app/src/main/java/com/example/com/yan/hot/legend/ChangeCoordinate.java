@@ -1692,7 +1692,11 @@ public class ChangeCoordinate {
 //            addCoordinateEnd("邮件",950,1900,1000);
 //        }
 
-        show("转生");
+//        setCoordinate("火树搜狗极速",975, 797,100, 1150);
+//        setCoordinate("趣头条搜狗极速",92, 969,270, 1150);
+//        setCoordinate("玩蛋搜狗极速",288, 1002,450, 1150);
+
+        show("火树搜狗极速","趣头条搜狗极速","玩蛋搜狗极速");
 
 //        ActionFile.write(actions);
     }
