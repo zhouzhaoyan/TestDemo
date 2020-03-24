@@ -42,9 +42,17 @@ public class PowerActivity extends Activity implements View.OnClickListener {
 
     private void initData() {
         powerObjects = PowerFile.read();
+        List<PowerObject> aDefault = getDefault();
         if (powerObjects == null) {
-            powerObjects = getDefault();
+            powerObjects = aDefault;
         }
+        List<PowerObject> add = new ArrayList<>();
+        for (PowerObject defaultPowerObject : aDefault){
+            if (!powerObjects.contains(defaultPowerObject)){
+                add.add(defaultPowerObject);
+            }
+        }
+        powerObjects.addAll(0, add);
     }
 
     private void initView() {

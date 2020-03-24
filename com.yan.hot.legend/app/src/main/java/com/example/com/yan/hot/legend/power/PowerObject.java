@@ -73,6 +73,15 @@ public class PowerObject {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (o instanceof PowerObject){
+            return ((PowerObject)o).getName().equals(name);
+        } else {
+            return super.equals(o);
+        }
+    }
+
+    @Override
     public String toString() {
         return "PowerObject{" +
                 "name='" + name + '\'' +

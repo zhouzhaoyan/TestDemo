@@ -28,7 +28,7 @@ public class PowerManager {
         List<PowerObject> powerObjects = new ArrayList<>();
         ClickTool.ClientType[] clientTypes = ClickTool.ClientType.values();
         for (ClickTool.ClientType clientType : clientTypes) {
-            powerObjects.add(new PowerObject(clientType.name(), getCurrentTime(), 0, 0, clientType));
+            powerObjects.add(new PowerObject(clientType.name(), 0, 0, 0, clientType));
         }
         return powerObjects;
     }
