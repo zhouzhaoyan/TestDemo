@@ -399,6 +399,7 @@ public class ClickTool {
             case 火树360极速双开:
             case 趣头条360极速双开:
             case 玩蛋360极速双开:
+            case 追书360极速双开:
                 result = true;
                 break;
         }
