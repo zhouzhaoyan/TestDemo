@@ -456,6 +456,7 @@ public class ClickTool {
     private static boolean is8Turn(ClientType clientType) {
         boolean result = false;
         switch (clientType) {
+            case 趣头条猎豹:
             case 游戏1758猎豹浏览器:
             case 牛刀浏览器360:
             case 游戏07073浏览器360:
@@ -510,7 +511,6 @@ public class ClickTool {
     private static boolean is7Turn(ClientType clientType) {
         boolean result = false;
         switch (clientType) {
-            case 趣头条猎豹:
             case 牛刀猎豹:
             case 火树遨游:
             case 趣头条遨游:
@@ -518,6 +518,12 @@ public class ClickTool {
             case 火树360极速:
             case 趣头条360极速:
             case 玩蛋360极速:
+            case 火树uc极速:
+            case 趣头条uc极速:
+            case 玩蛋uc极速:
+            case 火树搜狗:
+            case 趣头条搜狗:
+            case 玩蛋搜狗:
                 result = true;
                 break;
         }
