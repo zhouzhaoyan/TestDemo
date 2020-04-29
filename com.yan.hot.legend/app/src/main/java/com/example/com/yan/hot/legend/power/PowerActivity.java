@@ -69,7 +69,7 @@ public class PowerActivity extends Activity implements View.OnClickListener {
         Collections.sort(powerObjects, new Comparator<PowerObject>() {
             @Override
             public int compare(PowerObject lhs, PowerObject rhs) {
-                if (lhs.getDate() - rhs.getDate() == 0){
+                if (lhs.getValue() - rhs.getValue() != 0){
                     //战力
                     return (lhs.getValue() - rhs.getValue()) == 0 ? 0 : (lhs.getValue() - rhs.getValue()) > 0 ? 1 : -1;
                 } else {
