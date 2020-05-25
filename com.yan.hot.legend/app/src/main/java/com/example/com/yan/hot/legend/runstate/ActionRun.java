@@ -65,7 +65,7 @@ public class ActionRun {
         switch (modeType){
             case SIMPLE:
                 long second = TimeUtil.getRemainInDay();
-                int time = (int) (second/60/6) - 2;
+                int time = (int) (second/60/2);
                 boolean run;
                 int i = 0;
                 for (ClickTool.ClientType clientType : clientTypes) {

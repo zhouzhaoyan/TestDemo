@@ -212,8 +212,11 @@ public class PlugQQ {
 
         Coordinate coordinate1 = new Coordinate(rect.left + (rect.right - rect.left) / 2, rect.top + (rect.bottom - rect.top) / 2);
         Log.e(TAG, "PlugQQ runClick: " + coordinate1.getX() + "," + coordinate1.getY() + ",position:" + rect);
-        clickService.runClick(5000,
-                coordinate1);
+        clickService.runClick(5000, coordinate1);
+
+        Coordinate coordinate2 = new Coordinate(423, 977);
+        clickService.runClick(3000, coordinate2);
+
         return true;
     }
 
