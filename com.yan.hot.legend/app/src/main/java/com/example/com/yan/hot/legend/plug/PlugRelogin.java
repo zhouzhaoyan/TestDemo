@@ -28,7 +28,7 @@ public class PlugRelogin {
     private static Map<ClickTool.ClientType, Relogin> reloginMap = new HashMap();
 
     static {
-        clientTypes.add(ClickTool.ClientType.牛刀);
+//        clientTypes.add(ClickTool.ClientType.牛刀);
         clientTypes.add(ClickTool.ClientType.热血单机双开);
         clientTypes.add(ClickTool.ClientType.牛刀qq浏览器);
         Coordinate coordinate = null;
@@ -36,7 +36,7 @@ public class PlugRelogin {
         for (ClickTool.ClientType clientType: clientTypes) {
             switch (clientType){
                 case 牛刀:
-                    coordinate = new Coordinate(423,977);
+                    coordinate = new Coordinate(535,1600);
                     rect = new Rect(0,1000,1080,1070);
                     break;
                 default:
