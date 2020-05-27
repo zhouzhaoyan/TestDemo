@@ -1696,8 +1696,8 @@ public class ChangeCoordinate {
 //        setCoordinate("趣头条搜狗极速",92, 969,270, 1150);
 //        setCoordinate("玩蛋搜狗极速",288, 1002,450, 1150);
 
-//        setCoordinate("牛刀new",535,1106,535,1600);
-        show("牛刀new","牛刀");
+//        setCoordinate("牛刀new",535,1600,535,1900);
+        show("牛刀new");
 
 //        ActionFile.write(actions);
     }
