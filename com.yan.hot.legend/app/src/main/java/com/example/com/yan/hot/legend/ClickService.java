@@ -440,7 +440,7 @@ public class ClickService extends GrayService {
                             }
                             if (nextMode == null) {
                                 long time = getLastSecondInDay(System.currentTimeMillis()) - System.currentTimeMillis();
-                                if (time < 6 * 60 * 60 * 1000 && time > 3 * 60 * 1000) {
+                                if (time < 8 * 60 * 60 * 1000 && time > 3 * 60 * 1000) {
                                     nextMode = ActionRun.ModeType.NIGHT;
                                 } else {
                                     nextMode = ActionRun.ModeType.TASK;

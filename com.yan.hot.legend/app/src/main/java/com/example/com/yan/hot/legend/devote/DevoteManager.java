@@ -3,6 +3,7 @@ package com.example.com.yan.hot.legend.devote;
 
 import android.annotation.SuppressLint;
 
+import com.example.com.yan.hot.legend.runstate.ActionRun;
 import com.zsctc.remote.touch.bytes.ClickTool;
 import com.zsctc.remote.touch.bytes.TimeUtil;
 
@@ -41,7 +42,8 @@ public class DevoteManager {
                 if (list != null) {
                     long currentTime = getCurrentTime();
                     for (DevoteObject devoteObject : list) {
-                        if (devoteObject.getDate() < currentTime && devoteObject.getValue() < MAX_VALUE) {
+                        if (devoteObject.getDate() < currentTime && devoteObject.getValue() < MAX_VALUE
+                                && !ActionRun.noRun.contains(devoteObject.getClientType())) {
                             devoteObject.setDate(currentTime);
                             devoteObject.setValue(Math.min(devoteObject.getValue() + devoteObject.getOffset(), MAX_VALUE));
                         }

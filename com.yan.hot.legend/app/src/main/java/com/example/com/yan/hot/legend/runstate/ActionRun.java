@@ -14,10 +14,24 @@ import timber.log.Timber;
  */
 public class ActionRun {
 
-    private static List<ClickTool.ClientType> noRun = new ArrayList<>();
+    public static List<ClickTool.ClientType> noRun = new ArrayList<>();
 
     static {
         noRun.add(ClickTool.ClientType.客娱);
+        
+        noRun.add(ClickTool.ClientType.玩蛋);
+        noRun.add(ClickTool.ClientType.玩蛋双开);
+        noRun.add(ClickTool.ClientType.玩蛋qq浏览器);
+        noRun.add(ClickTool.ClientType.玩蛋qq浏览器双开);
+        noRun.add(ClickTool.ClientType.玩蛋猎豹浏览器);
+        noRun.add(ClickTool.ClientType.玩蛋360浏览器);
+        noRun.add(ClickTool.ClientType.玩蛋遨游);
+        noRun.add(ClickTool.ClientType.玩蛋360极速);
+        noRun.add(ClickTool.ClientType.玩蛋uc极速);
+        noRun.add(ClickTool.ClientType.玩蛋搜狗);
+        noRun.add(ClickTool.ClientType.玩蛋搜狗极速);
+        noRun.add(ClickTool.ClientType.玩蛋uc极速双开);
+        noRun.add(ClickTool.ClientType.玩蛋360极速双开);
     }
     //不跑简单模式
     private static List<ClickTool.ClientType> noRunForSimple = new ArrayList<>();
